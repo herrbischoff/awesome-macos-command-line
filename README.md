@@ -105,7 +105,7 @@ ipconfig getpacket en0
 defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences | grep LastConnected -A 7
 ```
 
-## Show Wi-Fi network passwords
+### Show Wi-Fi network passwords
 ```bash
 security find-generic-password -ga "ROUTERNAME" | grep "password:"
 ```
