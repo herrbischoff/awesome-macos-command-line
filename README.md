@@ -181,6 +181,12 @@ cat whatever.txt | pbcopy
 pbpaste > whatever.txt
 ```
 
+### Disable/enable Notification Center
+```bash
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist && killall -9 NotificationCenter
+launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
+```
+
 ### Eject all mountable volumes
 ```bash
 osascript -e 'tell application "Finder" to eject (every disk whose ejectable is true)'
