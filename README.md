@@ -35,11 +35,6 @@ xcode-select --install
 
 ## Disks
 
-### Disable sudden motion sensor (useless for SSDs)
-```bash
-sudo pmset -a sms 0
-```
-
 ### Repair file permissions
 ```bash
 sudo diskutil repairPermissions /
@@ -71,6 +66,11 @@ atsutil server -ping
 
 
 ## Hardware
+
+### Disable sudden motion sensor (useless for SSDs)
+```bash
+sudo pmset -a sms 0
+```
 
 ### List all hardware ports
 ```bash
