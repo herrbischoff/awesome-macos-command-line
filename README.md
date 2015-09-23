@@ -187,6 +187,12 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.
 launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
 ```
 
+### Disable/enable transparency in menu and windows
+```bash
+defaults write com.apple.universalaccess reduceTransparency -bool true
+defaults write com.apple.universalaccess reduceTransparency -bool false
+```
+
 ### Eject all mountable volumes
 ```bash
 osascript -e 'tell application "Finder" to eject (every disk whose ejectable is true)'
