@@ -45,7 +45,7 @@ sudo diskutil repairPermissions /
 
 ### Hide folder in finder
 ```bash
-SetFile -a V <FOLDER>
+SetFile -a V /path/to/folder/
 ```
 
 ## Fonts
