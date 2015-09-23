@@ -15,6 +15,7 @@ If you want to contribute, please read the [contribution guidelines](contributin
 * [Finder](#finder)
 * [Fonts](#fonts)
 * [Hardware](#hardware)
+* [Input Devices](#input-devices)
 * [Media](#media)
 * [Networking](#networking)
 * [Package Managers](#package-managers)
@@ -81,6 +82,14 @@ networksetup -listallhardwareports
 sudo pmset -g
 ```
 
+
+## Input Devices
+
+### Disable/enable auto-correct
+```bash
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool true
+```
 
 ## Media
 
