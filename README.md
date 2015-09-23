@@ -90,6 +90,12 @@ afconvert input.mp3 ringtone.m4r -f m4af
 sudo dscachutil -flushcache && sudo killall -HUP mDNSResponder
 ```
 
+### Enable/disable Bonjour
+```bash
+defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array-add "-NoMulticastAdvertisements"
+defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array "/usr/sbin/mDNSResponder" "-launchd"
+```
+
 ### Renew DHCP lease
 ```bash
 sudo ipconfig set en0 DHCP
