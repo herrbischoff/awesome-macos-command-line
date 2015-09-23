@@ -96,6 +96,16 @@ defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArgu
 defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array "/usr/sbin/mDNSResponder" "-launchd"
 ```
 
+### Remove Apple Remote Desktop settings
+```bash
+sudo rm -rf /var/db/RemoteManagement  
+sudo rm /Library/Preferences/com.apple.RemoteDesktop.plist  
+rm ~/Library/Preferences/com.apple.RemoteDesktop.plist
+sudo rm -r /Library/Application\ Support/Apple/Remote\ Desktop/ 
+rm -r ~/Library/Application\ Support/Remote\ Desktop/
+rm -r ~/Library/Containers/com.apple.RemoteDesktop
+```
+
 ### Renew DHCP lease
 ```bash
 sudo ipconfig set en0 DHCP
