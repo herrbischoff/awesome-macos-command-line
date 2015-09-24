@@ -429,7 +429,19 @@ sudo fdesetup status
 sudo sysdiagnose -f ~/Desktop/
 ```
 
-### Memory
+### Kernel Extensions
+
+#### Load Kernel Extension
+```bash
+sudo kextload -b com.apple.driver.ExampleBundle
+```
+
+#### Unload Kernel Extensions
+```bash
+sudo kextunload -b com.apple.driver.ExampleBundle
+```
+
+### Memory Management
 
 #### Purge memory cache
 ```bash
@@ -475,18 +487,6 @@ sudo nvram boot-args="-x"
 #### Disable Safe Mode
 ```bash
 sudo nvram boot-args=""
-```
-
-### Kernel Extensions
-
-#### Load Kernel Extension
-```bash
-sudo kextload -b com.apple.driver.ExampleBundle
-```
-
-#### Unload Kernel Extensions
-```bash
-sudo kextunload -b com.apple.driver.ExampleBundle
 ```
 
 
