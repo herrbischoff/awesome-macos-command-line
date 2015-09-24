@@ -126,11 +126,6 @@ sudo defaults write /System/Library/Launch Daemons/com.apple.backupd-auto StartI
 
 ## Disks and Volumes
 
-### Repair file permissions
-```bash
-sudo diskutil repairPermissions /
-```
-
 #### Disable Sudden Motion Sensor
 Leaving this turned on is useless when you're using SSDs.
 ```bash
