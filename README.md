@@ -17,9 +17,12 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [App Store](#app-store)
     - [Apple Remote Desktop](#apple-remote-desktop)
     - [Sketch](#sketch)
+- [Backup](#backup)
+    - [Time Machine](#time-machine)
 - [Developer](#developer)
     - [Xcode](#xcode)
 - [Disks and Volumes](#disks-and-volumes)
+- [Documents](#documents)
 - [Finder](#finder)
 - [Fonts](#fonts)
 - [Hardware](#hardware)
@@ -111,6 +114,16 @@ xcode-select --install
 ```
 
 
+## Backup
+
+### Time Machine
+
+#### Change Backup Interval
+This changes the interval to 30 minutes. The integer value is the time in seconds.
+```bash
+sudo defaults write /System/Library/Launch Daemons/com.apple.backupd-auto StartInterval -int 1800
+```
+
 ## Disks and Volumes
 
 ### Repair file permissions
@@ -133,6 +146,14 @@ You don't have to use the Disk Utility GUI for this.
 sudo diskutil repairPermissions /
 ```
 
+
+## Documents
+
+#### Convert File to HTML
+Supported formats are plain text, rich text (rtf) and Microsoft Word (doc/docx).
+```bash
+textutil -convert html file.ext
+```
 
 ## Finder
 
