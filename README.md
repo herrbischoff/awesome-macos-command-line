@@ -376,6 +376,11 @@ sw_vers
 cat whatever.txt | pbcopy
 ```
 
+### Convert Tabs to Spaces for Clipboard Content
+```bash
+pbpaste | expand | pbcopy
+```
+
 #### Copy data from Clipboard
 ```bash
 pbpaste > whatever.txt
