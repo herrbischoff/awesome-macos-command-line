@@ -2,7 +2,7 @@
 
 > A curated list of shell commands and tools specific to OS X.
 >
-> *“You don’t have to know everything. You simply need to know where to find it when necessary.” (John Brunner)*
+> _“You don’t have to know everything. You simply need to know where to find it when necessary.” (John Brunner)_
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
@@ -10,32 +10,127 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 
 ## Table of Contents
 
-* [Developer](#developer)
-* [Disks](#disks)
-* [Finder](#finder)
-* [Fonts](#fonts)
-* [Hardware](#hardware)
-* [Input Devices](#input-devices)
-* [Media](#media)
-* [Networking](#networking)
-* [Package Managers](#package-managers)
-* [Printing](#printing)
-* [Security](#security)
-* [System](#system)
-* [Miscellaneous](#miscellaneous)
+- [Appearance](#appearance)
+    - [Transparency](#transparency)
+    - [Wallpaper](#wallpaper)
+- [Applications](#applications)
+    - [App Store](#app-store)
+    - [Apple Remote Desktop](#apple-remote-desktop)
+    - [Sketch](#sketch)
+- [Developer](#developer)
+    - [Xcode](#xcode)
+- [Disks and Volumes](#disks-and-volumes)
+- [Finder](#finder)
+- [Fonts](#fonts)
+- [Hardware](#hardware)
+    - [Hardware Information](#hardware-information)
+- [Input Devices](#input-devices)
+    - [Keyboard](#keyboard)
+- [Media](#media)
+    - [Audio](#audio)
+- [Networking](#networking)
+    - [Bonjour](#bonjour)
+    - [DHCP](#dhcp)
+    - [DNS](#dns)
+    - [Networking Tools](#networking-tools)
+    - [Wi-Fi](#wi-fi)
+- [Package Managers](#package-managers)
+- [Printing](#printing)
+- [Security](#security)
+    - [Gatekeeper](#gatekeeper)
+    - [Wiping Data](#wiping-data)
+- [System](#system)
+    - [Basics](#basics)
+    - [Clipboard](#clipboard)
+    - [FileVault](#filevault)
+    - [Information/Reports](#information-reports)
+    - [Memory Management](#memory-management)
+    - [Notification Center](#notification-center)
+    - [Root User](#root-user)
+    - [Safe Mode Boot](#safe-mode-boot)
+    - [Kernel Extensions](#kernel-extensions)
 
+
+## Appearance
+
+### Transparency
+
+#### Disable Transparency in Menu and Windows
+```bash
+defaults write com.apple.universalaccess reduceTransparency -bool true
+```
+
+#### Enable Transparency in Menu and Windows
+```bash
+defaults write com.apple.universalaccess reduceTransparency -bool false
+```
+
+### Wallpaper
+
+#### Set wallpaper
+```bash
+osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/path/to/picture.jpg"'
+```
+
+
+## Applications
+
+### App Store
+
+#### List All Apps Downloaded from App Store
+```bash
+find /Applications -path '*Contents/_MASReceipt/receipt' -maxdepth 4 -print |\sed 's#.app/Contents/_MASReceipt/receipt#.app#g; s#/Applications/##'
+```
+
+### Apple Remote Desktop
+
+#### Remove Apple Remote Desktop Settings
+```bash
+sudo rm -rf /var/db/RemoteManagement
+sudo rm /Library/Preferences/com.apple.RemoteDesktop.plist
+rm ~/Library/Preferences/com.apple.RemoteDesktop.plist
+sudo rm -r /Library/Application\ Support/Apple/Remote\ Desktop/
+rm -r ~/Library/Application\ Support/Remote\ Desktop/
+rm -r ~/Library/Containers/com.apple.RemoteDesktop
+```
+
+### Sketch
+
+#### Export Compact SVGs
+```bash
+defaults write com.bohemiancoding.sketch3 exportCompactSVG -bool yes
+```
 
 ## Developer
 
-### Install command line tools without Xcode
+### Xcode
+
+#### Install Command Line Tools Without Xcode
 ```bash
 xcode-select --install
 ```
 
 
-## Disks
+## Disks and Volumes
 
+<<<<<<< 52cbd8c2cdbfd96e570b2382d428bd958502e5cb
 ### Repair file permissions
+=======
+#### Disable Sudden Motion Sensor
+Leaving this turned on is useless when you're using SSDs.
+```bash
+sudo pmset -a sms 0
+```
+
+#### Eject All Mountable Volumes
+The only reliable way to do this is by sending an AppleScript command to Finder.
+```bash
+osascript -e 'tell application "Finder" to eject (every disk whose ejectable is true)'
+```
+
+#### Repair File Permissions
+You don't have to use the Disk Utility GUI for this.
+>>>>>>> Complete list overhaul
 ```bash
 sudo diskutil repairPermissions /
 ```
@@ -43,100 +138,177 @@ sudo diskutil repairPermissions /
 
 ## Finder
 
-### Hide folder in finder
+#### Hide folder in Finder
 ```bash
+<<<<<<< 52cbd8c2cdbfd96e570b2382d428bd958502e5cb
 SetFile -a V /path/to/folder/
+=======
+chflags hidden /path/to/folder/
+>>>>>>> Complete list overhaul
+```
+
+#### Show All Hidden Files
+```bash
+defaults write com.apple.finder AppleShowAllFiles true
+```
+
+#### Restore Default File Visibility
+```bash
+defaults write com.apple.finder AppleShowAllFiles false
+```
+
+#### Unhide User Library folder
+```bash
+chflags nohidden ~/Library
 ```
 
 ## Fonts
 
-### Clear font cache for all users
+#### Clear Font Cache for Current User
+To clear font caches for all users, put `sudo` in front of this command.
 ```bash
-sudo atsutil databases -removeUser
-atsutil server -shutdown
-atsutil server -ping
-```
-
-### Clear font cache for current user
-```bash
-atsutil databases -removeUser
-atsutil server -shutdown
-atsutil server -ping
+atsutil databases -removeUser && atsutil server -shutdown && atsutil server -ping
 ```
 
 
 ## Hardware
 
+<<<<<<< 52cbd8c2cdbfd96e570b2382d428bd958502e5cb
 ### Disable sudden motion sensor (useless for SSDs)
 ```bash
 sudo pmset -a sms 0
 ```
 
 ### List all hardware ports
+=======
+### Hardware Information
+
+#### List All Hardware Ports
+>>>>>>> Complete list overhaul
 ```bash
 networksetup -listallhardwareports
 ```
 
-### Show all power management settings
+#### Show Current Screen Resolution
+```bash
+system_profiler SPDisplaysDataType | grep Resolution
+```
+
+### Power Management
+
+#### Show All Power Management Settings
 ```bash
 sudo pmset -g
 ```
 
+#### Put Display to Sleep After 15 Minutes of Inactivity
+```bash
+sudo pmset displaysleep 15
+```
+
+#### Put Computer to Sleep After 30 Minutes of Inactivity
+```bash
+sudo pmset sleep 30
+```
+
+#### Check System Sleep Idle Time
+```bash
+sudo systemsetup -getcomputersleep
+```
+
+#### Set System Sleep Idle Time to 60 Minutes
+```bash
+sudo systemsetup -setcomputersleep 60
+```
+
+#### Turn Off System Sleep Completely
+```bash
+sudo systemsetup -setcomputersleep Never
+```
 
 ## Input Devices
 
-### Disable/enable auto-correct
+### Keyboard
+
+#### Disable Auto-Correct
 ```bash
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool true
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 ```
+
+#### Enable Auto-Correct
+```bash
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool true
+```
+
+#### Show Auto-Correct Setting
+```bash
+defaults read -g NSAutomaticSpellingCorrectionEnabled
+```
+
 
 ## Media
 
-### Convert audio file to iPhone ringtone
+### Audio
+
+#### Convert Audio File to iPhone Ringtone
 ```bash
 afconvert input.mp3 ringtone.m4r -f m4af
 ```
 
+
 ## Networking
 
-### Clear DNS cache
-```bash
-sudo dscachutil -flushcache && sudo killall -HUP mDNSResponder
-```
+### Bonjour
 
-### Enable/disable Bonjour
+#### Disable Bonjour
 ```bash
-defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array-add "-NoMulticastAdvertisements"
 defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array "/usr/sbin/mDNSResponder" "-launchd"
 ```
 
-### Remove Apple Remote Desktop settings
+#### Enable Bonjour
 ```bash
-sudo rm -rf /var/db/RemoteManagement  
-sudo rm /Library/Preferences/com.apple.RemoteDesktop.plist  
-rm ~/Library/Preferences/com.apple.RemoteDesktop.plist
-sudo rm -r /Library/Application\ Support/Apple/Remote\ Desktop/ 
-rm -r ~/Library/Application\ Support/Remote\ Desktop/
-rm -r ~/Library/Containers/com.apple.RemoteDesktop
+defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array-add "-NoMulticastAdvertisements"
 ```
 
-### Renew DHCP lease
+### DHCP
+
+#### Renew DHCP Lease
 ```bash
 sudo ipconfig set en0 DHCP
 ```
 
-### Show DHCP info
+#### Show DHCP Info
 ```bash
 ipconfig getpacket en0
 ```
 
-### Show Wi-Fi connection history
+### DNS
+
+#### Clear DNS Cache
+```bash
+sudo dscachutil -flushcache && sudo killall -HUP mDNSResponder
+```
+
+### Networking Tools 
+
+#### Ping a Host to See Whether It’s Available
+```bash
+ping -o github.com
+```
+
+#### Troubleshoot Routing Problems
+```bash
+traceroute github.com
+```
+
+### Wi-Fi
+
+#### Show Wi-Fi Connection History
 ```bash
 defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences | grep LastConnected -A 7
 ```
 
-### Show Wi-Fi network passwords
+#### Show Wi-Fi Network Passwords
 ```bash
 security find-generic-password -ga "ROUTERNAME" | grep "password:"
 ```
@@ -144,13 +316,13 @@ security find-generic-password -ga "ROUTERNAME" | grep "password:"
 
 ## Package Managers
 
-* [Fink](http://www.finkproject.org) - The full world of Unix Open Source software for Darwin.
-* [Homebrew](http://brew.sh) - The missing package manager for OS X.
-* [MacPorts](https://www.macports.org) - Compile, install and upgrade either command-line, X11 or Aqua based open-source software.
+- [Fink](http://www.finkproject.org) - The full world of Unix Open Source software for Darwin.
+- [Homebrew](http://brew.sh) - The missing package manager for OS X.
+- [MacPorts](https://www.macports.org) - Compile, install and upgrade either command-line, X11 or Aqua based open-source software.
 
 ## Printing
 
-### Clear print queue
+#### Clear Print Queue
 ```bash
 cancel -a -
 ```
@@ -158,113 +330,139 @@ cancel -a -
 
 ## Security
 
-### Add/remove Gatekeeper exceptions
+### Gatekeeper
+
+#### Add Gatekeeper Exception
 ```bash
 spctl --add /path/to/Application.app
+```
+
+#### Remove Gatekeeper Exception
+```bash
 spctl --remove /path/to/Application.app
 ```
 
-### Check FileVault status
-```bash
-sudo fdesetup status
-```
+### Wiping Data
 
-### Securely remove file/directory/force
+#### Securely Remove File
 ```bash
 srm /path/to/file
+```
+
+#### Securely Remove Directory
+```bash
 srm -r /path/to/directory/
+```
+
+#### Securely Remove Path (Force)
+```bash
 srm -rf /path/to/complete/destruction
 ```
 
+
 ## System
 
-### Advanced system and performance report
+### Basics
+
+#### Restart
 ```bash
-sudo sysdiagnose -f ~/Desktop/
+sudo reboot
 ```
 
-### Check/set/turn off system sleep idle time
+#### Shutdown
 ```bash
-sudo systemsetup -getcomputersleep
-sudo systemsetup -setcomputersleep 60
-sudo systemsetup -setcomputersleep Never
+sudo poweroff
 ```
 
-### Copy to/from clipboard
-```bash
-cat whatever.txt | pbcopy
-pbpaste > whatever.txt
-```
-
-### Disable/enable Notification Center
-```bash
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist && killall -9 NotificationCenter
-launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
-```
-
-### Disable/enable transparency in menu and windows
-```bash
-defaults write com.apple.universalaccess reduceTransparency -bool true
-defaults write com.apple.universalaccess reduceTransparency -bool false
-```
-
-### Eject all mountable volumes
-```bash
-osascript -e 'tell application "Finder" to eject (every disk whose ejectable is true)'
-```
-
-### Enable/disable root user
-```bash
-dsenableroot
-dsenableroot -d
-```
-
-### Enable/disable/check safe mode
-```bash
-sudo nvram boot-args="-x"
-sudo nvram boot-args=""
-nvram boot-args
-```
-
-### List all apps downloaded from App Store
-```bash
-find /Applications -path '*Contents/_MASReceipt/receipt' -maxdepth 4 -print |\sed 's#.app/Contents/_MASReceipt/receipt#.app#g; s#/Applications/##'
-```
-
-### Load/unload kernel extensions
-```bash
-sudo kextload -b com.apple.driver.ExampleBundle
-sudo kextunload -b com.apple.driver.ExampleBundle
-```
-
-### Purge memory cache
-```bash
-sudo purge
-```
-
-### Show/disable/enable autocorrect setting
-```bash
-defaults read -g NSAutomaticSpellingCorrectionEnabled
-defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
-defaults write -g NSAutomaticSpellingCorrectionEnabled -bool true
-```
-
-### Show build number of OS
+#### Show Build Number of OS
 ```bash
 sw_vers
 ```
 
-### Show current screen resolution
+### Clipboard
+
+#### Copy data to Clipboard
 ```bash
-system_profiler SPDisplaysDataType | grep Resolution
+cat whatever.txt | pbcopy
 ```
 
-
-## Miscellaneous
-
-### Set wallpaper
+#### Copy data from Clipboard
 ```bash
-osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/path/to/picture.jpg"'
+pbpaste > whatever.txt
+```
+
+### FileVault
+
+#### Check FileVault Status
+```bash
+sudo fdesetup status
+```
+
+### Information/Reports
+
+#### Generate Advanced System and Performance Report
+```bash
+sudo sysdiagnose -f ~/Desktop/
+```
+
+### Memory
+
+#### Purge memory cache
+```bash
+sudo purge
+```
+
+### Notification Center
+
+#### Disable Notification Center
+```bash
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist && killall -9 NotificationCenter
+```
+
+#### Enable Notification Center
+```bash
+launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
+```
+
+### Root User
+
+#### Enable Root User
+```bash
+dsenableroot
+```
+
+#### Disable Root User
+```bash
+dsenableroot -d
+```
+
+### Safe Mode Boot
+
+#### Check Safe Mode Setting
+```bash
+nvram boot-args
+```
+
+#### Enable Safe Mode
+```bash
+sudo nvram boot-args="-x"
+```
+
+#### Disable Safe Mode
+```bash
+sudo nvram boot-args=""
+```
+
+### Kernel Extensions
+
+#### Load Kernel Extension
+```bash
+sudo kextload -b com.apple.driver.ExampleBundle
+```
+
+#### Unload Kernel Extensions
+```bash
+sudo kextunload -b com.apple.driver.ExampleBundle
 ```
 
 
