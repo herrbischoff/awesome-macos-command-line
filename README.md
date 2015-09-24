@@ -381,6 +381,11 @@ cat whatever.txt | pbcopy
 pbpaste > whatever.txt
 ```
 
+#### Sort and Strip Duplicate Lines from Clipboard Content
+```bash
+pbpaste | sort | uniq | pbcopy
+```
+
 ### FileVault
 
 #### Check FileVault Status
