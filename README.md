@@ -113,7 +113,6 @@ xcode-select --install
 
 ## Disks and Volumes
 
-<<<<<<< 52cbd8c2cdbfd96e570b2382d428bd958502e5cb
 ### Repair file permissions
 =======
 #### Disable Sudden Motion Sensor
@@ -130,7 +129,6 @@ osascript -e 'tell application "Finder" to eject (every disk whose ejectable is 
 
 #### Repair File Permissions
 You don't have to use the Disk Utility GUI for this.
->>>>>>> Complete list overhaul
 ```bash
 sudo diskutil repairPermissions /
 ```
@@ -140,11 +138,7 @@ sudo diskutil repairPermissions /
 
 #### Hide folder in Finder
 ```bash
-<<<<<<< 52cbd8c2cdbfd96e570b2382d428bd958502e5cb
-SetFile -a V /path/to/folder/
-=======
 chflags hidden /path/to/folder/
->>>>>>> Complete list overhaul
 ```
 
 #### Show All Hidden Files
@@ -173,18 +167,14 @@ atsutil databases -removeUser && atsutil server -shutdown && atsutil server -pin
 
 ## Hardware
 
-<<<<<<< 52cbd8c2cdbfd96e570b2382d428bd958502e5cb
 ### Disable sudden motion sensor (useless for SSDs)
 ```bash
 sudo pmset -a sms 0
 ```
 
-### List all hardware ports
-=======
 ### Hardware Information
 
 #### List All Hardware Ports
->>>>>>> Complete list overhaul
 ```bash
 networksetup -listallhardwareports
 ```
