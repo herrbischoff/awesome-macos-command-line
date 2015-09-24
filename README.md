@@ -400,7 +400,7 @@ sw_vers
 cat whatever.txt | pbcopy
 ```
 
-### Convert Tabs to Spaces for Clipboard Content
+#### Convert Tabs to Spaces for Clipboard Content
 ```bash
 pbpaste | expand | pbcopy
 ```
