@@ -156,6 +156,11 @@ You don't have to use the Disk Utility GUI for this.
 sudo diskutil repairPermissions /
 ```
 
+#### Show All Attached Disks and Partitions
+```bash
+diskutil list
+```
+
 
 ## Documents
 
