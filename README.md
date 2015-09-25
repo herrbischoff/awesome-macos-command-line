@@ -155,6 +155,11 @@ osascript -e 'tell application "Finder" to eject (every disk whose ejectable is 
 hdiutil attach /path/to/diskimage.dmg
 ```
 
+#### Unmount Disk Image
+```bash
+hdiutil detach /dev/disk2s1
+```
+
 #### Repair File Permissions
 You don't have to use the Disk Utility GUI for this.
 ```bash
