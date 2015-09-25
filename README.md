@@ -48,12 +48,12 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Clipboard](#clipboard)
     - [FileVault](#filevault)
     - [Information/Reports](#information-reports)
+    - [Kernel Extensions](#kernel-extensions)
     - [Memory Management](#memory-management)
     - [Notification Center](#notification-center)
     - [Root User](#root-user)
     - [Safe Mode Boot](#safe-mode-boot)
     - [Software Installation](#software-installation)
-    - [Kernel Extensions](#kernel-extensions)
 
 
 ## Appearance
