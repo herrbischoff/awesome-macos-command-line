@@ -41,6 +41,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 - [Printing](#printing)
 - [Security](#security)
     - [Gatekeeper](#gatekeeper)
+    - [Passwords](#passwords)
     - [Wiping Data](#wiping-data)
 - [System](#system)
     - [Basics](#basics)
@@ -349,6 +350,14 @@ spctl --add /path/to/Application.app
 #### Remove Gatekeeper Exception
 ```bash
 spctl --remove /path/to/Application.app
+```
+
+### Passwords
+
+#### Generate Secure Password and Copy to Clipboard
+First, install `pwgen` via Homebrew, etc.
+```bash
+pwgen -Cs 20 1 | tr -d ' ' | tr -d '\n' | pbcopy
 ```
 
 ### Wiping Data
