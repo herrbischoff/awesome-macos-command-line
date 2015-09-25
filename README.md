@@ -52,6 +52,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Notification Center](#notification-center)
     - [Root User](#root-user)
     - [Safe Mode Boot](#safe-mode-boot)
+    - [Software Installation](#software-installation)
     - [Kernel Extensions](#kernel-extensions)
 
 
@@ -517,6 +518,13 @@ sudo nvram boot-args="-x"
 #### Disable Safe Mode
 ```bash
 sudo nvram boot-args=""
+```
+
+### Software Installation
+
+#### Install PKG
+```bash
+installer -pkg /path/to/installer.pkg -target /
 ```
 
 
