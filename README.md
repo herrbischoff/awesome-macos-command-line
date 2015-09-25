@@ -70,7 +70,7 @@ defaults write com.apple.universalaccess reduceTransparency -bool false
 
 ### Wallpaper
 
-#### Set wallpaper
+#### Set Wallpaper
 ```bash
 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/path/to/picture.jpg"'
 ```
