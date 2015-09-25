@@ -150,6 +150,11 @@ The only reliable way to do this is by sending an AppleScript command to Finder.
 osascript -e 'tell application "Finder" to eject (every disk whose ejectable is true)'
 ```
 
+#### Mount Disk Image
+```bash
+hdiutil attach /path/to/diskimage.dmg
+```
+
 #### Repair File Permissions
 You don't have to use the Disk Utility GUI for this.
 ```bash
