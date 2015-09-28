@@ -292,6 +292,12 @@ defaults read -g NSAutomaticSpellingCorrectionEnabled
 afconvert input.mp3 ringtone.m4r -f m4af
 ```
 
+#### Play Audio File
+You can play all audio formats that are natively supported by QuickTime.
+```bash
+afplay -q 1 filename.mp3
+```
+
 
 ## Networking
 
