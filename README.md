@@ -52,6 +52,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Kernel Extensions](#kernel-extensions)
     - [Memory Management](#memory-management)
     - [Notification Center](#notification-center)
+    - [QuickLook](#quicklook)
     - [Root User](#root-user)
     - [Safe Mode Boot](#safe-mode-boot)
     - [Software Installation](#software-installation)
@@ -514,6 +515,15 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.
 launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
 ```
 
+
+### QuickLook
+
+#### Preview via QuickLook
+```bash
+qlmanage -p /path/to/file
+```
+
+
 ### Root User
 
 #### Enable Root User
@@ -542,6 +552,7 @@ sudo nvram boot-args="-x"
 ```bash
 sudo nvram boot-args=""
 ```
+
 
 ### Software Installation
 
