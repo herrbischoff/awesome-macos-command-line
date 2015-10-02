@@ -36,6 +36,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Bonjour](#bonjour)
     - [DHCP](#dhcp)
     - [DNS](#dns)
+    - [Hostname](#hostname)
     - [Networking Tools](#networking-tools)
     - [Wi-Fi](#wi-fi)
 - [Package Managers](#package-managers)
