@@ -346,6 +346,16 @@ traceroute github.com
 
 ### Wi-Fi
 
+#### Scan Available Access Points
+Create a symbolic link to the airport command for easy access:
+```bash
+sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
+```
+Run a wireless scan:
+```bash
+airport -s
+```
+
 #### Show Wi-Fi Connection History
 ```bash
 defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences | grep LastConnected -A 7
