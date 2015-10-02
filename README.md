@@ -27,6 +27,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 - [Fonts](#fonts)
 - [Hardware](#hardware)
     - [Hardware Information](#hardware-information)
+    - [Power Management](#power-management)
 - [Input Devices](#input-devices)
     - [Keyboard](#keyboard)
 - [Media](#media)
