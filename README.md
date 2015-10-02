@@ -234,6 +234,12 @@ system_profiler SPDisplaysDataType | grep Resolution
 
 ### Power Management
 
+#### Prevent System Sleep
+Prevent sleep for 1 hour:
+```bash
+caffeinate -u -t 3600
+```
+
 #### Show All Power Management Settings
 ```bash
 sudo pmset -g
