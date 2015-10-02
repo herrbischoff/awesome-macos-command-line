@@ -340,6 +340,16 @@ ipconfig getpacket en0
 sudo dscachutil -flushcache && sudo killall -HUP mDNSResponder
 ```
 
+### Hostname
+
+#### Set Hostname
+You need to run all of the commands since the hostname needs to be changed in three places.
+```bash
+sudo scutil --set ComputerName "newhostname" 
+sudo scutil --set LocalHostName "newhostname" 
+sudo scutil --set HostName "newhostname"
+```
+
 ### Networking Tools 
 
 #### Ping a Host to See Whether It’s Available
