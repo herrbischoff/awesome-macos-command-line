@@ -111,6 +111,7 @@ rm -r ~/Library/Containers/com.apple.RemoteDesktop
 defaults write com.bohemiancoding.sketch3 exportCompactSVG -bool yes
 ```
 
+
 ## Developer
 
 ### Xcode
@@ -177,7 +178,7 @@ You don't have to use the Disk Utility GUI for this.
 sudo diskutil repairPermissions /
 ```
 
-### Set Boot Volume
+#### Set Boot Volume
 ```bash
 bless --mount "/path/to/mounted/volume" --setBoot
 ```
@@ -363,12 +364,12 @@ sudo dscachutil -flushcache && sudo killall -HUP mDNSResponder
 #### Set Hostname
 You need to run all of the commands since the hostname needs to be changed in three places.
 ```bash
-sudo scutil --set ComputerName "newhostname" 
-sudo scutil --set LocalHostName "newhostname" 
+sudo scutil --set ComputerName "newhostname"
+sudo scutil --set LocalHostName "newhostname"
 sudo scutil --set HostName "newhostname"
 ```
 
-### Networking Tools 
+### Networking Tools
 
 #### Ping a Host to See Whether It’s Available
 ```bash
@@ -464,7 +465,7 @@ srm -rf /path/to/complete/destruction
 #### Execute AppleScript
 ```bash
 osascript /path/to/script.scpt
-````
+```
 
 ### Basics
 
@@ -550,14 +551,12 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.
 launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
 ```
 
-
 ### QuickLook
 
 #### Preview via QuickLook
 ```bash
 qlmanage -p /path/to/file
 ```
-
 
 ### Root User
 
@@ -588,14 +587,12 @@ sudo nvram boot-args="-x"
 sudo nvram boot-args=""
 ```
 
-
 ### Software Installation
 
 #### Install PKG
 ```bash
 installer -pkg /path/to/installer.pkg -target /
 ```
-
 
 ### Spotlight
 
@@ -618,6 +615,7 @@ mdutil -E /path/to/volume
 ```bash
 mdfind -name 'searchterm'
 ```
+
 
 ## License
 
