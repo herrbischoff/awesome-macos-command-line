@@ -38,6 +38,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [DNS](#dns)
     - [Hostname](#hostname)
     - [Networking Tools](#networking-tools)
+    - [TCP/IP](#tcp-ip)
     - [Wi-Fi](#wi-fi)
 - [Package Managers](#package-managers)
 - [Printing](#printing)
@@ -387,6 +388,14 @@ ping -o github.com
 #### Troubleshoot Routing Problems
 ```bash
 traceroute github.com
+```
+
+### TCP/IP
+
+#### Show Application Using a Certain Port
+This outputs all applications currently using port 80.
+```bash
+sudo lsof -i :80
 ```
 
 ### Wi-Fi
