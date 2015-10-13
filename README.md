@@ -20,6 +20,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 - [Backup](#backup)
     - [Time Machine](#time-machine)
 - [Developer](#developer)
+    - [App Icons](#app-icons)
     - [Xcode](#xcode)
 - [Disks and Volumes](#disks-and-volumes)
 - [Documents](#documents)
@@ -137,7 +138,7 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 ## Developer
 
-### Icons
+### App Icons
 
 #### Create App Icon
 Function to quickly create an application icon from 1024px master file.
