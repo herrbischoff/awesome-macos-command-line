@@ -319,6 +319,11 @@ You can play all audio formats that are natively supported by QuickTime.
 afplay -q 1 filename.mp3
 ```
 
+#### Speak Text with System Default Voice
+```bash
+say 'All your base are belong to us!'
+```
+
 
 ## Networking
 
