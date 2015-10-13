@@ -114,6 +114,14 @@ defaults write com.bohemiancoding.sketch3 exportCompactSVG -bool yes
 
 ## Developer
 
+### Vim
+
+#### Compile Sane Vim
+Compiling MacVim via Homebrew with all bells and whistles, including overwriting system Vim.
+```bash
+brew install macvim --HEAD --with-cscope --with-lua --override-system-vim --with-luajit --with-python
+```
+
 ### Xcode
 
 #### Install Command Line Tools Without Xcode
