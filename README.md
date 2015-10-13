@@ -112,24 +112,6 @@ defaults write com.bohemiancoding.sketch3 exportCompactSVG -bool yes
 ```
 
 
-## Developer
-
-### Vim
-
-#### Compile Sane Vim
-Compiling MacVim via Homebrew with all bells and whistles, including overwriting system Vim.
-```bash
-brew install macvim --HEAD --with-cscope --with-lua --override-system-vim --with-luajit --with-python
-```
-
-### Xcode
-
-#### Install Command Line Tools Without Xcode
-```bash
-xcode-select --install
-```
-
-
 ## Backup
 
 ### Time Machine
@@ -148,6 +130,24 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 #### Prevent Time Machine From Prompting to Use New Hard Drives as Backup Volume
 ```bash
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+```
+
+
+## Developer
+
+### Vim
+
+#### Compile Sane Vim
+Compiling MacVim via Homebrew with all bells and whistles, including overwriting system Vim.
+```bash
+brew install macvim --HEAD --with-cscope --with-lua --override-system-vim --with-luajit --with-python
+```
+
+### Xcode
+
+#### Install Command Line Tools Without Xcode
+```bash
+xcode-select --install
 ```
 
 
