@@ -138,7 +138,7 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 ### Vim
 
 #### Compile Sane Vim
-Compiling MacVim via Homebrew with all bells and whistles, including overwriting system Vim.
+Compiling MacVim via Homebrew with all bells and whistles, including overriding system Vim.
 ```bash
 brew install macvim --HEAD --with-cscope --with-lua --override-system-vim --with-luajit --with-python
 ```
