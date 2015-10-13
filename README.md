@@ -38,7 +38,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [DNS](#dns)
     - [Hostname](#hostname)
     - [Networking Tools](#networking-tools)
-    - [TCP/IP](#tcp-ip)
+    - [TCP/IP](#tcpip)
     - [Wi-Fi](#wi-fi)
 - [Package Managers](#package-managers)
 - [Printing](#printing)
