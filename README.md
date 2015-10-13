@@ -57,6 +57,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Root User](#root-user)
     - [Safe Mode Boot](#safe-mode-boot)
     - [Software Installation](#software-installation)
+    - [Spotlight](#spotlight)
 
 
 ## Appearance
@@ -582,6 +583,28 @@ sudo nvram boot-args=""
 installer -pkg /path/to/installer.pkg -target /
 ```
 
+
+### Spotlight
+
+#### Disable Indexing
+```bash
+mdutil -i off -d /path/to/volume
+```
+
+#### Enable Indexing
+```bash
+mdutil -i on /path/to/volume
+```
+
+#### Erase Spotlight Index and Rebuild
+```bash
+mdutil -E /path/to/volume
+```
+
+#### Search via Spotlight
+```bash
+mdfind -name 'searchterm'
+```
 
 ## License
 
