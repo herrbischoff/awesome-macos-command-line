@@ -46,6 +46,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Passwords](#passwords)
     - [Wiping Data](#wiping-data)
 - [System](#system)
+    - [AppleScript](#applescript)
     - [Basics](#basics)
     - [Clipboard](#clipboard)
     - [FileVault](#filevault)
@@ -452,6 +453,13 @@ srm -rf /path/to/complete/destruction
 
 
 ## System
+
+### AppleScript
+
+#### Execute AppleScript
+```bash
+osascript /path/to/script.scpt
+````
 
 ### Basics
 
