@@ -154,6 +154,11 @@ The only reliable way to do this is by sending an AppleScript command to Finder.
 osascript -e 'tell application "Finder" to eject (every disk whose ejectable is true)'
 ```
 
+#### Make Volume OS X Bootable
+```bash
+bless --folder "/path/to/mounted/volume/System/Library/CoreServices" --bootinfo --bootefi
+```
+
 #### Mount Disk Image
 ```bash
 hdiutil attach /path/to/diskimage.dmg
@@ -168,6 +173,11 @@ hdiutil detach /dev/disk2s1
 You don't have to use the Disk Utility GUI for this.
 ```bash
 sudo diskutil repairPermissions /
+```
+
+### Set Boot Volume
+```bash
+bless --mount "/path/to/mounted/volume" --setBoot
 ```
 
 #### Show All Attached Disks and Partitions
