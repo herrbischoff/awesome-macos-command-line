@@ -553,7 +553,7 @@ sudo kextunload -b com.apple.driver.ExampleBundle
 ### LaunchAgents
 
 #### Periodical Job Template
-Run job all 300 seconds.
+Run job every 5 minutes.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
