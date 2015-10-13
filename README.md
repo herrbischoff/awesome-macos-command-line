@@ -53,6 +53,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [FileVault](#filevault)
     - [Information/Reports](#information-reports)
     - [Kernel Extensions](#kernel-extensions)
+    - [LaunchAgents](#launchagents)
     - [Memory Management](#memory-management)
     - [Notification Center](#notification-center)
     - [QuickLook](#quicklook)
@@ -548,6 +549,79 @@ sudo kextload -b com.apple.driver.ExampleBundle
 ```bash
 sudo kextunload -b com.apple.driver.ExampleBundle
 ```
+
+### LaunchAgents
+
+#### Periodical Job Template
+Run job all 300 seconds.
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.example.touchsomefile</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>touch</string>
+        <string>/tmp/helloworld</string>
+    </array>
+    <key>StartInterval</key>
+    <integer>300</integer>
+</dict>
+</plist>
+```
+
+#### Periodical via Calendar Interval Job Template
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.example.touchsomefile</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>touch</string>
+        <string>/tmp/helloworld</string>
+    </array>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Minute</key>
+        <integer>45</integer>
+        <key>Hour</key>
+        <integer>13</integer>
+        <key>Day</key>
+        <integer>7</integer>
+    </dict>
+</dict>
+</plist>
+```
+
+#### Monitoring Directory Job Template
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.example.watchhostconfig</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>syslog</string>
+        <string>-s</string>
+        <string>-l</string>
+        <string>notice</string>
+        <string>somebody touched /etc/hostconfig</string>
+    </array>
+    <key>WatchPaths</key>
+    <array>
+        <string>/etc/hostconfig</string>
+    </array>
+</dict>
+</plist>
+```
+
 
 ### Memory Management
 
