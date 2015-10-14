@@ -252,7 +252,7 @@ defaults write com.apple.finder CreateDesktop -bool false && killall Finder
 defaults write com.apple.finder CreateDesktop -bool true && killall Finder
 ```
 
-#### Hide folder in Finder
+#### Hide Folder in Finder
 ```bash
 chflags hidden /path/to/folder/
 ```
