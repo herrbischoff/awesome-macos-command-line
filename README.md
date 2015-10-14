@@ -672,7 +672,7 @@ Run job every 5 minutes.
 ### LaunchServices
 
 #### Rebuild LaunchServices Database
-To be independent of OS version, this relies on `locate` to find `lsregister`. If you do not have your `locate` database built yet, [do it](#build-locate-database).
+To be independent of OS X version, this relies on `locate` to find `lsregister`. If you do not have your `locate` database built yet, [do it](#build-locate-database).
 ```bash
 sudo $(locate lsregister) -kill -seed -r
 ```
