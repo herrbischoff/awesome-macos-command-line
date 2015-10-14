@@ -48,6 +48,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Passwords](#passwords)
     - [Wiping Data](#wiping-data)
 - [Search](#search)
+    - [Find](#find)
     - [Locate](#locate)
 - [System](#system)
     - [AppleScript](#applescript)
@@ -237,6 +238,7 @@ Supported formats are plain text, rich text (rtf) and Microsoft Word (doc/docx).
 ```bash
 textutil -convert html file.ext
 ```
+
 
 ## Finder
 
@@ -508,6 +510,13 @@ srm -rf /path/to/complete/destruction
 
 
 ## Search
+
+### Find
+
+#### Recursively Delete .DS_Store Files
+```bash
+find . -type f -name '*.DS_Store' -ls -delete
+```
 
 ### Locate
 
