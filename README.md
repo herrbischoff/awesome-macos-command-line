@@ -25,6 +25,8 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 - [Disks and Volumes](#disks-and-volumes)
 - [Documents](#documents)
 - [Finder](#finder)
+    - [Files and Folders](#files-and-folders)
+    - [Icons](#icons)
 - [Fonts](#fonts)
 - [Hardware](#hardware)
     - [Hardware Information](#hardware-information)
@@ -242,15 +244,7 @@ textutil -convert html file.ext
 
 ## Finder
 
-#### Hide All Desktop Icons
-```bash
-defaults write com.apple.finder CreateDesktop -bool false && killall Finder
-```
-
-#### Show All Desktop Icons
-```bash
-defaults write com.apple.finder CreateDesktop -bool true && killall Finder
-```
+### Files and Folders
 
 #### Hide Folder in Finder
 ```bash
@@ -270,6 +264,18 @@ defaults write com.apple.finder AppleShowAllFiles false
 #### Unhide User Library folder
 ```bash
 chflags nohidden ~/Library
+```
+
+### Icons
+
+#### Hide All Desktop Icons
+```bash
+defaults write com.apple.finder CreateDesktop -bool false && killall Finder
+```
+
+#### Show All Desktop Icons
+```bash
+defaults write com.apple.finder CreateDesktop -bool true && killall Finder
 ```
 
 
