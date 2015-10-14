@@ -242,6 +242,16 @@ textutil -convert html file.ext
 
 ## Finder
 
+#### Hide All Desktop Icons
+```bash
+defaults write com.apple.finder CreateDesktop -bool false && killall Finder
+```
+
+#### Show All Desktop Icons
+```bash
+defaults write com.apple.finder CreateDesktop -bool true && killall Finder
+```
+
 #### Hide folder in Finder
 ```bash
 chflags hidden /path/to/folder/
@@ -261,6 +271,7 @@ defaults write com.apple.finder AppleShowAllFiles false
 ```bash
 chflags nohidden ~/Library
 ```
+
 
 ## Fonts
 
