@@ -47,6 +47,8 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Gatekeeper](#gatekeeper)
     - [Passwords](#passwords)
     - [Wiping Data](#wiping-data)
+- [Search](#search)
+    - [Locate](#locate)
 - [System](#system)
     - [AppleScript](#applescript)
     - [Basics](#basics)
@@ -55,6 +57,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Information/Reports](#information-reports)
     - [Kernel Extensions](#kernel-extensions)
     - [LaunchAgents](#launchagents)
+    - [LaunchServices](#launchservices)
     - [Memory Management](#memory-management)
     - [Notification Center](#notification-center)
     - [QuickLook](#quicklook)
@@ -504,6 +507,22 @@ srm -rf /path/to/complete/destruction
 ```
 
 
+## Search
+
+### Locate
+
+#### Build Locate Database
+```bash
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+```
+
+#### Search via Locate
+The `-i` modifier makes the search case insensitive.
+```bash
+locate -i *.jpg
+```
+
+
 ## System
 
 ### AppleScript
@@ -650,6 +669,13 @@ Run job every 5 minutes.
 </plist>
 ```
 
+### LaunchServices
+
+#### Rebuild LaunchServices Database
+To be independent of OS version, this relies on `locate` to find `lsregister`. If you do not have your `locate` database built yet, [do it](#build-locate-database).
+```bash
+sudo $(locate lsregister) -kill -seed -r
+```
 
 ### Memory Management
 
