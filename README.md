@@ -290,11 +290,6 @@ atsutil databases -removeUser && atsutil server -shutdown && atsutil server -pin
 
 ## Hardware
 
-### Disable sudden motion sensor (useless for SSDs)
-```bash
-sudo pmset -a sms 0
-```
-
 ### Hardware Information
 
 #### List All Hardware Ports
