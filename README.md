@@ -48,6 +48,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 - [Security](#security)
     - [Gatekeeper](#gatekeeper)
     - [Passwords](#passwords)
+    - [Physical Access](#physical-access)
     - [Wiping Data](#wiping-data)
 - [Search](#search)
     - [Find](#find)
@@ -512,6 +513,13 @@ spctl --remove /path/to/Application.app
 First, install `pwgen` via Homebrew, etc.
 ```bash
 pwgen -Cs 20 1 | tr -d ' ' | tr -d '\n' | pbcopy
+```
+
+### Physical Access
+
+#### Lock Screen
+```bash
+/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
 ```
 
 ### Wiping Data
