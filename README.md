@@ -188,6 +188,10 @@ brew install macvim --HEAD --with-cscope --with-lua --with-override-system-vim -
 xcode-select --install
 ```
 
+#### Remove all unavailable simulators
+```bash
+xcrun simctl delete unavailable
+```
 
 ## Disks and Volumes
 
