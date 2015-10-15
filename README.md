@@ -370,6 +370,16 @@ defaults read -g NSAutomaticSpellingCorrectionEnabled
 afconvert input.mp3 ringtone.m4r -f m4af
 ```
 
+#### Mute Audio Output
+```bash
+osascript -e 'set volume output muted true'
+```
+
+#### Set Audio Volume
+```bash
+osascript -e 'set volume 4'
+```
+
 #### Play Audio File
 You can play all audio formats that are natively supported by QuickTime.
 ```bash
