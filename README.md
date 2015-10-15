@@ -68,6 +68,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Safe Mode Boot](#safe-mode-boot)
     - [Software Installation](#software-installation)
     - [Spotlight](#spotlight)
+- [Terminal](#terminal)
 
 
 ## Appearance
@@ -780,6 +781,15 @@ mdutil -E /path/to/volume
 #### Search via Spotlight
 ```bash
 mdfind -name 'searchterm'
+```
+
+
+## Terminal
+
+#### Ring Terminal Bell
+Rings the terminal bell (if enabled) and puts a badge on it.
+```bash
+tput bel
 ```
 
 
