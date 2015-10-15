@@ -178,7 +178,7 @@ function mkicns() {
 #### Compile Sane Vim
 Compiling MacVim via Homebrew with all bells and whistles, including overriding system Vim.
 ```bash
-brew install macvim --HEAD --with-cscope --with-lua --override-system-vim --with-luajit --with-python
+brew install macvim --HEAD --with-cscope --with-lua --with-override-system-vim --with-luajit --with-python
 ```
 
 ### Xcode
