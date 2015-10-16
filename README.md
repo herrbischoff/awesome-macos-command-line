@@ -297,27 +297,28 @@ atsutil databases -removeUser && atsutil server -shutdown && atsutil server -pin
 
 ## Open
 
-#### Open a Url
+#### Open Url
 ```bash
 open http://www.github.com
 ```
 
-#### Open a file
+#### Open File
 ```bash
 open README.md
 ```
 
-#### Open an application using -a
+#### Open Applications
+You can open applications using -a
 ```bash
 open -a "Google Chrome" http://www.github.com
 ```
 
-#### Open a directory in Finder
+#### Open Directory
 ```bash
 open /path/to/directory
 ```
 
-#### Open the current directory
+#### Open Current Directory
 ```bash
 open .
 ```
