@@ -256,6 +256,10 @@ textutil -convert html file.ext
 ```bash
 chflags hidden /path/to/folder/
 ```
+#### Show All File Extensions
+```bash
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+```
 
 #### Show All Hidden Files
 ```bash
