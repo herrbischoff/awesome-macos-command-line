@@ -341,6 +341,11 @@ networksetup -listallhardwareports
 system_profiler SPDisplaysDataType | grep Resolution
 ```
 
+#### Show CPU Brand String
+```bash
+sysctl -n machdep.cpu.brand_string
+```
+
 ### Power Management
 
 #### Prevent System Sleep
