@@ -58,7 +58,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Basics](#basics)
     - [Clipboard](#clipboard)
     - [FileVault](#filevault)
-    - [Information/Reports](#information-reports)
+    - [Information/Reports](#informationreports)
     - [Kernel Extensions](#kernel-extensions)
     - [LaunchAgents](#launchagents)
     - [LaunchServices](#launchservices)
