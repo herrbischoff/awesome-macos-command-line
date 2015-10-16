@@ -13,7 +13,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 - [Appearance](#appearance)
     - [Transparency](#transparency)
     - [Wallpaper](#wallpaper)
-    - [Desktop icons](#desktopicons)
+    - [Desktop icons](#desktop-icons)
 - [Applications](#applications)
     - [App Store](#app-store)
     - [Apple Remote Desktop](#apple-remote-desktop)
