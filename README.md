@@ -27,6 +27,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 - [Finder](#finder)
     - [Files and Folders](#files-and-folders)
     - [Icons](#icons)
+    - [Open](#open)
 - [Fonts](#fonts)
 - [Hardware](#hardware)
     - [Hardware Information](#hardware-information)
@@ -43,7 +44,6 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Networking Tools](#networking-tools)
     - [TCP/IP](#tcpip)
     - [Wi-Fi](#wi-fi)
-- [Open](#open)
 - [Package Managers](#package-managers)
 - [Printing](#printing)
 - [Security](#security)
@@ -295,6 +295,34 @@ atsutil databases -removeUser && atsutil server -shutdown && atsutil server -pin
 ```
 
 
+## Open
+
+#### Open a Url
+```bash
+open http://www.github.com
+```
+
+#### Open a file
+```bash
+open README.md
+```
+
+#### Open an application using -a
+```bash
+open -a "Google Chrome" http://www.github.com
+```
+
+#### Open a directory in Finder
+```bash
+open /path/to/directory
+```
+
+#### Open the current directory
+```bash
+open .
+```
+
+
 ## Hardware
 
 ### Hardware Information
@@ -481,33 +509,6 @@ defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.prefere
 #### Show Wi-Fi Network Passwords
 ```bash
 security find-generic-password -ga "ROUTERNAME" | grep "password:"
-```
-
-## Open
-
-#### Open a Url
-```bash
-open http://www.github.com
-```
-
-#### Open a file
-```bash
-open README.md
-```
-
-#### Open an application using -a
-```bash
-open -a "Google Chrome" http://www.github.com
-```
-
-#### Open a directory in Finder
-```bash
-open /path/to/directory
-```
-
-#### Open the current directory
-```bash
-open .
 ```
 
 ## Package Managers
