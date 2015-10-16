@@ -291,7 +291,7 @@ defaults write com.apple.finder CreateDesktop -bool true && killall Finder
 
 ### Opening Things
 
-#### Open Url
+#### Open URL
 ```bash
 open http://www.github.com
 ```
