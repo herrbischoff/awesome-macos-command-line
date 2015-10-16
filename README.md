@@ -27,6 +27,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 - [Finder](#finder)
     - [Files and Folders](#files-and-folders)
     - [Icons](#icons)
+    - [Open](#open)
 - [Fonts](#fonts)
 - [Hardware](#hardware)
     - [Hardware Information](#hardware-information)
@@ -298,6 +299,35 @@ atsutil databases -removeUser && atsutil server -shutdown && atsutil server -pin
 ```
 
 
+## Open
+
+#### Open Url
+```bash
+open http://www.github.com
+```
+
+#### Open File
+```bash
+open README.md
+```
+
+#### Open Applications
+You can open applications using -a
+```bash
+open -a "Google Chrome" http://www.github.com
+```
+
+#### Open Directory
+```bash
+open /path/to/directory
+```
+
+#### Open Current Directory
+```bash
+open .
+```
+
+
 ## Hardware
 
 ### Hardware Information
@@ -485,7 +515,6 @@ defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.prefere
 ```bash
 security find-generic-password -ga "ROUTERNAME" | grep "password:"
 ```
-
 
 ## Package Managers
 
