@@ -13,6 +13,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 - [Appearance](#appearance)
     - [Transparency](#transparency)
     - [Wallpaper](#wallpaper)
+    - [Desktop icons](#desktopicons)
 - [Applications](#applications)
     - [App Store](#app-store)
     - [Apple Remote Desktop](#apple-remote-desktop)
@@ -91,6 +92,18 @@ defaults write com.apple.universalaccess reduceTransparency -bool false
 #### Set Wallpaper
 ```bash
 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/path/to/picture.jpg"'
+```
+
+### Desktop icons
+
+#### Hide icons from desktop
+```bash
+defaults write com.apple.finder CreateDesktop -bool false && killall Finder
+```
+#### Show icons on desktop
+
+```bash
+defaults write com.apple.finder CreateDesktop -bool true && killall Finder
 ```
 
 
