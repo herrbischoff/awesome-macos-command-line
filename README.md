@@ -27,7 +27,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 - [Finder](#finder)
     - [Files and Folders](#files-and-folders)
     - [Icons](#icons)
-    - [Open](#open)
+    - [Opening Things](#opening-things)
 - [Fonts](#fonts)
 - [Hardware](#hardware)
     - [Hardware Information](#hardware-information)
@@ -289,17 +289,7 @@ defaults write com.apple.finder CreateDesktop -bool false && killall Finder
 defaults write com.apple.finder CreateDesktop -bool true && killall Finder
 ```
 
-
-## Fonts
-
-#### Clear Font Cache for Current User
-To clear font caches for all users, put `sudo` in front of this command.
-```bash
-atsutil databases -removeUser && atsutil server -shutdown && atsutil server -ping
-```
-
-
-## Open
+### Opening Things
 
 #### Open Url
 ```bash
@@ -312,7 +302,7 @@ open README.md
 ```
 
 #### Open Applications
-You can open applications using -a
+You can open applications using `-a`.
 ```bash
 open -a "Google Chrome" http://www.github.com
 ```
@@ -325,6 +315,15 @@ open /path/to/directory
 #### Open Current Directory
 ```bash
 open .
+```
+
+
+## Fonts
+
+#### Clear Font Cache for Current User
+To clear font caches for all users, put `sudo` in front of this command.
+```bash
+atsutil databases -removeUser && atsutil server -shutdown && atsutil server -ping
 ```
 
 
