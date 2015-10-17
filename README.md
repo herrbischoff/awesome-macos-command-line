@@ -319,6 +319,12 @@ Possible values: `WhenScrolling`, `Automatic` and `Always`.
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 ```
 
+#### Save to Disk by Default
+Sets default save target to be a local disk, not iCloud.
+```bash
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+```
+
 #### Set Sidebar Icon Size
 Sets size to 'medium'.
 ```bash
