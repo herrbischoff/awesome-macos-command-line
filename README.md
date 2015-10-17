@@ -21,6 +21,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Time Machine](#time-machine)
 - [Developer](#developer)
     - [App Icons](#app-icons)
+    - [Vim](#vim)
     - [Xcode](#xcode)
 - [Disks and Volumes](#disks-and-volumes)
 - [Documents](#documents)
