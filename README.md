@@ -26,7 +26,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 - [Documents](#documents)
 - [Finder](#finder)
     - [Files and Folders](#files-and-folders)
-    - [Icons](#icons)
+    - [Layout](#layout)
     - [Opening Things](#opening-things)
 - [Fonts](#fonts)
 - [Hardware](#hardware)
@@ -277,7 +277,7 @@ defaults write com.apple.finder AppleShowAllFiles false
 chflags nohidden ~/Library
 ```
 
-### Icons
+### Layout
 
 #### Hide All Desktop Icons
 ```bash
@@ -287,6 +287,12 @@ defaults write com.apple.finder CreateDesktop -bool false && killall Finder
 #### Show All Desktop Icons
 ```bash
 defaults write com.apple.finder CreateDesktop -bool true && killall Finder
+```
+
+#### Scrollbar Visibility
+Possible values: `WhenScrolling`, `Automatic` and `Always`.
+```bash
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 ```
 
 #### Set Sidebar Icon Size
