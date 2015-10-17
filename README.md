@@ -289,6 +289,12 @@ defaults write com.apple.finder CreateDesktop -bool false && killall Finder
 defaults write com.apple.finder CreateDesktop -bool true && killall Finder
 ```
 
+#### Set Sidebar Icon Size
+Sets size to 'medium'.
+```bash
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
+```
+
 ### Opening Things
 
 #### Open URL
