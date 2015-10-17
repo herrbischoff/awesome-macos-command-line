@@ -291,6 +291,12 @@ Revert back to standard behavior.
 defaults write NSGlobalDomain NSScrollAnimationEnabled -bool true
 ```
 
+#### Expand Save Panel by Default
+```bash
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+```
+
 #### Hide All Desktop Icons
 ```bash
 defaults write com.apple.finder CreateDesktop -bool false && killall Finder
