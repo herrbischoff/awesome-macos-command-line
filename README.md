@@ -229,6 +229,7 @@ You don't have to use the Disk Utility GUI for this.
 ```bash
 sudo diskutil repairPermissions /
 ```
+> Beginning with OS X El Capitan, system file permissions are automatically protected. It's no longer necessary to verify or repair permissions with Disk Utility. ([Source](https://support.apple.com/en-us/HT201560))
 
 #### Set Boot Volume
 ```bash
