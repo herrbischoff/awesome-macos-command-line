@@ -512,7 +512,7 @@ ipconfig getpacket en0
 
 #### Clear DNS Cache
 ```bash
-sudo dscachutil -flushcache && sudo killall -HUP mDNSResponder
+sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder
 ```
 
 ### Hostname
