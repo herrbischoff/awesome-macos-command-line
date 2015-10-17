@@ -279,6 +279,18 @@ chflags nohidden ~/Library
 
 ### Layout
 
+#### Disable Smooth Scrolling
+Useful if you’re on an older Mac that messes up the animation.
+```bash
+defaults write NSGlobalDomain NSScrollAnimationEnabled -bool false
+```
+
+#### Enable Smooth Scrolling
+Revert back to standard behavior.
+```bash
+defaults write NSGlobalDomain NSScrollAnimationEnabled -bool true
+```
+
 #### Hide All Desktop Icons
 ```bash
 defaults write com.apple.finder CreateDesktop -bool false && killall Finder
