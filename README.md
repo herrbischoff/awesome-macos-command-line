@@ -413,6 +413,11 @@ defaults read -g NSAutomaticSpellingCorrectionEnabled
 afconvert input.mp3 ringtone.m4r -f m4af
 ```
 
+#### Disable Sound Effects on Boot
+``bash`
+sudo nvram SystemAudioVolume=" "
+```
+
 #### Mute Audio Output
 ```bash
 osascript -e 'set volume output muted true'
