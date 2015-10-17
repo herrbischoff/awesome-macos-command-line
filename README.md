@@ -456,7 +456,7 @@ afconvert input.mp3 ringtone.m4r -f m4af
 ```
 
 #### Disable Sound Effects on Boot
-``bash`
+```bash
 sudo nvram SystemAudioVolume=" "
 ```
 
