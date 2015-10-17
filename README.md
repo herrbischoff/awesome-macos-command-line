@@ -568,17 +568,24 @@ defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.prefere
 security find-generic-password -ga "ROUTERNAME" | grep "password:"
 ```
 
+
 ## Package Managers
 
 - [Fink](http://www.finkproject.org) - The full world of Unix Open Source software for Darwin.
 - [Homebrew](http://brew.sh) - The missing package manager for OS X.
 - [MacPorts](https://www.macports.org) - Compile, install and upgrade either command-line, X11 or Aqua based open-source software.
 
+
 ## Printing
 
 #### Clear Print Queue
 ```bash
 cancel -a -
+```
+
+#### Quit Printer app After Print Jobs Complete
+```bash
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 ```
 
 
