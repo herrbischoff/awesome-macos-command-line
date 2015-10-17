@@ -470,12 +470,13 @@ sudo dscachutil -flushcache && sudo killall -HUP mDNSResponder
 
 ### Hostname
 
-#### Set Hostname
+#### Set Computer Name/Host Name
 You need to run all of the commands since the hostname needs to be changed in three places.
 ```bash
 sudo scutil --set ComputerName "newhostname"
-sudo scutil --set LocalHostName "newhostname"
 sudo scutil --set HostName "newhostname"
+sudo scutil --set LocalHostName "newhostname"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "newhostname"
 ```
 
 ### Networking Tools
