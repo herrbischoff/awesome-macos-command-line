@@ -24,6 +24,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Vim](#vim)
     - [Xcode](#xcode)
 - [Disks and Volumes](#disks-and-volumes)
+- [Dock](#dock)
 - [Documents](#documents)
 - [Finder](#finder)
     - [Files and Folders](#files-and-folders)
