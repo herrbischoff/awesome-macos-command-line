@@ -367,6 +367,11 @@ Sets default save target to be a local disk, not iCloud.
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 ```
 
+#### Set Current Directory as Default Search Scope
+```bash
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+```
+
 #### Set Default Finder Location to Home Folder
 ```bash
 defaults write com.apple.finder NewWindowTarget -string "PfLo" && \
