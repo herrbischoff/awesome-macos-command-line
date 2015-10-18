@@ -195,6 +195,7 @@ xcode-select --install
 xcrun simctl delete unavailable
 ```
 
+
 ## Disks and Volumes
 
 #### Disable Sudden Motion Sensor
@@ -427,6 +428,7 @@ sudo systemsetup -setcomputersleep 60
 ```bash
 sudo systemsetup -setcomputersleep Never
 ```
+
 
 ## Input Devices
 
