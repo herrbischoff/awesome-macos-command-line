@@ -243,6 +243,12 @@ bless --mount "/path/to/mounted/volume" --setBoot
 diskutil list
 ```
 
+## Dock
+
+#### Add a Stack with Recent Applications to Dock
+```bash
+defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "list-type" = 1; }; "tile-type" = "recents-tile"; }'; killall Dock
+```
 
 ## Documents
 
