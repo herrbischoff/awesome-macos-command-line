@@ -1037,9 +1037,21 @@ tput bel
 
 ### Shells
 
-#### fish
+#### Bash
+Install the latest version and set as current users' default shell:
 ```bash
-brew install fish
+brew install bash && \
+sudo echo $(brew --prefix)/bin/bash >> /etc/shells && \
+chsh -s $(brew --prefix)/bin/bash
+```
+
+- [Homepage](https://www.gnu.org/software/bash/) - The default shell for OS X and most other Unix-based operating systems.
+
+#### fish
+Install the latest version and set as current users' default shell:
+```bash
+brew install fish && \
+chsh -s $(brew --prefix)/bin/fish
 ```
 
 - [Homepage](http://fishshell.com) - A smart and user-friendly command line
@@ -1047,8 +1059,10 @@ shell for OS X, Linux, and the rest of the family.
 - [The Fishshell Framework](https://github.com/oh-my-fish/oh-my-fish) - Provides core infrastructure to allow you to install packages which extend or modify the look of your shell.
 
 #### Zsh
+Install the latest version and set as current users' default shell:
 ```bash
-brew install zsh
+brew install zsh && \
+chsh -s $(brew --prefix)/bin/zsh
 ```
 
 - [Homepage](http://www.zsh.org) - Zsh is a shell designed for interactive use, although it is also a powerful scripting language.
