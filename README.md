@@ -530,6 +530,12 @@ Disable the default "press and hold" behavior.
 defaults write -g ApplePressAndHoldEnabled -bool false
 ```
 
+#### Set Key Repeat Rate
+Sets a very fast repeat rate, adjust to taste.
+```bash
+defaults write NSGlobalDomain KeyRepeat -int 0.02
+```
+
 
 ## Media
 
