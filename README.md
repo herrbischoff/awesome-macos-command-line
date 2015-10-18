@@ -368,6 +368,11 @@ Possible values: `WhenScrolling`, `Automatic` and `Always`.
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 ```
 
+#### Show Status Bar
+```bash
+defaults write com.apple.finder ShowStatusBar -bool true
+```
+
 #### Save to Disk by Default
 Sets default save target to be a local disk, not iCloud.
 ```bash
