@@ -976,10 +976,10 @@ tput bel
 
 ### Terminal Fonts
 
-- [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro)
-- [Hack](http://sourcefoundry.org/hack/)
-- [Input](http://input.fontbureau.com)
-- [Meslo](https://github.com/andreberg/Meslo-Font)
+- [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) - A family of four fixed-width fonts designed with coding in mind.
+- [Hack](http://sourcefoundry.org/hack/) - Hack is hand groomed and optically balanced to be your go-to code face.
+- [Input](http://input.fontbureau.com) - Input is a flexible system of fonts designed specifically for code.
+- [Meslo](https://github.com/andreberg/Meslo-Font) - Customized version of Apple's Menlo font.
 
 
 ## License
