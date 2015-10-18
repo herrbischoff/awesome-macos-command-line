@@ -25,6 +25,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Vim](#vim)
     - [Xcode](#xcode)
 - [Disks and Volumes](#disks-and-volumes)
+    - [Disk Images](#disk-images)
 - [Documents](#documents)
 - [Finder](#finder)
     - [Files and Folders](#files-and-folders)
@@ -219,21 +220,6 @@ The only reliable way to do this is by sending an AppleScript command to Finder.
 osascript -e 'tell application "Finder" to eject (every disk whose ejectable is true)'
 ```
 
-#### Make Volume OS X Bootable
-```bash
-bless --folder "/path/to/mounted/volume/System/Library/CoreServices" --bootinfo --bootefi
-```
-
-#### Mount Disk Image
-```bash
-hdiutil attach /path/to/diskimage.dmg
-```
-
-#### Unmount Disk Image
-```bash
-hdiutil detach /dev/disk2s1
-```
-
 #### Repair File Permissions
 You don't have to use the Disk Utility GUI for this.
 ```bash
@@ -249,6 +235,30 @@ bless --mount "/path/to/mounted/volume" --setBoot
 #### Show All Attached Disks and Partitions
 ```bash
 diskutil list
+```
+
+### Disk Images
+
+#### Disable Disk Image Verification
+```bash
+defaults write com.apple.frameworks.diskimages skip-verify -bool true && \
+defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true && \
+defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
+```
+
+#### Make Volume OS X Bootable
+```bash
+bless --folder "/path/to/mounted/volume/System/Library/CoreServices" --bootinfo --bootefi
+```
+
+#### Mount Disk Image
+```bash
+hdiutil attach /path/to/diskimage.dmg
+```
+
+#### Unmount Disk Image
+```bash
+hdiutil detach /dev/disk2s1
 ```
 
 
