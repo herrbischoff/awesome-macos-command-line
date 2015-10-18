@@ -87,12 +87,12 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 
 ### Transparency
 
-#### Disable Transparency in Menu and Windows
+#### Reduce Transparency in Menu and Windows
 ```bash
 defaults write com.apple.universalaccess reduceTransparency -bool true
 ```
 
-#### Enable Transparency in Menu and Windows
+#### Restore Default Transparency in Menu and Windows
 ```bash
 defaults write com.apple.universalaccess reduceTransparency -bool false
 ```
