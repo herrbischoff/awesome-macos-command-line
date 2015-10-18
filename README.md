@@ -72,6 +72,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Software Installation](#software-installation)
     - [Spotlight](#spotlight)
 - [Terminal](#terminal)
+    - [Terminal Fonts](#terminal-fonts)
 
 
 ## Appearance
@@ -909,6 +910,13 @@ Rings the terminal bell (if enabled) and puts a badge on it.
 ```bash
 tput bel
 ```
+
+### Terminal Fonts
+
+- [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro)
+- [Hack](http://sourcefoundry.org/hack/)
+- [Input](http://input.fontbureau.com)
+- [Meslo](https://github.com/andreberg/Meslo-Font)
 
 
 ## License
