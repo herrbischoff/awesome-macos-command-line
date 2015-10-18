@@ -16,6 +16,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 - [Applications](#applications)
     - [App Store](#app-store)
     - [Apple Remote Desktop](#apple-remote-desktop)
+    - [Safari](#safari)
     - [Sketch](#sketch)
     - [TextEdit](#textedit)
 - [Backup](#backup)
@@ -118,6 +119,17 @@ rm ~/Library/Preferences/com.apple.RemoteDesktop.plist
 sudo rm -r /Library/Application\ Support/Apple/Remote\ Desktop/
 rm -r ~/Library/Application\ Support/Remote\ Desktop/
 rm -r ~/Library/Containers/com.apple.RemoteDesktop
+```
+
+### Safari
+
+#### Enable Develop Menu and Web Inspector
+```bash
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true && \
+defaults write com.apple.Safari IncludeDevelopMenu -bool true && \
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true && \
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true && \
+defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 ```
 
 ### Sketch
