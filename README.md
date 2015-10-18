@@ -271,6 +271,11 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write com.apple.finder AppleShowAllFiles true
 ```
 
+#### Show Full Path in Finder Title
+```bash
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+```
+
 #### Restore Default File Visibility
 ```bash
 defaults write com.apple.finder AppleShowAllFiles false
