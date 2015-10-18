@@ -210,6 +210,13 @@ Compiling MacVim via Homebrew with all bells and whistles, including overriding 
 brew install macvim --HEAD --with-cscope --with-lua --with-override-system-vim --with-luajit --with-python
 ```
 
+#### NeoVim
+Install the development version of this modern Vim drop-in alternative via Homebrew.
+```bash
+brew tap neovim/neovim && \
+brew install --HEAD neovim
+```
+
 ### Xcode
 
 #### Install Command Line Tools Without Xcode
