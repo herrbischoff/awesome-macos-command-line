@@ -14,5 +14,6 @@ Please ensure your pull request adheres to the following guidelines:
 - Make sure your text editor is set to remove trailing whitespace.
 - The pull request and commit should have a useful title.
 - New categories or improvements to the existing categorization are welcome.
+- Pull requests that are not fixed according to the comments within one week will be closed.
 
 Thank you for your suggestions!
