@@ -945,12 +945,14 @@ sudo nvram boot-args=""
 
 ### Screenshots
 
-#### Save screenshots to the desktop
+#### Save Screenshots to given Location
+Sets location to `~/Desktop`.
 ```bash
 defaults write com.apple.screencapture location ~/Desktop && killall SystemUIServer
 ```
 
-#### Save screenshots in png format (other options: bmp, gif, jpg, jpeg, pdf, tiff)
+#### Save Screenshots with given format
+Sets format to `png`. Other options are `bmp`, `gif`, `jpg`, `jpeg`, `pdf`, `tiff`.
 ```bash
 defaults write com.apple.screencapture type -string "png"
 ```
