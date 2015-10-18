@@ -75,6 +75,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Root User](#root-user)
     - [Safe Mode Boot](#safe-mode-boot)
     - [Software Installation](#software-installation)
+    - [Software Update](#software-update)
     - [Spotlight](#spotlight)
 - [Terminal](#terminal)
     - [Alternative Terminals](#alternative-terminals)
@@ -947,6 +948,14 @@ sudo nvram boot-args=""
 #### Install PKG
 ```bash
 installer -pkg /path/to/installer.pkg -target /
+```
+
+### Software Update
+
+#### Set Software Update Check Interval
+Set to check daily instead of weekly.
+```bash
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 ```
 
 ### Spotlight
