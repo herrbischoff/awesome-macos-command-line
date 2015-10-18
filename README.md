@@ -118,11 +118,11 @@ find /Applications -path '*Contents/_MASReceipt/receipt' -maxdepth 4 -print |\se
 
 #### Remove Apple Remote Desktop Settings
 ```bash
-sudo rm -rf /var/db/RemoteManagement
-sudo rm /Library/Preferences/com.apple.RemoteDesktop.plist
-rm ~/Library/Preferences/com.apple.RemoteDesktop.plist
-sudo rm -r /Library/Application\ Support/Apple/Remote\ Desktop/
-rm -r ~/Library/Application\ Support/Remote\ Desktop/
+sudo rm -rf /var/db/RemoteManagement && \
+sudo rm /Library/Preferences/com.apple.RemoteDesktop.plist && \
+rm ~/Library/Preferences/com.apple.RemoteDesktop.plist && \
+sudo rm -r /Library/Application\ Support/Apple/Remote\ Desktop/ && \
+rm -r ~/Library/Application\ Support/Remote\ Desktop/ && \
 rm -r ~/Library/Containers/com.apple.RemoteDesktop
 ```
 
@@ -344,13 +344,13 @@ defaults write NSGlobalDomain NSScrollAnimationEnabled -bool true
 
 #### Expand Save Panel by Default
 ```bash
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true && \
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 ```
 
 #### Expand Print Panel by Default
 ```bash
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true && \
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 ```
 
@@ -450,7 +450,9 @@ open .
 #### Clear Font Cache for Current User
 To clear font caches for all users, put `sudo` in front of this command.
 ```bash
-atsutil databases -removeUser && atsutil server -shutdown && atsutil server -ping
+atsutil databases -removeUser && \
+atsutil server -shutdown && \
+atsutil server -ping
 ```
 
 
@@ -617,17 +619,17 @@ ipconfig getpacket en0
 
 #### Clear DNS Cache
 ```bash
-sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder
+sudo dscacheutil -flushcache && \
+sudo killall -HUP mDNSResponder
 ```
 
 ### Hostname
 
 #### Set Computer Name/Host Name
-You need to run all of the commands since the hostname needs to be changed in three places.
 ```bash
-sudo scutil --set ComputerName "newhostname"
-sudo scutil --set HostName "newhostname"
-sudo scutil --set LocalHostName "newhostname"
+sudo scutil --set ComputerName "newhostname" && \
+sudo scutil --set HostName "newhostname" && \
+sudo scutil --set LocalHostName "newhostname" && \
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "newhostname"
 ```
 
@@ -936,7 +938,8 @@ sudo purge
 
 #### Disable Notification Center
 ```bash
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist && killall -9 NotificationCenter
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist && \
+killall -9 NotificationCenter
 ```
 
 #### Enable Notification Center
