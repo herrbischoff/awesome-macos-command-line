@@ -41,6 +41,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Keyboard](#keyboard)
 - [Media](#media)
     - [Audio](#audio)
+    - [Video](#video)
 - [Networking](#networking)
     - [Bonjour](#bonjour)
     - [DHCP](#dhcp)
@@ -547,6 +548,13 @@ afplay -q 1 filename.mp3
 #### Speak Text with System Default Voice
 ```bash
 say 'All your base are belong to us!'
+```
+
+### Video
+
+#### Auto-Play Videos in QuickTime Player
+```bash
+defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen 1
 ```
 
 
