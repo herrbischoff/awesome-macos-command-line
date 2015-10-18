@@ -367,6 +367,12 @@ Sets default save target to be a local disk, not iCloud.
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 ```
 
+#### Set Default Finder Location to Home Folder
+```bash
+defaults write com.apple.finder NewWindowTarget -string "PfLo" && \
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
+```
+
 #### Set Sidebar Icon Size
 Sets size to 'medium'.
 ```bash
