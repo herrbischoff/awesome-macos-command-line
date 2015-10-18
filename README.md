@@ -690,7 +690,7 @@ security find-generic-password -ga "ROUTERNAME" | grep "password:"
 cancel -a -
 ```
 
-#### Quit Printer app After Print Jobs Complete
+#### Quit Printer App After Print Jobs Complete
 ```bash
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 ```
