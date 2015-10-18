@@ -343,6 +343,17 @@ Revert back to standard behavior.
 defaults write NSGlobalDomain NSScrollAnimationEnabled -bool true
 ```
 
+#### Disable Rubberband Scrolling
+```bash
+defaults write -g NSScrollViewRubberbanding -bool false
+```
+
+#### Enable Rubberband Scrolling
+Revert to default behavior.
+```bash
+defaults write -g NSScrollViewRubberbanding -bool true
+```
+
 #### Expand Save Panel by Default
 ```bash
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true && \
