@@ -323,7 +323,7 @@ defaults write com.apple.finder AppleShowAllFiles false
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 ```
 
-#### Unhide User Library folder
+#### Unhide User Library Folder
 ```bash
 chflags nohidden ~/Library
 ```
@@ -386,7 +386,7 @@ Sets default save target to be a local disk, not iCloud.
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 ```
 
-#### Set Current Directory as Default Search Scope
+#### Set Current Folder as Default Search Scope
 ```bash
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 ```
@@ -434,12 +434,12 @@ You can open applications using `-a`.
 open -a "Google Chrome" http://www.github.com
 ```
 
-#### Open Directory
+#### Open Folder
 ```bash
-open /path/to/directory
+open /path/to/folder/
 ```
 
-#### Open Current Directory
+#### Open Current Folder
 ```bash
 open .
 ```
@@ -732,9 +732,9 @@ pwgen -Cs 20 1 | tr -d ' ' | tr -d '\n' | pbcopy
 srm /path/to/file
 ```
 
-#### Securely Remove Directory
+#### Securely Remove Folder
 ```bash
-srm -r /path/to/directory/
+srm -r /path/to/folder/
 ```
 
 #### Securely Remove Path (Force)
@@ -895,7 +895,7 @@ Run job every 5 minutes.
 </plist>
 ```
 
-#### Monitoring Directory Job Template
+#### Monitoring Folder Job Template
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
