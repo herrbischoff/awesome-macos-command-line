@@ -28,6 +28,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 - [Finder](#finder)
     - [Files and Folders](#files-and-folders)
     - [Layout](#layout)
+    - [Metadata Files](#metadata-files)
     - [Opening Things](#opening-things)
 - [Fonts](#fonts)
 - [Hardware](#hardware)
