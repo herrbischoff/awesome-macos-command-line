@@ -843,6 +843,10 @@ launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.pl
 ```bash
 qlmanage -p /path/to/file
 ```
+#### Enable Text Selection and Copying in QuickLook
+```bash
+defaults write com.apple.finder QLEnableTextSelection -bool true
+```
 
 ### Root User
 
