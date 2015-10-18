@@ -357,6 +357,11 @@ defaults write com.apple.finder CreateDesktop -bool false && killall Finder
 defaults write com.apple.finder CreateDesktop -bool true && killall Finder
 ```
 
+#### Show Path Bar
+```bash
+defaults write com.apple.finder ShowPathbar -bool true
+```
+
 #### Scrollbar Visibility
 Possible values: `WhenScrolling`, `Automatic` and `Always`.
 ```bash
