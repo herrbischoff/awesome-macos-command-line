@@ -348,12 +348,6 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true && \
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 ```
 
-#### Expand Print Panel by Default
-```bash
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true && \
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
-```
-
 #### Hide All Desktop Icons
 ```bash
 defaults write com.apple.finder CreateDesktop -bool false && killall Finder
@@ -688,6 +682,12 @@ security find-generic-password -ga "ROUTERNAME" | grep "password:"
 #### Clear Print Queue
 ```bash
 cancel -a -
+```
+
+#### Expand Print Panel by Default
+```bash
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true && \
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 ```
 
 #### Quit Printer App After Print Jobs Complete
