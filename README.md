@@ -77,6 +77,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Software Installation](#software-installation)
     - [Spotlight](#spotlight)
 - [Terminal](#terminal)
+    - [Alternative Terminals](#alternative-terminals)
     - [Terminal Fonts](#terminal-fonts)
 
 
@@ -967,6 +968,11 @@ Rings the terminal bell (if enabled) and puts a badge on it.
 ```bash
 tput bel
 ```
+
+### Alternative Terminals
+
+- [iTerm 2](https://iterm2.com) - A better Terminal.app.
+- [TotalTerminal](http://totalterminal.binaryage.com) - A system-wide terminal available on a hot-key.
 
 ### Terminal Fonts
 
