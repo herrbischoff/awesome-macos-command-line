@@ -514,6 +514,12 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool true
 defaults read -g NSAutomaticSpellingCorrectionEnabled
 ```
 
+#### Enable Key Repeat
+Disable the default "press and hold" behavior.
+```bash
+defaults write -g ApplePressAndHoldEnabled -bool false
+```
+
 
 ## Media
 
