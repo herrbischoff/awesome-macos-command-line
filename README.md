@@ -17,6 +17,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [App Store](#app-store)
     - [Apple Remote Desktop](#apple-remote-desktop)
     - [Sketch](#sketch)
+    - [TextEdit](#textedit)
 - [Backup](#backup)
     - [Time Machine](#time-machine)
 - [Developer](#developer)
@@ -123,6 +124,13 @@ rm -r ~/Library/Containers/com.apple.RemoteDesktop
 #### Export Compact SVGs
 ```bash
 defaults write com.bohemiancoding.sketch3 exportCompactSVG -bool yes
+```
+
+### TextEdit
+
+#### Use Plain Text Mode as Default
+```bash
+defaults write com.apple.TextEdit RichText -int 0
 ```
 
 
