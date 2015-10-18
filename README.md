@@ -59,6 +59,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Find](#find)
     - [Locate](#locate)
 - [System](#system)
+    - [AirDrop](#airdrop)
     - [AppleScript](#applescript)
     - [Basics](#basics)
     - [Clipboard](#clipboard)
@@ -695,6 +696,13 @@ locate -i *.jpg
 
 
 ## System
+
+### AirDrop
+
+#### Enable AirDrop over Ethernet and on Unsupported Macs
+```bash
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+```
 
 ### AppleScript
 
