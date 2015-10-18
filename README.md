@@ -334,6 +334,19 @@ Sets size to 'medium'.
 ```bash
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 ```
+### Metadata Files
+
+#### Disable Creation of Metadata Files on Network Volumes
+Disables creation of .DS_Store and ._filename files.
+```bash
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+```
+
+#### Disable Creation of Metadata Files on USB Volumes
+Disables creation of .DS_Store and ._filename files.
+```bash
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+```
 
 ### Opening Things
 
