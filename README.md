@@ -80,6 +80,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Spotlight](#spotlight)
 - [Terminal](#terminal)
     - [Alternative Terminals](#alternative-terminals)
+    - [Shells](#shells)
     - [Terminal Fonts](#terminal-fonts)
 
 
@@ -1033,6 +1034,25 @@ tput bel
 
 - [iTerm 2](https://iterm2.com) - A better Terminal.app.
 - [TotalTerminal](http://totalterminal.binaryage.com) - A system-wide terminal available on a hot-key.
+
+### Shells
+
+#### fish
+```bash
+brew install fish
+```
+
+- [Homepage](http://fishshell.com) - A smart and user-friendly command line
+shell for OS X, Linux, and the rest of the family.
+- [The Fishshell Framework](https://github.com/oh-my-fish/oh-my-fish) - Provides core infrastructure to allow you to install packages which extend or modify the look of your shell.
+
+#### Zsh
+```bash
+brew install zsh
+```
+
+- [Homepage](http://www.zsh.org) - Zsh is a shell designed for interactive use, although it is also a powerful scripting language.
+- [Oh My Zsh](http://ohmyz.sh) - An open source, community-driven framework for managing your ZSH configuration.
 
 ### Terminal Fonts
 
