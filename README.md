@@ -1029,7 +1029,7 @@ tput bel
 - [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) - A family of four fixed-width fonts designed with coding in mind.
 - [Hack](http://sourcefoundry.org/hack/) - Hack is hand groomed and optically balanced to be your go-to code face.
 - [Inconsolata](http://levien.com/type/myfonts/inconsolata.html) -  A monospace font, designed for code listings and the like.
-- [Input](http://input.fontbureau.com) - Input is a flexible system of fonts designed specifically for code.
+- [Input](http://input.fontbureau.com) - A flexible system of fonts designed specifically for code.
 - [Meslo](https://github.com/andreberg/Meslo-Font) - Customized version of Apple's Menlo font.
 
 
