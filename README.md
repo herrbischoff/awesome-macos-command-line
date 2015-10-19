@@ -262,6 +262,12 @@ bless --mount "/path/to/mounted/volume" --setBoot
 diskutil list
 ```
 
+#### View File System Usage
+A contiuous stream of file system access info.
+```bash
+sudo fs_usage
+```
+
 ### Disk Images
 
 #### Disable Disk Image Verification
