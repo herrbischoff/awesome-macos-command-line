@@ -471,7 +471,7 @@ atsutil server -ping
 networksetup -listallhardwareports
 ```
 
-#### Show connected device's UDID
+#### Show Connected Device's UDID
 ```bash
 system_profiler SPUSBDataType | sed -n -e '/iPad/,/Serial/p' -e '/iPhone/,/Serial/p'
 ```
