@@ -1021,10 +1021,20 @@ installer -pkg /path/to/installer.pkg -target /
 
 ### Software Update
 
+#### Install All Available Software Updates
+```bash
+sudo softwareupdate -ia
+```
+
 #### Set Software Update Check Interval
 Set to check daily instead of weekly.
 ```bash
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+```
+
+#### Show Available Software Updates
+```bash
+sudo softwareupdate -l
 ```
 
 ### Spotlight
