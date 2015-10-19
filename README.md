@@ -834,6 +834,12 @@ sudo poweroff
 sw_vers
 ```
 
+#### Uptime
+How long since your last restart.
+```bash
+uptime
+```
+
 ### Clipboard
 
 #### Copy data to Clipboard
