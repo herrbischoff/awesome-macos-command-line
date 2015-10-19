@@ -286,6 +286,12 @@ hdiutil attach /path/to/diskimage.dmg
 hdiutil detach /dev/disk2s1
 ```
 
+#### Write Disk Image to Volume
+Like the Disk Utility "Restore" function.
+```bash
+sudo asr -restore -noverify -source /path/to/diskimage.dmg -target /Volumes/VolumeToRestoreTo
+```
+
 
 ## Documents
 
