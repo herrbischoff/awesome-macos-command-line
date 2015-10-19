@@ -471,6 +471,11 @@ atsutil server -ping
 networksetup -listallhardwareports
 ```
 
+#### Show connected device's UDID
+```bash
+system_profiler SPUSBDataType | sed -n -e '/iPad/,/Serial/p' -e '/iPhone/,/Serial/p'
+```
+
 #### Show Current Screen Resolution
 ```bash
 system_profiler SPDisplaysDataType | grep Resolution
