@@ -230,6 +230,42 @@ xcode-select --install
 xcrun simctl delete unavailable
 ```
 
+### `man` pages
+
+#### Open in Dash.app
+
+To open Kapeli's [Dash.app](https://kapeli.com/dash) with `man`, place the following in `~/.bash_profile`:
+ 
+```bash
+function encodeuri {
+  local string="${@}"
+  local strlen=${#string}
+  local encoded=""
+
+  for (( pos = 0; pos < strlen; pos ++ )); do
+    c=${string:$pos:1}
+    case "$c" in
+      [-_.~a-zA-Z0-9]) o="${c}" ;;
+      *) printf -v o '%%%02x' "'$c"
+    esac
+    encoded+="${o}"
+  done
+  echo "${encoded}"
+}
+
+function man {
+  if [[ -d /Applications/Dash.app && \
+    -d "$HOME/Library/Application Support/Dash/DocSets/Man_Pages" ]]; then
+    /usr/bin/open dash://manpages:`encodeuri ${@}`
+  else
+    /usr/bin/man ${@}
+  fi
+}
+```
+
+Either open a new terminal or execute `source ~/.bash_profile`.  `man git` will then open the Git man page in Dash.app.
+
+The `encodeuri` function can be leveraged to assist opening just about any application that supports a URL scheme.
 
 ## Disks and Volumes
 
