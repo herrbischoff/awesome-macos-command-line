@@ -710,6 +710,10 @@ defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.prefere
 security find-generic-password -ga "ROUTERNAME" | grep "password:"
 ```
 
+#### Show Local IP Address
+```bash
+ipconfig getifaddr en0
+```
 
 ## Package Managers
 
