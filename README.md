@@ -688,6 +688,11 @@ This outputs all applications currently using port 80.
 sudo lsof -i :80
 ```
 
+#### Show External IP Address
+```bash
+dig +short myip.opendns.com @resolver1.opendns.com
+```
+
 ### Wi-Fi
 
 #### Scan Available Access Points
@@ -709,7 +714,6 @@ defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.prefere
 ```bash
 security find-generic-password -ga "ROUTERNAME" | grep "password:"
 ```
-
 
 ## Package Managers
 
