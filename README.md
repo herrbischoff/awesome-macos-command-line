@@ -706,8 +706,9 @@ defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.prefere
 ```
 
 #### Show Wi-Fi Network Passwords
+Exchange SSID with the SSID of the access point you wish to query the password from.
 ```bash
-security find-generic-password -ga "ROUTERNAME" | grep "password:"
+security find-generic-password -ga "SSID" | grep "password:"
 ```
 
 #### Show Local IP Address
