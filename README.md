@@ -16,6 +16,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 - [Applications](#applications)
     - [App Store](#app-store)
     - [Apple Remote Desktop](#apple-remote-desktop)
+    - [iTunes](#itunes)
     - [Safari](#safari)
     - [Sketch](#sketch)
     - [TextEdit](#textedit)
@@ -125,6 +126,13 @@ rm ~/Library/Preferences/com.apple.RemoteDesktop.plist && \
 sudo rm -r /Library/Application\ Support/Apple/Remote\ Desktop/ && \
 rm -r ~/Library/Application\ Support/Remote\ Desktop/ && \
 rm -r ~/Library/Containers/com.apple.RemoteDesktop
+```
+
+### iTunes
+
+#### Stop Itunes from Responding to the Keyboard Media Keys
+```bash
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 ```
 
 ### Safari
