@@ -948,7 +948,8 @@ sudo nvram boot-args=""
 #### Save Screenshots to Given Location
 Sets location to `~/Desktop`.
 ```bash
-defaults write com.apple.screencapture location ~/Desktop && killall SystemUIServer
+defaults write com.apple.screencapture location ~/Desktop && \
+killall SystemUIServer
 ```
 
 #### Save Screenshots in Given format
@@ -959,7 +960,8 @@ defaults write com.apple.screencapture type -string "png"
 
 #### Disable shadow in Screenshots
 ```bash
-defaults write com.apple.screencapture disable-shadow -bool true && killall SystemUIServer
+defaults write com.apple.screencapture disable-shadow -bool true && \
+killall SystemUIServer
 ```
 
 ### Software Installation
