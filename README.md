@@ -130,7 +130,7 @@ rm -r ~/Library/Containers/com.apple.RemoteDesktop
 
 ### iTunes
 
-#### Stop Itunes from Responding to the Keyboard Media Keys
+#### Stop Responding to the Keyboard Media Keys
 ```bash
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 ```
