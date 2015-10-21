@@ -1103,6 +1103,12 @@ Rings the terminal bell (if enabled) and puts a badge on it.
 tput bel
 ```
 
+#### Watch Star Wars
+Watch Star Wars on your terminal.
+```bash
+telnet towel.blinkenlights.nl
+```
+
 ### Alternative Terminals
 
 - [iTerm 2](https://iterm2.com) - A better Terminal.app.
