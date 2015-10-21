@@ -436,6 +436,12 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 ### Opening Things
 
+#### Change Working Directory to Finder Path
+If multiple windows are open, it chooses the top-most one.
+```bash
+cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
+```
+
 #### Open URL
 ```bash
 open http://www.github.com
