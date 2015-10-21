@@ -1151,7 +1151,8 @@ chsh -s $(brew --prefix)/bin/zsh
 ```
 
 - [Homepage](http://www.zsh.org) - Zsh is a shell designed for interactive use, although it is also a powerful scripting language.
-- [Oh My Zsh](http://ohmyz.sh) - An open source, community-driven framework for managing your ZSH configuration.
+- [Oh My Zsh](http://ohmyz.sh) - An open source, community-driven framework for managing your Zsh configuration.
+- [Prezto](https://github.com/sorin-ionescu/prezto) - A speedy Zsh framework. Enriches the command line interface environment with sane defaults, aliases, functions, auto completion, and prompt themes.
 
 ### Terminal Fonts
 
