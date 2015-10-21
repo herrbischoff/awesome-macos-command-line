@@ -642,14 +642,14 @@ defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen 1
 
 ### Bonjour
 
-#### Enable Bonjour
-```bash
-defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array "/usr/sbin/mDNSResponder" "-launchd"
-```
-
 #### Disable Bonjour
 ```bash
 defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array-add "-NoMulticastAdvertisements"
+```
+
+#### Enable Bonjour
+```bash
+defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array "/usr/sbin/mDNSResponder" "-launchd"
 ```
 
 ### DHCP
