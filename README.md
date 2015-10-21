@@ -1137,6 +1137,7 @@ chsh -s $(brew --prefix)/bin/zsh
 - [Inconsolata](http://levien.com/type/myfonts/inconsolata.html) -  A monospace font, designed for code listings and the like.
 - [Input](http://input.fontbureau.com) - A flexible system of fonts designed specifically for code.
 - [Meslo](https://github.com/andreberg/Meslo-Font) - Customized version of Apple's Menlo font.
+- [Source Code Pro](https://adobe-fonts.github.io/source-code-pro/) - A monospaced font family for user interfaces and coding environments.
 
 
 ## License
