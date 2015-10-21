@@ -822,6 +822,11 @@ srm -rf /path/to/complete/destruction
 find . -type f -name '*.DS_Store' -ls -delete
 ```
 
+#### Search for text in file names or file contents (spotlight search)
+```bash
+mdfind -onlyin . searchstring
+```
+
 ### Locate
 
 #### Build Locate Database
