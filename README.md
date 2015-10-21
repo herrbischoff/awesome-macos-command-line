@@ -700,6 +700,11 @@ Run a wireless scan:
 airport -s
 ```
 
+#### Show Local IP Address
+```bash
+ipconfig getifaddr en0
+```
+
 #### Show Wi-Fi Connection History
 ```bash
 defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences | grep LastConnected -A 7
@@ -711,10 +716,6 @@ Exchange SSID with the SSID of the access point you wish to query the password f
 security find-generic-password -ga "SSID" | grep "password:"
 ```
 
-#### Show Local IP Address
-```bash
-ipconfig getifaddr en0
-```
 
 ## Package Managers
 
