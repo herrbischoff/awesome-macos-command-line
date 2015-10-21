@@ -694,6 +694,11 @@ This outputs all applications currently using port 80.
 sudo lsof -i :80
 ```
 
+#### Show External IP Address
+```bash
+dig +short myip.opendns.com @resolver1.opendns.com
+```
+
 ### Wi-Fi
 
 #### Scan Available Access Points
@@ -726,7 +731,6 @@ Exchange SSID with the SSID of the access point you wish to query the password f
 ```bash
 security find-generic-password -D "AirPort network password" -a "SSID" -gw
 ```
-
 
 ## Package Managers
 
