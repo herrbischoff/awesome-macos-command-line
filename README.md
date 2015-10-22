@@ -952,13 +952,13 @@ defaults write com.apple.screencapture location ~/Desktop && \
 killall SystemUIServer
 ```
 
-#### Save Screenshots in Given format
+#### Save Screenshots in Given Format
 Sets format to `png`. Other options are `bmp`, `gif`, `jpg`, `jpeg`, `pdf`, `tiff`.
 ```bash
 defaults write com.apple.screencapture type -string "png"
 ```
 
-#### Disable shadow in Screenshots
+#### Disable Shadow in Screenshots
 ```bash
 defaults write com.apple.screencapture disable-shadow -bool true && \
 killall SystemUIServer
