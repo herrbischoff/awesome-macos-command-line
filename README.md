@@ -102,8 +102,20 @@ defaults write com.apple.universalaccess reduceTransparency -bool false
 ### Wallpaper
 
 #### Set Wallpaper
+
+For OSX pre-Mavericks: 
+
 ```bash
 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/path/to/picture.jpg"'
+```
+
+For OSX pos-Mavericks: 
+
+```bash
+function newWallpaper() {
+sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$1'" && killall Dock
+}
+newWallpaper(/path/to/picture.jpg)
 ```
 
 
