@@ -65,6 +65,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [AirDrop](#airdrop)
     - [AppleScript](#applescript)
     - [Basics](#basics)
+    - [Battery Status](#battery-status)
     - [Clipboard](#clipboard)
     - [FileVault](#filevault)
     - [Information/Reports](#informationreports)
@@ -873,6 +874,20 @@ sw_vers
 How long since your last restart.
 ```bash
 uptime
+```
+
+### Battery Status
+
+#### Battery Percentage
+Remaining battery in percentage.
+```bash
+pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';'
+```
+
+#### Remaining Batter Time
+Remaining battery backup time.
+```bash
+pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f3 -d';'
 ```
 
 ### Clipboard
