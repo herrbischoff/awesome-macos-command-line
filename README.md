@@ -915,6 +915,12 @@ pbpaste | sort | uniq | pbcopy
 sudo fdesetup status
 ```
 
+#### Restart Computer and Unlock FileVault
+If FileVault is enabled on the current volume, it restarts the system, bypassing the initial unlock.   The command may not work on all systems.
+```bash
+sudo fdesetup authrestart
+```
+
 ### Information/Reports
 
 #### Generate Advanced System and Performance Report
