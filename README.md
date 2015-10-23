@@ -76,6 +76,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [QuickLook](#quicklook)
     - [Root User](#root-user)
     - [Safe Mode Boot](#safe-mode-boot)
+    - [Screenshots](#screenshots)
     - [Software Installation](#software-installation)
     - [Software Update](#software-update)
     - [Spotlight](#spotlight)
@@ -1067,6 +1068,27 @@ sudo nvram boot-args="-x"
 #### Disable Safe Mode
 ```bash
 sudo nvram boot-args=""
+```
+
+### Screenshots
+
+#### Save Screenshots to Given Location
+Sets location to `~/Desktop`.
+```bash
+defaults write com.apple.screencapture location ~/Desktop && \
+killall SystemUIServer
+```
+
+#### Save Screenshots in Given Format
+Sets format to `png`. Other options are `bmp`, `gif`, `jpg`, `jpeg`, `pdf`, `tiff`.
+```bash
+defaults write com.apple.screencapture type -string "png"
+```
+
+#### Disable Shadow in Screenshots
+```bash
+defaults write com.apple.screencapture disable-shadow -bool true && \
+killall SystemUIServer
 ```
 
 ### Software Installation
