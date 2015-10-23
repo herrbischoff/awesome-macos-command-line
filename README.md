@@ -497,6 +497,16 @@ atsutil server -ping
 networksetup -listallhardwareports
 ```
 
+#### Remaining Battery Percentage
+```bash
+pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';'
+```
+
+#### Remaining Battery Time
+```bash
+pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f3 -d';'
+```
+
 #### Show Connected Device's UDID
 ```bash
 system_profiler SPUSBDataType | sed -n -e '/iPad/,/Serial/p' -e '/iPhone/,/Serial/p'
