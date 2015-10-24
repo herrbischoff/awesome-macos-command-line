@@ -321,6 +321,12 @@ textutil -convert html file.ext
 
 ### Files and Folders
 
+#### Empty Trash on all Mounted Volumes and the Main HDD
+Also, clear Apple’s System Logs that will improve your shell startup speed
+```bash
+sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl
+```
+
 #### Hide Folder in Finder
 ```bash
 chflags hidden /path/to/folder/
