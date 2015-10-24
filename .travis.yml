@@ -15,3 +15,6 @@ matrix:
 
 script:
   - ./setup.sh
+  - brew install --build-from-source etl
+  - brew install checkbashisms
+  - checkbashisms --posix --force --extra ./setup.sh
