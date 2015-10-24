@@ -910,15 +910,15 @@ pbpaste | sort | uniq | pbcopy
 
 ### FileVault
 
+#### Automatically Unlock FileVault on Restart
+If FileVault is enabled on the current volume, it restarts the system, bypassing the initial unlock. The command may not work on all systems.
+```bash
+sudo fdesetup authrestart
+```
+
 #### Check FileVault Status
 ```bash
 sudo fdesetup status
-```
-
-#### Restart Computer and Unlock FileVault
-If FileVault is enabled on the current volume, it restarts the system, bypassing the initial unlock.   The command may not work on all systems.
-```bash
-sudo fdesetup authrestart
 ```
 
 ### Information/Reports
