@@ -443,6 +443,12 @@ Avoids creation of `.DS_Store` and AppleDouble files.
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 ```
 
+#### Recursively Delete Metadata Files in Current Folder
+Run from Terminal, it will recursively delete all `.DS_Store` files it finds starting from the current directory.
+```bash
+find . -name '*.DS_Store' -type f -ls -delete
+```
+
 ### Opening Things
 
 #### Change Working Directory to Finder Path
