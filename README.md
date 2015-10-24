@@ -350,7 +350,7 @@ defaults write com.apple.finder AppleShowAllFiles true
 defaults write com.apple.finder AppleShowAllFiles false
 ```
 
-### Remove Protected Flag
+#### Remove Protected Flag
 ```bash
 sudo chflags -R nouchg /path/to/file/or/folder
 ```
