@@ -28,6 +28,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Xcode](#xcode)
 - [Disks and Volumes](#disks-and-volumes)
     - [Disk Images](#disk-images)
+- [Dock](#dock)
 - [Documents](#documents)
 - [Finder](#finder)
     - [Files and Folders](#files-and-folders)
@@ -307,6 +308,12 @@ Like the Disk Utility "Restore" function.
 sudo asr -restore -noverify -source /path/to/diskimage.dmg -target /Volumes/VolumeToRestoreTo
 ```
 
+## Dock
+
+#### Add a Stack with Recent Applications to Dock
+```bash
+defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "list-type" = 1; }; "tile-type" = "recents-tile"; }'; killall Dock
+```
 
 ## Documents
 
