@@ -1,0 +1,17 @@
+language: objective-c
+os: osx
+env: OSX=10.11
+osx_image: osx10.11
+rvm:
+  - system
+matrix:
+  include:
+    - env: OSX=10.10
+      osx_image: xcode7
+      rvm: system
+    - env: OSX=10.9
+      osx_image: beta-xcode6.2
+      rvm: system
+
+script:
+  - ./setup.sh
