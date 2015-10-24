@@ -20,6 +20,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Safari](#safari)
     - [Sketch](#sketch)
     - [TextEdit](#textedit)
+    - [Sublime Text](#sublime-text)
 - [Backup](#backup)
     - [Time Machine](#time-machine)
 - [Developer](#developer)
@@ -161,6 +162,15 @@ defaults write com.bohemiancoding.sketch3 exportCompactSVG -bool yes
 defaults write com.apple.TextEdit RichText -int 0
 ```
 
+### Sublime Text
+
+#### Alias for openning files or folders with Sublime Text
+```bash
+alias subl="open -a 'Sublime Text'"
+#example
+subl Makefile
+subl .
+```
 
 ## Backup
 
