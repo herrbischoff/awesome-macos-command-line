@@ -331,6 +331,11 @@ textutil -convert html file.ext
 
 ### Files and Folders
 
+#### Clear All ACLs
+```bash
+sudo chmod -RN /path/to/folder
+```
+
 #### Hide Folder in Finder
 ```bash
 chflags hidden /path/to/folder/
