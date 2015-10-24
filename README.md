@@ -308,12 +308,6 @@ Like the Disk Utility "Restore" function.
 sudo asr -restore -noverify -source /path/to/diskimage.dmg -target /Volumes/VolumeToRestoreTo
 ```
 
-## Dock
-
-#### Add a Stack with Recent Applications to Dock
-```bash
-defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "list-type" = 1; }; "tile-type" = "recents-tile"; }'; killall Dock
-```
 
 ## Dock
 
