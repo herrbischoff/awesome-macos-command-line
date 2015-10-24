@@ -350,6 +350,11 @@ defaults write com.apple.finder AppleShowAllFiles true
 defaults write com.apple.finder AppleShowAllFiles false
 ```
 
+### Remove Protected Flag
+```bash
+sudo chflags -R nouchg /path/to/file/or/folder
+```
+
 #### Show Full Path in Finder Title
 ```bash
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
