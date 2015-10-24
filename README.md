@@ -321,6 +321,12 @@ textutil -convert html file.ext
 
 ### Files and Folders
 
+#### Empty Trash on all Mounted Volumes and the Main HDD
+Also, clear Apple’s System Logs that will improve your shell startup speed.
+```bash
+sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl
+```
+
 #### Hide Folder in Finder
 ```bash
 chflags hidden /path/to/folder/
@@ -441,6 +447,12 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 Avoids creation of `.DS_Store` and AppleDouble files.
 ```bash
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+```
+
+#### Recursively Delete Metadata Files in Current Folder
+Run from Terminal, it will recursively delete all `.DS_Store` files it finds starting from the current directory.
+```bash
+find . -name '*.DS_Store' -type f -ls -delete
 ```
 
 ### Opening Things
