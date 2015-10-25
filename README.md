@@ -106,7 +106,7 @@ defaults write com.apple.universalaccess reduceTransparency -bool false
 
 #### Set Wallpaper
 
-For up to Mountain Lion: 
+Up to Mountain Lion: 
 
 ```bash
 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/path/to/picture.jpg"'
