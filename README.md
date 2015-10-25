@@ -28,6 +28,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Xcode](#xcode)
 - [Disks and Volumes](#disks-and-volumes)
     - [Disk Images](#disk-images)
+- [Dock](#dock)
 - [Documents](#documents)
 - [Finder](#finder)
     - [Files and Folders](#files-and-folders)
@@ -76,9 +77,11 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [QuickLook](#quicklook)
     - [Root User](#root-user)
     - [Safe Mode Boot](#safe-mode-boot)
+    - [Screenshots](#screenshots)
     - [Software Installation](#software-installation)
     - [Software Update](#software-update)
     - [Spotlight](#spotlight)
+    - [System Integrity Protection](#system-integrity-protection)
 - [Terminal](#terminal)
     - [Alternative Terminals](#alternative-terminals)
     - [Shells](#shells)
@@ -307,6 +310,15 @@ sudo asr -restore -noverify -source /path/to/diskimage.dmg -target /Volumes/Volu
 ```
 
 
+## Dock
+
+#### Add a Stack with Recent Applications
+```bash
+defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "list-type" = 1; }; "tile-type" = "recents-tile"; }' && \
+killall Dock
+```
+
+
 ## Documents
 
 #### Convert File to HTML
@@ -319,6 +331,11 @@ textutil -convert html file.ext
 ## Finder
 
 ### Files and Folders
+
+#### Clear All ACLs
+```bash
+sudo chmod -RN /path/to/folder
+```
 
 #### Hide Folder in Finder
 ```bash
@@ -337,6 +354,11 @@ defaults write com.apple.finder AppleShowAllFiles true
 #### Restore Default File Visibility
 ```bash
 defaults write com.apple.finder AppleShowAllFiles false
+```
+
+#### Remove Protected Flag
+```bash
+sudo chflags -R nouchg /path/to/file/or/folder
 ```
 
 #### Show Full Path in Finder Title
@@ -497,6 +519,16 @@ atsutil server -ping
 networksetup -listallhardwareports
 ```
 
+#### Remaining Battery Percentage
+```bash
+pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';'
+```
+
+#### Remaining Battery Time
+```bash
+pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f3 -d';'
+```
+
 #### Show Connected Device's UDID
 ```bash
 system_profiler SPUSBDataType | sed -n -e '/iPad/,/Serial/p' -e '/iPhone/,/Serial/p'
@@ -644,12 +676,12 @@ defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen 1
 
 #### Disable Bonjour
 ```bash
-defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array-add "-NoMulticastAdvertisements"
+sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array-add "-NoMulticastAdvertisements"
 ```
 
 #### Enable Bonjour
 ```bash
-defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array "/usr/sbin/mDNSResponder" "-launchd"
+sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array "/usr/sbin/mDNSResponder" "-launchd"
 ```
 
 ### DHCP
@@ -899,6 +931,12 @@ pbpaste | sort | uniq | pbcopy
 
 ### FileVault
 
+#### Automatically Unlock FileVault on Restart
+If FileVault is enabled on the current volume, it restarts the system, bypassing the initial unlock. The command may not work on all systems.
+```bash
+sudo fdesetup authrestart
+```
+
 #### Check FileVault Status
 ```bash
 sudo fdesetup status
@@ -1059,6 +1097,27 @@ sudo nvram boot-args="-x"
 sudo nvram boot-args=""
 ```
 
+### Screenshots
+
+#### Save Screenshots to Given Location
+Sets location to `~/Desktop`.
+```bash
+defaults write com.apple.screencapture location ~/Desktop && \
+killall SystemUIServer
+```
+
+#### Save Screenshots in Given Format
+Sets format to `png`. Other options are `bmp`, `gif`, `jpg`, `jpeg`, `pdf`, `tiff`.
+```bash
+defaults write com.apple.screencapture type -string "png"
+```
+
+#### Disable Shadow in Screenshots
+```bash
+defaults write com.apple.screencapture disable-shadow -bool true && \
+killall SystemUIServer
+```
+
 ### Software Installation
 
 #### Install PKG
@@ -1104,6 +1163,20 @@ mdutil -E /path/to/volume
 #### Search via Spotlight
 ```bash
 mdfind -name 'searchterm'
+```
+
+### System Integrity Protection
+
+#### Disable System Integrity Protection
+Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd>, open the Terminal application and enter:
+```bash
+csrutil disable && reboot
+```
+
+#### Enable System Integrity Protection
+Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd>, open the Terminal application and enter:
+```bash
+csrutil enable && reboot
 ```
 
 
