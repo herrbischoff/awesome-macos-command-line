@@ -81,6 +81,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Software Installation](#software-installation)
     - [Software Update](#software-update)
     - [Spotlight](#spotlight)
+    - [System Integrity Protection](#system-integrity-protection)
 - [Terminal](#terminal)
     - [Alternative Terminals](#alternative-terminals)
     - [Shells](#shells)
@@ -1162,6 +1163,20 @@ mdutil -E /path/to/volume
 #### Search via Spotlight
 ```bash
 mdfind -name 'searchterm'
+```
+
+### System Integrity Protection
+
+#### Disable System Integrity Protection
+Reboot while holding `Cmd-R`, open the Terminal application an enter:
+```bash
+csrutil disable && reboot
+```
+
+#### Enable System Integrity Protection
+Reboot while holding `Cmd-R`, open the Terminal application an enter:
+```bash
+csrutil enable && reboot
 ```
 
 
