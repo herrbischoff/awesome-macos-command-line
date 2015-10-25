@@ -1168,13 +1168,13 @@ mdfind -name 'searchterm'
 ### System Integrity Protection
 
 #### Disable System Integrity Protection
-Reboot while holding `Cmd-R`, open the Terminal application an enter:
+Reboot while holding `Cmd-R`, open the Terminal application and enter:
 ```bash
 csrutil disable && reboot
 ```
 
 #### Enable System Integrity Protection
-Reboot while holding `Cmd-R`, open the Terminal application an enter:
+Reboot while holding `Cmd-R`, open the Terminal application and enter:
 ```bash
 csrutil enable && reboot
 ```
