@@ -868,11 +868,6 @@ sudo poweroff
 ```bash
 sw_vers
 ```
-#### Show OS Details
-```bash
-uname -a
-```
-
 
 #### Uptime
 How long since your last restart.
