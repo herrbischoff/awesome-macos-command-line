@@ -20,6 +20,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Safari](#safari)
     - [Sketch](#sketch)
     - [TextEdit](#textedit)
+    - [GitX](#gitx)
 - [Backup](#backup)
     - [Time Machine](#time-machine)
 - [Developer](#developer)
@@ -172,6 +173,12 @@ defaults write com.bohemiancoding.sketch3 exportCompactSVG -bool yes
 defaults write com.apple.TextEdit RichText -int 0
 ```
 
+### GitX
+
+#### Open current folder on GitX
+```bash
+open -a GitX .
+```
 
 ## Backup
 
