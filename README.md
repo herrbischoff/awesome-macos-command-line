@@ -55,6 +55,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 - [Package Managers](#package-managers)
 - [Printing](#printing)
 - [Security](#security)
+    - [Application Firewall](#application-firewall)
     - [Gatekeeper](#gatekeeper)
     - [Passwords](#passwords)
     - [Physical Access](#physical-access)
@@ -106,7 +107,7 @@ defaults write com.apple.universalaccess reduceTransparency -bool false
 
 #### Set Wallpaper
 
-Up to Mountain Lion: 
+Up to Mountain Lion:
 
 ```bash
 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/path/to/picture.jpg"'
@@ -809,6 +810,28 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 ## Security
 
+### Application Firewall
+
+#### Display If the Firewall is Enabled
+```bash
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate
+```
+
+#### Turn off the Firewall
+```bash
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate off
+```
+
+#### Turn on the Firewall
+```bash
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+```
+
+#### Add the Application to the Firewall
+```bash
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /path/to/file
+```
+
 ### Gatekeeper
 
 #### Add Gatekeeper Exception
@@ -1108,7 +1131,7 @@ sudo nvram boot-args=""
 
 ### Screenshots
 
-#### Take Delayed Screenshot 
+#### Take Delayed Screenshot
 Takes a screenshot as JPEG after 3 seconds and displays in Preview.
 ```bash
 screencapture -T 3 -t jpg -P delayedpic.jpg
