@@ -1109,9 +1109,9 @@ sudo nvram boot-args=""
 ### Screenshots
 
 #### Take Delayed Screenshot 
-Takes a screenshot as JPEG after 3 seconds and displays in Preview.
+Takes a screenshot as PNG after 3 seconds and displays in Preview.
 ```bash
-screencapture -T 3 -t jpg -P delayedpic.jpg
+screencapture -T 3 -t png -P delayedpic.png
 ```
 
 #### Save Screenshots to Given Location
