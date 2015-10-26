@@ -553,6 +553,12 @@ system_profiler SPDisplaysDataType | grep Resolution
 sysctl -n machdep.cpu.brand_string
 ```
 
+#### Stress Test CPU
+Will instantly utilize 100% of your CPU:
+```bash
+yes
+```
+
 ### Power Management
 
 #### Prevent System Sleep
