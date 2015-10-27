@@ -812,22 +812,22 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 ### Application Firewall
 
-#### Display If the Firewall is Enabled
+#### Show Firewall Status
 ```bash
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate
 ```
 
-#### Turn off the Firewall
-```bash
-sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate off
-```
-
-#### Turn on the Firewall
+#### Turn on Firewall
 ```bash
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 ```
 
-#### Add the Application to the Firewall
+#### Turn off Firewall
+```bash
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate off
+```
+
+#### Add Application to Firewall
 ```bash
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /path/to/file
 ```
