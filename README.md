@@ -158,10 +158,9 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 ```
 
-#### Get the current Web Page as Source, Text or URL
+#### Get Current Page Data
+Use ```get source``` or ```get text``` for the html source or text content.
 ```bash
-osascript -e 'tell application "Safari" to get source of current tab of front window'
-osascript -e 'tell application "Safari" to get text of current tab of front window'
 osascript -e 'tell application "Safari" to get URL of current tab of front window'
 ```
 
