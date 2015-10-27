@@ -328,9 +328,10 @@ defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "l
 killall Dock
 ```
 
-#### Add a Space in Dock
+#### Add a Space
 ```bash
-defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
+defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}' &&\
+killall Dock
 ```
 
 
