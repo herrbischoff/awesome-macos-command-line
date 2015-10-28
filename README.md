@@ -147,6 +147,10 @@ rm -r ~/Library/Containers/com.apple.RemoteDesktop
 ```bash
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 ```
+To reverse this and restore default behavior:
+```bash
+launchctl load -w /System/Library/LaunchAgents/com.apple.rcd.plist
+```
 
 ### Safari
 
