@@ -598,6 +598,11 @@ sudo systemsetup -setcomputersleep 60
 sudo systemsetup -setcomputersleep Never
 ```
 
+#### Automatically restart Computer if it freezes
+```bash
+sudo systemsetup -setrestartfreeze on
+```
+
 #### Enable Chime when Charging
 Play iOS charging sound when MagSafe is connected.
 ```bash
