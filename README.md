@@ -608,7 +608,7 @@ open /System/Library/CoreServices/PowerChime.app
 #### Disable Chime when Charging
 ```bash
 defaults write com.apple.PowerChime ChimeOnAllHardware -bool false && \
-open /System/Library/CoreServices/PowerChime.app
+killall PowerChime
 ```
 
 ## Input Devices
