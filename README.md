@@ -865,14 +865,14 @@ pwgen -Cs 20 1 | tr -d ' ' | tr -d '\n' | pbcopy
 
 ### Physical Access
 
-#### Lock Screen
-```bash
-/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
-```
-
 #### Launch Screen Saver
 ```bash
 open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app
+```
+
+#### Lock Screen
+```bash
+/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
 ```
 
 ### Wiping Data
