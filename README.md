@@ -598,7 +598,7 @@ sudo systemsetup -setcomputersleep 60
 sudo systemsetup -setcomputersleep Never
 ```
 
-#### Restart Computer if it Freezes
+#### Automatic Restart on System Freeze
 ```bash
 sudo systemsetup -setrestartfreeze on
 ```
