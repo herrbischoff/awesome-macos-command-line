@@ -870,6 +870,11 @@ pwgen -Cs 20 1 | tr -d ' ' | tr -d '\n' | pbcopy
 /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
 ```
 
+#### Screen Saver
+```bash
+open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app
+```
+
 ### Wiping Data
 
 #### Securely Remove File
