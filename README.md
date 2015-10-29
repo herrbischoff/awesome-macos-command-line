@@ -387,6 +387,11 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 chflags nohidden ~/Library
 ```
 
+#### Open Current Folder in Finder
+```bash
+open
+```
+
 ### Layout
 
 #### Disable Smooth Scrolling
