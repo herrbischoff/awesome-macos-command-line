@@ -393,6 +393,12 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 chflags nohidden ~/Library
 ```
 
+#### Increase Number of Recent Places
+```bash
+defaults write .GlobalPreferences NSNavRecentPlacesLimit -int 10 && \
+killall Finder
+```
+
 ### Layout
 
 #### Disable Smooth Scrolling
