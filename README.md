@@ -73,6 +73,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Kernel Extensions](#kernel-extensions)
     - [LaunchAgents](#launchagents)
     - [LaunchServices](#launchservices)
+    - [Login Window](#login-window)
     - [Memory Management](#memory-management)
     - [Notification Center](#notification-center)
     - [QuickLook](#quicklook)
@@ -1099,6 +1100,13 @@ Run job every 5 minutes.
 To be independent of OS X version, this relies on `locate` to find `lsregister`. If you do not have your `locate` database built yet, [do it](#build-locate-database).
 ```bash
 sudo $(locate lsregister) -kill -seed -r
+```
+
+### Login Window
+
+#### Set Login Window Text
+```bash
+sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Your text"
 ```
 
 ### Memory Management
