@@ -1011,6 +1011,11 @@ sudo sysdiagnose -f ~/Desktop/
 
 ### Kernel Extensions
 
+#### Show Status of Loaded Kernel Extensions
+```bash
+sudo kextstat -l
+```
+
 #### Load Kernel Extension
 ```bash
 sudo kextload -b com.apple.driver.ExampleBundle
