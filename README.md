@@ -1264,7 +1264,7 @@ shell for OS X, Linux, and the rest of the family.
 Install the latest version and set as current users' default shell:
 ```bash
 brew install zsh && \
-sudo sh -c 'echo $(brew --prefix)/bin/zsh >> /etc/shells' \
+sudo sh -c 'echo $(brew --prefix)/bin/zsh >> /etc/shells' && \
 chsh -s $(brew --prefix)/bin/zsh
 ```
 
