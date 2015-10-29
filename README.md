@@ -321,7 +321,7 @@ textutil -convert html file.ext
 
 ### Files and Folders
 
-#### Empty Trash on all Mounted Volumes
+#### Empty Trash on All Mounted Volumes
 Clear your trash from the command line.
 ```bash
 sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash
