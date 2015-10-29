@@ -1011,7 +1011,7 @@ sudo sysdiagnose -f ~/Desktop/
 
 ### Kernel Extensions
 
-#### Show Status of Loaded Kernel Extensions
+#### Display Status of Loaded Kernel Extensions
 ```bash
 sudo kextstat -l
 ```
