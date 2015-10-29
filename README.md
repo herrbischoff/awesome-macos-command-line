@@ -160,7 +160,7 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 ```
 
 #### Get Current Page Data
-Use `get source` or `get text` for the html source or text content.
+Other options: `get source` or `get text`.
 ```bash
 osascript -e 'tell application "Safari" to get URL of current tab of front window'
 ```
