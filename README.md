@@ -106,7 +106,7 @@ defaults write com.apple.universalaccess reduceTransparency -bool false
 
 #### Set Wallpaper
 
-Up to Mountain Lion: 
+Up to Mountain Lion:
 
 ```bash
 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/path/to/picture.jpg"'
@@ -159,7 +159,7 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 ```
 
 #### Get Current Page Data
-Use ```get source``` or ```get text``` for the html source or text content.
+Use `get source` or `get text` for the html source or text content.
 ```bash
 osascript -e 'tell application "Safari" to get URL of current tab of front window'
 ```
