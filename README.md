@@ -159,6 +159,12 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 ```
 
+#### Get Current Page Data
+Use `get source` or `get text` for the html source or text content.
+```bash
+osascript -e 'tell application "Safari" to get URL of current tab of front window'
+```
+
 ### Sketch
 
 #### Export Compact SVGs
