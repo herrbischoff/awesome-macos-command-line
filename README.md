@@ -291,7 +291,7 @@ diskutil list
 ```
 
 #### View File System Usage
-A contiuous stream of file system access info.
+A continuous stream of file system access info.
 ```bash
 sudo fs_usage
 ```
