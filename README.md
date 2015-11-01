@@ -1197,6 +1197,13 @@ defaults write com.apple.screencapture disable-shadow -bool true && \
 killall SystemUIServer
 ```
 
+#### Set Default Screenshot Name
+Date and time remain unchanged.
+```bash
+defaults write com.apple.screencapture name "Example name" && \
+killall SystemUIServer
+```
+
 ### Software Installation
 
 #### Install PKG
