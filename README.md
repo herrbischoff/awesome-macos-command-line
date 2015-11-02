@@ -73,6 +73,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
     - [Kernel Extensions](#kernel-extensions)
     - [LaunchAgents](#launchagents)
     - [LaunchServices](#launchservices)
+    - [Login Window](#login-window)
     - [Memory Management](#memory-management)
     - [Notification Center](#notification-center)
     - [QuickLook](#quicklook)
@@ -290,7 +291,7 @@ diskutil list
 ```
 
 #### View File System Usage
-A contiuous stream of file system access info.
+A continuous stream of file system access info.
 ```bash
 sudo fs_usage
 ```
@@ -1112,6 +1113,13 @@ To be independent of OS X version, this relies on `locate` to find `lsregister`.
 sudo $(locate lsregister) -kill -seed -r
 ```
 
+### Login Window
+
+#### Set Login Window Text
+```bash
+sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Your text"
+```
+
 ### Memory Management
 
 #### Purge memory cache
@@ -1192,6 +1200,13 @@ defaults write com.apple.screencapture type -string "png"
 #### Disable Shadow in Screenshots
 ```bash
 defaults write com.apple.screencapture disable-shadow -bool true && \
+killall SystemUIServer
+```
+
+#### Set Default Screenshot Name
+Date and time remain unchanged.
+```bash
+defaults write com.apple.screencapture name "Example name" && \
 killall SystemUIServer
 ```
 
@@ -1307,10 +1322,12 @@ chsh -s $(brew --prefix)/bin/zsh
 ### Terminal Fonts
 
 - [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) - A family of four fixed-width fonts designed with coding in mind.
+- [DejaVu Sans Mono](http://dejavu-fonts.org/wiki/Main_Page) - A font family based on the Vera Fonts.
 - [Hack](http://sourcefoundry.org/hack/) - Hack is hand groomed and optically balanced to be your go-to code face.
 - [Inconsolata](http://levien.com/type/myfonts/inconsolata.html) -  A monospace font, designed for code listings and the like.
 - [Input](http://input.fontbureau.com) - A flexible system of fonts designed specifically for code.
 - [Meslo](https://github.com/andreberg/Meslo-Font) - Customized version of Apple's Menlo font.
+- [Powerline Fonts](https://github.com/powerline/fonts) - Repo of patched fonts for the Powerline plugin.
 - [Source Code Pro](https://adobe-fonts.github.io/source-code-pro/) - A monospaced font family for user interfaces and coding environments.
 
 
