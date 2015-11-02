@@ -298,6 +298,11 @@ sudo fs_usage
 
 ### Disk Images
 
+#### Burn ISO to DVD
+```bash
+hdiutil burn /path/to/file.iso
+```
+
 #### Disable Disk Image Verification
 ```bash
 defaults write com.apple.frameworks.diskimages skip-verify -bool true && \
