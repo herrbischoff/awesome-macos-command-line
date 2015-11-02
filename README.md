@@ -303,6 +303,12 @@ sudo fs_usage
 hdiutil create -volname "Volume Name" -srcfolder /path/to/Folder -ov diskimage.dmg
 ```
 
+#### Burn Disk Images to DVD
+This command applies to .iso, .img and .dmg images.
+```bash
+hdiutil burn /path/to/image_file
+```
+
 #### Disable Disk Image Verification
 ```bash
 defaults write com.apple.frameworks.diskimages skip-verify -bool true && \
