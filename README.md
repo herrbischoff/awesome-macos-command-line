@@ -990,6 +990,11 @@ pbpaste > whatever.txt
 pbpaste | sort | uniq | pbcopy
 ```
 
+#### Convert Clipboard to plain text
+```bash
+pbpaste | textutil -convert txt -stdin -stdout -encoding 30 | pbcopy
+```
+
 ### FileVault
 
 #### Automatically Unlock FileVault on Restart
