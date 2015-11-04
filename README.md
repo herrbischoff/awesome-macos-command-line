@@ -144,7 +144,7 @@ rm -r ~/Library/Containers/com.apple.RemoteDesktop
 
 ### iTunes
 
-#### Stop Responding to the Keyboard Media Keys
+#### Stop Responding to Keyboard Media Keys
 ```bash
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 ```
@@ -196,7 +196,7 @@ sudo defaults write /System/Library/Launch Daemons/com.apple.backupd-auto StartI
 hash tmutil &> /dev/null && sudo tmutil disablelocal
 ```
 
-#### Prevent Time Machine From Prompting to Use New Hard Drives as Backup Volume
+#### Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
 ```bash
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 ```
@@ -248,7 +248,7 @@ brew install --HEAD neovim
 
 ### Xcode
 
-#### Install Command Line Tools Without Xcode
+#### Install Command Line Tools without Xcode
 ```bash
 xcode-select --install
 ```
@@ -343,6 +343,13 @@ killall Dock
 #### Add a Space
 ```bash
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}' &&\
+killall Dock
+```
+
+#### Set Auto Show/Hide Delay
+The float number defines the show/hide delay in ms.
+```bash
+defaults write com.apple.Dock autohide-delay -float 0 &&\
 killall Dock
 ```
 
@@ -591,12 +598,12 @@ caffeinate -u -t 3600
 sudo pmset -g
 ```
 
-#### Put Display to Sleep After 15 Minutes of Inactivity
+#### Put Display to Sleep after 15 Minutes of Inactivity
 ```bash
 sudo pmset displaysleep 15
 ```
 
-#### Put Computer to Sleep After 30 Minutes of Inactivity
+#### Put Computer to Sleep after 30 Minutes of Inactivity
 ```bash
 sudo pmset sleep 30
 ```
@@ -621,14 +628,14 @@ sudo systemsetup -setcomputersleep Never
 sudo systemsetup -setrestartfreeze on
 ```
 
-#### Enable Chime when Charging
+#### Enable Chime When Charging
 Play iOS charging sound when MagSafe is connected.
 ```bash
 defaults write com.apple.PowerChime ChimeOnAllHardware -bool true && \
 open /System/Library/CoreServices/PowerChime.app
 ```
 
-#### Disable Chime when Charging
+#### Disable Chime When Charging
 ```bash
 defaults write com.apple.PowerChime ChimeOnAllHardware -bool false && \
 killall PowerChime
@@ -780,6 +787,11 @@ dig +short myip.opendns.com @resolver1.opendns.com
 
 ### Wi-Fi
 
+#### Join a Wi-Fi Network
+```bash
+networksetup -setairportnetwork en0 WIFI_SSID WIFI_PASSWORD
+```
+
 #### Scan Available Access Points
 Create a symbolic link to the airport command for easy access:
 ```bash
@@ -809,6 +821,11 @@ defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.prefere
 Exchange SSID with the SSID of the access point you wish to query the password from.
 ```bash
 security find-generic-password -D "AirPort network password" -a "SSID" -gw
+```
+
+#### Turn on Wi-Fi Adapter
+```bash
+networksetup -setairportpower en0 on
 ```
 
 ## Package Managers
@@ -1311,6 +1328,7 @@ shell for OS X, Linux, and the rest of the family.
 Install the latest version and set as current users' default shell:
 ```bash
 brew install zsh && \
+sudo sh -c 'echo $(brew --prefix)/bin/zsh >> /etc/shells' && \
 chsh -s $(brew --prefix)/bin/zsh
 ```
 
