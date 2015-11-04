@@ -298,6 +298,11 @@ sudo fs_usage
 
 ### Disk Images
 
+#### Create a Disk Image From the Contents of a Folder
+```bash
+hdiutil create -volname "Name Of Volume" -srcfolder /path/to/Folder -ov MyDmgName.dmg
+```
+
 #### Disable Disk Image Verification
 ```bash
 defaults write com.apple.frameworks.diskimages skip-verify -bool true && \
