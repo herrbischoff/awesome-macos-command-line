@@ -298,9 +298,10 @@ sudo fs_usage
 
 ### Disk Images
 
-#### Burn ISO to DVD
+#### Burn Disk Images to DVD
+This command applies to .fat, .hfs, .iso, .img, .dmg, .smi and .udf images.
 ```bash
-hdiutil burn /path/to/file.iso
+hdiutil burn /path/to/image_file
 ```
 
 #### Disable Disk Image Verification
