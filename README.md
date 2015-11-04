@@ -341,6 +341,12 @@ defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-t
 killall Dock
 ```
 
+#### Disable Auto-Hide Delay
+```bash
+defaults write com.apple.Dock autohide-delay -float 0 &&\
+killall Dock
+```
+
 
 ## Documents
 
