@@ -341,6 +341,13 @@ defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-t
 killall Dock
 ```
 
+#### Set Auto Show/Hide Delay
+The float number defines the show/hide delay in ms.
+```bash
+defaults write com.apple.Dock autohide-delay -float 0 &&\
+killall Dock
+```
+
 
 ## Documents
 
