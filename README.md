@@ -144,7 +144,7 @@ rm -r ~/Library/Containers/com.apple.RemoteDesktop
 
 ### iTunes
 
-#### Stop Responding to the Keyboard Media Keys
+#### Stop Responding to Keyboard Media Keys
 ```bash
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 ```
@@ -196,7 +196,7 @@ sudo defaults write /System/Library/Launch Daemons/com.apple.backupd-auto StartI
 hash tmutil &> /dev/null && sudo tmutil disablelocal
 ```
 
-#### Prevent Time Machine From Prompting to Use New Hard Drives as Backup Volume
+#### Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
 ```bash
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 ```
@@ -248,7 +248,7 @@ brew install --HEAD neovim
 
 ### Xcode
 
-#### Install Command Line Tools Without Xcode
+#### Install Command Line Tools without Xcode
 ```bash
 xcode-select --install
 ```
@@ -593,12 +593,12 @@ caffeinate -u -t 3600
 sudo pmset -g
 ```
 
-#### Put Display to Sleep After 15 Minutes of Inactivity
+#### Put Display to Sleep after 15 Minutes of Inactivity
 ```bash
 sudo pmset displaysleep 15
 ```
 
-#### Put Computer to Sleep After 30 Minutes of Inactivity
+#### Put Computer to Sleep after 30 Minutes of Inactivity
 ```bash
 sudo pmset sleep 30
 ```
@@ -623,14 +623,14 @@ sudo systemsetup -setcomputersleep Never
 sudo systemsetup -setrestartfreeze on
 ```
 
-#### Enable Chime when Charging
+#### Enable Chime When Charging
 Play iOS charging sound when MagSafe is connected.
 ```bash
 defaults write com.apple.PowerChime ChimeOnAllHardware -bool true && \
 open /System/Library/CoreServices/PowerChime.app
 ```
 
-#### Disable Chime when Charging
+#### Disable Chime When Charging
 ```bash
 defaults write com.apple.PowerChime ChimeOnAllHardware -bool false && \
 killall PowerChime
