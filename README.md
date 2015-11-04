@@ -775,6 +775,11 @@ dig +short myip.opendns.com @resolver1.opendns.com
 
 ### Wi-Fi
 
+#### Join a Wi-Fi Network
+```bash
+networksetup -setairportnetwork en0 WIFI_SSID WIFI_PASSWORD
+```
+
 #### Scan Available Access Points
 Create a symbolic link to the airport command for easy access:
 ```bash
@@ -804,6 +809,11 @@ defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.prefere
 Exchange SSID with the SSID of the access point you wish to query the password from.
 ```bash
 security find-generic-password -D "AirPort network password" -a "SSID" -gw
+```
+
+#### Turn on Wi-Fi Adapter
+```bash
+networksetup -setairportpower en0 on
 ```
 
 ## Package Managers
