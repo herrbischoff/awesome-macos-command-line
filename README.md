@@ -992,6 +992,11 @@ uptime
 cat whatever.txt | pbcopy
 ```
 
+#### Convert Clipboard to Plain Text
+```bash
+pbpaste | textutil -convert txt -stdin -stdout -encoding 30 | pbcopy
+```
+
 #### Convert Tabs to Spaces for Clipboard Content
 ```bash
 pbpaste | expand | pbcopy
