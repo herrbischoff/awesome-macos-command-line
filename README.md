@@ -298,6 +298,12 @@ sudo fs_usage
 
 ### Disk Images
 
+#### Burn Disk Images to DVD
+This command applies to .fat, .hfs, .iso, .img, .dmg, .smi and .udf images.
+```bash
+hdiutil burn /path/to/image_file
+```
+
 #### Disable Disk Image Verification
 ```bash
 defaults write com.apple.frameworks.diskimages skip-verify -bool true && \
