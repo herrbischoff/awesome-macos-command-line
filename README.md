@@ -298,9 +298,9 @@ sudo fs_usage
 
 ### Disk Images
 
-#### Create a Disk Image From the Contents of a Folder
+#### Create Disk Image From Folder Contents
 ```bash
-hdiutil create -volname "Name Of Volume" -srcfolder /path/to/Folder -ov MyDmgName.dmg
+hdiutil create -volname "Volume Name" -srcfolder /path/to/Folder -ov diskimage.dmg
 ```
 
 #### Disable Disk Image Verification
