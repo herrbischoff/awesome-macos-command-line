@@ -300,7 +300,17 @@ sudo fs_usage
 
 #### Create Disk Image From Folder Contents
 ```bash
-hdiutil create -volname "Volume Name" -srcfolder /path/to/Folder -ov diskimage.dmg
+hdiutil create -volname "Volume Name" -srcfolder /path/to/folder -ov diskimage.dmg
+```
+
+If you'd like to encrypt the disk image:
+```bash
+hdiutil create -encryption -stdinpass -volname "Volume Name" -srcfolder /path/to/folder -ov encrypted.dmg
+```
+
+By default, you'll be prompted for a password. You can automate that by piping in a password:
+```bash
+echo -n YourPassword | hdiutil create -encryption -stdinpass -volname "Volume Name" -srcfolder /path/to/folder -ov encrypted.dmg
 ```
 
 #### Burn Disk Images to DVD
