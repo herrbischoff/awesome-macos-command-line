@@ -303,6 +303,16 @@ sudo fs_usage
 hdiutil create -volname "Volume Name" -srcfolder /path/to/Folder -ov diskimage.dmg
 ```
 
+If you'd like to encrypt the dmg, do:
+```bash
+hdiutil create -encryption -stdinpass -volname "Volume Name" -srcfolder /path/to/Folder -ov encrypted.dmg
+```
+
+By default, you'll be prompted for a password, but you can automate that as well by piping in a password:
+```bash
+echo -n YourPassword | hdiutil create -encryption -stdinpass -volname "Volume Name" -srcfolder /path/to/Folder -ov encrypted.dmg
+```
+
 #### Burn Disk Images to DVD
 This command applies to .iso, .img and .dmg images.
 ```bash
