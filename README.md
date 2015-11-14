@@ -155,7 +155,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 ### Mail
 
 #### Vacuum Mail Index
-The code below will quit Mail, vacuum the SQLite index, then re-open Mail. On a large email database that hasn't been optimized for a while, this can provide significant improvements in responsiveness and speed.
+The AppleScript code below will quit Mail, vacuum the SQLite index, then re-open Mail. On a large email database that hasn't been optimized for a while, this can provide significant improvements in responsiveness and speed.
 ```applescript
 (*
 Speed up Mail.app by vacuuming the Envelope Index
