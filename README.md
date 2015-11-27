@@ -1305,6 +1305,11 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 sudo softwareupdate -l
 ```
 
+#### Update server used for checking Software Updates
+```bash
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate CatalogURL http://example.com/index.sucatalog
+```
+
 ### Spotlight
 
 #### Disable Indexing
