@@ -402,6 +402,13 @@ defaults write com.apple.Dock autohide-delay -float 0 &&\
 killall Dock
 ```
 
+#### Indicate Hidden App Icons
+The bolean enable/disable this feature
+```bash
+defaults write com.apple.dock showhidden -bool TRUE &&\
+killall Dock
+```
+
 
 ## Documents
 
