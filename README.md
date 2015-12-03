@@ -98,15 +98,15 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
 
 ### Transparency
 
-#### Reduce Transparency in Menu and Windows
+#### Transparency in Menu and Windows
 ```bash
+# Reduce Transparency
 defaults write com.apple.universalaccess reduceTransparency -bool true
-```
 
-#### Restore Default Transparency in Menu and Windows
-```bash
+# Restore Default Transparency
 defaults write com.apple.universalaccess reduceTransparency -bool false
 ```
+
 
 ### Wallpaper
 
