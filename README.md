@@ -1325,9 +1325,14 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 sudo softwareupdate -l
 ```
 
-#### Update server used for checking Software Updates
+#### Set Software Update Server
+This should only be done for testing purposes or unmanaged clients. To use network-wide, either correctly set up DNS along with [Apple SUS service](http://krypted.com/mac-security/using-the-software-update-service-on-mountain-lion-server/) and bind your clients via OpenDirectory. Alternatively, use [Reposado](https://github.com/wdas/reposado) together with correct network DNS settings to make resolution transparent. [Margarita](https://github.com/jessepeterson/margarita) looks nice to have as well.
 ```bash
-sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate CatalogURL http://example.com/index.sucatalog
+# Use own SUS
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate CatalogURL http://su.example.com:8088/index.sucatalog
+
+# Reset to Apple SUS
+sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
 ```
 
 ### Spotlight
