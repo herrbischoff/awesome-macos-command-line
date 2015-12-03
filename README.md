@@ -39,6 +39,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Metadata Files](#metadata-files)
     - [Opening Things](#opening-things)
 - [Fonts](#fonts)
+- [Functions](#functions)
 - [Hardware](#hardware)
     - [Hardware Information](#hardware-information)
     - [Power Management](#power-management)
@@ -609,6 +610,11 @@ atsutil databases -removeUser && \
 atsutil server -shutdown && \
 atsutil server -ping
 ```
+
+
+## Functions
+
+Please see [this file](functions.md).
 
 
 ## Hardware
