@@ -143,9 +143,13 @@ rm -r ~/Library/Containers/com.apple.RemoteDesktop
 
 ### iTunes
 
-#### Stop Responding to Keyboard Media Keys
+#### Keyboard Media Keys
 ```bash
+# Stop Responding to Keypresses
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
+
+# Reset to OS Default
+launchctl load -w /System/Library/LaunchAgents/com.apple.rcd.plist
 ```
 
 ### Mail
