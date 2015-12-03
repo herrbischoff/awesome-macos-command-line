@@ -1199,10 +1199,10 @@ sudo purge
 
 #### Show Memory Statistics
 ```bash
-# one time
+# One time
 vm_stat
 
-# table of data, repeat 10 times total, 1 second wait between each poll
+# Table of data, repeat 10 times total, 1 second wait between each poll
 vm_stat -c 10 1
 ```
 
