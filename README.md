@@ -1191,6 +1191,41 @@ Run job every 5 minutes.
 </dict>
 </plist>
 ```
+#### Periodic Homebrew Update & Upgrade
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.example.homebrew-upgrade</string>
+	<key>ProcessType</key>
+	<string>Background</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/sh</string>
+		<string>-c</string>
+		<string>/usr/local/bin/brew update &amp;&amp; /usr/local/bin/brew upgrade &amp;&amp; /usr/local/bin/terminal-notifier -title 'Homebrew Upgrader' -message 'Homebrew upgraded!' -appIcon http://curvve-curvvemedia.netdna-ssl.com/wp-content/uploads/2013/09/homebrew_osx_logo.png</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/tmp/com.example.homebrew-upgrade.stderr</string>
+	<key>StandardOutPath</key>
+	<string>/tmp/com.example.homebrew-upgrade.stdout</string>
+	<key>StartCalendarInterval</key>
+	<array>
+		<dict>
+			<key>Hour</key>
+			<integer>8</integer>
+		</dict>
+	</array>
+</dict>
+</plist>
+```
+
+To leverage the notification system, this agent requires [terminal-notifier](https://github.com/julienXX/terminal-notifier), which can be installed via `brew install terminal-notifier`.
 
 ### LaunchServices
 
