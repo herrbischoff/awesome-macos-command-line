@@ -1197,6 +1197,15 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "
 sudo purge
 ```
 
+#### Show Memory Statistics
+```bash
+# one time
+vm_stat
+
+# table of data, repeat 10 times total, 1 second wait between each poll
+vm_stat -c 10 1
+```
+
 ### Notification Center
 
 #### Disable Notification Center
