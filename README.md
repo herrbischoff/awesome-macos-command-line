@@ -145,10 +145,10 @@ rm -r ~/Library/Containers/com.apple.RemoteDesktop
 
 #### Keyboard Media Keys
 ```bash
-# Stop Responding to Keypresses
+# Stop Responding to Key Presses
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 
-# Reset to OS Default
+# Respond to Key Presses (Default)
 launchctl load -w /System/Library/LaunchAgents/com.apple.rcd.plist
 ```
 
