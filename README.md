@@ -768,13 +768,12 @@ defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen 1
 
 ### Bonjour
 
-#### Disable Bonjour
+#### Bonjour Service
 ```bash
+# Disable
 sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array-add "-NoMulticastAdvertisements"
-```
 
-#### Enable Bonjour
-```bash
+# Enable (Default)
 sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder ProgramArguments -array "/usr/sbin/mDNSResponder" "-launchd"
 ```
 
