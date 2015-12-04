@@ -692,28 +692,29 @@ killall PowerChime
 
 ### Keyboard
 
-#### Disable Auto-Correct
+#### Auto-Correct
 ```bash
+# Disable
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
-```
 
-#### Enable Auto-Correct
-```bash
+# Enable (Default)
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool true
-```
 
-#### Show Auto-Correct Setting
-```bash
+# Show Status
 defaults read -g NSAutomaticSpellingCorrectionEnabled
 ```
 
-#### Enable Key Repeat
+#### Key Repeat
 Disable the default "press and hold" behavior.
 ```bash
+# Enable Key Repeat
 defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Disable Key Repeat
+defaults write -g ApplePressAndHoldEnabled -bool true
 ```
 
-#### Set Key Repeat Rate
+#### Key Repeat Rate
 Sets a very fast repeat rate, adjust to taste.
 ```bash
 defaults write NSGlobalDomain KeyRepeat -int 0.02
