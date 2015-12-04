@@ -224,14 +224,18 @@ This changes the interval to 30 minutes. The integer value is the time in second
 sudo defaults write /System/Library/Launch Daemons/com.apple.backupd-auto StartInterval -int 1800
 ```
 
-#### Disable Local Time Machine Backups
-```bash
-hash tmutil &> /dev/null && sudo tmutil disablelocal
-```
-
 #### Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
 ```bash
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+```
+
+#### Set Status
+```bash
+# Disable Local Time Machine Backups
+hash tmutil &> /dev/null && sudo tmutil disablelocal
+
+# Enable Local Time Machine Backups (Default)
+hash tmutil &> /dev/null && sudo tmutil enablelocal
 ```
 
 
