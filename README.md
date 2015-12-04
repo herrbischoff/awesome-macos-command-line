@@ -368,14 +368,14 @@ killall Dock
 
 #### Add a Space
 ```bash
-defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}' &&\
+defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}' && \
 killall Dock
 ```
 
 #### Set Auto Show/Hide Delay
 The float number defines the show/hide delay in ms.
 ```bash
-defaults write com.apple.Dock autohide-delay -float 0 &&\
+defaults write com.apple.Dock autohide-delay -float 0 && \
 killall Dock
 ```
 
