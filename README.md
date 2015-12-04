@@ -418,13 +418,12 @@ chflags hidden /path/to/folder/
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 ```
 
-#### Show All Hidden Files
+#### Show Hidden Files
 ```bash
+# Show All
 defaults write com.apple.finder AppleShowAllFiles true
-```
 
-#### Restore Default File Visibility
-```bash
+# Restore Default File Visibility
 defaults write com.apple.finder AppleShowAllFiles false
 ```
 
@@ -451,26 +450,22 @@ killall Finder
 
 ### Layout
 
-#### Disable Smooth Scrolling
+#### Smooth Scrolling
 Useful if you’re on an older Mac that messes up the animation.
 ```bash
+# Disable
 defaults write NSGlobalDomain NSScrollAnimationEnabled -bool false
-```
 
-#### Enable Smooth Scrolling
-Revert back to standard behavior.
-```bash
+# Enable (Default)
 defaults write NSGlobalDomain NSScrollAnimationEnabled -bool true
 ```
 
-#### Disable Rubberband Scrolling
+#### Rubberband Scrolling
 ```bash
+# Disable
 defaults write -g NSScrollViewRubberbanding -bool false
-```
 
-#### Enable Rubberband Scrolling
-Revert to default behavior.
-```bash
+# Enable (Default)
 defaults write -g NSScrollViewRubberbanding -bool true
 ```
 
@@ -480,19 +475,24 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true && \
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 ```
 
-#### Hide All Desktop Icons
+#### Desktop Icon Visibility
 ```bash
-defaults write com.apple.finder CreateDesktop -bool false && killall Finder
+# Hide Icons
+defaults write com.apple.finder CreateDesktop -bool false && \
+killall Finder
+
+# Show Icons (Default)
+defaults write com.apple.finder CreateDesktop -bool true && \
+killall Finder
 ```
 
-#### Show All Desktop Icons
+#### Path Bar
 ```bash
-defaults write com.apple.finder CreateDesktop -bool true && killall Finder
-```
-
-#### Show Path Bar
-```bash
+# Show
 defaults write com.apple.finder ShowPathbar -bool true
+
+# Hide (Default)
+defaults write com.apple.finder ShowPathbar -bool false
 ```
 
 #### Scrollbar Visibility
@@ -501,9 +501,13 @@ Possible values: `WhenScrolling`, `Automatic` and `Always`.
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 ```
 
-#### Show Status Bar
+#### Status Bar
 ```bash
+# Show
 defaults write com.apple.finder ShowStatusBar -bool true
+
+# Hide (Default)
+defaults write com.apple.finder ShowStatusBar -bool false
 ```
 
 #### Save to Disk by Default
@@ -528,6 +532,7 @@ Sets size to 'medium'.
 ```bash
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 ```
+
 ### Metadata Files
 
 #### Disable Creation of Metadata Files on Network Volumes
