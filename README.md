@@ -1069,9 +1069,16 @@ If FileVault is enabled on the current volume, it restarts the system, bypassing
 sudo fdesetup authrestart
 ```
 
-#### Check FileVault Status
+#### FileVault Service
 ```bash
+# Status
 sudo fdesetup status
+
+# Enable
+sudo fdesetup enable
+
+# Disable (Default)
+sudo fdestatus disable
 ```
 
 ### Information/Reports
@@ -1136,14 +1143,13 @@ vm_stat -c 10 1
 
 ### Notification Center
 
-#### Disable Notification Center
+#### Notification Center Service
 ```bash
+# Disable
 launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist && \
 killall -9 NotificationCenter
-```
 
-#### Enable Notification Center
-```bash
+# Enable (Default)
 launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
 ```
 
@@ -1156,30 +1162,24 @@ qlmanage -p /path/to/file
 
 ### Root User
 
-#### Enable Root User
 ```bash
+# Enable
 dsenableroot
-```
 
-#### Disable Root User
-```bash
+# Disable
 dsenableroot -d
 ```
 
 ### Safe Mode Boot
 
-#### Check Safe Mode Setting
 ```bash
+# Status
 nvram boot-args
-```
 
-#### Enable Safe Mode
-```bash
+# Enable
 sudo nvram boot-args="-x"
-```
 
-#### Disable Safe Mode
-```bash
+# Disable
 sudo nvram boot-args=""
 ```
 
@@ -1254,13 +1254,12 @@ sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
 
 ### Spotlight
 
-#### Disable Indexing
+#### Spotlight Indexing
 ```bash
+# Disable
 mdutil -i off -d /path/to/volume
-```
 
-#### Enable Indexing
-```bash
+# Enable (Default)
 mdutil -i on /path/to/volume
 ```
 
