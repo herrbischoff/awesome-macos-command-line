@@ -390,6 +390,19 @@ defaults write com.apple.dock showhidden -bool false && \
 killall Dock
 ```
 
+#### Use Scroll Gestures to show Application Windows
+Use your touchpad or mouse scroll wheel to interact with dock items. When enabled, this command allows you to use an upward scrolling gesture to open stacks, or use the same gesture on applications that are already running to show all windows associated with that application (also known as Exposé, pictured).
+
+```bash
+# Enable
+defaults write com.apple.dock scroll-to-open -bool TRUE && \
+killall Dock
+
+# Disable
+defaults write com.apple.dock scroll-to-open -bool FALSE && \
+killall Dock
+```
+
 
 ## Documents
 
