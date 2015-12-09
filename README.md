@@ -395,11 +395,11 @@ Use your touchpad or mouse scroll wheel to interact with dock items. When enable
 
 ```bash
 # Enable
-defaults write com.apple.dock scroll-to-open -bool TRUE && \
+defaults write com.apple.dock scroll-to-open -bool true && \
 killall Dock
 
 # Disable
-defaults write com.apple.dock scroll-to-open -bool FALSE && \
+defaults write com.apple.dock scroll-to-open -bool false && \
 killall Dock
 ```
 
