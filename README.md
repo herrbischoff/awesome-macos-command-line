@@ -390,6 +390,12 @@ defaults write com.apple.dock showhidden -bool false && \
 killall Dock
 ```
 
+#### Reset Dock
+
+```bash
+defaults delete com.apple.dock; killall Dock
+```
+
 
 ## Documents
 
