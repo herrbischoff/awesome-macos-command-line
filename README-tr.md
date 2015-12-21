@@ -1,4 +1,4 @@
-<img src="https://cdn.rawgit.com/herrbischoff/awesome-osx-command-line/master/assets/logo-tr.png" width="600">
+<img src="https://cdn.rawgit.com/herrbischoff/awesome-osx-command-line/master/assets/logo-tr.svg" width="600">
 
 > A curated list of shell commands and tools specific to OS X.
 >
