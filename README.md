@@ -90,6 +90,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Software Update](#software-update)
     - [Spotlight](#spotlight)
     - [System Integrity Protection](#system-integrity-protection)
+    - [Time and Date](#time-and-date)
 - [Terminal](#terminal)
     - [Alternative Terminals](#alternative-terminals)
     - [Shells](#shells)
@@ -1322,6 +1323,18 @@ Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd>, open the Terminal applicatio
 csrutil enable && reboot
 ```
 
+### Time and Date
+
+```bash
+# Status
+sudo systemsetup getusingnetworktime
+
+# Enable (Default)
+sudo systemsetup setusingnetworktime on
+
+# Disable
+sudo systemsetup setusingnetworktime off
+```
 
 ## Terminal
 
