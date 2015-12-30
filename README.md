@@ -41,6 +41,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
 - [Fonts](#fonts)
 - [Functions](#functions)
 - [Hardware](#hardware)
+    - [Bluetooth](#bluetooth)
     - [Hardware Information](#hardware-information)
     - [Infrared Receiver](#infrared-receiver)
     - [Power Management](#power-management)
@@ -600,6 +601,20 @@ Please see [this file](functions.md).
 
 
 ## Hardware
+
+### Bluetooth
+
+```bash
+# Status
+defaults read /Library/Preferences/com.apple.Bluetooth ControllerPowerState
+
+# Enable (Default)
+sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 1
+
+# Disable
+sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0 && \
+sudo killall -HUP blued
+```
 
 ### Hardware Information
 
