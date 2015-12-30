@@ -984,6 +984,18 @@ open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/Scree
 /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
 ```
 
+#### Screensaver Password
+```bash
+# Status
+defaults read com.apple.screensaver askForPassword
+
+# Enable
+defaults write com.apple.screensaver askForPassword -int 1
+
+# Disable (Default)
+defaults write com.apple.screensaver askForPassword -int 0
+```
+
 ### Wiping Data
 
 #### Securely Remove File
