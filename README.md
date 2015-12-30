@@ -1062,7 +1062,7 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 defaults remove com.apple.NetworkBrowser DisableAirDrop
 
 # Disable
-defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES<Paste>
+defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES
 ```
 
 ### AppleScript
