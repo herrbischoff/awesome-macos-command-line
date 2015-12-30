@@ -984,6 +984,18 @@ open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/Scree
 /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
 ```
 
+#### Screensaver Immediate Lock
+```bash
+# Status
+defaults read com.apple.screensaver askForPasswordDelay
+
+# Enable (Default)
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# Disable (Integer = lock delay in seconds)
+defaults write com.apple.screensaver askForPasswordDelay -int 10
+```
+
 #### Screensaver Password
 ```bash
 # Status
