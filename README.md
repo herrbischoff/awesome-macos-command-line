@@ -83,6 +83,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Memory Management](#memory-management)
     - [Notification Center](#notification-center)
     - [QuickLook](#quicklook)
+    - [Remote Apple Events](#remote-apple-events)
     - [Root User](#root-user)
     - [Safe Mode Boot](#safe-mode-boot)
     - [Screenshots](#screenshots)
@@ -1218,6 +1219,18 @@ launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.pl
 #### Preview via QuickLook
 ```bash
 qlmanage -p /path/to/file
+```
+
+### Remote Apple Events
+```bash
+# Status
+sudo systemsetup -getremoteappleevents
+
+# Enable
+sudo systemsetup -setremoteappleevents on
+
+# Disable (Default)
+sudo systemsetup -setremoteappleevents off
 ```
 
 ### Root User
