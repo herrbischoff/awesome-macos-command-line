@@ -1028,9 +1028,15 @@ locate -i *.jpg
 
 ### AirDrop
 
-#### Enable AirDrop over Ethernet and on Unsupported Macs
 ```bash
+# Enable AirDrop over Ethernet and on Unsupported Macs
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+
+# Enable (Default)
+defaults remove com.apple.NetworkBrowser DisableAirDrop
+
+# Disable
+defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES<Paste>
 ```
 
 ### AppleScript
