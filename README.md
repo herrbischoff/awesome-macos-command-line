@@ -42,6 +42,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
 - [Functions](#functions)
 - [Hardware](#hardware)
     - [Hardware Information](#hardware-information)
+    - [Infrared Receiver](#infrared-receiver)
     - [Power Management](#power-management)
 - [Input Devices](#input-devices)
     - [Keyboard](#keyboard)
@@ -630,6 +631,19 @@ system_profiler SPDisplaysDataType | grep Resolution
 #### Show CPU Brand String
 ```bash
 sysctl -n machdep.cpu.brand_string
+```
+
+### Infrared Receiver
+
+```bash
+# Status
+defaults read /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled
+
+# Enable (Default)
+defaults write /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled -int 1
+
+# Disable
+defaults write /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled -int 0
 ```
 
 ### Power Management
