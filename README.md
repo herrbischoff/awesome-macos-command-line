@@ -158,6 +158,12 @@ launchctl load -w /System/Library/LaunchAgents/com.apple.rcd.plist
 
 ### Mail
 
+#### Show Attachments as Icons
+
+```bash
+defaults write com.apple.mail DisableInlineAttachmentViewing -bool yes
+```
+
 #### Vacuum Mail Index
 The AppleScript code below will quit Mail, vacuum the SQLite index, then re-open Mail. On a large email database that hasn't been optimized for a while, this can provide significant improvements in responsiveness and speed.
 ```applescript
