@@ -18,6 +18,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
 - [Applications](#applications)
     - [App Store](#app-store)
     - [Apple Remote Desktop](#apple-remote-desktop)
+    - [Contacts](#contacts)
     - [iTunes](#itunes)
     - [Mail](#mail)
     - [Safari](#safari)
@@ -143,6 +144,17 @@ defaults delete ~/Library/Preferences/com.apple.RemoteDesktop.plist ; \
 sudo rm -r /Library/Application\ Support/Apple/Remote\ Desktop/ ; \
 rm -r ~/Library/Application\ Support/Remote\ Desktop/ ; \
 rm -r ~/Library/Containers/com.apple.RemoteDesktop
+```
+
+### Contacts
+
+#### Debug Mode
+```bash
+# Enable
+defaults write com.apple.addressbook ABShowDebugMenu -bool true
+
+# Disable (Default)
+defaults write com.apple.addressbook ABShowDebugMenu -bool false
 ```
 
 ### iTunes
