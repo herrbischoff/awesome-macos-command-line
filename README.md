@@ -134,6 +134,16 @@ sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set v
 find /Applications -path '*Contents/_MASReceipt/receipt' -maxdepth 4 -print |\sed 's#.app/Contents/_MASReceipt/receipt#.app#g; s#/Applications/##'
 ```
 
+#### Enable the Debug menu for App Store.
+```bash
+# Enable
+defaults write com.apple.appstore ShowDebugMenu -bool true
+
+# Disable (Default)
+defaults write com.apple.appstore ShowDebugMenu -bool false
+```
+
+
 ### Apple Remote Desktop
 
 #### Remove Apple Remote Desktop Settings
