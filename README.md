@@ -799,6 +799,12 @@ defaults write NSGlobalDomain KeyRepeat -int 0.02
 afconvert input.mp3 ringtone.m4r -f m4af
 ```
 
+#### Create Audiobook From Text
+Uses "Alex" voice, a plain UTF-8 encoded text file for input and AAC output.
+```bash
+say -v Alex -f file.txt -o "output.m4a"
+```
+
 #### Disable Sound Effects on Boot
 ```bash
 sudo nvram SystemAudioVolume=" "
