@@ -432,6 +432,11 @@ defaults write com.apple.dock showhidden -bool false && \
 killall Dock
 ```
 
+#### Disable Icons Bounce Alert
+```bash
+defaults write com.apple.dock no-bouncing -bool TRUE && \\
+killall Dock
+```
 
 ## Documents
 
