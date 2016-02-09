@@ -1390,6 +1390,11 @@ mdutil -E /path/to/volume
 mdfind -name 'searchterm'
 ```
 
+#### Show Spotlight Indexed Metadata
+```bash
+mdls /path/to/file
+```
+
 ### System Integrity Protection
 
 #### Disable System Integrity Protection
