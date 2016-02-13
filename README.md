@@ -23,6 +23,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Mail](#mail)
     - [Safari](#safari)
     - [Sketch](#sketch)
+    - [Skim](#skim)
     - [TextEdit](#textedit)
 - [Backup](#backup)
     - [Time Machine](#time-machine)
@@ -236,6 +237,14 @@ osascript -e 'tell application "Safari" to get URL of current tab of front windo
 #### Export Compact SVGs
 ```bash
 defaults write com.bohemiancoding.sketch3 exportCompactSVG -bool yes
+```
+
+### Skim
+
+#### Turn Off Auto Reload Dialog
+Removes the dialog and defaults to auto reload.
+```bash
+defaults write -app Skim SKAutoReloadFileUpdate -boolean true
 ```
 
 ### TextEdit
