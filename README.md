@@ -501,6 +501,18 @@ killall Finder
 
 ### Layout
 
+#### Show "Quit Finder" Menu Item
+Makes possible to see Finder menu item "Quit Finder" with default shortcut <kbd>Cmd</kbd> + <kbd>Q</kbd>
+```bash
+# Enable
+defaults write com.apple.finder QuitMenuItem -bool true && \ 
+killall Finder
+
+# Disable (Default)
+defaults write com.apple.finder QuitMenuItem -bool false && \
+killall Finder
+```
+
 #### Smooth Scrolling
 Useful if you’re on an older Mac that messes up the animation.
 ```bash
