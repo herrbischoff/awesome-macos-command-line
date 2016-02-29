@@ -608,7 +608,7 @@ cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as al
 
 #### Open URL
 ```bash
-open http://www.github.com
+open https://github.com
 ```
 
 #### Open File
@@ -619,7 +619,7 @@ open README.md
 #### Open Applications
 You can open applications using `-a`.
 ```bash
-open -a "Google Chrome" http://www.github.com
+open -a "Google Chrome" https://github.com
 ```
 
 #### Open Folder
@@ -1496,4 +1496,4 @@ chsh -s $(brew --prefix)/bin/zsh
 
 ## License
 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
