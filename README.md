@@ -608,7 +608,7 @@ cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as al
 
 #### Open URL
 ```bash
-open http://www.github.com
+open https://www.github.com
 ```
 
 #### Open File
@@ -619,7 +619,7 @@ open README.md
 #### Open Applications
 You can open applications using `-a`.
 ```bash
-open -a "Google Chrome" http://www.github.com
+open -a "Google Chrome" https://www.github.com
 ```
 
 #### Open Folder
