@@ -10,6 +10,7 @@
     - [App Icons](#app-icons)
 - [Finder](#finder)
     - [Get Path of Frontmost Finder Window](#get-path-of-frontmost-finder-window)
+    - [Print Files Selected in Finder](#print-files-selected-in-finder)
     - [Set Current Directory's Finder View to Column View](#set-current-directorys-finder-view-to-column-view)
     - [Set Current Directory's Finder View to Icon View](#set-current-directorys-finder-view-to-icon-view)
     - [Set Current Directory's Finder View to List View](#set-current-directorys-finder-view-to-list-view)
@@ -44,7 +45,6 @@ function mkicns() {
 }
 ```
 
-
 ## Finder
 
 ### Get Path of Frontmost Finder Window
@@ -60,6 +60,23 @@ function finder_path {
         -e 'end tell';
 }
 ```
+
+ ### Print Files Selected in Finder
+
+ ```bash
+ selected() {
+     osascript <<EOT
+         tell application "Finder"
+             set theFiles to selection
+             set theList to ""
+             repeat with aFile in theFiles
+                 set theList to theList & POSIX path of (aFile as alias) & "\n"
+             end repeat
+             theList
+         end tell
+ EOT
+ }
+ ```
 
 ### Set Current Directory's Finder View to Column View
 
