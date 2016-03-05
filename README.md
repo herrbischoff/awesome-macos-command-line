@@ -423,6 +423,12 @@ defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-t
 killall Dock
 ```
 
+#### Disable Icon Bounce Alert
+```bash
+defaults write com.apple.dock no-bouncing -bool TRUE && \
+killall Dock
+```
+
 #### Set Auto Show/Hide Delay
 The float number defines the show/hide delay in ms.
 ```bash
