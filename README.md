@@ -76,6 +76,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [AppleScript](#applescript)
     - [Basics](#basics)
     - [Clipboard](#clipboard)
+	- [Date and Time](#date-and-time)
     - [FileVault](#filevault)
     - [Information/Reports](#informationreports)
     - [Kernel Extensions](#kernel-extensions)
@@ -93,7 +94,6 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Software Update](#software-update)
     - [Spotlight](#spotlight)
     - [System Integrity Protection](#system-integrity-protection)
-    - [Time and Date](#time-and-date)
 - [Terminal](#terminal)
     - [Alternative Terminals](#alternative-terminals)
     - [Shells](#shells)
@@ -1460,8 +1460,19 @@ Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd>, open the Terminal applicatio
 csrutil enable && reboot
 ```
 
-### Time and Date
+### Date and Time
 
+#### List Available Timezones
+```bash
+sudo systemsetup -listtimezones
+```
+
+#### Set Timezone
+```bash
+sudo systemsetup -settimezone Europe/Berlin
+```
+
+#### Set Clock Using Network Time
 ```bash
 # Status
 sudo systemsetup getusingnetworktime
@@ -1472,6 +1483,8 @@ sudo systemsetup setusingnetworktime on
 # Disable
 sudo systemsetup setusingnetworktime off
 ```
+
+
 
 ## Terminal
 
