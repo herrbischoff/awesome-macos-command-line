@@ -435,6 +435,12 @@ defaults write com.apple.dock no-bouncing -bool false && \
 killall Dock
 ```
 
+### Reset Dock
+```bash
+defaults delete com.apple.dock && \
+killall Dock
+```
+
 #### Set Auto Show/Hide Delay
 The float number defines the show/hide delay in ms.
 ```bash
