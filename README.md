@@ -441,6 +441,18 @@ defaults delete com.apple.dock && \
 killall Dock
 ```
 
+#### Scroll Gestures
+Use your touchpad or mouse scroll wheel to interact with Dock items. Allows you to use an upward scrolling gesture to open stacks. Using the same gesture on applications that are running invokes Exposé/Mission Control.
+```bash
+# Enable
+defaults write com.apple.dock scroll-to-open -bool true && \
+killall Dock
+
+# Disable (Default)
+defaults write com.apple.dock scroll-to-open -bool false && \
+killall Dock
+```
+
 #### Set Auto Show/Hide Delay
 The float number defines the show/hide delay in ms.
 ```bash
