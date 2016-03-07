@@ -56,8 +56,10 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Bonjour](#bonjour)
     - [DHCP](#dhcp)
     - [DNS](#dns)
+    - [FTP](#ftp)
     - [Hostname](#hostname)
     - [Networking Tools](#networking-tools)
+    - [SSH](#ssh)
     - [TCP/IP](#tcpip)
     - [Wi-Fi](#wi-fi)
 - [Package Managers](#package-managers)
@@ -905,6 +907,15 @@ sudo dscacheutil -flushcache && \
 sudo killall -HUP mDNSResponder
 ```
 
+### FTP
+```bash
+# enable
+sudo -s launchctl load -w /System/Library/LaunchDaemons/ftp.plist
+
+# disable
+sudo -s launchctl unload -w /System/Library/LaunchDaemons/ftp.plist
+```
+
 ### Hostname
 
 #### Set Computer Name/Host Name
@@ -925,6 +936,15 @@ ping -o github.com
 #### Troubleshoot Routing Problems
 ```bash
 traceroute github.com
+```
+
+### SSH
+```bash
+# enable
+sudo -s launchctl load -w /System/Library/LaunchDaemons/ssh.plist
+
+# disable
+sudo -s launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
 ```
 
 ### TCP/IP
