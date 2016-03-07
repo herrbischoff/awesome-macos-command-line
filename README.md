@@ -435,7 +435,7 @@ defaults write com.apple.dock no-bouncing -bool false && \
 killall Dock
 ```
 
-### Reset Dock
+#### Reset Dock
 ```bash
 defaults delete com.apple.dock && \
 killall Dock
