@@ -57,6 +57,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [DHCP](#dhcp)
     - [DNS](#dns)
     - [Hostname](#hostname)
+    - [Network Preferences](#network-preferences)
     - [Networking Tools](#networking-tools)
     - [TCP/IP](#tcpip)
     - [Wi-Fi](#wi-fi)
@@ -931,6 +932,18 @@ sudo scutil --set ComputerName "newhostname" && \
 sudo scutil --set HostName "newhostname" && \
 sudo scutil --set LocalHostName "newhostname" && \
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "newhostname"
+```
+
+### Network Preferences
+
+#### Network Locations
+Switch between network locations created in the Network preference pane.
+```bash
+# Status
+scselect
+
+# Switch Network Location
+scselect LocationNameFromStatus
 ```
 
 ### Networking Tools
