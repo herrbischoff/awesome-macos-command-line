@@ -1529,6 +1529,7 @@ chsh -s $(brew --prefix)/bin/bash
 Install the latest version and set as current users' default shell:
 ```bash
 brew install fish && \
+echo $(brew --prefix)/bin/fish | sudo tee -a /etc/shells && \
 chsh -s $(brew --prefix)/bin/fish
 ```
 
