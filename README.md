@@ -1535,7 +1535,7 @@ chsh -s $(brew --prefix)/bin/fish
 - [Homepage](http://fishshell.com) - A smart and user-friendly command line
 shell for OS X, Linux, and the rest of the family.
 - [Fisherman](http://fisherman.sh) - A blazing fast, modern plugin manager for Fish.
-- [The Fishshell Framework](https://github.com/oh-my-fish/oh-my-fish) - Provides core infrastructure to allow you to install packages which extend or modify the look of your shell.
+- [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) - The Fishshell Framework. Provides core infrastructure to allow you to install packages which extend or modify the look of your shell.
 
 #### Zsh
 Install the latest version and set as current users' default shell:
