@@ -536,7 +536,7 @@ killall Finder
 Makes possible to see Finder menu item "Quit Finder" with default shortcut <kbd>Cmd</kbd> + <kbd>Q</kbd>
 ```bash
 # Enable
-defaults write com.apple.finder QuitMenuItem -bool true && \ 
+defaults write com.apple.finder QuitMenuItem -bool true && \
 killall Finder
 
 # Disable (Default)
@@ -1535,6 +1535,7 @@ chsh -s $(brew --prefix)/bin/fish
 
 - [Homepage](http://fishshell.com) - A smart and user-friendly command line
 shell for OS X, Linux, and the rest of the family.
+- [fin](https://github.com/fishery/fin) - One-file, no-configuration, concurrent plugin manager for the fish shell.
 - [Fisherman](http://fisherman.sh) - A blazing fast, modern plugin manager for Fish.
 - [The Fishshell Framework](https://github.com/oh-my-fish/oh-my-fish) - Provides core infrastructure to allow you to install packages which extend or modify the look of your shell.
 
