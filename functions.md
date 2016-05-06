@@ -21,7 +21,9 @@
 ### App Icons
 
 #### Create App Icon
+
 Function to quickly create an application icon from 1024px master file.
+
 ```bash
 function mkicns() {
     if [[ -z "$@" ]]; then
@@ -43,6 +45,33 @@ function mkicns() {
         rm -r $filename.iconset
     fi
 }
+```
+
+### Helper functions
+
+#### Ask user for a password
+
+This function will use AppleScript to present a password entry dialog to make
+your scripts a little more user friendly.
+
+```bash
+function gui_password {
+  if [[ -z $1 ]]; then
+    gui_prompt="Password:"
+  else
+    gui_prompt="$1"
+  fi
+  PW=$(osascript <<EOF
+  tell application "System Events"
+    activate
+    text returned of (display dialog "${gui_prompt}" default answer "" with hidden answer)
+  end tell
+EOF
+  )
+
+  echo -n "${PW}"
+}
+
 ```
 
 ## Finder
