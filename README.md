@@ -59,6 +59,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Hostname](#hostname)
     - [Network Preferences](#network-preferences)
     - [Networking Tools](#networking-tools)
+    - [SSH](#ssh)
     - [TCP/IP](#tcpip)
     - [Wi-Fi](#wi-fi)
 - [Package Managers](#package-managers)
@@ -957,6 +958,18 @@ ping -o github.com
 ```bash
 traceroute github.com
 ```
+
+### SSH
+
+#### Remote Login
+```bash
+# Enable remote login
+sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
+
+# Disable remote login
+sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
+```
+
 
 ### TCP/IP
 
