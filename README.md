@@ -1522,8 +1522,8 @@ tput bel
 
 ### Alternative Terminals
 
-- [iTerm 2](https://iterm2.com) - A better Terminal.app.
-- [TotalTerminal](http://totalterminal.binaryage.com) - A system-wide terminal available on a hot-key.
+- [iTerm2](https://iterm2.com) - A better Terminal.app.
+- [TotalTerminal](http://totalterminal.binaryage.com) - A system-wide terminal available on a hot-key. (Requires System Integrity Protection be disabled. If you don't want to disable it, iTerm2 also has this feature.)
 
 ### Shells
 
