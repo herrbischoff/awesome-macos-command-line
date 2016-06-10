@@ -1089,9 +1089,8 @@ spctl --remove /path/to/Application.app
 ### Passwords
 
 #### Generate Secure Password and Copy to Clipboard
-First, install `pwgen` via Homebrew, etc.
 ```bash
-pwgen -Cs 20 1 | tr -d ' ' | tr -d '\n' | pbcopy
+tr -dc A-Za-z0-9_ < /dev/urandom | head -c 20 | pbcopy
 ```
 
 ### Physical Access
