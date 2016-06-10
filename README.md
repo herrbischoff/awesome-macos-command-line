@@ -306,7 +306,7 @@ brew install macvim --HEAD --with-cscope --with-lua --with-override-system-vim -
 Install the development version of this modern Vim drop-in alternative via Homebrew.
 ```bash
 brew tap neovim/neovim && \
-brew install --HEAD neovim
+brew install neovim
 ```
 
 ### Xcode
