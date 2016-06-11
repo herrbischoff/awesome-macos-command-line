@@ -1194,6 +1194,11 @@ osascript /path/to/script.scpt
 
 ### Basics
 
+#### Compare Two Folders
+```bash
+diff -qr /path/to/folder1 /path/to/folder2
+```
+
 #### Restart
 ```bash
 sudo reboot
