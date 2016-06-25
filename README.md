@@ -473,6 +473,11 @@ defaults write com.apple.dock showhidden -bool false && \
 killall Dock
 ```
 
+#### Resize
+```bash
+defaults write com.apple.dock tilesize -int 0 && \
+killall Dock
+```
 
 ## Documents
 
