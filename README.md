@@ -443,6 +443,13 @@ defaults delete com.apple.dock && \
 killall Dock
 ```
 
+#### Resize
+Fully resize your Dock's body. To resize change the `0` value as an integer.
+```bash
+defaults write com.apple.dock tilesize -int 0 && \
+killall Dock
+```
+
 #### Scroll Gestures
 Use your touchpad or mouse scroll wheel to interact with Dock items. Allows you to use an upward scrolling gesture to open stacks. Using the same gesture on applications that are running invokes Exposé/Mission Control.
 ```bash
@@ -470,12 +477,6 @@ killall Dock
 
 # Disable
 defaults write com.apple.dock showhidden -bool false && \
-killall Dock
-```
-
-#### Resize
-```bash
-defaults write com.apple.dock tilesize -int 0 && \
 killall Dock
 ```
 
