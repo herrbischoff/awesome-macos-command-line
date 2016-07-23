@@ -19,6 +19,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [App Store](#app-store)
     - [Apple Remote Desktop](#apple-remote-desktop)
     - [Contacts](#contacts)
+    - [Google](#google)
     - [iTunes](#itunes)
     - [Mail](#mail)
     - [Safari](#safari)
@@ -168,6 +169,13 @@ defaults write com.apple.addressbook ABShowDebugMenu -bool true
 
 # Disable (Default)
 defaults write com.apple.addressbook ABShowDebugMenu -bool false
+```
+
+### Google
+
+#### Uninstall Google Update
+```bash
+~/Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/Contents/Resources/ksinstall --nuke
 ```
 
 ### iTunes
