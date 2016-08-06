@@ -61,22 +61,22 @@ function finder_path {
 }
 ```
 
- ### Print Files Selected in Finder
+### Print Files Selected in Finder
 
- ```bash
- selected() {
-     osascript <<EOT
-         tell application "Finder"
-             set theFiles to selection
-             set theList to ""
-             repeat with aFile in theFiles
-                 set theList to theList & POSIX path of (aFile as alias) & "\n"
-             end repeat
-             theList
-         end tell
- EOT
- }
- ```
+```bash
+selected() {
+    osascript <<EOT
+        tell application "Finder"
+            set theFiles to selection
+            set theList to ""
+            repeat with aFile in theFiles
+                set theList to theList & POSIX path of (aFile as alias) & "\n"
+            end repeat
+            theList
+        end tell
+EOT
+}
+```
 
 ### Set Current Directory's Finder View to Column View
 
