@@ -82,6 +82,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
 	- [Date and Time](#date-and-time)
     - [FileVault](#filevault)
     - [Information/Reports](#informationreports)
+    - [Install OS](#install-os)
     - [Kernel Extensions](#kernel-extensions)
     - [LaunchAgents](#launchagents)
     - [LaunchServices](#launchservices)
@@ -1286,6 +1287,20 @@ sudo fdestatus disable
 #### Generate Advanced System and Performance Report
 ```bash
 sudo sysdiagnose -f ~/Desktop/
+```
+
+### Install OS
+
+#### Create Bootable Installer
+```bash
+# El Capitan
+sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app
+
+# Yosemite
+sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ OS\ X\ Yosemite.app
+
+# Mavericks
+sudo /Applications/Install\ OS\ X\ Mavericks.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ OS\ X\ Mavericks.app
 ```
 
 ### Kernel Extensions
