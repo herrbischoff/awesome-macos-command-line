@@ -1214,6 +1214,12 @@ osascript /path/to/script.scpt
 diff -qr /path/to/folder1 /path/to/folder2
 ```
 
+#### Restore Sane Shell
+In case your shell session went insane (some script or application turned it into a garbled mess).
+```bash
+stty sane
+```
+
 #### Restart
 ```bash
 sudo reboot
