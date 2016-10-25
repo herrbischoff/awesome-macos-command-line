@@ -136,7 +136,7 @@ sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set v
 
 #### List All Apps Downloaded from App Store
 ```bash
-find /Applications -path '*Contents/_MASReceipt/receipt' -maxdepth 4 -print |\sed 's#.app/Contents/_MASReceipt/receipt#.app#g; s#/Applications/##'
+mdfind kMDItemAppStoreHasReceipt=1
 ```
 
 #### Show Debug Menu
