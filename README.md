@@ -1106,6 +1106,18 @@ spctl --add /path/to/Application.app
 spctl --remove /path/to/Application.app
 ```
 
+#### Manage Gatekeeper
+```bash
+# Status
+spctl --status
+
+# Enable (Default)
+sudo spctl --master-enable
+
+# Disable
+sudo spctl --master-disable
+```
+
 ### Passwords
 
 #### Generate Secure Password and Copy to Clipboard
