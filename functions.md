@@ -47,29 +47,29 @@ function mkicns() {
 }
 ```
 
-### Helper functions
+### Helper Functions
 
-#### Ask user for a password
+#### Ask User for Password
 
 This function will use AppleScript to present a password entry dialog to make
 your scripts a little more user friendly.
 
 ```bash
 function gui_password {
-  if [[ -z $1 ]]; then
-    gui_prompt="Password:"
-  else
-    gui_prompt="$1"
-  fi
-  PW=$(osascript <<EOF
-  tell application "System Events"
-    activate
-    text returned of (display dialog "${gui_prompt}" default answer "" with hidden answer)
-  end tell
+    if [[ -z $1 ]]; then
+        gui_prompt="Password:"
+    else
+        gui_prompt="$1"
+    fi
+    PW=$(osascript <<EOF
+    tell application "System Events"
+        activate
+        text returned of (display dialog "${gui_prompt}" default answer "" with hidden answer)
+    end tell
 EOF
   )
 
-  echo -n "${PW}"
+    echo -n "${PW}"
 }
 
 ```
