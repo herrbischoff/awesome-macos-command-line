@@ -8,9 +8,9 @@
 
 - [Developer](#developer)
     - [App Icons](#app-icons)
-      - [Create App Icon](#create-app-icon)
+        - [Create App Icon](#create-app-icon)
     - [Helper Functions](#helper-functions)
-      - [Ask User for Password](#ask-user-for-password)
+        - [Ask User for Password](#ask-user-for-password)
 
 - [Finder](#finder)
     - [Get Path of Frontmost Finder Window](#get-path-of-frontmost-finder-window)
