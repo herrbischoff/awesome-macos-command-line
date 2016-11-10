@@ -71,7 +71,7 @@ function gui_password {
         text returned of (display dialog "${gui_prompt}" default answer "" with hidden answer)
     end tell
 EOF
-  )
+    )
 
     echo -n "${PW}"
 }
