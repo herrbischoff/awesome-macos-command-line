@@ -234,7 +234,7 @@ defaults write com.apple.Safari IncludeInternalDebugMenu -bool true && \
 defaults write com.apple.Safari IncludeDevelopMenu -bool true && \
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true && \
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true && \
-defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+defaults write -g WebKitDeveloperExtras -bool true
 ```
 
 #### Get Current Page Data
@@ -512,7 +512,7 @@ chflags hidden /path/to/folder/
 ```
 #### Show All File Extensions
 ```bash
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write -g AppleShowAllExtensions -bool true
 ```
 
 #### Show Hidden Files
@@ -541,7 +541,7 @@ chflags nohidden ~/Library
 
 #### Increase Number of Recent Places
 ```bash
-defaults write .GlobalPreferences NSNavRecentPlacesLimit -int 10 && \
+defaults write -g NSNavRecentPlacesLimit -int 10 && \
 killall Finder
 ```
 
@@ -563,10 +563,10 @@ killall Finder
 Useful if you’re on an older Mac that messes up the animation.
 ```bash
 # Disable
-defaults write NSGlobalDomain NSScrollAnimationEnabled -bool false
+defaults write -g NSScrollAnimationEnabled -bool false
 
 # Enable (Default)
-defaults write NSGlobalDomain NSScrollAnimationEnabled -bool true
+defaults write -g NSScrollAnimationEnabled -bool true
 ```
 
 #### Rubberband Scrolling
@@ -580,8 +580,8 @@ defaults write -g NSScrollViewRubberbanding -bool true
 
 #### Expand Save Panel by Default
 ```bash
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true && \
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+defaults write -g NSNavPanelExpandedStateForSaveMode -bool true && \
+defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
 ```
 
 #### Desktop Icon Visibility
@@ -607,7 +607,7 @@ defaults write com.apple.finder ShowPathbar -bool false
 #### Scrollbar Visibility
 Possible values: `WhenScrolling`, `Automatic` and `Always`.
 ```bash
-defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+defaults write -g AppleShowScrollBars -string "Always"
 ```
 
 #### Status Bar
@@ -622,7 +622,7 @@ defaults write com.apple.finder ShowStatusBar -bool false
 #### Save to Disk by Default
 Sets default save target to be a local disk, not iCloud.
 ```bash
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
 ```
 
 #### Set Current Folder as Default Search Scope
@@ -639,7 +639,7 @@ defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 #### Set Sidebar Icon Size
 Sets size to 'medium'.
 ```bash
-defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
+defaults write -g NSTableViewDefaultSizeMode -int 2
 ```
 
 ### Metadata Files
@@ -859,7 +859,7 @@ defaults write -g ApplePressAndHoldEnabled -bool true
 #### Key Repeat Rate
 Sets a very fast repeat rate, adjust to taste.
 ```bash
-defaults write NSGlobalDomain KeyRepeat -int 0.02
+defaults write -g KeyRepeat -int 0.02
 ```
 
 
@@ -1063,8 +1063,8 @@ cancel -a -
 
 #### Expand Print Panel by Default
 ```bash
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true && \
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+defaults write -g PMPrintingExpandedStateForPrint -bool true && \
+defaults write -g PMPrintingExpandedStateForPrint2 -bool true
 ```
 
 #### Quit Printer App After Print Jobs Complete
