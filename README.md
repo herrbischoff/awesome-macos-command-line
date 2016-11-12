@@ -279,27 +279,20 @@ sudo defaults write /System/Library/Launch Daemons/com.apple.backupd-auto StartI
 #### Local Backups
 Whether Time Machine performs local backups while the Time Machine backup volume is not available.
 ```bash
-# Disable
-sudo tmutil disablelocal
+# Status
+defaults read /Library/Preferences/com.apple.TimeMachine MobileBackups
 
 # Enable (Default)
 sudo tmutil enablelocal
+
+# Disable
+sudo tmutil disablelocal
 ```
 
 #### Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
 ```bash
-defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+sudo defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 ```
-
-#### Set Status
-```bash
-# Disable Local Time Machine Backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
-
-# Enable Local Time Machine Backups (Default)
-hash tmutil &> /dev/null && sudo tmutil enablelocal
-```
-
 
 ## Developer
 
