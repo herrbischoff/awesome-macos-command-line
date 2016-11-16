@@ -1219,6 +1219,12 @@ osascript /path/to/script.scpt
 diff -qr /path/to/folder1 /path/to/folder2
 ```
 
+#### Copy Large File with Progress
+Make sure you have `pv` installed and replace `/dev/rdisk2` with the appropriate write device or file.
+```bash
+FILE=/path/to/file.iso pv -s $(du -h $FILE | awk '/.*/ {print $1}') $FILE | sudo dd of=/dev/rdisk2 bs=1m
+```
+
 #### Restore Sane Shell
 In case your shell session went insane (some script or application turned it into a garbled mess).
 ```bash
