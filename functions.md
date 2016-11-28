@@ -8,6 +8,10 @@
 
 - [Developer](#developer)
     - [App Icons](#app-icons)
+        - [Create App Icon](#create-app-icon)
+    - [Helper Functions](#helper-functions)
+        - [Ask User for Password](#ask-user-for-password)
+
 - [Finder](#finder)
     - [Get Path of Frontmost Finder Window](#get-path-of-frontmost-finder-window)
     - [Print Files Selected in Finder](#print-files-selected-in-finder)
@@ -21,7 +25,9 @@
 ### App Icons
 
 #### Create App Icon
+
 Function to quickly create an application icon from 1024px master file.
+
 ```bash
 function mkicns() {
     if [[ -z "$@" ]]; then
@@ -43,6 +49,33 @@ function mkicns() {
         rm -r $filename.iconset
     fi
 }
+```
+
+### Helper Functions
+
+#### Ask User for Password
+
+This function will use AppleScript to present a password entry dialog to make
+your scripts a little more user friendly.
+
+```bash
+function gui_password {
+    if [[ -z $1 ]]; then
+        gui_prompt="Password:"
+    else
+        gui_prompt="$1"
+    fi
+    PW=$(osascript <<EOF
+    tell application "System Events"
+        activate
+        text returned of (display dialog "${gui_prompt}" default answer "" with hidden answer)
+    end tell
+EOF
+    )
+
+    echo -n "${PW}"
+}
+
 ```
 
 ## Finder
