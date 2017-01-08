@@ -29,7 +29,6 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
 - [Backup](#backup)
     - [Time Machine](#time-machine)
 - [Developer](#developer)
-    - [App Icons](#app-icons)
     - [Vim](#vim)
     - [Xcode](#xcode)
 - [Disks and Volumes](#disks-and-volumes)
