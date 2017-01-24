@@ -1626,12 +1626,14 @@ chsh -s $(brew --prefix)/bin/zsh
 ### Terminal Fonts
 
 - [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) - A family of four fixed-width fonts designed with coding in mind.
+- [CamingoCode](http://www.myfonts.com/fonts/jan-fromm/camingo-code/) - A monospaced typeface designed for source-code editors.
 - [Codeface](https://github.com/chrissimpkins/codeface) - A gallery and repository of monospaced fonts for developers.
 - [DejaVu Sans Mono](http://dejavu-fonts.org/wiki/Main_Page) - A font family based on the Vera Fonts.
 - [Hack](http://sourcefoundry.org/hack/) - Hack is hand groomed and optically balanced to be your go-to code face.
 - [Inconsolata](http://levien.com/type/myfonts/inconsolata.html) -  A monospace font, designed for code listings and the like.
 - [Input](http://input.fontbureau.com) - A flexible system of fonts designed specifically for code.
 - [Meslo](https://github.com/andreberg/Meslo-Font) - Customized version of Apple's Menlo font.
+- [Operator Mono](http://www.typography.com/fonts/operator/overview/) - A typeface rooted in the traditions of typewriting, it is designed to offer a new voice for designers, and a new tool for developers.
 - [Powerline Fonts](https://github.com/powerline/fonts) - Repo of patched fonts for the Powerline plugin.
 - [Source Code Pro](https://adobe-fonts.github.io/source-code-pro/) - A monospaced font family for user interfaces and coding environments.
 
