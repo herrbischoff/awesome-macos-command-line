@@ -298,6 +298,12 @@ sudo tmutil disablelocal
 sudo defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 ```
 
+#### Verify Backup
+Beginning in OS X 10.11, Time Machine records checksums of files copied into snapshots. Checksums are not retroactively computed for files that were copied by earlier releases of OS X.
+```bash
+sudo tmutil verifychecksums /path/to/backup
+```
+
 ## Developer
 
 ### Vim
