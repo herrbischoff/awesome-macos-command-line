@@ -218,6 +218,7 @@ set os_version to do shell script "sw_vers -productVersion"
 set mail_version to "V2"
 considering numeric strings
     if "10.10" <= os_version then set mail_version to "V3"
+    if "10.12" < os_version then set mail_version to "V4" # for osx sierra
 end considering
 
 set sizeBefore to do shell script "ls -lnah ~/Library/Mail/" & mail_version & "/MailData | grep -E 'Envelope Index$' | awk {'print $5'}"
