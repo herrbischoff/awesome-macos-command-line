@@ -1588,6 +1588,7 @@ tput bel
 ### Alternative Terminals
 
 - [iTerm2](https://iterm2.com) - A better Terminal.app.
+- [Hyper](https://hyper.is/) - A terminal built on web technologies.
 
 ### Shells
 
