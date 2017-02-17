@@ -97,6 +97,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Software Update](#software-update)
     - [Spotlight](#spotlight)
     - [System Integrity Protection](#system-integrity-protection)
+    - [Trash](#trash)
 - [Terminal](#terminal)
     - [Alternative Terminals](#alternative-terminals)
     - [Shells](#shells)
@@ -1573,6 +1574,29 @@ sudo systemsetup setusingnetworktime on
 
 # Disable
 sudo systemsetup setusingnetworktime off
+```
+
+### Trash
+[`trash`](https://github.com/ali-rantakari/trash) is a "CLI tool that moves files or folder to the trash". It has all the benefits of Trash, including the "Put Back" Finder command.
+
+To install:
+```bash
+brew install trash
+```
+
+#### Move Items to Trash
+```bash
+trash file1.txt file2.txt folder1 folder2
+```
+
+#### Empty Trash
+```bash
+trash -e
+```
+
+#### More Options
+```bash
+man trash
 ```
 
 
