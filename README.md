@@ -1053,7 +1053,7 @@ networksetup -setairportpower en0 on
 ## Package Managers
 
 - [Fink](http://www.finkproject.org) - The full world of Unix Open Source software for Darwin. A little outdated.
-- [Homebrew](http://brew.sh) - The missing package manager for OS X. The most popular choice.
+- [Homebrew](https://brew.sh) - The missing package manager for OS X. The most popular choice.
 - [MacPorts](https://www.macports.org) - Compile, install and upgrade either command-line, X11 or Aqua based open-source software. Very clean, it's what I use.
 
 
@@ -1612,7 +1612,7 @@ chsh -s $(brew --prefix)/bin/fish
 
 - [Homepage](http://fishshell.com) - A smart and user-friendly command line
 shell for OS X, Linux, and the rest of the family.
-- [Fisherman](http://fisherman.sh) - A blazing fast, modern plugin manager for Fish.
+- [Fisherman](https://fisherman.github.io/) - A blazing fast, modern plugin manager for Fish.
 - [The Fishshell Framework](https://github.com/oh-my-fish/oh-my-fish) - Provides core infrastructure to allow you to install packages which extend or modify the look of your shell.
 - [Installation & Configuration Tutorial](https://github.com/ellerbrock/fish-shell-setup-osx) - How to Setup Fish Shell with Fisherman, Powerline Fonts, iTerm2 and Budspencer Theme on OS X.
 
@@ -1633,12 +1633,12 @@ chsh -s $(brew --prefix)/bin/zsh
 
 - [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) - A family of four fixed-width fonts designed with coding in mind.
 - [Codeface](https://github.com/chrissimpkins/codeface) - A gallery and repository of monospaced fonts for developers.
-- [DejaVu Sans Mono](http://dejavu-fonts.org/wiki/Main_Page) - A font family based on the Vera Fonts.
+- [DejaVu Sans Mono](https://dejavu-fonts.github.io/) - A font family based on the Vera Fonts.
 - [Hack](http://sourcefoundry.org/hack/) - Hack is hand groomed and optically balanced to be your go-to code face.
 - [Inconsolata](http://levien.com/type/myfonts/inconsolata.html) -  A monospace font, designed for code listings and the like.
 - [Input](http://input.fontbureau.com) - A flexible system of fonts designed specifically for code.
 - [Meslo](https://github.com/andreberg/Meslo-Font) - Customized version of Apple's Menlo font.
-- [Operator Mono](http://www.typography.com/fonts/operator/overview/) - A surprisingly usable alternative take on a monospace font (commercial).
+- [Operator Mono](https://www.typography.com/fonts/operator/overview/) - A surprisingly usable alternative take on a monospace font (commercial).
 - [Powerline Fonts](https://github.com/powerline/fonts) - Repo of patched fonts for the Powerline plugin.
 - [Source Code Pro](https://adobe-fonts.github.io/source-code-pro/) - A monospaced font family for user interfaces and coding environments.
 
