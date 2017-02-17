@@ -293,6 +293,12 @@ sudo tmutil enablelocal
 sudo tmutil disablelocal
 ```
 
+#### Speed up Time Machine Backups
+Until next bootup, speed up Time Machine backups by disabling standard low processing priority.
+```bash
+sudo sysctl debug.lowpri_throttle_enabled=0
+```
+
 #### Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
 ```bash
 sudo defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
