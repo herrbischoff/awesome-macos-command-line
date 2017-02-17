@@ -1166,6 +1166,9 @@ defaults write com.apple.screensaver askForPassword -int 0
 
 ### Wiping Data
 
+Note: The `srm` command appears to have been removed on MacOS after 10.9. There is a note on an [Apple support page](https://support.apple.com/en-us/HT201949) hinting as to why:
+> With an SSD drive, Secure Erase and Erasing Free Space are not available in Disk Utility. These options are not needed for an SSD drive because a standard erase makes it difficult to recover data from an SSD.
+
 #### Securely Remove File
 ```bash
 srm /path/to/file
