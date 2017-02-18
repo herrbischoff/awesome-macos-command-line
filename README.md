@@ -1033,7 +1033,7 @@ Create a symbolic link to the airport command for easy access:
 ```bash
 sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
 ```
-Run a wireless scan:
+Run a wireless scan (requires symbolic link command above)
 ```bash
 airport -s
 ```
