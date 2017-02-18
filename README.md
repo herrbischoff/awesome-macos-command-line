@@ -964,12 +964,22 @@ sudo killall -HUP mDNSResponder
 
 ### Hostname
 
-#### Set Computer Name/Host Name
+#### Set Computer Name
 ```bash
-sudo scutil --set ComputerName "newhostname" && \
-sudo scutil --set HostName "newhostname" && \
-sudo scutil --set LocalHostName "newhostname" && \
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "newhostname"
+# Status
+scutil --get ComputerName
+
+# Set
+sudo scutil --set ComputerName "newcomputername"
+```
+
+#### Set Hostname
+```bash
+# Status
+scutil --get LocalHostName
+
+# Set
+sudo scutil --set LocalHostName "newhostname"
 ```
 
 ### Network Preferences
