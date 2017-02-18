@@ -706,7 +706,7 @@ atsutil server -ping
 ```
 
 #### Get SF Mono Fonts
-Pre-Sierra, you need to download and install Xcode 8 for this to work. Afterwards they should be available in all applications.
+You need to download and install Xcode 8 beta for this to work. Afterwards they should be available in all applications.
 ```bash
 cp -v /Applications/Xcode-beta.app/Contents/SharedFrameworks/DVTKit.framework/Versions/A/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
@@ -715,6 +715,7 @@ From Sierra onward, they are included in Terminal.app.
 ```bash
 cp -v /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
+
 
 ## Functions
 
@@ -1179,6 +1180,9 @@ defaults write com.apple.screensaver askForPassword -int 0
 ```
 
 ### Wiping Data
+
+Note: The `srm` command appears to have been removed on MacOS after 10.9. There is a note on an [Apple support page](https://support.apple.com/en-us/HT201949) hinting as to why:
+> With an SSD drive, Secure Erase and Erasing Free Space are not available in Disk Utility. These options are not needed for an SSD drive because a standard erase makes it difficult to recover data from an SSD.
 
 #### Securely Remove File
 ```bash
