@@ -870,6 +870,37 @@ Sets a very fast repeat rate, adjust to taste.
 defaults write -g KeyRepeat -int 0.02
 ```
 
+#### Modifier Key Mapping
+Change caps lock key mapping to the control key. ([Source](http://apple.stackexchange.com/questions/13598/updating-modifier-key-mappings-through-defaults-command-tool))  
+(Log out and log back in again for the changes to take effect.)
+```bash
+defaults -currentHost write -g com.apple.keyboard.modifiermapping.1452-582-0 -array-add '<dict><key>HIDKeyboardModifierMappingDst</key><integer>2</integer><key>HIDKeyboardModifierMappingSrc</key><integer>0</integer></dict>'
+```
+1452-582-0 corresponds to $VendorID-$ProductID-0 as per the output of the following command:
+```bash
+ioreg -n IOHIDKeyboard -r | grep -e 'class IOHIDKeyboard' -e VendorID\" -e Product
+
+# result:
+# +-o IOHIDKeyboard  <class IOHIDKeyboard, id 0x100000300, registered, matched, active, busy 0 (0 ms), retain 10>
+#   |   "Product" = "Apple Internal Keyboard / Trackpad"
+#   |   "VendorID" = 1452
+#   |   "ProductID" = 582
+```
+
+Possible values for `HIDKeyboardModifierMappingDst` and `HIDKeyboardModifierMappingSrc`:  
+
+None — -1  
+Caps Lock — 0  
+Shift (Left) — 1  
+Control (Left) — 2  
+Option (Left) — 3  
+Command (Left) — 4  
+Keypad 0 — 5  
+Help — 6  
+Shift (Right) — 9  
+Control (Right) — 10  
+Option (Right) — 11  
+Command (Right) — 12 
 
 ## Media
 
