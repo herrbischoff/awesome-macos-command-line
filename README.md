@@ -708,7 +708,7 @@ atsutil server -ping
 #### Get SF Mono Fonts
 You need to download and install Xcode 8 beta for this to work. Afterwards they should be available in all applications.
 ```bash
-cp -v /Applications/Xcode-beta.app/Contents/SharedFrameworks/DVTKit.framework/Versions/A/Resources/Fonts/SFMono-* ~/Library/Fonts
+cp -v /Applications/Xcode.app/Contents/SharedFrameworks/DVTKit.framework/Versions/A/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
 
 
