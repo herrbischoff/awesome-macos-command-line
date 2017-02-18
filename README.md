@@ -1609,7 +1609,7 @@ tput bel
 Install the latest version and set as current users' default shell:
 ```bash
 brew install bash && \
-sudo echo $(brew --prefix)/bin/bash >> /etc/shells && \
+echo $(brew --prefix)/bin/bash | sudo tee -a /etc/shells && \
 chsh -s $(brew --prefix)/bin/bash
 ```
 
