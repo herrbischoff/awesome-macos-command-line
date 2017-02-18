@@ -864,7 +864,21 @@ Sets a very fast repeat rate, adjust to taste.
 ```bash
 defaults write -g KeyRepeat -int 0.02
 ```
+#### Full Keyboard Access
+Enable Tab in modal dialogs.
+```bash
+# Full Keyboard Access OFF and Text boxes and lists only
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 0
 
+# Full Keyboard Access ON and Text boxes and lists only
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 1
+
+# Full Keyboard Access OFF and All controls
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
+
+# Full Keyboard Access ON and All controls
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+```
 
 ## Media
 
