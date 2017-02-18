@@ -851,19 +851,11 @@ defaults read -g NSAutomaticSpellingCorrectionEnabled
 
 #### Full Keyboard Access
 Enable Tab in modal dialogs.
-Default OS: macOS 10.12
-
 ```bash
-# Disable Text boxes and lists only
+# Text boxes and lists only (Default)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 0
 
-# Enable Text boxes and lists only
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 1
-
-# Disable All controls
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
-
-# Enable All controls
+# All controls
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 ```
 
