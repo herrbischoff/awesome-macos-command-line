@@ -1602,6 +1602,8 @@ tput bel
 ### Alternative Terminals
 
 - [iTerm2](https://iterm2.com) - A better Terminal.app.
+- [HyperTerm](https://hyperterm.org) - An [Electron](http://electron.atom.io)-based terminal application with many [Themes](https://hyperthemes.matthi.coffee) and plugins.
+- [Black Screen](https://github.com/shockone/black-screen) – A terminal application with IDE-like features such as autocomplete.
 
 ### Shells
 
