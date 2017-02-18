@@ -854,6 +854,16 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool true
 defaults read -g NSAutomaticSpellingCorrectionEnabled
 ```
 
+#### Full Keyboard Access
+Enable Tab in modal dialogs.
+```bash
+# Text boxes and lists only (Default)
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 0
+
+# All controls
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+```
+
 #### Key Repeat
 Disable the default "press and hold" behavior.
 ```bash
@@ -869,7 +879,6 @@ Sets a very fast repeat rate, adjust to taste.
 ```bash
 defaults write -g KeyRepeat -int 0.02
 ```
-
 
 ## Media
 
