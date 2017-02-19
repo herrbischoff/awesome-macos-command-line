@@ -186,7 +186,6 @@ defaults write com.apple.addressbook ABShowDebugMenu -bool false
 
 ### Image Capture
 #### Stop auto opening when a new device is connected.
-
 ```bash
 # Enable
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool NO
