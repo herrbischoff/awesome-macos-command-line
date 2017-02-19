@@ -20,6 +20,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Apple Remote Desktop](#apple-remote-desktop)
     - [Contacts](#contacts)
     - [Google](#google)
+    - [Image Capture](#imagecapture)
     - [iTunes](#itunes)
     - [Mail](#mail)
     - [Safari](#safari)
@@ -181,6 +182,18 @@ defaults write com.apple.addressbook ABShowDebugMenu -bool false
 #### Uninstall Google Update
 ```bash
 ~/Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/Contents/Resources/ksinstall --nuke
+```
+
+### Image Capture
+#### Auto Open
+Stop opening when a new device is connected.
+
+```bash
+# Enable
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool NO
+
+# Disable
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES
 ```
 
 ### iTunes
