@@ -20,7 +20,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Apple Remote Desktop](#apple-remote-desktop)
     - [Contacts](#contacts)
     - [Google](#google)
-    - [Image Capture](#imagecapture)
+    - [Image Capture](#image-capture)
     - [iTunes](#itunes)
     - [Mail](#mail)
     - [Safari](#safari)
