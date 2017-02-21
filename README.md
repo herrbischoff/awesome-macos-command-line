@@ -997,6 +997,11 @@ ping -o github.com
 traceroute github.com
 ```
 
+#### Display updated information about used sockets or routes
+```bash
+nettop
+```
+
 ### SSH
 
 #### Remote Login
