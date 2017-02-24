@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+## version: 1.0.0
+## repo: https://github.com/qihaiyan/msh
+## license: MIT
+
 resfile="./msh.etc"
 funfile="./msh.fun"
 lockfile="./.msh"
