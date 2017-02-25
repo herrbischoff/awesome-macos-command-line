@@ -438,3 +438,396 @@ funC010302(){
 funC0104(){
   defaults write -g KeyRepeat -int 0.02
 }
+funD0101(){
+  afconvert input.mp3 ringtone.m4r -f m4af
+}
+funD0102(){
+  say -v Alex -f file.txt -o "output.m4a"
+}
+funD0103(){
+  sudo nvram SystemAudioVolume=" "
+}
+funD0104(){
+  osascript -e 'set volume output muted true'
+}
+funD0105(){
+  osascript -e 'set volume 4'
+}
+funD0106(){
+  afplay -q 1 filename.mp3
+}
+funD0107(){
+  say 'All your base are belong to us!'
+}
+funD0201(){
+  defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen 1
+}
+funE010101(){
+  sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist ProgramArguments -array-add "-NoMulticastAdvertisements"
+}
+funE010102(){
+  sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist ProgramArguments -array "/usr/sbin/mDNSResponder" "-launchd"
+}
+funE0201(){
+  sudo ipconfig set en0 DHCP
+}
+funE0202(){
+  ipconfig getpacket en0
+}
+funE0301(){
+  sudo dscacheutil -flushcache && \
+  sudo killall -HUP mDNSResponder
+}
+funE0401(){
+  sudo scutil --set ComputerName "newhostname" && \
+  sudo scutil --set HostName "newhostname" && \
+  sudo scutil --set LocalHostName "newhostname" && \
+  sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "newhostname"
+}
+funE050101(){
+  scselect
+}
+funE050102(){
+  scselect LocationNameFromStatus
+}
+funE0601(){
+  ping -o github.com
+}
+funE0602(){
+  traceroute github.com
+}
+funE070101(){
+  sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
+}
+funE070102(){
+  sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
+}
+funE0801(){
+  sudo lsof -i :80
+}
+funE0802(){
+  dig +short myip.opendns.com @resolver1.opendns.com
+}
+funE0901(){
+  networksetup -setairportnetwork en0 WIFI_SSID WIFI_PASSWORD
+}
+funE0902(){
+  sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
+}
+funE0903(){
+  airport -s
+}
+funE0904(){
+  /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}'
+}
+funE0905(){
+  ipconfig getifaddr en0
+}
+funE0906(){
+  defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences | grep LastConnected -A 7
+}
+funE0907(){
+  security find-generic-password -D "AirPort network password" -a "SSID" -gw
+}
+funE0908(){
+  networksetup -setairportpower en0 on
+}
+funF01(){
+  open http://www.finkproject.org/
+}
+funF02(){
+  open https://brew.sh/
+}
+funF03(){
+  open https://www.macports.org/
+}
+funG01(){
+  cancel -a -
+}
+funG02(){
+  defaults write -g PMPrintingExpandedStateForPrint -bool true && \
+  defaults write -g PMPrintingExpandedStateForPrint2 -bool true
+}
+funG03(){
+  defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+}
+funH010101(){
+  sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate
+}
+funH010102(){
+  sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+}
+funH010103(){
+  sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate off
+}
+funH0102(){
+  echo "using command: " "sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /path/to/file"
+}
+funH0201(){
+  echo "using command: " "spctl --add /path/to/Application.app"
+}
+funH0202(){
+  echo "using command: " "spctl --remove /path/to/Application.app"
+}
+funH020301(){
+  spctl --status
+}
+funH020302(){
+  sudo spctl --master-enable
+}
+funH020303(){
+  sudo spctl --master-disable
+}
+funH0301(){
+  LC_ALL=C tr -dc "[:alpha:][:alnum:]" < /dev/urandom | head -c 20 | pbcopy
+}
+funH0401(){
+  open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app
+}
+funH0402(){
+  /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
+}
+funH040301(){
+  defaults read com.apple.screensaver askForPasswordDelay
+}
+funH040302(){
+  defaults write com.apple.screensaver askForPasswordDelay -int 0
+}
+funH040303(){
+  defaults write com.apple.screensaver askForPasswordDelay -int 10
+}
+funH040401(){
+  defaults read com.apple.screensaver askForPassword
+}
+funH040402(){
+  defaults write com.apple.screensaver askForPassword -int 1
+}
+funH040403(){
+  defaults write com.apple.screensaver askForPassword -int 0
+}
+funH0501(){
+  echo "using command: " "srm /path/to/file"
+}
+funH0502(){
+  echo "using command: " "srm -r /path/to/folder/"
+}
+funH0503(){
+  echo "using command: " "srm -rf /path/to/complete/destruction"
+}
+funI0101(){
+  find . -type f -name '*.DS_Store' -ls -delete
+}
+funI0201(){
+  sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+}
+funI0202(){
+  locate -i *.jpg
+}
+funJ0101(){
+  defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+}
+funJ0102(){
+  defaults remove com.apple.NetworkBrowser DisableAirDrop
+}
+funJ0103(){
+  defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES
+}
+funJ0201(){
+  echo "using command: " "osascript /path/to/script.scpt"
+}
+funJ0301(){
+  echo "using command: " "diff -qr /path/to/folder1 /path/to/folder2"
+}
+funJ0302(){
+  echo "using command: " "FILE=/path/to/file.iso pv -s $(du -h $FILE | awk '/.*/ {print $1}') $FILE | sudo dd of=/dev/rdisk2 bs=1m"
+}
+funJ0303(){
+  stty sane
+}
+funJ0304(){
+  sudo reboot
+}
+funJ0305(){
+  sudo poweroff
+}
+funJ0306(){
+  sw_vers
+}
+funJ0307(){
+  uptime
+}
+funJ0401(){
+  cat whatever.txt | pbcopy
+}
+funJ0402(){
+  pbpaste | textutil -convert txt -stdin -stdout -encoding 30 | pbcopy
+}
+funJ0403(){
+  pbpaste | expand | pbcopy
+}
+funJ0404(){
+  pbpaste > whatever.txt
+}
+funJ0405(){
+  pbpaste | sort | uniq | pbcopy
+}
+funJ0501(){
+  sudo systemsetup -listtimezones
+}
+funJ0502(){
+  sudo systemsetup -settimezone Europe/Berlin
+}
+funJ050301(){
+  sudo systemsetup getusingnetworktime
+}
+funJ050302(){
+  sudo systemsetup setusingnetworktime on
+}
+funJ050303(){
+  sudo systemsetup setusingnetworktime off
+}
+funJ0601(){
+  sudo fdesetup authrestart
+}
+funJ060201(){
+  sudo fdesetup status
+}
+funJ060202(){
+  sudo fdesetup enable
+}
+funJ060203(){
+  sudo fdestatus disable
+}
+funJ0701(){
+  sudo sysdiagnose -f ~/Desktop/
+}
+funJ080101(){
+  sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app
+}
+funJ080102(){
+  sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ OS\ X\ Yosemite.app
+}
+funJ080103(){
+  sudo /Applications/Install\ OS\ X\ Mavericks.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ OS\ X\ Mavericks.app
+}
+funJ0901(){
+  sudo kextstat -l
+}
+funJ0902(){
+  sudo kextload -b com.apple.driver.ExampleBundle
+}
+funJ0903(){
+  sudo kextunload -b com.apple.driver.ExampleBundle
+}
+funJ0A(){
+  open https://github.com/herrbischoff/awesome-osx-command-line/blob/master/launchagents.md
+}
+funJ0B01(){
+  echo "To be independent of OS X version, this relies on locate to find lsregister. If you do not have your locate database built yet, do it."
+  echo "using command: " 'sudo $(locate lsregister) -kill -seed -r'
+}
+funJ0C01(){
+  sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Your text"
+}
+funJ0D01(){
+  sudo purge
+}
+funJ0D0201(){
+  vm_stat
+}
+funJ0D0202(){
+  vm_stat -c 10 1
+}
+funJ0E0101(){
+  launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist && \
+  killall -9 NotificationCenter
+}
+funJ0E0102(){
+  launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
+}
+funJ0F01(){
+  echo "using command: " "qlmanage -p /path/to/file"
+}
+funJ0G01(){
+  sudo systemsetup -getremoteappleevents
+}
+funJ0G02(){
+  sudo systemsetup -setremoteappleevents on
+}
+funJ0G03(){
+  sudo systemsetup -setremoteappleevents off
+}
+funJ0H01(){
+  dsenableroot
+}
+funJ0H02(){
+  dsenableroot -d
+}
+funJ0I01(){
+  nvram boot-args
+}
+funJ0I02(){
+  sudo nvram boot-args="-x"
+}
+funJ0I03(){
+  sudo nvram boot-args=""
+}
+funJ0J01(){
+  screencapture -T 3 -t jpg -P delayedpic.jpg
+}
+funJ0J02(){
+  defaults write com.apple.screencapture location ~/Desktop && \
+  killall SystemUIServer
+}
+funJ0J03(){
+  defaults write com.apple.screencapture type -string "png"
+}
+funJ0J04(){
+  defaults write com.apple.screencapture disable-shadow -bool true && \
+  killall SystemUIServer
+}
+funJ0J05(){
+  defaults write com.apple.screencapture name "Example name" && \
+  killall SystemUIServer
+}
+funJ0K01(){
+  installer -pkg /path/to/installer.pkg -target /
+}
+funJ0L01(){
+  sudo softwareupdate -ia
+}
+funJ0L02(){
+  defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+}
+funJ0L03(){
+  sudo softwareupdate -l
+}
+funJ0L0401(){
+  sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate CatalogURL http://su.example.com:8088/index.sucatalog
+}
+funJ0L0402(){
+  sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
+}
+funJ0M0101(){
+  echo "using command: " "mdutil -i off -d /path/to/volume"
+}
+funJ0M0102(){
+  echo "using command: " "mdutil -i on /path/to/volume"
+}
+funJ0M02(){
+  echo "using command: " "mdutil -E /path/to/volume"
+}
+funJ0M03(){
+  mdfind -name 'searchterm'
+}
+funJ0M04(){
+  echo "using command: " "mdls /path/to/file"
+}
+funJ0N01(){
+  echo "Reboot while holding Cmd + R, open the Terminal application and enter:"
+  echo "csrutil disable && reboot"
+}
+funJ0N02(){
+  echo "Reboot while holding Cmd + R, open the Terminal application and enter:"
+  echo "csrutil enable && reboot"
+}
