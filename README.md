@@ -278,7 +278,7 @@ defaults write com.apple.TextEdit RichText -int 0
 #### Change Backup Interval
 This changes the interval to 30 minutes. The integer value is the time in seconds.
 ```bash
-sudo defaults write /System/Library/Launch Daemons/com.apple.backupd-auto StartInterval -int 1800
+sudo defaults write /System/Library/LaunchDaemons/com.apple.backupd-auto StartInterval -int 1800
 ```
 
 #### Local Backups
