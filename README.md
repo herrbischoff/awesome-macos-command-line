@@ -437,6 +437,17 @@ defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-t
 killall Dock
 ```
 
+#### Auto rearrange Spaces based on most recent use
+```bash
+# Enable (Default)
+defaults write com.apple.dock mru-spaces -bool true && \
+killall Dock
+
+# Disable
+defaults write com.apple.dock mru-spaces -bool false && \
+killall Dock
+```
+
 #### Icon Bounce
 Global setting whether Dock icons should bounce when the respective application demands your attention.
 ```bash
