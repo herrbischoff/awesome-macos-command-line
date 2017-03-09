@@ -437,7 +437,7 @@ defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-t
 killall Dock
 ```
 
-#### Auto rearrange Spaces based on most recent use
+#### Auto Rearrange Spaces Based on Most Recent Use
 ```bash
 # Enable (Default)
 defaults write com.apple.dock mru-spaces -bool true && \
