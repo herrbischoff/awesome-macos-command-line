@@ -212,6 +212,7 @@ Code from: http://web.archive.org/web/20071008123746/http://www.hawkwings.net/20
 Originally by "pmbuko" with modifications by Romulo
 Updated by Brett Terpstra 2012
 Updated by Mathias Törnblom 2015 to support V3 in El Capitan and still keep backwards compatibility
+Updated by Andrei Miclaus 2017 to support V4 in Sierra
 *)
 
 tell application "Mail" to quit
@@ -219,7 +220,7 @@ set os_version to do shell script "sw_vers -productVersion"
 set mail_version to "V2"
 considering numeric strings
     if "10.10" <= os_version then set mail_version to "V3"
-    if "10.12" < os_version then set mail_version to "V4" # for osx sierra
+    if "10.12" < os_version then set mail_version to "V4"
 end considering
 
 set sizeBefore to do shell script "ls -lnah ~/Library/Mail/" & mail_version & "/MailData | grep -E 'Envelope Index$' | awk {'print $5'}"
@@ -346,6 +347,17 @@ killall Dock
 #### Add a Space
 ```bash
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}' && \
+killall Dock
+```
+
+#### Auto Rearrange Spaces Based on Most Recent Use
+```bash
+# Enable (Default)
+defaults write com.apple.dock mru-spaces -bool true && \
+killall Dock
+
+# Disable
+defaults write com.apple.dock mru-spaces -bool false && \
 killall Dock
 ```
 
