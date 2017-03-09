@@ -417,7 +417,7 @@ textutil -convert html file.ext
 
 #### Create an Empty File
 Creates an empty 10 gigabyte test file.
-```
+```bash
 mkfile 10g /path/to/file
 ```
 
