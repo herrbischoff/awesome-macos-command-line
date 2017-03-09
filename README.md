@@ -399,7 +399,7 @@ killall Dock
 defaults write com.apple.dock showhidden -bool true && \
 killall Dock
 
-# Disable
+# Disable (Default)
 defaults write com.apple.dock showhidden -bool false && \
 killall Dock
 ```
