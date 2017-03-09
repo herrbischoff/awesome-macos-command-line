@@ -61,6 +61,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Networking Tools](#networking-tools)
     - [SSH](#ssh)
     - [TCP/IP](#tcpip)
+    - [TFTP](#tftp)
     - [Wi-Fi](#wi-fi)
 - [Package Managers](#package-managers)
 - [Printing](#printing)
@@ -1014,7 +1015,6 @@ sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
 ```
 
-
 ### TCP/IP
 
 #### Show Application Using a Certain Port
@@ -1026,6 +1026,15 @@ sudo lsof -i :80
 #### Show External IP Address
 ```bash
 dig +short myip.opendns.com @resolver1.opendns.com
+```
+
+### TFTP
+
+#### Start Native TFTP Daemon
+Files will be served from `/private/tftpboot`.
+```bash
+sudo launchctl load -F /System/Library/LaunchDaemons/tftp.plist && \
+sudo launchctl start com.apple.tftpd
 ```
 
 ### Wi-Fi
