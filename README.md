@@ -350,6 +350,17 @@ defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-t
 killall Dock
 ```
 
+#### Auto Rearrange Spaces Based on Most Recent Use
+```bash
+# Enable (Default)
+defaults write com.apple.dock mru-spaces -bool true && \
+killall Dock
+
+# Disable
+defaults write com.apple.dock mru-spaces -bool false && \
+killall Dock
+```
+
 #### Icon Bounce
 Global setting whether Dock icons should bounce when the respective application demands your attention.
 ```bash
@@ -508,86 +519,6 @@ Like the Disk Utility "Restore" function.
 sudo asr -restore -noverify -source /path/to/diskimage.dmg -target /Volumes/VolumeToRestoreTo
 ```
 
-
-## Dock
-
-#### Add a Stack with Recent Applications
-```bash
-defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "list-type" = 1; }; "tile-type" = "recents-tile"; }' && \
-killall Dock
-```
-
-#### Add a Space
-```bash
-defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}' && \
-killall Dock
-```
-
-#### Auto Rearrange Spaces Based on Most Recent Use
-```bash
-# Enable (Default)
-defaults write com.apple.dock mru-spaces -bool true && \
-killall Dock
-
-# Disable
-defaults write com.apple.dock mru-spaces -bool false && \
-killall Dock
-```
-
-#### Icon Bounce
-Global setting whether Dock icons should bounce when the respective application demands your attention.
-```bash
-# Enable (Default)
-defaults write com.apple.dock no-bouncing -bool true && \
-killall Dock
-
-# Disable
-defaults write com.apple.dock no-bouncing -bool false && \
-killall Dock
-```
-
-#### Reset Dock
-```bash
-defaults delete com.apple.dock && \
-killall Dock
-```
-
-#### Resize
-Fully resize your Dock's body. To resize change the `0` value as an integer.
-```bash
-defaults write com.apple.dock tilesize -int 0 && \
-killall Dock
-```
-
-#### Scroll Gestures
-Use your touchpad or mouse scroll wheel to interact with Dock items. Allows you to use an upward scrolling gesture to open stacks. Using the same gesture on applications that are running invokes Exposé/Mission Control.
-```bash
-# Enable
-defaults write com.apple.dock scroll-to-open -bool true && \
-killall Dock
-
-# Disable (Default)
-defaults write com.apple.dock scroll-to-open -bool false && \
-killall Dock
-```
-
-#### Set Auto Show/Hide Delay
-The float number defines the show/hide delay in ms.
-```bash
-defaults write com.apple.Dock autohide-delay -float 0 && \
-killall Dock
-```
-
-#### Show Hidden App Icons
-```bash
-# Enable
-defaults write com.apple.dock showhidden -bool true && \
-killall Dock
-
-# Disable
-defaults write com.apple.dock showhidden -bool false && \
-killall Dock
-```
 
 ## Documents
 
