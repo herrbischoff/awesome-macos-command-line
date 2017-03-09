@@ -31,7 +31,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
 - [Developer](#developer)
     - [Vim](#vim)
     - [Xcode](#xcode)
-- [Disks and Volumes](#disks-and-volumes)
+- [Files, Disks and Volumes](#files-disks-and-volumes)
     - [Disk Images](#disk-images)
 - [Dock](#dock)
 - [Documents](#documents)
@@ -334,7 +334,13 @@ xcrun simctl delete unavailable
 ```
 
 
-## Disks and Volumes
+## Files, Disks and Volumes
+
+#### Create an Empty File
+Creates an empty 10 gigabyte test file.
+```
+mkfile 10g /path/to/file
+```
 
 #### Disable Sudden Motion Sensor
 Leaving this turned on is useless when you're using SSDs.
