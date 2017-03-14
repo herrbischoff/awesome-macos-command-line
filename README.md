@@ -520,15 +520,6 @@ sudo asr -restore -noverify -source /path/to/diskimage.dmg -target /Volumes/Volu
 ```
 
 
-## Documents
-
-#### Convert File to HTML
-Supported formats are plain text, rich text (rtf) and Microsoft Word (doc/docx).
-```bash
-textutil -convert html file.ext
-```
-
-
 ## Finder
 
 ### Files and Folders
