@@ -997,7 +997,7 @@ ping -o github.com
 traceroute github.com
 ```
 
-#### Display updated information about used sockets or routes
+#### Display Updated Information about Used Sockets or Routes
 ```bash
 nettop
 ```
