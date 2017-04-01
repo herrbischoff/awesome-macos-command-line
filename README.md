@@ -10,7 +10,7 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 
 For more terminal shell goodness, please also see this list's sister list [Awesome Command Line Apps](https://github.com/herrbischoff/awesome-command-line-apps).
 
-## Table of Contents
+## Contents
 
 - [Appearance](#appearance)
     - [Transparency](#transparency)
