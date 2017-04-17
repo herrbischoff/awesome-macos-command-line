@@ -26,6 +26,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Sketch](#sketch)
     - [Skim](#skim)
     - [TextEdit](#textedit)
+    - [Sublime Text](#sublime-text)
 - [Backup](#backup)
     - [Time Machine](#time-machine)
 - [Developer](#developer)
@@ -272,6 +273,15 @@ defaults write -app Skim SKAutoReloadFileUpdate -boolean true
 defaults write com.apple.TextEdit RichText -int 0
 ```
 
+### Sublime Text
+
+#### Alias for openning files or folders with Sublime Text
+```bash
+alias subl="open -a 'Sublime Text'"
+#example
+subl Makefile
+subl .
+```
 
 ## Backup
 
