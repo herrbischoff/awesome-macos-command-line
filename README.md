@@ -232,6 +232,10 @@ display dialog ("Mail index before: " & sizeBefore & return & "Mail index after:
 
 tell application "Mail" to activate
 ```
+To reverse this and restore default behavior:
+```bash
+launchctl load -w /System/Library/LaunchAgents/com.apple.rcd.plist
+```
 
 ### Safari
 
