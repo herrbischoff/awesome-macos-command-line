@@ -1,0 +1,151 @@
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Layout {{{
+
+# Hide All Desktop Icons
+alias hideicons="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+
+# Show All Desktop Icons
+alias showicons="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# }}}
+# Metadata Files {{{
+
+# Recursively Delete .DS_Store Files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# }}}
+# Opening Things {{{
+
+# Change Working Directory to Finder Path
+# If multiple windows are open, it chooses the top-most one.
+alias cdf=`cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"`
+
+# }}}
+
+###############################################################################
+# Fonts                                                                       #
+###############################################################################
+
+# {{{
+
+# Clear Font Cache for Current User
+# To clear font caches for all users, put sudo in front of this command.
+alias clearfontcache="atsutil databases -removeUser && atsutil server -shutdown && atsutil server -ping"
+
+# }}}
+
+###############################################################################
+# Hardware                                                                    #
+###############################################################################
+
+# Hardware Information {{{
+
+# Remaining Battery Percentage
+alias battp=`pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';'`
+
+# Remaining Battery Time
+alias battt=`pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f3 -d';'`
+
+# Show Connected Device's UDID
+alias udid="system_profiler SPUSBDataType | sed -n -e '/iPad/,/Serial/p' -e '/iPhone/,/Serial/p'"
+
+# }}}
+# Power Management {{{
+
+# Prevent System Sleep
+# Give time in seconds as parameter, like `nosleep 3600`.
+alias nosleep="caffeinate -u -t"
+
+# }}}
+
+###############################################################################
+# Media                                                                       #
+###############################################################################
+
+# Audio {{{
+
+# Mute Audio Output
+alias mute="osascript -e 'set volume output muted true'"
+
+# Set Audio Volume
+alias unmute="osascript -e 'set volume 4'"
+
+# }}}
+
+###############################################################################
+# Networking                                                                  #
+###############################################################################
+
+# TCP/IP {{{
+
+# Show External IP Address
+alias extip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+# Show local IP Address
+# Defaults to Wi-Fi connection, change accordingly if needed.
+alias ip="ipconfig getifaddr en0"
+
+# }}}
+# Wi-Fi {{{
+
+# Airport Utility
+alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
+
+# Show Current SSID
+alias ssid="airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}'"
+
+# Show Wi-Fi Connection History
+alias wifilast="defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences | grep LastConnected -A 7"
+
+# Show Wi-Fi Password of Current Connection
+alias wifipass=`security find-generic-password -D "AirPort network password" -a "$(airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}')" -gw`
+
+# Show Wi-Fi Connection History
+alias wifihist="defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences | grep LastConnected -A 7"
+
+# }}}
+
+###############################################################################
+# Security                                                                    #
+###############################################################################
+
+# Passwords {{{
+
+# Generate Secure Password and Copy to Clipboard
+# Needs `pwgen` via Homebrew, etc.
+alias pw="pwgen -Cs 20 1 | tr -d ' ' | tr -d '\n' | pbcopy"
+
+# }}}
+# Physical Access {{{
+
+# Lock Screen
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# }}}
+
+###############################################################################
+# System                                                                      #
+###############################################################################
+
+# Software Update {{{
+
+# Install All Available Software Updates
+alias update="sudo softwareupdate -ia"
+
+# }}}
+
+###############################################################################
+# Terminal                                                                    #
+###############################################################################
+
+# {{{
+
+# Ring Terminal Bell
+alias bell="tput bel"
+
+# }}}
+
+# vim:foldmethod=marker:foldlevel=0:ft=sh
