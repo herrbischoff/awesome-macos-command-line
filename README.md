@@ -518,7 +518,10 @@ Like the Disk Utility "Restore" function.
 ```bash
 sudo asr -restore -noverify -source /path/to/diskimage.dmg -target /Volumes/VolumeToRestoreTo
 ```
-
+#### Burn iso to DVD
+```bash
+hdiutil burn /path/to/file.iso
+```
 
 ## Documents
 
