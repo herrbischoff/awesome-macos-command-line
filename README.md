@@ -15,6 +15,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
 - [Appearance](#appearance)
     - [Transparency](#transparency)
     - [Wallpaper](#wallpaper)
+    - [Desktop icons](#desktop-icons)
 - [Applications](#applications)
     - [App Store](#app-store)
     - [Apple Remote Desktop](#apple-remote-desktop)
@@ -127,6 +128,18 @@ osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/p
 
 # Since Mavericks
 sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '/path/to/picture.jpg'" && killall Dock
+```
+
+### Desktop icons
+
+#### Hide icons from desktop
+```bash
+defaults write com.apple.finder CreateDesktop -bool false && killall Finder
+```
+#### Show icons on desktop
+
+```bash
+defaults write com.apple.finder CreateDesktop -bool true && killall Finder
 ```
 
 
