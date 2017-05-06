@@ -1460,6 +1460,10 @@ launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.pl
 ```bash
 qlmanage -p /path/to/file
 ```
+#### Enable Text Selection
+```bash
+defaults write com.apple.finder QLEnableTextSelection -bool true
+```
 
 ### Remote Apple Events
 ```bash
