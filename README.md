@@ -909,6 +909,17 @@ Sets a very fast repeat rate, adjust to taste.
 defaults write -g KeyRepeat -int 0.02
 ```
 
+### Mouse
+
+#### Focus Mode on Follow
+```
+# Enable
+defaults write com.apple.Terminal FocusFollowsMouse -string YES
+
+# Disable
+defaults write com.apple.Terminal FocusFollowsMouse -string NO
+```
+
 ## Media
 
 ### Audio
