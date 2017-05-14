@@ -913,7 +913,7 @@ defaults write -g KeyRepeat -int 0.02
 ### Mouse
 
 #### Focus Mode on Follow
-```
+```bash
 # Enable
 defaults write com.apple.Terminal FocusFollowsMouse -string YES
 
