@@ -49,6 +49,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Power Management](#power-management)
 - [Input Devices](#input-devices)
     - [Keyboard](#keyboard)
+    - [Mouse](#mouse)
 - [Media](#media)
     - [Audio](#audio)
     - [Video](#video)
