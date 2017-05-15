@@ -25,6 +25,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Safari](#safari)
     - [Sketch](#sketch)
     - [Skim](#skim)
+    - [Terminal](#terminal)
     - [TextEdit](#textedit)
 - [Backup](#backup)
     - [Time Machine](#time-machine)
@@ -49,7 +50,6 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Power Management](#power-management)
 - [Input Devices](#input-devices)
     - [Keyboard](#keyboard)
-    - [Mouse](#mouse)
 - [Media](#media)
     - [Audio](#audio)
     - [Video](#video)
@@ -264,6 +264,16 @@ defaults write com.bohemiancoding.sketch3 exportCompactSVG -bool yes
 Removes the dialog and defaults to auto reload.
 ```bash
 defaults write -app Skim SKAutoReloadFileUpdate -boolean true
+```
+### Terminal
+
+#### Focus Mode on Follow
+```bash
+# Enable
+defaults write com.apple.Terminal FocusFollowsMouse -string YES
+
+# Disable
+defaults write com.apple.Terminal FocusFollowsMouse -string NO
 ```
 
 ### TextEdit
@@ -908,17 +918,6 @@ defaults write -g ApplePressAndHoldEnabled -bool true
 Sets a very fast repeat rate, adjust to taste.
 ```bash
 defaults write -g KeyRepeat -int 0.02
-```
-
-### Mouse
-
-#### Focus Mode on Follow
-```bash
-# Enable
-defaults write com.apple.Terminal FocusFollowsMouse -string YES
-
-# Disable
-defaults write com.apple.Terminal FocusFollowsMouse -string NO
 ```
 
 ## Media
