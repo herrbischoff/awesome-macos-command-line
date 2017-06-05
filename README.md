@@ -155,6 +155,29 @@ defaults write com.apple.appstore ShowDebugMenu -bool false
 
 ### Apple Remote Desktop
 
+#### Kickstart Manual Pages
+```bash
+sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -help
+```
+
+#### Activate And Deactivate the ARD Agent and Helper
+```bash
+# Activate And Restart the ARD Agent and Helper
+sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -restart -agent -console
+
+# Deactivate and Stop the Remote Management Service
+sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -stop 
+```
+
+#### Enable and Disable Remote Desktop Sharing
+```bash
+# Allow Access for All Users and Give All Users Full Access
+sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -allUsers -privs -all
+
+# Disable ARD Agent and Remove Access Privileges for All Users
+sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -configure -access -off
+```
+
 #### Remove Apple Remote Desktop Settings
 ```bash
 sudo rm -rf /var/db/RemoteManagement ; \
@@ -163,28 +186,6 @@ defaults delete ~/Library/Preferences/com.apple.RemoteDesktop.plist ; \
 sudo rm -r /Library/Application\ Support/Apple/Remote\ Desktop/ ; \
 rm -r ~/Library/Application\ Support/Remote\ Desktop/ ; \
 rm -r ~/Library/Containers/com.apple.RemoteDesktop
-```
-#### Kickstart Apple Remote Desktop
-
-##### Kickstart Manual Pages
-```bash
-sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -help
-```
-##### Activate And Deactivate the ARD Agent and Helper
-```bash
-#Activate And Restart the ARD Agent and Helper
-sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -restart -agent -console
-
-#Deactivate and Stop the Remote Management Service
-sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -stop 
-```
-##### Enable and Disable Remote Desktop Sharing
-```bash
-#Allow Access for All Users and Give All Users Full Access
-sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -allUsers -privs -all
-
-#Disable ARD Agent and Remove Access Privileges for All Users
-sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -configure -access -off
 ```
 
 ### Contacts
