@@ -1,0 +1,369 @@
+PROMPT	Input your choice
+BANNER	banner	banner
+1	Appearance	submenu	banner1
+1-1	Transparency	submenu	banner1
+1-1-1	Reduce Transparency	fun10101	1
+1-1-2	Restore Default Transparency	fun10102	1
+1-2	Wallpaper	submenu	banner1
+1-2-1	Up to Mountain Lion	fun10201	1
+1-2-2	Since Mavericks	fun10202	1
+2	Applications	submenu	banner1
+2-1	App Store	submenu	banner1
+2-1-1	"List All Apps Downloaded from App Store"	submenu	banner1
+2-1-1-1	Via find	fun2010101	1
+2-1-1-2	Via Spotlight	fun2010102	1
+2-1-2	Show Debug Menu	submenu	banner1
+2-1-2-1	Enable	fun2010201	1
+2-1-2-2	Disable (Default)	fun2010202	1
+2-2	Apple Remote Desktop	submenu	banner1
+2-2-1	Remove Apple Remote Desktop Settings	fun20201	1
+2-3	Contacts	submenu	banner1
+2-3-1	Debug Mode	submenu	banner1
+2-3-1-1	Enable	fun2030101	1
+2-3-1-2	Disable (Default)	fun2030102	1
+2-4	Google	submenu	banner1
+2-4-1	Uninstall Google Update	fun20401	1
+2-5	iTunes	submenu	banner1
+2-5-1	Keyboard Media Keys	submenu	banner1
+2-5-1-1	Stop Responding to Key Presses	fun2050101	1
+2-5-1-2	Stop Responding to Key Presses	fun2050102	1
+2-6	Mail	submenu	banner1
+2-6-1	Show Attachments as Icons	fun20601	1
+2-6-2	Vacuum Mail Index	fun20602	1
+2-7	Safari	submenu	banner1
+2-7-1	Enable Develop Menu and Web Inspector	fun20701	1
+2-7-2	Get Current Page Data	fun20702	1
+2-8	Sketch	submenu	banner1
+2-8-1	Export Compact SVGs	fun20801	1
+2-9	Skim	submenu	banner1
+2-9-1	Turn Off Auto Reload Dialog	fun20901	1
+2-A	TextEdit	submenu	banner1
+2-A-1	Use Plain Text Mode as Default	fun20A01	1
+3	Backup	submenu	banner1
+3-1	Time Machine	submenu	banner1
+3-1-1	Change Backup Interval	fun30101	1
+3-1-2	Local Backups	submenu	banner1
+3-1-2-1	Status	fun3010201	1
+3-1-2-2	Enable (Default)	fun3010202	1
+3-1-2-3	Disable	fun3010203	1
+3-1-3	Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume	fun30103	1
+3-1-4	Verify Backup	fun30104	1
+4	Developer	submenu	banner1
+4-1	Vim	submenu	banner1
+4-1-1	Compile Sane Vim	fun40101	1
+4-1-2	Neovim	fun40102	1
+4-2	Xcode	submenu	banner1
+4-2-1	Install Command Line Tools without Xcode	fun40201	1
+4-2-2	Remove All Unavailable Simulators	fun40202	1
+5	Disks and Volumes	submenu	banner1
+5-1	Disable Sudden Motion Sensor	fun501	1
+5-2	Eject All Mountable Volumes	fun502	1
+5-3	Repair File Permissions	fun503	1
+5-4	Set Boot Volume	fun504	1
+5-5	Show All Attached Disks and Partitions	fun505	1
+5-6	View File System Usage	fun506	1
+5-7	Disk Images	submenu	banner1
+5-7-1	Create Disk Image From Folder Contents	fun50701	1
+5-7-2	Burn Disk Images to DVD	fun50702	1
+5-7-3	Disable Disk Image Verification	fun50703	1
+5-7-4	Make Volume OS X Bootable	fun50704	1
+5-7-5	Mount Disk Image	fun50705	1
+5-7-6	Unmount Disk Image	fun50706	1
+5-7-7	Write Disk Image to Volume	fun50707	1
+6	Dock	submenu	banner1
+6-1	Add a Stack with Recent Applications	fun601	1
+6-2	Add a Space	fun602	1
+6-3	Icon Bounce	submenu	banner1
+6-3-1	Enable (Default)	fun60301	1
+6-3-2	Disable	fun60302	1
+6-4	Reset Dock	fun604	1
+6-5	Resize	fun605	1
+6-6	Scroll Gestures	submenu	banner1
+6-6-1	Enable	fun60601	1
+6-6-2	Disable (Default)	fun60602	1
+6-7	Set Auto Show/Hide Delay	fun607	1
+6-8	Show Hidden App Icons	submenu	banner1
+6-8-1	Enable	fun60801	1
+6-8-2	Disable	fun60802	1
+7	Documents	submenu	banner1
+7-1	Convert File to HTML	fun701	1
+8	Finder	submenu	banner1
+8-1	Files and Folders	submenu	banner1
+8-1-1	Clear All ACLs	fun80101	1
+8-1-2	Hide Folder in Finder	fun80102	1
+8-1-3	Show All File Extensions	fun80103	1
+8-1-4	Show Hidden Files	submenu	banner1
+8-1-4-1	Show All	fun8010401	1
+8-1-4-2	Restore Default File Visibility	fun8010402	1
+8-1-5	Remove Protected Flag	fun80105	1
+8-1-6	Show Full Path in Finder Title	fun80106	1
+8-1-7	Unhide User Library Folder	fun80107	1
+8-1-8	Increase Number of Recent Places	fun80108	1
+8-2	Layout	submenu	banner1
+8-2-1	Show "Quit Finder" Menu Item	submenu	banner1
+8-2-1-1	Enable	fun8020101	1
+8-2-1-2	Disable (Default)	fun8020102	1
+8-2-2	Smooth Scrolling	submenu	banner1
+8-2-2-1	Disable	fun8020201	1
+8-2-2-2	Enable (Default)	fun8020202	1
+8-2-3	Rubberband Scrolling	submenu	banner1
+8-2-3-1	Disable	fun8020301	1
+8-2-3-2	Enable (Default)	fun8020302	1
+8-2-4	Expand Save Panel by Default	fun80204	1
+8-2-5	Desktop Icon Visibility	submenu	banner1
+8-2-5-1	Hide Icons	fun8020501	1
+8-2-5-2	Show Icons (Default)	fun8020502	1
+8-2-6	Path Bar	submenu	banner1
+8-2-6-1	Show	fun8020601	1
+8-2-6-2	Hide (Default)	fun8020602	1
+8-2-7	Scrollbar Visibility	fun80207	1
+8-2-8	Status Bar	submenu	banner1
+8-2-8-1	Show	fun8020801	1
+8-2-8-2	Hide (Default)	fun8020802	1
+8-2-9	Save to Disk by Default	fun80209	1
+8-2-A	Set Current Folder as Default Search Scope	fun8020A	1
+8-2-B	Set Default Finder Location to Home Folder	fun8020B	1
+8-2-C	Set Sidebar Icon Size	fun8020C	1
+8-3	Metadata Files	submenu	banner1
+8-3-1	Disable Creation of Metadata Files on Network Volumes	fun80301	1
+8-3-2	Disable Creation of Metadata Files on USB Volumes	fun80302	1
+8-4	Opening Things	submenu	banner1
+8-4-1	Change Working Directory to Finder Path	fun80401	1
+8-4-2	Open URL	fun80402	1
+8-4-3	Open File	fun80403	1
+8-4-4	Open Applications	fun80404	1
+8-4-5	Open Folder	fun80405	1
+8-4-6	Open Current Folder	fun80406	1
+9	Fonts	submenu	banner1
+9-1	Clear Font Cache for Current User	fun901	1
+9-2	Get SF Mono Fonts(for Sierra onward)	fun902	1
+A	Functions	funA	1
+B	Hardware	submenu	banner1
+B-1	Bluetooth	submenu	banner1
+B-1-1	Status	funB0101	1
+B-1-2	Enable (Default)	funB0102	1
+B-1-3	Disable	funB0103	1
+B-2	Hardware Information	submenu	banner1
+B-2-1	List All Hardware Ports	funB0201	1
+B-2-2	Remaining Battery Percentage	funB0202	1
+B-2-3	Remaining Battery Time	funB0203
+B-2-4	Show Connected Device's UDID	funB0204	1
+B-2-5	Show Current Screen Resolution	funB0205	1
+B-2-6	Show CPU Brand String	funB0206	1
+B-3	Infrared Receiver	submenu	banner1
+B-3-1	Status	funB0301	1
+B-3-2	Enable (Default)	funB0302	1
+B-3-3	Disable	funB0303	1
+B-4	Power Management	submenu	banner1
+B-4-1	Prevent System Sleep	funB0401	1
+B-4-2	Show All Power Management Settings	funB0402	1
+B-4-3	Put Display to Sleep after 15 Minutes of Inactivity	funB0403	1
+B-4-4	Put Computer to Sleep after 30 Minutes of Inactivity	funB0404	1
+B-4-5	Check System Sleep Idle Time	funB0405	1
+B-4-6	Set System Sleep Idle Time to 60 Minutes	funB0406	1
+B-4-7	Turn Off System Sleep Completely	funB0407	1
+B-4-8	Automatic Restart on System Freeze	funB0408	1
+B-4-9	Chime When Charging	submenu	banner1
+B-4-9-1	Enable	funB040901	1
+B-4-9-2	Disable (Default)	funB040902	1
+C	Input Devices	submenu	banner1
+C-1	Keyboard	submenu	banner1
+C-1-1	Auto-Correct	submenu	banner1
+C-1-1-1	Disable	funC010101	1
+C-1-1-2	Enable (Default)	funC010102	1
+C-1-1-3	Show Status	funC010103	1
+C-1-2	Full Keyboard Access	submenu	banner1
+C-1-2-1	Text boxes and lists only (Default)	funC010201	1
+C-1-2-2	All controls	funC010202	1
+C-1-3	Key Repeat	submenu	banner1
+C-1-3-1	Enable Key Repeat	funC010301	1
+C-1-3-2	Disable Key Repeat	funC010302	1
+C-1-4	Key Repeat Rate	funC0104	1
+D	Media	submenu	banner1
+D-1	Audio	submenu	banner1
+D-1-1	Convert Audio File to iPhone Ringtone	funD0101	1
+D-1-2	Create Audiobook From Text	funD0102	1
+D-1-3	Disable Sound Effects on Boot	funD0103	1
+D-1-4	Mute Audio Output	funD0104	1
+D-1-5	Set Audio Volume	funD0105	1
+D-1-6	Play Audio File	funD0106	1
+D-1-7	Speak Text with System Default Voice	funD0107	1
+D-2	Video	submenu	banner1
+D-2-1	Auto-Play Videos in QuickTime Player	funD0201	1
+E	Networking	submenu	banner1
+E-1	Bonjour	submenu	banner1
+E-1-1	Bonjour Service	submenu	banner1
+E-1-1-1	Disable	funE010101	1
+E-1-1-2	Enable (Default)	funE010102	1
+E-2	DHCP	submenu	banner1
+E-2-1	Renew DHCP Lease	funE0201	1
+E-2-2	Show DHCP Info	funE0202	1
+E-3	DNS	submenu	banner1
+E-3-1	Clear DNS Cache	funE0301	1
+E-4	Hostname	submenu	banner1
+E-4-1	Set Computer Name/Host Name	funE0401	1
+E-5	Network Preferences	submenu	banner1
+E-5-1	Network Locations	submenu	banner1
+E-5-1-1	Status	funE050101	1
+E-5-1-2	Switch Network Location	funE050102	1
+E-6	Networking Tools	submenu	banner1
+E-6-1	Ping a Host to See Whether It’s Available	funE0601	1
+E-6-2	Troubleshoot Routing Problems	funE0602	1
+E-7	SSH	submenu	banner1
+E-7-1	Remote Login	submenu	banner1
+E-7-1-1	Enable remote login	funE070101	1
+E-7-1-2	Disable remote login	funE070102	1
+E-8	TCP/IP	submenu	banner1
+E-8-1	Show Application Using a Certain Port	funE0801	1
+E-8-2	Show External IP Address	funE0802	1
+E-9	Wi-Fi	submenu	banner1
+E-9-1	Join a Wi-Fi Network	funE0901	1
+E-9-2	Scan Available Access Points	funE0902	1
+E-9-3	Run a wireless scan	funE0903	1
+E-9-4	Show Current SSID	funE0904	1
+E-9-5	Show Local IP Address	funE0905	1
+E-9-6	Show Wi-Fi Connection History	funE0906	1
+E-9-7	Show Wi-Fi Network Passwords	funE0907	1
+E-9-8	Turn on Wi-Fi Adapter	funE0908	1
+F	Package Managers	submenu	banner1
+F-1	Fink	funF01	1
+F-2	Homebrew	funF02	1
+F-3	MacPorts	funF03	1
+G	Printing	submenu	banner1
+G-1	Clear Print Queue	funG01	1
+G-2	Expand Print Panel by Default	funG02	1
+G-3	Quit Printer App After Print Jobs Complete	funG03	1
+H	Security	submenu	banner1
+H-1	Application Firewall	submenu	banner1
+H-1-1	Firewall Service	submenu	banner1
+H-1-1-1	Show Status	funH010101	1
+H-1-1-2	Enable	funH010102	1
+H-1-1-3	Disable (Default)	funH010103	1
+H-1-2	Add Application to Firewall	funH0102	1
+H-2	Gatekeeper	submenu	banner1
+H-2-1	Add Gatekeeper Exception	funH0201	1
+H-2-2	Remove Gatekeeper Exception	funH0202	1
+H-2-3	Manage Gatekeeper	submenu	banner1
+H-2-3-1	Status	funH020301	1
+H-2-3-2	Enable (Default)	funH020302	1
+H-2-3-3	Disable	funH020303	1
+H-3	Passwords	submenu	banner1
+H-3-1	Generate Secure Password and Copy to Clipboard	funH0301	1
+H-4	Physical Access	submenu	banner1
+H-4-1	Launch Screen Saver	funH0401	1
+H-4-2	Lock Screen	funH0402	1
+H-4-3	Screensaver Immediate Lock	submenu	banner1
+H-4-3-1	Status	funH040301	1
+H-4-3-2	Enable (Default)	funH040302	1
+H-4-3-3	Disable (Integer = lock delay in seconds)	funH040303	1
+H-4-4	Screensaver Password	submenu	banner1
+H-4-4-1	Status	funH040401	1
+H-4-4-2	Enable	funH040402	1
+H-4-4-3	Disable (Default)	funH040403	1
+H-5	Wiping Data	submenu	banner1
+H-5-1	Securely Remove File	funH0501	1
+H-5-2	Securely Remove Folder	funH0502	1
+H-5-3	Securely Remove Path (Force)	funH0503	1
+I	Search	submenu	banner1
+I-1	Find	submenu	banner1
+I-1-1	Recursively Delete .DS_Store Files	funI0101	1
+I-2	Locate	submenu	banner1
+I-2-1	Build Locate Database	funI0201	1
+I-2-2	Search via Locate	funI0202	1
+J	System	submenu	banner1
+J-1	AirDrop	submenu	banner1
+J-1-1	Enable AirDrop over Ethernet and on Unsupported Macs	funJ0101	1
+J-1-2	Enable (Default)	funJ0102	1
+J-1-3	Disable	funJ0103	1
+J-2	AppleScript	submenu	banner1
+J-2-1	Execute AppleScript	funJ0201	1
+J-3	Basics	submenu	banner1
+J-3-1	Compare Two Folders	funJ0301	1
+J-3-2	Copy Large File with Progress	funJ0302	1
+J-3-3	Restore Sane Shell	funJ0303	1
+J-3-4	Restart	funJ0304	1
+J-3-5	Shutdown	funJ0305	1
+J-3-6	Show Build Number of OS	funJ0306	1
+J-3-7	Uptime	funJ0307	1
+J-4	Clipboard	submenu	banner1
+J-4-1	Copy data to Clipboard	funJ0401	1
+J-4-2	Convert Clipboard to Plain Text	funJ0402	1
+J-4-3	Convert Tabs to Spaces for Clipboard Content	funJ0403	1
+J-4-4	Copy data from Clipboard	funJ0404	1
+J-4-5	Sort and Strip Duplicate Lines from Clipboard Content	funJ0405	1
+J-5	Date and Time	submenu	banner1
+J-5-1	List Available Timezones	funJ0501	1
+J-5-2	Set Timezone	funJ0502	1
+J-5-3	Set Clock Using Network Time	submenu	banner1
+J-5-3-1	Status	funJ050301	1
+J-5-3-2	Enable (Default)	funJ050302	1
+J-5-3-3	Disable	funJ050303	1
+J-6	FileVault	submenu	banner1
+J-6-1	Automatically Unlock FileVault on Restart	funJ0601	1
+J-6-2	FileVault Service	funJ0602	1
+J-6-2-1	Status	funJ060201	1
+J-6-2-2	Enable	funJ060202	1
+J-6-2-3	Disable (Default)	funJ060203	1
+J-7	Information/Reports	submenu	banner1
+J-7-1	Generate Advanced System and Performance Report	funJ0701	1
+J-8	Install OS	submenu	banner1
+J-8-1	Create Bootable Installer	submenu	banner1
+J-8-1-1	El Capitan	funJ080101	1
+J-8-1-2	Yosemite	funJ080102	1
+J-8-1-3	Mavericks	funJ080103	1
+J-9	Kernel Extensions	submenu	banner1
+J-9-1	Display Status of Loaded Kernel Extensions	funJ0901	1
+J-9-2	Load Kernel Extension	funJ0902	1
+J-9-3	Unload Kernel Extensions	funJ0903	1
+J-A	LaunchAgents	funJ0A	1
+J-B	LaunchServices	submenu	banner1
+J-B-1	Rebuild LaunchServices Database	funJ0B01	1
+J-C	Login Window	submenu	banner1
+J-C-1	Set Login Window Text	funJ0C01	1
+J-D	Memory Management	submenu	banner1
+J-D-1	Purge memory cache	funJ0D01	1
+J-D-2	Show Memory Statistics	submenu	banner1
+J-D-2-1	One time	funJ0D0201	1
+J-D-2-2	Table of data, repeat 10 times total	funJ0D0202	1
+J-E	Notification Center	submenu	banner1
+J-E-1	Notification Center Service	submenu	banner1
+J-E-1-1	Disable	funJ0E0101	1
+J-E-1-2	Enable (Default)	funJ0E0102	1
+J-F	QuickLook	submenu	banner1
+J-F-1	Preview via QuickLook	funJ0F01	1
+J-G	Remote Apple Events	submenu	banner1
+J-G-1	Status	funJ0G01	1
+J-G-2	Enable	funJ0G02	1
+J-G-3	Disable (Default)	funJ0G03	1
+J-H	Root User	submenu	banner1
+J-H-1	Enable	funJ0H01	1
+J-H-2	Disable	funJ0H02	1
+J-I	Safe Mode Boot	submenu	banner1
+J-I-1	Status	funJ0I01	1
+J-I-2	Enable	funJ0I02	1
+J-I-3	Disable	funJ0I03	1
+J-J	Screenshots	submenu	banner1
+J-J-1	Take Delayed Screenshot	funJ0J01	1
+J-J-2	Take Delayed Screenshot	funJ0J02	1
+J-J-3	Take Delayed Screenshot	funJ0J03	1
+J-J-4	Take Delayed Screenshot	funJ0J04	1
+J-J-5	Take Delayed Screenshot	funJ0J05	1
+J-K	Software Installation	submenu	banner1
+J-K-1	Install PKG	funJ0K01	1
+J-L	Software Update	submenu	banner1
+J-L-1	Install All Available Software Updates	funJ0L01	1
+J-L-2	Set Software Update Check Interval	funJ0L02	1
+J-L-3	Show Available Software Updates	funJ0L03	1
+J-L-4	Set Software Update Server	submenu	banner1
+J-L-4-1	Use own SUS	funJ0L0401	1
+J-L-4-2	Reset to Apple SUS	funJ0L0402	1
+J-M	Spotlight	submenu	banner1
+J-M-1	Spotlight Indexing	submenu	banner1
+J-M-1-1	Disable	funJ0M0101	1
+J-M-1-2	Enable (Default)	funJ0M0102	1
+J-M-2	Erase Spotlight Index and Rebuild	funJ0M02	1
+J-M-3	Search via Spotlight	funJ0M03	1
+J-M-4	Show Spotlight Indexed Metadata	funJ0M04	1
+J-N	System Integrity Protection	submenu	banner1
+J-N-1	Disable System Integrity Protection	funJ0N01	1
+J-N-2	Enable System Integrity Protection	funJ0N02	1
