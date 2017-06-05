@@ -2,6 +2,7 @@
 
 Please ensure your pull request adheres to the following guidelines:
 
+- Your GitHub profile contains a non-default profile picture and at least some information about you. Experience shows pull requests from accounts missing those characteristics are likely to reflect their owner's attention to detail.
 - Search previous suggestions before making a new one, as yours may be a duplicate.
 - Make an individual pull request for each suggestion.
 - Titles need to be [capitalized](http://grammar.yourdictionary.com/capitalization/rules-for-capitalization-in-titles.html) properly. Don't be lazy. For help with this, see [Online Capitalize Tool](https://headlinecapitalization.com). Use *Chicago Manual of Style* rules.
