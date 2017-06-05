@@ -1646,7 +1646,7 @@ tput bel
 ### Shells
 
 #### Bash
-Install the latest version and set as current users' default shell:
+Install the latest version and set as current user's default shell:
 ```bash
 brew install bash && \
 echo $(brew --prefix)/bin/bash | sudo tee -a /etc/shells && \
@@ -1657,7 +1657,7 @@ chsh -s $(brew --prefix)/bin/bash
 - [Bash-it](https://github.com/Bash-it/bash-it) - Community Bash framework, like Oh My Zsh for Bash.
 
 #### fish
-Install the latest version and set as current users' default shell:
+Install the latest version and set as current user's default shell:
 ```bash
 brew install fish && \
 echo $(brew --prefix)/bin/fish | sudo tee -a /etc/shells && \
@@ -1671,7 +1671,7 @@ shell for OS X, Linux, and the rest of the family.
 - [Installation & Configuration Tutorial](https://github.com/ellerbrock/fish-shell-setup-osx) - How to Setup Fish Shell with Fisherman, Powerline Fonts, iTerm2 and Budspencer Theme on OS X.
 
 #### Zsh
-Install the latest version and set as current users' default shell:
+Install the latest version and set as current user's default shell:
 ```bash
 brew install zsh && \
 sudo sh -c 'echo $(brew --prefix)/bin/zsh >> /etc/shells' && \
