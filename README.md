@@ -267,7 +267,7 @@ defaults write -app Skim SKAutoReloadFileUpdate -boolean true
 ```
 ### Terminal
 
-#### Focus Mode on Follow
+#### Focus Follows Mouse
 ```bash
 # Enable
 defaults write com.apple.Terminal FocusFollowsMouse -string YES
