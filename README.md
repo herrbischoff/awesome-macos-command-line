@@ -1453,6 +1453,12 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "
 
 ### Memory Management
 
+
+#### Displays a Sorted List of System Processes
+```bash
+top
+```
+
 #### Purge memory cache
 ```bash
 sudo purge
