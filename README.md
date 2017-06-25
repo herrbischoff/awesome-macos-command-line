@@ -276,7 +276,11 @@ osascript -e 'tell application "Safari" to get URL of current tab of front windo
 
 #### Use Backspace/Delete to Go Back a Page
 ```bash
+# Enable
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool YES
+
+# Disable
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool NO
 ```
 
 ### Sketch
