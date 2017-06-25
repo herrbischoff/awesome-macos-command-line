@@ -130,6 +130,16 @@ osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/p
 sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '/path/to/picture.jpg'" && killall Dock
 ```
 
+#### Use Screensaver for Wallpaper
+Note: this prevents normal screensaver activation after a timed amount of inactivity.
+
+```bash
+/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine -background &
+
+# Restore Wallpaper and Screensaver Activation
+killall ScreenSaverEngine && sleep 1 && \
+open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app
+```
 
 ## Applications
 
