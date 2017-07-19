@@ -1210,7 +1210,7 @@ sudo spctl --master-disable
 
 #### Generate Secure Password and Copy to Clipboard
 ```bash
-LC_ALL=C tr -dc "[:alpha:][:alnum:]" < /dev/urandom | head -c 20 | pbcopy
+LC_ALL=C tr -dc "[:alnum:]" < /dev/urandom | head -c 20 | pbcopy
 ```
 
 ### Physical Access
