@@ -260,6 +260,14 @@ tell application "Mail" to activate
 
 ### Safari
 
+#### Change Default Fonts
+```bash
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2StandardFontFamily Georgia
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DefaultFontSize 16
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2FixedFontFamily Menlo
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DefaultFixedFontSize 14
+```
+
 #### Enable Develop Menu and Web Inspector
 ```bash
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true && \
