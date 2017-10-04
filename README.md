@@ -475,6 +475,17 @@ defaults write com.apple.dock showhidden -bool false && \
 killall Dock
 ```
 
+#### Show Only Active Applications
+```bash
+# Enable
+defaults write com.apple.dock static-only -bool true && \
+killall Dock
+
+# Disable (Default)
+defaults write com.apple.dock static-only -bool false && \
+killall Dock
+```
+
 ## Documents
 
 #### Convert File to HTML
