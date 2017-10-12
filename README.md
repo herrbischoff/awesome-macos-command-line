@@ -332,6 +332,7 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
 
 ### Remove Smiley Face
+At next start the warning "Your Code installation appears to be corrupt. Please reinstall." will appear. That's fine, just click "Don't show again".
 ```bash
 sed -i '' 's/\.send-feedback{display:inline-block}/\.send-feedback{display:none}/' /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/out/vs/workbench/workbench.main.css
 ```
