@@ -1708,6 +1708,7 @@ tput bel
 ### Alternative Terminals
 
 - [iTerm2](https://iterm2.com) - A better Terminal.app.
+- [Upterm](https://github.com/railsware/upterm) - A terminal emulator for the 21st century.
 
 ### Shells
 
