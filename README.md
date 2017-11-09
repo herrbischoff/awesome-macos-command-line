@@ -27,7 +27,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Skim](#skim)
     - [Terminal](#terminal)
     - [TextEdit](#textedit)
-    - [Virtual Studio Code](#visual-studio-code)
+    - [Visual Studio Code](#visual-studio-code)
 - [Backup](#backup)
     - [Time Machine](#time-machine)
 - [Developer](#developer)
