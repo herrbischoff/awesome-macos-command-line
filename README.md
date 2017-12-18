@@ -830,7 +830,7 @@ sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerStat
 
 # Disable
 sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0 && \
-sudo killall -HUP blued
+sudo killall -HUP bluetoothd
 ```
 
 ### Harddisks
