@@ -833,6 +833,14 @@ sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerStat
 sudo killall -HUP bluetoothd
 ```
 
+On El Capitan (10.12) and earlier, the bluetooth daemon is named `blued`.
+
+```
+# Disable On El Capitan (12.12) or earlier
+sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0 && \
+sudo killall -HUP blued
+```
+
 ### Harddisks
 
 #### Force Enable Trim
