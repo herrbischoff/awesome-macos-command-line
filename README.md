@@ -1089,6 +1089,11 @@ scselect
 scselect LocationNameFromStatus
 ```
 
+#### Set Static IP Address
+```bash
+networksetup -setmanual "Ethernet" 192.168.2.100 255.255.255.0 192.168.2.1
+```
+
 ### Networking Tools
 
 #### Ping a Host to See Whether It’s Available
