@@ -411,9 +411,21 @@ defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "l
 killall Dock
 ```
 
+#### Add a Nameless Stack Folder and Small Spacer
+```bash
+defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = {}; "tile-type"="small-spacer-tile"; }' && \
+killall Dock
+```
+
 #### Add a Space
 ```bash
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}' && \
+killall Dock
+```
+
+#### Add a Small Space
+```bash
+defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="small-spacer-tile";}' && \
 killall Dock
 ```
 
