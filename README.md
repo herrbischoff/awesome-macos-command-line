@@ -149,6 +149,7 @@ mdfind kMDItemAppStoreHasReceipt=1
 ```
 
 #### Show Debug Menu
+Works up to Yosemite.
 ```bash
 # Enable
 defaults write com.apple.appstore ShowDebugMenu -bool true
