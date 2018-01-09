@@ -52,6 +52,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Power Management](#power-management)
 - [Input Devices](#input-devices)
     - [Keyboard](#keyboard)
+- [Launchpad](#launchpad)
 - [Media](#media)
     - [Audio](#audio)
     - [Video](#video)
@@ -1006,6 +1007,20 @@ defaults write -g ApplePressAndHoldEnabled -bool true
 Sets a very fast repeat rate, adjust to taste.
 ```bash
 defaults write -g KeyRepeat -int 0.02
+```
+
+## Launchpad
+
+#### Reset Launchpad Layout
+You need to restart `Dock` because Launchpad is tied to it.
+```bash
+# Until Yosemite
+rm ~/Library/Application\ Support/Dock/*.db && \
+killall Dock
+
+# From El Capitan
+defaults write com.apple.dock ResetLaunchPad -bool true && \
+killall Dock
 ```
 
 ## Media
