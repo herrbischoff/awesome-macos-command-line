@@ -1014,7 +1014,7 @@ defaults write -g KeyRepeat -int 0.02
 #### Reset Launchpad Layout
 You need to restart `Dock` because Launchpad is tied to it.
 ```bash
-# Until Yosemite
+# Up to Yosemite
 rm ~/Library/Application\ Support/Dock/*.db && \
 killall Dock
 
