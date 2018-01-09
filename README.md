@@ -215,12 +215,18 @@ defaults write com.apple.addressbook ABShowDebugMenu -bool false
 ### iTunes
 
 #### Keyboard Media Keys
+This works up to Yosemite. System Integrity Protection was introduced in El Capitan which prevents system Launch Agents from being unloaded.
 ```bash
 # Stop Responding to Key Presses
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 
 # Respond to Key Presses (Default)
 launchctl load -w /System/Library/LaunchAgents/com.apple.rcd.plist
+```
+
+From El Capitan onwards, you need to resort to a kind of hack, which will make iTunes inaccessible to any user, effectively preventing it from starting itself or its helpers.
+```bash
+sudo chmod 0000 /Applications/iTunes.app
 ```
 
 ### Mail
