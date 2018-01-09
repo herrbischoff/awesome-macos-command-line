@@ -224,7 +224,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 launchctl load -w /System/Library/LaunchAgents/com.apple.rcd.plist
 ```
 
-From El Capitan onwards, you need to resort to a kind of hack, which will make iTunes inaccessible to any user, effectively preventing it from starting itself or its helpers.
+From El Capitan onwards, you can either disable SIP or resort to a kind of hack, which will make iTunes inaccessible to any user, effectively preventing it from starting itself or its helpers. Be aware that for all intents and purposes this will trash your iTunes installation and may conflict with OS updates down the road.
 ```bash
 sudo chmod 0000 /Applications/iTunes.app
 ```
