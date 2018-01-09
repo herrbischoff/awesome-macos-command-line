@@ -544,7 +544,11 @@ sudo diskutil repairPermissions /
 
 #### Set Boot Volume
 ```bash
+# Up to Yosemite
 bless --mount "/path/to/mounted/volume" --setBoot
+
+# From El Capitan
+sudo systemsetup -setstartupdisk /System/Library/CoreServices
 ```
 
 #### Show All Attached Disks and Partitions
