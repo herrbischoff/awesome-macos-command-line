@@ -370,6 +370,8 @@ sudo tmutil enablelocal
 sudo tmutil disablelocal
 ```
 
+Since High Sierra, you cannot disable local snapshots as they are used as the source for creating the external backup.
+
 #### Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
 ```bash
 sudo defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
