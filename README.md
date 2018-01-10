@@ -370,7 +370,7 @@ sudo tmutil enablelocal
 sudo tmutil disablelocal
 ```
 
-Since High Sierra, you cannot disable local snapshots as they are used as the source for creating the external backup.
+Since High Sierra, you cannot disable local snapshots. Time Machine now always creates a local snapshot and uses that snapshot as the data source to create a regular backup, rather than using the live disk as the source, as is the case with HFS formatted disks. 
 
 #### Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
 ```bash
