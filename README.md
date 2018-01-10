@@ -377,6 +377,29 @@ Since High Sierra, you cannot disable local snapshots. Time Machine now always c
 sudo defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 ```
 
+#### Show Time Machine Logs
+This little script will output the last 12 hours of Time Machine activity followed by live activity.
+```bash
+#!/bin/sh
+
+filter='processImagePath contains "backupd" and subsystem beginswith "com.apple.TimeMachine"'
+
+# show the last 12 hours
+start="$(date -j -v-12H +'%Y-%m-%d %H:%M:%S')"
+
+echo ""
+echo "[History (from $start)]"
+echo ""
+
+log show --style syslog --info --start "$start" --predicate "$filter"
+
+echo ""
+echo "[Following]"
+echo ""
+
+log stream --style syslog --info --predicate "$filter"
+```
+
 #### Verify Backup
 Beginning in OS X 10.11, Time Machine records checksums of files copied into snapshots. Checksums are not retroactively computed for files that were copied by earlier releases of OS X.
 ```bash
