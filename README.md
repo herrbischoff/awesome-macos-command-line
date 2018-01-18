@@ -400,6 +400,18 @@ echo ""
 log stream --style syslog --info --predicate "$filter"
 ```
 
+#### Toggle Backup While on Battery
+```bash
+# Status
+sudo defaults read /Library/Preferences/com.apple.TimeMachine RequiresACPower
+
+# Enable (Default)
+sudo defaults write /Library/Preferences/com.apple.TimeMachine RequiresACPower -bool true
+
+# Disable
+sudo defaults write /Library/Preferences/com.apple.TimeMachine RequiresACPower -bool false
+```
+
 #### Verify Backup
 Beginning in OS X 10.11, Time Machine records checksums of files copied into snapshots. Checksums are not retroactively computed for files that were copied by earlier releases of OS X.
 ```bash
