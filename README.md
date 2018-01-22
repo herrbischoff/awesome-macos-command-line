@@ -1201,13 +1201,13 @@ sudo lsof -i :80
 ```
 
 #### Show External IP Address
-Works if your DNS server doesn't replace DNS requests.
+Works if your ISP doesn't replace DNS requests (which it shouldn't).
 ```bash
 dig +short myip.opendns.com @resolver1.opendns.com
 ```
-Alternative way, works on all networks.
+Alternative that works on all networks.
 ```bash
-curl -s https://api.ipify.org && echo
+curl -s https://api.ipify.org
 ````
 
 ### TFTP
