@@ -1207,7 +1207,7 @@ dig +short myip.opendns.com @resolver1.opendns.com
 ```
 Alternative that works on all networks.
 ```bash
-curl -s https://api.ipify.org
+curl -s https://api.ipify.org && echo
 ````
 
 ### TFTP
