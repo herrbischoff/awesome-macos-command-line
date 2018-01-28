@@ -36,6 +36,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
 - [Dock](#dock)
 - [Documents](#documents)
 - [Files, Disks and Volumes](#files-disks-and-volumes)
+    - [APFS](#apfs)
     - [Disk Images](#disk-images)
 - [Finder](#finder)
     - [Files and Folders](#files-and-folders)
@@ -604,6 +605,40 @@ diskutil list
 A continuous stream of file system access info.
 ```bash
 sudo fs_usage
+```
+### APFS
+
+Available since High Sierra. There is no central utility and usage is inconsistent as most functionality is rolled into `tmutil`.
+
+#### Convert Volume from HFS+ to APFS
+```bash
+/System/Library/Filesystems/apfs.fs/Contents/Resources/hfs_convert /path/to/file/system
+```
+
+#### Create New APFS Filesystem
+```bash
+/System/Library/Filesystems/apfs.fs/Contents/Resources/newfs_apfs /path/to/device
+```
+
+#### Create Snapshot
+```bash
+tmutil localsnapshot
+```
+
+#### Delete Snapshot
+```bash
+tmutil deletelocalsnapshots com.apple.TimeMachine.2018-01-26-044042
+````
+
+#### List Snapshots
+```bash
+tmutil listlocalsnapshots /
+```
+
+#### Mount Snapshot
+```bash
+mkdir ~/mnt
+/System/Library/Filesystems/apfs.fs/Contents/Resources/mount_apfs -s com.apple.TimeMachine.2018-01-26-044042 / ~/mnt
 ```
 
 ### Disk Images
