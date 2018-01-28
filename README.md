@@ -636,6 +636,7 @@ tmutil listlocalsnapshots /
 ```
 
 #### Mount Snapshot
+Snapshots are read-only.
 ```bash
 mkdir ~/mnt
 /System/Library/Filesystems/apfs.fs/Contents/Resources/mount_apfs -s com.apple.TimeMachine.2018-01-26-044042 / ~/mnt
