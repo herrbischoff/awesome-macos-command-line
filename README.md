@@ -10,6 +10,10 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 
 For more terminal shell goodness, please also see this list's sister list [Awesome Command Line Apps](https://github.com/herrbischoff/awesome-command-line-apps).
 
+Many of the commands below are using [defaults(1)](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/defaults.1.html) - a cli tool to access the MacOS X defaults system. Excerpt from the `man` page:
+
+>"Defaults allows users to read, write, and delete Mac OS X user defaults from a command-line shell. Mac OS X applications and other programs use the defaults system to record user preferences and other information that must be maintained when the applications aren't running (such as default font for new documents, or the position of an Info panel). Much of this information is accessible through an application's Preferences panel, but some of it isn't, such as the position of the Info panel. You can access this information with defaults"
+
 ## Contents
 
 - [Appearance](#appearance)
