@@ -527,10 +527,18 @@ defaults write com.apple.dock scroll-to-open -bool false && \
 killall Dock
 ```
 
+#### Enable Dock Autohide
+
+``` bash
+defaults write com.apple.dock autohide -bool true && \
+killall Dock
+```
+
 #### Set Auto Show/Hide Delay
 The float number defines the show/hide delay in ms.
 ```bash
-defaults write com.apple.Dock autohide-delay -float 0 && \
+defaults write com.apple.dock autohide-time-modifier -float 0.4 && \
+defaults write com.apple.dock autohide-delay -float 0 && \
 killall Dock
 ```
 
