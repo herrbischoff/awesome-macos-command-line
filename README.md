@@ -491,6 +491,17 @@ defaults write com.apple.dock no-bouncing -bool false && \
 killall Dock
 ```
 
+#### Lock the Dock Size
+```bash
+# Enable
+defaults write com.apple.Dock size-immutable -bool yes && \
+killall Dock
+
+# Disable (Default)
+defaults write com.apple.Dock size-immutable -bool no && \
+killall Dock
+```
+
 #### Reset Dock
 ```bash
 defaults delete com.apple.dock && \
