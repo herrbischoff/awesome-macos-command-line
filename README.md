@@ -755,6 +755,57 @@ defaults write -g NSNavRecentPlacesLimit -int 10 && \
 killall Finder
 ```
 
+### Desktop Visibility
+
+#### Show External Hard Drives on Desktop
+Show / hide icons for external HDDs / USB-sticks on Desktop?
+```bash
+# Enable
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+killall Finder
+
+# Disable 
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
+killall Finder
+```
+
+#### Show Hard Drives on Desktop
+Show / hide icons for internal HDDs or SSDs on Desktop
+```bash
+# Enable
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+killall Finder
+
+# Disable 
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
+killall Finder
+```
+
+
+#### Show Removable Media on Desktop
+Show / hide icons for CDs, DVDs, iPods on Desktop
+```bash
+# Enable
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+killall Finder
+
+# Disable 
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
+killall Finder
+```
+
+#### Show Connected Servers on Desktop
+Show / hide icons for mounted network drives on Desktop
+```bash
+# Enable
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
+killall Finder
+
+# Disable 
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
+killall Finder
+```
+
 ### Layout
 
 #### Show "Quit Finder" Menu Item
