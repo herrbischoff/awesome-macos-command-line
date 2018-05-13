@@ -1575,7 +1575,7 @@ sudo fdesetup status
 sudo fdesetup enable
 
 # Disable (Default)
-sudo fdestatus disable
+sudo fdesetup disable
 ```
 
 ### Information/Reports
