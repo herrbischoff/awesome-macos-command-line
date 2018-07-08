@@ -1326,11 +1326,12 @@ sudo launchctl start com.apple.tftpd
 networksetup -setairportnetwork en0 WIFI_SSID WIFI_PASSWORD
 ```
 
-#### Scan Available Access Points
-Create a symbolic link to the airport command for easy access:
+#### Create a symbolic link to the airport command for easy access:
 ```bash
 sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
 ```
+
+#### Scan Available Access Points
 Run a wireless scan:
 ```bash
 airport -s
@@ -1338,7 +1339,14 @@ airport -s
 
 #### Show Current SSID
 ```bash
-/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}'
+airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}'
+```
+
+#### Spoof your MAC address
+Disconnect from current WiFi network, then change MAC to any hex series.
+```bash
+sudo airport -z
+sudo ifconfig en1 ether a1:b2:c3:d4:e5:f6
 ```
 
 #### Show Local IP Address
