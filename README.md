@@ -39,6 +39,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [APFS](#apfs)
     - [Disk Images](#disk-images)
 - [Finder](#finder)
+    - [Desktop](#desktop)
     - [Files and Folders](#files-and-folders)
     - [Layout](#layout)
     - [Metadata Files](#metadata-files)
@@ -709,6 +710,56 @@ sudo asr -restore -noverify -source /path/to/diskimage.dmg -target /Volumes/Volu
 
 ## Finder
 
+### Desktop
+
+#### Show External Media
+External HDs, thumb drives, etc.
+```bash
+# Enable
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true && \
+killall Finder
+
+# Disable (Default)
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false && \
+killall Finder
+```
+
+#### Show Internal Media
+Built-in HDs or SSDs.
+```bash
+# Enable
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true && \
+killall Finder
+
+# Disable (Default)
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false && \
+killall Finder
+```
+
+#### Show Removable Media
+CDs, DVDs, iPods, etc.
+```bash
+# Enable
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true && \
+killall Finder
+
+# Disable (Default)
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false && \
+killall Finder
+```
+
+#### Show Network Volumes
+AFP, SMB, NFS, WebDAV, etc.
+```bash
+# Enable
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true && \
+killall Finder
+
+# Disable (Default)
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool false && \
+killall Finder
+```
+
 ### Files and Folders
 
 #### Clear All ACLs
@@ -752,57 +803,6 @@ chflags nohidden ~/Library
 #### Increase Number of Recent Places
 ```bash
 defaults write -g NSNavRecentPlacesLimit -int 10 && \
-killall Finder
-```
-
-### Desktop Visibility
-
-#### Show External Hard Drives on Desktop
-Show / hide icons for external HDDs / USB-sticks on Desktop?
-```bash
-# Enable
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-killall Finder
-
-# Disable 
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
-killall Finder
-```
-
-#### Show Hard Drives on Desktop
-Show / hide icons for internal HDDs or SSDs on Desktop
-```bash
-# Enable
-defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
-killall Finder
-
-# Disable 
-defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
-killall Finder
-```
-
-
-#### Show Removable Media on Desktop
-Show / hide icons for CDs, DVDs, iPods on Desktop
-```bash
-# Enable
-defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
-killall Finder
-
-# Disable 
-defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
-killall Finder
-```
-
-#### Show Connected Servers on Desktop
-Show / hide icons for mounted network drives on Desktop
-```bash
-# Enable
-defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
-killall Finder
-
-# Disable 
-defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 killall Finder
 ```
 
