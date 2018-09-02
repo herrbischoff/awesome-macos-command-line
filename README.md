@@ -681,6 +681,14 @@ This command applies to .iso, .img and .dmg images.
 hdiutil burn /path/to/image_file
 ```
 
+#### Create A Temporary High-Performance Disk
+The disk is backed by physical RAM and will be several times faster than an SSD. The contents of the disk cannot be recovered after it has been ejected.
+```bash
+# 500 MiB
+let DISKSIZE=500*2048 && \
+diskutil erasevolume HFS+ "RAM Disk" `hdiutil attach -nomount ram://$DISKSIZE`
+```
+
 #### Disable Disk Image Verification
 ```bash
 defaults write com.apple.frameworks.diskimages skip-verify -bool true && \
