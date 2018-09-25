@@ -1915,6 +1915,7 @@ tput bel
 ### Alternative Terminals
 
 - [iTerm2](https://iterm2.com) - A better Terminal.app.
+- [kitty](https://sw.kovidgoyal.net/kitty/) - Modern, GPU-accelerated terminal emulator.
 
 ### Shells
 
