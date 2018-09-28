@@ -1285,6 +1285,22 @@ traceroute github.com
 
 ### SSH
 
+#### Permanently Add Private Key Passphrase to SSH Agent
+> Prior to macOS Sierra, ssh would present a dialog asking for your passphrase and would offer the option to store it into the keychain. This UI was deprecated some time ago and has been removed.
+>
+> Instead, a new UseKeychain option was introduced in macOS Sierra allowing users to specify whether they would like for the passphrase to be stored in the keychain. This option was enabled by default on macOS Sierra, which caused all passphrases to be stored in the keychain.
+>
+> This was not the intended default behavior, so this has been changed in macOS 10.12.2. ([Source](https://developer.apple.com/library/archive/technotes/tn2449/_index.html))
+```bash
+ssh-add -K /path/to/private_key
+```
+Then add to `~/.ssh/config`:
+```bash
+Host server.example.com
+    IdentityFile /path/to/private_key
+    UseKeychain yes
+```
+
 #### Remote Login
 ```bash
 # Enable remote login
