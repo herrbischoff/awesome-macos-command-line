@@ -1445,9 +1445,19 @@ LC_ALL=C tr -dc "[:alnum:]" < /dev/urandom | head -c 20 | pbcopy
 ### Physical Access
 
 #### Launch Screen Saver
+
+Pre macOS High Sierra (10.13):
+
 ```bash
 open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app
 ```
+
+As from macOS High Sierra (10.13):
+
+```bash
+/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
+```
+
 
 #### Lock Screen
 ```bash
