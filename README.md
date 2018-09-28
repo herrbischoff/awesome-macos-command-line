@@ -1446,15 +1446,11 @@ LC_ALL=C tr -dc "[:alnum:]" < /dev/urandom | head -c 20 | pbcopy
 
 #### Launch Screen Saver
 
-Pre macOS High Sierra (10.13):
-
 ```bash
+# Pre macOS High Sierra (10.13)
 open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app
-```
 
-As from macOS High Sierra (10.13):
-
-```bash
+# From macOS High Sierra (10.13)
 /System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
 ```
 
