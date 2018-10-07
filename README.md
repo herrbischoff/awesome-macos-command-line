@@ -110,6 +110,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
     - [Shells](#shells)
     - [Terminal Fonts](#terminal-fonts)
 - [Glossary](#glossary)
+    - [Mac OS X, OS X, and macOS Version Information](#mac-os-x-os-x-and-macos-version-information)
 
 
 ## Appearance
