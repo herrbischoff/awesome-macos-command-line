@@ -1461,9 +1461,15 @@ LC_ALL=C tr -dc "[:alnum:]" < /dev/urandom | head -c 20 | pbcopy
 ### Physical Access
 
 #### Launch Screen Saver
+
 ```bash
+# Up to Sierra
 open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app
+
+# From High Sierra
+/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
 ```
+
 
 #### Lock Screen
 ```bash
