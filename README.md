@@ -13,9 +13,9 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
 ## Contents
 
 - [Appearance](#appearance)
+    - [Font Rendering](#font-rendering)
     - [Transparency](#transparency)
     - [Wallpaper](#wallpaper)
-    - [Font Rendering](#font-rendering)
 - [Applications](#applications)
     - [App Store](#app-store)
     - [Apple Remote Desktop](#apple-remote-desktop)
@@ -114,6 +114,19 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
 
 ## Appearance
 
+### Font Rendering
+
+#### Font Smoothing
+```bash
+# Mojave
+# Enable
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool false
+
+# Disable (Default)
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool true
+```
+
+
 ### Transparency
 
 #### Transparency in Menu and Windows
@@ -137,16 +150,6 @@ osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/p
 sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '/path/to/picture.jpg'" && killall Dock
 ```
 
-### Font Rendering
-
-#### Font Smoothing
-```bash
-# Enable font smoothing (Mojave)
-defaults write -g CGFontRenderingFontSmoothingDisabled -bool FALSE
-
-# Disable font smoothing (Mojave)
-defaults write -g CGFontRenderingFontSmoothingDisabled -bool TRUE
-```
 
 ## Applications
 
