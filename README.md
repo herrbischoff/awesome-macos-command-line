@@ -1424,9 +1424,69 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate off
 ```
 
-#### Add Application to Firewall
+#### Firewall Application
 ```bash
+# List All
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --listapps
+
+# Block All Status
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getblockall
+
+# Block All Enable
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall on
+
+# Block All Disable
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall off
+
+# Path to file example: /Applications/My.app/Contents/MacOS/My
+
+# Add
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /path/to/file
+
+# Remove
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --remove /path/to/file
+
+# Block
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp /path/to/file
+
+# Unblock
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --unblockapp /path/to/file
+```
+
+#### Firewall Stealthmode
+```bash
+# Stealthmode Status
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getstealthmode
+
+# Stealthmode Enable
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getstealthmode on
+
+# Stealthmode Disable
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getstealthmode off
+```
+
+#### Firewall Logging
+```bash
+# Logging Status
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getloggingmode
+
+# Logging Enable
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setloggingmode on
+
+# Logging Disable
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setloggingmode off
+
+# Logging Option Current
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getloggingopt
+
+# Logging Option Set Throttled
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --throttled
+
+# Logging Option Set Brief
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --brief
+
+# Logging Option Set Detail
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --detail
 ```
 
 ### Gatekeeper
