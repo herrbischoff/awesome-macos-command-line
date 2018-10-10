@@ -10,6 +10,14 @@ If you want to contribute, you are highly encouraged to do so. Please read the [
 
 For more terminal shell goodness, please also see this list's sister list [Awesome Command Line Apps](https://github.com/herrbischoff/awesome-command-line-apps).
 
+
+## Caffeinating
+
+When you find something helpful in here, you could buy me a coffee. I spend a lot of time and effort on curating this list. Keeping me properly caffeinated accelerates things. And it would really make my day. Kindness of strangers and all that. If you can't or won't, no hard feelings. It's available completely free for a reason. Still, it would be awesome.
+
+Patreon: https://www.patreon.com/herrbischoff
+
+
 ## Contents
 
 - [Appearance](#appearance)
@@ -2019,13 +2027,6 @@ OS X 10.11                 | El Capitan         | September 30, 2015 | 10.11.6 (
 macOS 10.12                | Sierra             | September 20, 2016 | 10.12.6 (16G29) (July 19, 2017)
 macOS 10.13                | High Sierra        | September 25, 2017 | 10.13.6 (17G65) (July 9, 2018)
 macOS 10.14                | Mojave             | September 24, 2018 | 10.14 (18A391) (September 24, 2018)
-
-
-## Send a Tip my Way
-
-In case you feel particularly generous today, you could buy me a coffee. That would really make my day. Kindness of strangers and all that. If you can't or won't, no hard feelings.
-
-Patreon: https://www.patreon.com/herrbischoff
 
 
 ## License
