@@ -1690,9 +1690,9 @@ sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinst
 sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/USB --applicationpath /Applications/Install\ OS\ X\ Yosemite.app
 ```
 
-* For confirmation before erasing the drive, remove `–nointeraction` from the command.
-* The optional `–downloadassets` flag is new in Mojave. It downloads assets which may be required during installation, like updates.
-* The `–applicationpath` flag is deprecated since Mojave and will throw an error if used.
+* For confirmation before erasing the drive, remove `–-nointeraction` from the command.
+* The optional `–-downloadassets` flag is new in Mojave. It downloads assets which may be required during installation, like updates.
+* The `–-applicationpath` flag is deprecated since Mojave and will throw an error if used.
 
 ### Kernel Extensions
 
