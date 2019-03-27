@@ -1337,6 +1337,10 @@ Alternative that works on all networks.
 ```bash
 curl -s https://api.ipify.org && echo
 ````
+Additional alternative command
+```bash
+curl ifconfig.me
+````
 
 ### TFTP
 
