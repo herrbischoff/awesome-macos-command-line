@@ -1396,6 +1396,14 @@ networksetup -setairportpower en0 on
 - [Homebrew](https://brew.sh) - The missing package manager for OS X. The most popular choice.
 - [MacPorts](https://www.macports.org) - Compile, install and upgrade either command-line, X11 or Aqua based open-source software. Very clean, it's what I use.
 
+### Homebrew
+
+#### Full Uninstall
+
+```bash
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+```
+
 
 ## Printing
 
