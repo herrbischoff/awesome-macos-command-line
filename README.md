@@ -1961,6 +1961,7 @@ tput bel
 
 ### Alternative Terminals
 
+- [Alacritty](https://github.com/jwilm/alacritty) - Cross-platform, GPU-accelerated terminal emulator.
 - [iTerm2](https://iterm2.com) - A better Terminal.app.
 - [kitty](https://sw.kovidgoyal.net/kitty/) - Modern, GPU-accelerated terminal emulator.
 
