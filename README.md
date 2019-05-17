@@ -1172,6 +1172,14 @@ defaults write com.apple.dock ResetLaunchPad -bool true && \
 killall Dock
 ```
 
+#### Force Delete Launchpad Application Icon
+
+**Gitter** is Application Name. And it's case sensitive.
+
+```bash
+sqlite3 $(find /private/var/folders \( -name com.apple.dock.launchpad -a -user $USER \) 2> /dev/null)/db/db "DELETE FROM apps WHERE title='Gitter';" && killall Dock
+```
+
 ## Media
 
 ### Audio
