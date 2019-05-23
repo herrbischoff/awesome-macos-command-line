@@ -1336,7 +1336,12 @@ dig +short myip.opendns.com @resolver1.opendns.com
 Alternative that works on all networks.
 ```bash
 curl -s https://api.ipify.org && echo
-````
+```
+#### Show Summary of Network Information
+This displays all your network interface information, both for IPv4 and IPv6.
+```bash
+scutil --nwi
+```
 
 ### TFTP
 
