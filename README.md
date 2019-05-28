@@ -1337,8 +1337,9 @@ Alternative that works on all networks.
 ```bash
 curl -s https://api.ipify.org && echo
 ```
-#### Show Summary of Network Information
-This displays all your network interface information, both for IPv4 and IPv6.
+
+#### Show Network Interface Information
+Undocumented flag of the `scutil` command.
 ```bash
 scutil --nwi
 ```
