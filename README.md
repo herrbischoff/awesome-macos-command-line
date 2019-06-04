@@ -577,6 +577,17 @@ defaults write com.apple.dock static-only -bool false && \
 killall Dock
 ```
 
+#### Hide recent apps in macOS Mojave+
+```bash
+# Disable
+defaults write com.apple.dock show-recents -bool false  && \
+killall Dock
+
+# Enable (Default)
+defaults write com.apple.dock show-recents -bool true && \
+killall Dock
+```
+
 ## Documents
 
 #### Convert File to HTML
