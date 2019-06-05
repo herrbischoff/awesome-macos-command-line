@@ -492,6 +492,18 @@ defaults write com.apple.dock mru-spaces -bool false && \
 killall Dock
 ```
 
+#### Autohide
+
+``` bash
+# Enable
+defaults write com.apple.dock autohide -bool true && \
+killall Dock
+
+# Disable (Default)
+defaults write com.apple.dock autohide -bool false && \
+killall Dock
+```
+
 #### Icon Bounce
 Global setting whether Dock icons should bounce when the respective application demands your attention.
 ```bash
@@ -537,13 +549,6 @@ killall Dock
 
 # Disable (Default)
 defaults write com.apple.dock scroll-to-open -bool false && \
-killall Dock
-```
-
-#### Enable Dock Autohide
-
-``` bash
-defaults write com.apple.dock autohide -bool true && \
 killall Dock
 ```
 
