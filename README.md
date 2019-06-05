@@ -582,6 +582,20 @@ defaults write com.apple.dock static-only -bool false && \
 killall Dock
 ```
 
+#### Single App Mode
+When clicking an application icon in the Dock, the respective windows will come
+to the front, but all other application windows will be hidden.
+```bash
+# Enable
+defaults write com.apple.dock single-app -bool true && \
+killall Dock
+
+# Disable (Default)
+defaults write com.apple.dock single-app -bool false && \
+killall Dock
+```
+
+
 ## Documents
 
 #### Convert File to HTML
