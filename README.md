@@ -2068,6 +2068,7 @@ OS X 10.11                 | El Capitan         | September 30, 2015 | 10.11.6 (
 macOS 10.12                | Sierra             | September 20, 2016 | 10.12.6 (16G29) (July 19, 2017)
 macOS 10.13                | High Sierra        | September 25, 2017 | 10.13.6 (17G65) (July 9, 2018)
 macOS 10.14                | Mojave             | September 24, 2018 | 10.14 (18A391) (September 24, 2018)
+macOS 10.15                | Catalina           | tba                | tba
 
 
 ## License
