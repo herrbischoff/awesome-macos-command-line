@@ -2034,6 +2034,7 @@ chsh -s $(brew --prefix)/bin/zsh
 - [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) - A family of four fixed-width fonts designed with coding in mind.
 - [Codeface](https://github.com/chrissimpkins/codeface) - A gallery and repository of monospaced fonts for developers.
 - [DejaVu Sans Mono](https://dejavu-fonts.github.io/) - A font family based on the Vera Fonts.
+- [Fantasque Sans Mono](https://github.com/belluzj/fantasque-sans) - Designed for programming, but with some handwriting-like fuzziness that makes it unassumingly cool.
 - [Hack](http://sourcefoundry.org/hack/) - Hack is hand groomed and optically balanced to be your go-to code face.
 - [Inconsolata](http://levien.com/type/myfonts/inconsolata.html) -  A monospace font, designed for code listings and the like.
 - [Input](http://input.fontbureau.com) - A flexible system of fonts designed specifically for code.
