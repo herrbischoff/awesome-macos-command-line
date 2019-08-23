@@ -1834,6 +1834,12 @@ sudo nvram boot-args="-x"
 sudo nvram boot-args=""
 ```
 
+### Save Dialogs
+Significantly improve the now rather slow animation in save dialogs.
+```bash
+defaults write NSGlobalDomain NSWindowResizeTime .001
+```
+
 ### Screenshots
 
 #### Take Delayed Screenshot
@@ -1973,7 +1979,6 @@ sudo systemsetup setusingnetworktime on
 # Disable
 sudo systemsetup setusingnetworktime off
 ```
-
 
 
 ## Terminal
