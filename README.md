@@ -107,6 +107,7 @@ Patreon: https://www.patreon.com/herrbischoff
     - [Remote Apple Events](#remote-apple-events)
     - [Root User](#root-user)
     - [Safe Mode Boot](#safe-mode-boot)
+    - [Save Dialogs](#save-dialogs)
     - [Screenshots](#screenshots)
     - [Software Installation](#software-installation)
     - [Software Update](#software-update)
