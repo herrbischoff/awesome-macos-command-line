@@ -1126,12 +1126,12 @@ sudo systemsetup -setrestartfreeze on
 #### Chime When Charging
 Play iOS charging sound when MagSafe is connected.
 ```bash
-# Enable
-defaults write com.apple.PowerChime ChimeOnAllHardware -bool true && \
+# Enable (Default)
+defaults write com.apple.PowerChime ChimeOnNoHardware -bool false && \
 open /System/Library/CoreServices/PowerChime.app
 
-# Disable (Default)
-defaults write com.apple.PowerChime ChimeOnAllHardware -bool false && \
+# Disable
+defaults write com.apple.PowerChime ChimeOnNoHardware -bool true && \
 killall PowerChime
 ```
 
