@@ -1884,6 +1884,12 @@ installer -pkg /path/to/installer.pkg -target /
 
 ### Software Update
 
+#### Ignore Specific Software Update
+The identifier can be found via `softwareupdate --list`. In the example below, being on Mojave, will ignore all update prompts to Catalina, since the latter removes 32-bit support.
+```bash
+sudo /usr/sbin/softwareupdate --ignore "macOS Catalina"
+```
+
 #### Install All Available Software Updates
 ```bash
 sudo softwareupdate -ia
@@ -1897,7 +1903,7 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 #### Show Available Software Updates
 ```bash
-sudo softwareupdate -l
+sudo softwareupdate --list
 ```
 
 #### Set Software Update Server
