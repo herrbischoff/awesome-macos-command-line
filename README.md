@@ -1005,7 +1005,7 @@ From Sierra onward, they are included in Terminal.app.
 cp -v /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
 
-Starting in Catalina, Utilities apps are now found in System folder
+Starting in Catalina, the Utilities apps (including Terminal.app) are now found in the `/System` folder.
 ```bash
 cp -v /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
