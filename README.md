@@ -1991,6 +1991,22 @@ sudo systemsetup setusingnetworktime on
 sudo systemsetup setusingnetworktime off
 ```
 
+#### Set Clock Format in Menu Bar
+```bash
+# Day of the week and time (default), e.g. "Sat 11:52".
+defaults write com.apple.menuextra.clock "DateFormat" "EEE HH:mm"
+
+# Day of the week, month and date, time, e.g. "Sat Nov 16 11:52".
+defaults write com.apple.menuextra.clock "DateFormat" "EEE MMM d  HH:mm"
+
+# Time only, e.g. "11:52".
+defaults write com.apple.menuextra.clock "DateFormat" "HH:mm"
+```
+
+Restart `SystemUIServer` for the changes to take effect immediately:
+```bash
+killall SystemUIServer
+```
 
 ## Terminal
 
