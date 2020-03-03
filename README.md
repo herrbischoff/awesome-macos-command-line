@@ -1237,6 +1237,25 @@ afplay -q 1 filename.mp3
 say 'All your base are belong to us!'
 ```
 
+#### Startup Chime
+Older Macs:
+```bash
+# Enable (Default)
+sudo nvram BootAudio=%01
+
+# Disable
+sudo nvram BootAudio=%00
+```
+
+From 2016 models onwards:
+```bash
+# Enable
+sudo nvram StartupMute=%00
+
+# Disable (Default)
+sudo nvram StartupMute=%01
+```
+
 ### Video
 
 #### Auto-Play Videos in QuickTime Player
