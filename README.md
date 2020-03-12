@@ -105,6 +105,7 @@ When you find something helpful in here, you could buy me a coffee. I spend a lo
     - [Notification Center](#notification-center)
     - [QuickLook](#quicklook)
     - [Remote Apple Events](#remote-apple-events)
+    - [Remote Management](#remote-management)
     - [Root User](#root-user)
     - [Safe Mode Boot](#safe-mode-boot)
     - [Save Dialogs](#save-dialogs)
@@ -1835,6 +1836,16 @@ sudo systemsetup -setremoteappleevents on
 # Disable (Default)
 sudo systemsetup -setremoteappleevents off
 ```
+
+### Remote Management
+
+By default, when logging into a Mac remotely (using Apple Remote Desktop or similar), you are required to enter your password a second time after connecting to the Mac. You can disable this second login requirement using the following command:
+
+```bash
+sudo defaults write /Library/Preferences/com.apple.RemoteManagement.plist RestoreMachineState -bool no
+```
+
+More info can be found in [this blog post](https://help.edovia.com/hc/en-us/articles/360000472587-Why-do-I-sometimes-have-to-log-in-twice-when-connecting-to-my-Mac-) from Edovia, the developer of [Screens](https://edovia.com/en/).
 
 ### Root User
 
