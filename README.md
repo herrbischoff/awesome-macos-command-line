@@ -1444,6 +1444,7 @@ networksetup -setairportpower en0 on
 - [Fink](http://www.finkproject.org) - The full world of Unix Open Source software for Darwin. A little outdated.
 - [Homebrew](https://brew.sh) - The missing package manager for OS X. The most popular choice.
 - [MacPorts](https://www.macports.org) - Compile, install and upgrade either command-line, X11 or Aqua based open-source software. Very clean, it's what I use.
+- [Nix](https://nixos.org) - A package manager that makes package management reliable and reproducible. See also [nix-darwin](https://github.com/LnL7/nix-darwin).
 
 ### Homebrew
 
