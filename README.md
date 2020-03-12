@@ -84,6 +84,7 @@ When you find something helpful in here, you could buy me a coffee. I spend a lo
     - [Gatekeeper](#gatekeeper)
     - [Passwords](#passwords)
     - [Physical Access](#physical-access)
+    - [Privacy Permissions](#privacy-permissions)
     - [Wiping Data](#wiping-data)
 - [Search](#search)
     - [Find](#find)
@@ -1566,6 +1567,22 @@ defaults write com.apple.screensaver askForPassword -int 1
 
 # Disable (Default)
 defaults write com.apple.screensaver askForPassword -int 0
+```
+
+### Privacy Permissions
+
+Note: Close all apps except your terminal before running any of these commands.
+
+#### Reset all
+
+```bash
+sudo tccutil reset All
+```
+
+#### Reset all for specific app
+
+```bash
+sudo tccutil reset All com.google.Chrome
 ```
 
 ### Wiping Data
