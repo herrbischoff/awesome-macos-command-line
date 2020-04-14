@@ -109,6 +109,7 @@ When you find something helpful in here, you could buy me a coffee. I spend a lo
     - [Safe Mode Boot](#safe-mode-boot)
     - [Save Dialogs](#save-dialogs)
     - [Screenshots](#screenshots)
+    - [Sidecar](#sidecar)
     - [Software Installation](#software-installation)
     - [Software Update](#software-update)
     - [Software Version](#software-version)
@@ -1904,6 +1905,19 @@ killall SystemUIServer
 #### Install PKG
 ```bash
 installer -pkg /path/to/installer.pkg -target /
+```
+
+### Sidecar
+
+#### Use on Incompatible Macs
+This may or may not work, depending on the age of the machine.
+```bash
+# Enable
+defaults write com.apple.sidecar.display AllowAllDevices -bool true && \
+defaults write com.apple.sidecar.display hasShownPref -bool true
+
+# Disable (Default)
+defaults delete com.apple.sidecar.display
 ```
 
 ### Software Update
