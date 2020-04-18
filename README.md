@@ -818,7 +818,7 @@ defaults write com.apple.finder AppleShowAllFiles true
 defaults write com.apple.finder AppleShowAllFiles false
 ```
 
-#### Remove Protected Flag
+#### Remove Locked Status
 ```bash
 sudo chflags -R nouchg /path/to/file/or/folder
 ```
@@ -1037,7 +1037,7 @@ sudo killall -HUP blued
 #### Force Enable Trim
 Enable Trim for non-Apple SSDs. This command is available since Yosemite.
 ```bash
-forcetrim
+trimforce
 ```
 
 ### Hardware Information
@@ -1988,6 +1988,11 @@ mdls /path/to/file
 ```
 
 ### System Integrity Protection
+
+#### Check SIP Status
+```bash
+csrutil status
+```
 
 #### Disable System Integrity Protection
 Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd>, open the Terminal application and enter:
