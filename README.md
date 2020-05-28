@@ -1733,6 +1733,9 @@ sudo sysdiagnose -f ~/Desktop/
 
 #### Create Bootable Installer
 ```bash
+# Catalina
+sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/USB --nointeraction --downloadassets
+
 # Mojave
 sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/USB --nointeraction --downloadassets
 
