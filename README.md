@@ -1988,22 +1988,16 @@ mdls /path/to/file
 ```
 
 ### System Integrity Protection
-
-#### Check SIP Status
-```bash
+Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd> and open the Terminal application. You will need to `reboot` for the commands to take effect.
+```sh
+# Status
 csrutil status
-```
 
-#### Disable System Integrity Protection
-Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd>, open the Terminal application and enter:
-```bash
-csrutil disable && reboot
-```
+# Enable (Default)
+csrutil enable
 
-#### Enable System Integrity Protection
-Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd>, open the Terminal application and enter:
-```bash
-csrutil enable && reboot
+# Disable
+csrutil disable
 ```
 
 ### Date and Time
