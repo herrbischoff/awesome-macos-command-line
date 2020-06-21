@@ -496,6 +496,7 @@ xcrun simctl delete unavailable
 ## Dock
 
 #### Add a Stack with Recent Applications
+Obsolete since macOS 10.14 (Mojave). See [Show Recent Apps](#show-recent-apps).
 ```sh
 defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "list-type" = 1; }; "tile-type" = "recents-tile"; }' && \
 killall Dock
@@ -530,9 +531,8 @@ defaults write com.apple.dock mru-spaces -bool false && \
 killall Dock
 ```
 
-#### Autohide
-
-``` bash
+#### Automatically Hide
+```sh
 # Enable
 defaults write com.apple.dock autohide -bool true && \
 killall Dock
@@ -590,25 +590,6 @@ defaults write com.apple.dock scroll-to-open -bool false && \
 killall Dock
 ```
 
-#### Show Recent Apps
-This setting is available since macOS 10.14 (Mojave).
-```sh
-# Disable
-defaults write com.apple.dock show-recents -bool false  && \
-killall Dock
-
-# Enable (Default)
-defaults write com.apple.dock show-recents -bool true && \
-killall Dock
-```
-
-#### Enable Dock Autohide
-
-``` bash
-defaults write com.apple.dock autohide -bool true && \
-killall Dock
-```
-
 #### Set Auto Show/Hide Delay
 The float number defines the show/hide delay in ms.
 ```sh
@@ -636,6 +617,18 @@ killall Dock
 
 # Disable (Default)
 defaults write com.apple.dock static-only -bool false && \
+killall Dock
+```
+
+#### Show Recent Apps
+Setting present since macOS 10.14 (Mojave).
+```sh
+# Disable
+defaults write com.apple.dock show-recents -bool false  && \
+killall Dock
+
+# Enable (Default)
+defaults write com.apple.dock show-recents -bool true && \
 killall Dock
 ```
 
