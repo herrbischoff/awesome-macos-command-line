@@ -122,7 +122,7 @@ It also explains what the numbers in the man pages refer to --- like `man(1)`.
     - [Memory Management](#memory-management)
     - [Notification Center](#notification-center)
     - [QuickLook](#quicklook)
-    - [Remote Apple Events](#remote-apple-events)
+    - [Remote Management](#remote-management)
     - [Root User](#root-user)
     - [Safe Mode Boot](#safe-mode-boot)
     - [Save Dialogs](#save-dialogs)
@@ -1867,7 +1867,21 @@ launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.pl
 qlmanage -p /path/to/file
 ```
 
-### Remote Apple Events
+### Remote Management
+
+See also: [Apple Remote Desktop](#apple-remote-desktop).
+
+#### Prevent Double Password Entry
+When logging into a Mac remotely via Apple Remote Desktop or VNC, you are sometimes required to enter your password a second time after connecting to the Mac. While you can disable this behavior, it is explicitly not recommend to turn this functionality off unless you are certain that no one else will be able to access your Mac physically when you are away.
+```sh
+# Disable
+sudo defaults write /Library/Preferences/com.apple.RemoteManagement.plist RestoreMachineState -bool no
+
+# Enable (Default)
+sudo defaults write /Library/Preferences/com.apple.RemoteManagement.plist RestoreMachineState -bool yes
+```
+
+#### Remote Apple Events
 ```sh
 # Status
 sudo systemsetup -getremoteappleevents
