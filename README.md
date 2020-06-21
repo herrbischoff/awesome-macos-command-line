@@ -2,18 +2,26 @@
 
 > A curated list of shell commands and tools specific to OS X.
 >
-> _“You don’t have to know everything. You simply need to know where to find it when necessary.” (John Brunner)_
+> _“You don’t have to know everything. You simply need to know where to find it 
+> when necessary.” (John Brunner)_
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
-If you want to contribute, you are highly encouraged to do so. Please read the [contribution guidelines](contributing.md).
+If you want to contribute, you are highly encouraged to do so. Please read the 
+[contribution guidelines](contributing.md).
 
-For more terminal shell goodness, please also see this list's sister list [Awesome Command Line Apps](https://github.com/herrbischoff/awesome-command-line-apps).
+For more terminal shell goodness, please also see this list's sister list 
+[Awesome Command Line 
+Apps](https://github.com/herrbischoff/awesome-command-line-apps).
 
 
 ## Caffeinating
 
-When you find something helpful in here, you could buy me a coffee. I spend a lot of time and effort on curating this list. Keeping me properly caffeinated accelerates things. And it would really make my day. Kindness of strangers and all that. If you can't or won't, no hard feelings. It's available completely free for a reason. Still, it would be awesome.
+When you find something helpful in here, you could buy me a coffee. I spend a 
+lot of time and effort on curating this list. Keeping me properly caffeinated 
+accelerates things. And it would really make my day. Kindness of strangers and 
+all that. If you can't or won't, no hard feelings. It's available completely 
+free for a reason. Still, it would be awesome.
 
 <https://github.com/sponsors/herrbischoff>
 
@@ -268,7 +276,9 @@ defaults write com.apple.addressbook ABShowDebugMenu -bool false
 ### iTunes
 
 #### Keyboard Media Keys
-Works up to OS X 10.10 (Yosemite). System Integrity Protection was introduced in OS X 10.11 (El Capitan) which prevents system Launch Agents from being unloaded.
+Works up to OS X 10.10 (Yosemite). System Integrity Protection was introduced 
+in OS X 10.11 (El Capitan) which prevents system Launch Agents from being 
+unloaded.
 ```sh
 # Stop Responding to Key Presses
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
@@ -277,7 +287,11 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 launchctl load -w /System/Library/LaunchAgents/com.apple.rcd.plist
 ```
 
-From OS X 10.11 (El Capitan) on, you can either disable SIP or resort to a kind of hack, which will make iTunes inaccessible to any user, effectively preventing it from starting itself or its helpers. Be aware that for all intents and purposes this will trash your iTunes installation and may conflict with OS updates down the road.
+From OS X 10.11 (El Capitan) on, you can either disable SIP or resort to a kind 
+of hack, which will make iTunes inaccessible to any user, effectively 
+preventing it from starting itself or its helpers. Be aware that for all 
+intents and purposes this will trash your iTunes installation and may conflict 
+with OS updates down the road.
 ```sh
 sudo chmod 0000 /Applications/iTunes.app
 ```
@@ -291,7 +305,9 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool yes
 ```
 
 #### Vacuum Mail Index
-The AppleScript code below will quit Mail, vacuum the SQLite index, then re-open Mail. On a large email database that hasn't been optimized for a while, this can provide significant improvements in responsiveness and speed.
+The AppleScript code below will quit Mail, vacuum the SQLite index, then 
+re-open Mail. On a large email database that hasn't been optimized for a while, 
+this can provide significant improvements in responsiveness and speed.
 ```applescript
 (*
 Speed up Mail.app by vacuuming the Envelope Index
@@ -422,13 +438,15 @@ defaults delete com.microsoft.VSCode.helper.NP CGFontRenderingFontSmoothingDisab
 ### Time Machine
 
 #### Change Backup Interval
-This changes the interval to 30 minutes. The integer value is the time in seconds.
+This changes the interval to 30 minutes. The integer value is the time in 
+seconds.
 ```sh
 sudo defaults write /System/Library/LaunchDaemons/com.apple.backupd-auto StartInterval -int 1800
 ```
 
 #### Local Backups
-Whether Time Machine performs local backups while the Time Machine backup volume is not available.
+Whether Time Machine performs local backups while the Time Machine backup 
+volume is not available.
 ```sh
 # Status
 defaults read /Library/Preferences/com.apple.TimeMachine MobileBackups
@@ -440,7 +458,10 @@ sudo tmutil enablelocal
 sudo tmutil disablelocal
 ```
 
-Since macOS 10.13 (High Sierra), you cannot disable local snapshots. Time Machine now always creates a local APFS snapshot and uses that snapshot as the data source to create a regular backup, rather than using the live disk as the source, as is the case with HFS formatted disks.
+Since macOS 10.13 (High Sierra), you cannot disable local snapshots. Time 
+Machine now always creates a local APFS snapshot and uses that snapshot as the 
+data source to create a regular backup, rather than using the live disk as the 
+source, as is the case with HFS formatted disks.
 
 #### Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
 ```sh
@@ -448,7 +469,8 @@ sudo defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisk
 ```
 
 #### Show Time Machine Logs
-This little script will output the last 12 hours of Time Machine activity followed by live activity.
+This little script will output the last 12 hours of Time Machine activity 
+followed by live activity.
 ```sh
 #!/bin/sh
 
@@ -483,7 +505,9 @@ sudo defaults write /Library/Preferences/com.apple.TimeMachine RequiresACPower -
 ```
 
 #### Verify Backup
-Beginning in OS X 10.11, Time Machine records checksums of files copied into snapshots. Checksums are not retroactively computed for files that were copied by earlier releases of OS X.
+Beginning in OS X 10.11, Time Machine records checksums of files copied into 
+snapshots. Checksums are not retroactively computed for files that were copied 
+by earlier releases of OS X.
 ```sh
 sudo tmutil verifychecksums /path/to/backup
 ```
@@ -493,7 +517,8 @@ sudo tmutil verifychecksums /path/to/backup
 ### Vim
 
 #### Compile Sane Vim
-Compiling MacVim via Homebrew with all bells and whistles, including overriding system Vim.
+Compiling MacVim via Homebrew with all bells and whistles, including overriding 
+system Vim.
 ```sh
 brew install macvim --HEAD
 ```
@@ -567,7 +592,8 @@ killall Dock
 ```
 
 #### Icon Bounce
-Global setting whether Dock icons should bounce when the respective application demands your attention.
+Global setting whether Dock icons should bounce when the respective application 
+demands your attention.
 ```sh
 # Enable (Default)
 defaults write com.apple.dock no-bouncing -bool true && \
@@ -603,7 +629,9 @@ killall Dock
 ```
 
 #### Scroll Gestures
-Use your touchpad or mouse scroll wheel to interact with Dock items. Allows you to use an upward scrolling gesture to open stacks. Using the same gesture on applications that are running invokes Exposé/Mission Control.
+Use your touchpad or mouse scroll wheel to interact with Dock items. Allows you 
+to use an upward scrolling gesture to open stacks. Using the same gesture on 
+applications that are running invokes Exposé/Mission Control.
 ```sh
 # Enable
 defaults write com.apple.dock scroll-to-open -bool true && \
@@ -694,7 +722,8 @@ sudo pmset -a sms 0
 ```
 
 #### Eject All Mountable Volumes
-The only reliable way to do this is by sending an AppleScript command to Finder.
+The only reliable way to do this is by sending an AppleScript command to 
+Finder.
 ```sh
 osascript -e 'tell application "Finder" to eject (every disk whose ejectable is true)'
 ```
@@ -704,7 +733,10 @@ You don't have to use the Disk Utility GUI for this.
 ```sh
 sudo diskutil repairPermissions /
 ```
-> Beginning with OS X 10.11 (El Capitan), system file permissions are automatically protected. It's no longer necessary to verify or repair permissions with Disk Utility. ([Source](https://support.apple.com/en-us/HT201560))
+> Beginning with OS X 10.11 (El Capitan), system file permissions are 
+> automatically protected. It's no longer necessary to verify or repair 
+> permissions with Disk Utility. 
+> ([Source](https://support.apple.com/en-us/HT201560))
 
 #### Set Boot Volume
 ```sh
@@ -727,7 +759,8 @@ sudo fs_usage
 ```
 ### APFS
 
-Present since macOS 10.13 (High Sierra). There is no central utility and usage is inconsistent as most functionality is rolled into `tmutil`.
+Present since macOS 10.13 (High Sierra). There is no central utility and usage 
+is inconsistent as most functionality is rolled into `tmutil`.
 
 #### Convert Volume from HFS+ to APFS
 ```sh
@@ -773,7 +806,8 @@ If you'd like to encrypt the disk image:
 hdiutil create -encryption -stdinpass -volname "Volume Name" -srcfolder /path/to/folder -ov encrypted.dmg
 ```
 
-By default, you'll be prompted for a password. You can automate that by piping in a password:
+By default, you'll be prompted for a password. You can automate that by piping 
+in a password:
 ```sh
 echo -n YourPassword | hdiutil create -encryption -stdinpass -volname "Volume Name" -srcfolder /path/to/folder -ov encrypted.dmg
 ```
@@ -914,7 +948,8 @@ killall Finder
 ### Layout
 
 #### Show "Quit Finder" Menu Item
-Makes possible to see Finder menu item "Quit Finder" with default shortcut <kbd>Cmd</kbd> + <kbd>Q</kbd>
+Makes possible to see Finder menu item "Quit Finder" with default shortcut 
+<kbd>Cmd</kbd> + <kbd>Q</kbd>
 ```sh
 # Enable
 defaults write com.apple.finder QuitMenuItem -bool true && \
@@ -1068,7 +1103,8 @@ atsutil server -ping
 ```
 
 #### Get SF Mono Fonts
-You need to download and install Xcode 8 beta for this to work. Afterwards they should be available in all applications.
+You need to download and install Xcode 8 beta for this to work. Afterwards they 
+should be available in all applications.
 ```sh
 cp -v /Applications/Xcode-beta.app/Contents/SharedFrameworks/DVTKit.framework/Versions/A/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
@@ -1078,7 +1114,8 @@ From macOS 10.12 (Sierra) on, they are included in Terminal.app.
 cp -v /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
 
-Starting in macOS 10.15 (Catalina), the Utilities apps (including Terminal.app) are now found in the `/System` folder.
+Starting in macOS 10.15 (Catalina), the Utilities apps (including Terminal.app) 
+are now found in the `/System` folder.
 ```sh
 cp -v /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
@@ -1412,11 +1449,18 @@ traceroute github.com
 ### SSH
 
 #### Permanently Add Private Key Passphrase to SSH Agent
-> Prior to macOS 10.12 (Sierra), ssh would present a dialog asking for your passphrase and would offer the option to store it into the keychain. This UI was deprecated some time ago and has been removed.
+> Prior to macOS 10.12 (Sierra), ssh would present a dialog asking for your 
+> passphrase and would offer the option to store it into the keychain. This UI 
+> was deprecated some time ago and has been removed.
 >
-> Instead, a new UseKeychain option was introduced in macOS 10.12 (Sierra) allowing users to specify whether they would like for the passphrase to be stored in the keychain. This option was enabled by default on macOS 10.12 (Sierra), which caused all passphrases to be stored in the keychain.
+> Instead, a new UseKeychain option was introduced in macOS 10.12 (Sierra) 
+> allowing users to specify whether they would like for the passphrase to be 
+> stored in the keychain. This option was enabled by default on macOS 10.12 
+> (Sierra), which caused all passphrases to be stored in the keychain.
 >
-> This was not the intended default behavior, so this has been changed in macOS 10.12.2. ([Source](https://developer.apple.com/library/archive/technotes/tn2449/_index.html))
+> This was not the intended default behavior, so this has been changed in macOS 
+> 10.12.2. 
+> ([Source](https://developer.apple.com/library/archive/technotes/tn2449/_index.html))
 ```sh
 ssh-add -K /path/to/private_key
 ```
@@ -1514,9 +1558,12 @@ networksetup -setairportpower en0 on
 
 ## Package Managers
 
-- [Fink](http://www.finkproject.org) - The full world of Unix Open Source software for Darwin. A little outdated.
-- [Homebrew](https://brew.sh) - The missing package manager for OS X. The most popular choice.
-- [MacPorts](https://www.macports.org) - Compile, install and upgrade either command-line, X11 or Aqua based open-source software. Very clean, it's what I use.
+- [Fink](http://www.finkproject.org) - The full world of Unix Open Source 
+  software for Darwin. A little outdated.
+- [Homebrew](https://brew.sh) - The missing package manager for OS X. The most 
+  popular choice.
+- [MacPorts](https://www.macports.org) - Compile, install and upgrade either 
+  command-line, X11 or Aqua based open-source software.
 
 ### Homebrew
 
@@ -1580,7 +1627,8 @@ spctl --remove /path/to/Application.app
 ```
 
 #### Manage Gatekeeper
-Especially helpful with the annoying macOS 10.15 (Catalina) system popup blocking execution of non-signed apps.
+Especially helpful with the annoying macOS 10.15 (Catalina) system popup 
+blocking execution of non-signed apps.
 ```sh
 # Status
 spctl --status
@@ -1643,7 +1691,9 @@ defaults write com.apple.screensaver askForPassword -int 0
 
 ### Privacy Database
 
-The `tccutil` command manages the privacy database, which stores decisions the user has made about whether apps may access personal data. You need to close all applications except Terminal before running any of these commands.
+The `tccutil` command manages the privacy database, which stores decisions the 
+user has made about whether apps may access personal data. You need to close 
+all applications except Terminal before running any of these commands.
 
 ```sh
 # Full Reset for All Applications
@@ -1658,8 +1708,12 @@ sudo tccutil reset All com.apple.Terminal
 
 ### Wiping Data
 
-Note: The `srm` command appears to have been removed on MacOS after 10.9. There is a note on an [Apple support page](https://support.apple.com/en-us/HT201949) hinting as to why:
-> With an SSD drive, Secure Erase and Erasing Free Space are not available in Disk Utility. These options are not needed for an SSD drive because a standard erase makes it difficult to recover data from an SSD.
+Note: The `srm` command appears to have been removed on MacOS after 10.9. There 
+is a note on an [Apple support page](https://support.apple.com/en-us/HT201949) 
+hinting as to why:
+> With an SSD drive, Secure Erase and Erasing Free Space are not available in 
+> Disk Utility. These options are not needed for an SSD drive because a 
+> standard erase makes it difficult to recover data from an SSD.
 
 #### Securely Remove File
 ```sh
@@ -1730,13 +1784,15 @@ diff -qr /path/to/folder1 /path/to/folder2
 ```
 
 #### Copy Large File with Progress
-Make sure you have `pv` installed and replace `/dev/rdisk2` with the appropriate write device or file.
+Make sure you have `pv` installed and replace `/dev/rdisk2` with the 
+appropriate write device or file.
 ```sh
 FILE=/path/to/file.iso pv -s $(du -h $FILE | awk '/.*/ {print $1}') $FILE | sudo dd of=/dev/rdisk2 bs=1m
 ```
 
 #### Restore Sane Shell
-In case your shell session went insane (some script or application turned it into a garbled mess).
+In case your shell session went insane (some script or application turned it 
+into a garbled mess).
 ```sh
 stty sane
 ```
@@ -1792,7 +1848,8 @@ pbpaste | sort | uniq | pbcopy
 ### FileVault
 
 #### Automatically Unlock FileVault on Restart
-If FileVault is enabled on the current volume, it restarts the system, bypassing the initial unlock. The command may not work on all systems.
+If FileVault is enabled on the current volume, it restarts the system, 
+bypassing the initial unlock. The command may not work on all systems.
 ```sh
 sudo fdesetup authrestart
 ```
@@ -1839,9 +1896,12 @@ sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinst
 sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/USB --applicationpath /Applications/Install\ OS\ X\ Yosemite.app
 ```
 
-* For confirmation before erasing the drive, remove `–-nointeraction` from the command.
-* The optional `–-downloadassets` flag is new in macOS 10.14 (Mojave). It downloads assets which may be required during installation, like updates.
-* The `–-applicationpath` flag is deprecated since macOS 10.14 (Mojave) and will throw an error if used.
+* For confirmation before erasing the drive, remove `–-nointeraction` from the 
+  command.
+* The optional `–-downloadassets` flag is new in macOS 10.14 (Mojave). It 
+  downloads assets which may be required during installation, like updates.
+* The `–-applicationpath` flag is deprecated since macOS 10.14 (Mojave) and 
+  will throw an error if used.
 
 #### Download Older OS Versions
 
@@ -1889,7 +1949,9 @@ Please see [this file](launchagents.md).
 ### LaunchServices
 
 #### Rebuild LaunchServices Database
-To be independent of OS X version, this relies on `locate` to find `lsregister`. If you do not have your `locate` database built yet, [do it](#build-locate-database).
+To be independent of OS X version, this relies on `locate` to find 
+`lsregister`. If you do not have your `locate` database built yet, [do 
+it](#build-locate-database).
 ```sh
 sudo $(locate lsregister) -kill -seed -r
 ```
@@ -1941,7 +2003,11 @@ qlmanage -p /path/to/file
 See also: [Apple Remote Desktop](#apple-remote-desktop).
 
 #### Prevent Double Password Entry
-When logging into a Mac remotely via Apple Remote Desktop or VNC, you are sometimes required to enter your password a second time after connecting to the Mac. While you can disable this behavior, it is explicitly not recommend to turn this functionality off unless you are certain that no one else will be able to access your Mac physically when you are away.
+When logging into a Mac remotely via Apple Remote Desktop or VNC, you are 
+sometimes required to enter your password a second time after connecting to the 
+Mac. While you can disable this behavior, it is explicitly not recommend to 
+turn this functionality off unless you are certain that no one else will be 
+able to access your Mac physically when you are away.
 ```sh
 # Disable
 sudo defaults write /Library/Preferences/com.apple.RemoteManagement.plist RestoreMachineState -bool no
@@ -2009,7 +2075,8 @@ killall SystemUIServer
 ```
 
 #### Save Screenshots in Given Format
-Sets format to `png`. Other options are `bmp`, `gif`, `jpg`, `jpeg`, `pdf`, `tiff`.
+Sets format to `png`. Other options are `bmp`, `gif`, `jpg`, `jpeg`, `pdf`, 
+`tiff`.
 ```sh
 defaults write com.apple.screencapture type -string "png"
 ```
@@ -2050,7 +2117,9 @@ defaults delete com.apple.sidecar.display
 ### Software Update
 
 #### Ignore Specific Software Update
-The identifier can be found via `softwareupdate --list`. In the example below, being on macOS 10.14 (Mojave), will ignore all update prompts to macOS 10.15 (Catalina), since the latter removes 32-bit support.
+The identifier can be found via `softwareupdate --list`. In the example below, 
+being on macOS 10.14 (Mojave), will ignore all update prompts to macOS 10.15 
+(Catalina), since the latter removes 32-bit support.
 ```sh
 sudo /usr/sbin/softwareupdate --ignore "macOS Catalina"
 ```
@@ -2072,7 +2141,14 @@ sudo softwareupdate --list
 ```
 
 #### Set Software Update Server
-This should only be done for testing purposes or unmanaged clients. To use network-wide, either correctly set up DNS along with [Apple SUS service](http://krypted.com/mac-security/using-the-software-update-service-on-mountain-lion-server/) and bind your clients via OpenDirectory. Alternatively, use [Reposado](https://github.com/wdas/reposado) together with correct network DNS settings to make resolution transparent. [Margarita](https://github.com/jessepeterson/margarita) looks nice to have as well.
+This should only be done for testing purposes or unmanaged clients. To use 
+network-wide, either correctly set up DNS along with [Apple SUS 
+service](http://krypted.com/mac-security/using-the-software-update-service-on-mountain-lion-server/) 
+and bind your clients via OpenDirectory. Alternatively, use 
+[Reposado](https://github.com/wdas/reposado) together with correct network DNS 
+settings to make resolution transparent. 
+[Margarita](https://github.com/jessepeterson/margarita) looks nice to have as 
+well.
 ```sh
 # Use own SUS
 sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate CatalogURL http://su.example.com:8088/index.sucatalog
@@ -2117,13 +2193,15 @@ mdls /path/to/file
 ### System Integrity Protection
 
 #### Disable System Integrity Protection
-Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd>, open the Terminal application and enter:
+Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd>, open the Terminal 
+application and enter:
 ```sh
 csrutil disable && reboot
 ```
 
 #### Enable System Integrity Protection
-Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd>, open the Terminal application and enter:
+Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd>, open the Terminal 
+application and enter:
 ```sh
 csrutil enable && reboot
 ```
@@ -2374,9 +2452,11 @@ tput bel
 
 ### Alternative Terminals
 
-- [Alacritty](https://github.com/jwilm/alacritty) - Cross-platform, GPU-accelerated terminal emulator.
+- [Alacritty](https://github.com/jwilm/alacritty) - Cross-platform, 
+  GPU-accelerated terminal emulator.
 - [iTerm2](https://iterm2.com) - A better Terminal.app.
-- [kitty](https://sw.kovidgoyal.net/kitty/) - Modern, GPU-accelerated terminal emulator.
+- [kitty](https://sw.kovidgoyal.net/kitty/) - Modern, GPU-accelerated terminal 
+  emulator.
 
 ### Shells
 
@@ -2388,8 +2468,10 @@ echo $(brew --prefix)/bin/bash | sudo tee -a /etc/shells && \
 chsh -s $(brew --prefix)/bin/bash
 ```
 
-- [Homepage](https://www.gnu.org/software/bash/) - The default shell for OS X and most other Unix-based operating systems.
-- [Bash-it](https://github.com/Bash-it/bash-it) - Community Bash framework, like Oh My Zsh for Bash.
+- [Homepage](https://www.gnu.org/software/bash/) - The default shell for OS X 
+  and most other Unix-based operating systems.
+- [Bash-it](https://github.com/Bash-it/bash-it) - Community Bash framework, 
+  like Oh My Zsh for Bash.
 
 #### fish
 Install the latest version and set as current user's default shell:
@@ -2399,10 +2481,15 @@ echo $(brew --prefix)/bin/fish | sudo tee -a /etc/shells && \
 chsh -s $(brew --prefix)/bin/fish
 ```
 
-- [Homepage](http://fishshell.com) - A smart and user-friendly command line
-shell for OS X, Linux, and the rest of the family.
-- [The Fishshell Framework](https://github.com/oh-my-fish/oh-my-fish) - Provides core infrastructure to allow you to install packages which extend or modify the look of your shell.
-- [Installation & Configuration Tutorial](https://github.com/ellerbrock/fish-shell-setup-osx) - How to Setup Fish Shell with Fisherman, Powerline Fonts, iTerm2 and Budspencer Theme on OS X.
+- [Homepage](http://fishshell.com) - A smart and user-friendly command line 
+  shell for OS X, Linux, and the rest of the family.
+- [The Fishshell Framework](https://github.com/oh-my-fish/oh-my-fish) - 
+  Provides core infrastructure to allow you to install packages which extend or 
+  modify the look of your shell.
+- [Installation & Configuration 
+  Tutorial](https://github.com/ellerbrock/fish-shell-setup-osx) - How to Setup 
+  Fish Shell with Fisherman, Powerline Fonts, iTerm2 and Budspencer Theme on OS 
+  X. 
 
 #### Zsh
 Install the latest version and set as current user's default shell:
@@ -2412,24 +2499,43 @@ sudo sh -c 'echo $(brew --prefix)/bin/zsh >> /etc/shells' && \
 chsh -s $(brew --prefix)/bin/zsh
 ```
 
-- [Homepage](http://www.zsh.org) - Zsh is a shell designed for interactive use, although it is also a powerful scripting language.
-- [Oh My Zsh](http://ohmyz.sh) - An open source, community-driven framework for managing your Zsh configuration.
-- [Prezto](https://github.com/sorin-ionescu/prezto) - A speedy Zsh framework. Enriches the command line interface environment with sane defaults, aliases, functions, auto completion, and prompt themes.
-- [zgen](https://github.com/tarjoilija/zgen) - Another open source framework for managing your zsh configuration. Zgen will load oh-my-zsh compatible plugins and themes and has the advantage of both being faster and automatically cloning any plugins used in your configuration for you.
+- [Homepage](http://www.zsh.org) - Zsh is a shell designed for interactive use, 
+  although it is also a powerful scripting language.
+- [Oh My Zsh](http://ohmyz.sh) - An open source, community-driven framework for 
+  managing your Zsh configuration.
+- [Prezto](https://github.com/sorin-ionescu/prezto) - A speedy Zsh framework. 
+  Enriches the command line interface environment with sane defaults, aliases, 
+  functions, auto completion, and prompt themes.
+- [zgen](https://github.com/tarjoilija/zgen) - Another open source framework 
+  for managing your zsh configuration. Zgen will load oh-my-zsh compatible 
+  plugins and themes and has the advantage of both being faster and 
+  automatically cloning any plugins used in your configuration for you.
 
 ### Terminal Fonts
 
-- [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) - A family of four fixed-width fonts designed with coding in mind.
-- [Codeface](https://github.com/chrissimpkins/codeface) - A gallery and repository of monospaced fonts for developers.
-- [DejaVu Sans Mono](https://dejavu-fonts.github.io/) - A font family based on the Vera Fonts.
-- [Fantasque Sans Mono](https://github.com/belluzj/fantasque-sans) - Designed with functionality in mind, and with some wibbly-wobbly handwriting-like fuzziness that makes it unassumingly cool.
-- [Hack](http://sourcefoundry.org/hack/) - Hack is hand groomed and optically balanced to be your go-to code face.
-- [Inconsolata](http://levien.com/type/myfonts/inconsolata.html) -  A monospace font, designed for code listings and the like.
-- [Input](http://input.fontbureau.com) - A flexible system of fonts designed specifically for code.
-- [Meslo](https://github.com/andreberg/Meslo-Font) - Customized version of Apple's Menlo font.
-- [Operator Mono](https://www.typography.com/fonts/operator/overview/) - A surprisingly usable alternative take on a monospace font (commercial).
-- [Powerline Fonts](https://github.com/powerline/fonts) - Repo of patched fonts for the Powerline plugin.
-- [Source Code Pro](https://adobe-fonts.github.io/source-code-pro/) - A monospaced font family for user interfaces and coding environments.
+- [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) - A 
+  family of four fixed-width fonts designed with coding in mind.
+- [Codeface](https://github.com/chrissimpkins/codeface) - A gallery and 
+  repository of monospaced fonts for developers.
+- [DejaVu Sans Mono](https://dejavu-fonts.github.io/) - A font family based on 
+  the Vera Fonts.
+- [Fantasque Sans Mono](https://github.com/belluzj/fantasque-sans) - Designed 
+  with functionality in mind, and with some wibbly-wobbly handwriting-like 
+  fuzziness that makes it unassumingly cool.
+- [Hack](http://sourcefoundry.org/hack/) - Hack is hand groomed and optically 
+  balanced to be your go-to code face.
+- [Inconsolata](http://levien.com/type/myfonts/inconsolata.html) -  A monospace 
+  font, designed for code listings and the like.
+- [Input](http://input.fontbureau.com) - A flexible system of fonts designed 
+  specifically for code.
+- [Meslo](https://github.com/andreberg/Meslo-Font) - Customized version of 
+  Apple's Menlo font.
+- [Operator Mono](https://www.typography.com/fonts/operator/overview/) - A 
+  surprisingly usable alternative take on a monospace font (commercial).
+- [Powerline Fonts](https://github.com/powerline/fonts) - Repo of patched fonts 
+  for the Powerline plugin.
+- [Source Code Pro](https://adobe-fonts.github.io/source-code-pro/) - A 
+  monospaced font family for user interfaces and coding environments.
 
 
 ## Glossary
