@@ -1143,7 +1143,7 @@ Please see [this file](functions.md).
 
 ### Bluetooth
 
-Up to OS X 10.11 (El Capitan) the Bluetooth daemon is named `blued` instead of 
+Up to OS X 10.12 (Sierra) the Bluetooth daemon is named `blued` instead of 
 `bluetoothd`. You need to adjust the `killall` command accordingly.
 
 ```sh
