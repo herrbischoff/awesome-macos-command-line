@@ -681,11 +681,17 @@ This command applies to .iso, .img and .dmg images.
 hdiutil burn /path/to/image_file
 ```
 
-#### Create A Temporary High-Performance Disk
-The disk is backed by physical RAM and will be several times faster than an SSD. The contents of the disk cannot be recovered after it has been ejected.
-```bash
-# 500 MiB
+#### Create Temporary High-Performance Disk
+The disk is backed by physical RAM and will be several times faster than an 
+SSD. The contents of the disk cannot be recovered after it has been ejected. 
+The example below is for a 500 MiB RAM disk, adjust as needed.
+```sh
+# Up to macOS 10.14 (Mojave)
 let DISKSIZE=500*2048 && \
+diskutil erasevolume HFS+ "RAM Disk" `hdiutil attach -nomount ram://$DISKSIZE`
+
+# From macOS 10.15 (Catalina) on
+let "DISKSIZE = 500*2048" && \
 diskutil erasevolume HFS+ "RAM Disk" `hdiutil attach -nomount ram://$DISKSIZE`
 ```
 
