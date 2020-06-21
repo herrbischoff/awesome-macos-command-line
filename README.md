@@ -388,10 +388,32 @@ defaults write com.apple.TextEdit RichText -int 0
 
 ### Visual Studio Code
 
-#### Fix VSCodeVim Key Repeat
+#### VSCodeVim Key Repeat
 ```sh
+# Enable
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
+# Disable (Default)
+defaults delete com.microsoft.VSCode ApplePressAndHoldEnabled
 ```
+
+#### Subpixel Anti-Aliasing
+Setting present since macOS 10.14 (Mojave). See also system-wide setting:
+[Subpixel Anti-Aliasing](#subpixel-anti-aliasing-font-smoothing)
+```sh
+# Enable
+defaults write com.microsoft.VSCode CGFontRenderingFontSmoothingDisabled -bool false && \
+defaults write com.microsoft.VSCode.helper CGFontRenderingFontSmoothingDisabled -bool false && \
+defaults write com.microsoft.VSCode.helper.EH CGFontRenderingFontSmoothingDisabled -bool false && \
+defaults write com.microsoft.VSCode.helper.NP CGFontRenderingFontSmoothingDisabled -bool false
+
+# Disable (Default)
+defaults delete com.microsoft.VSCode CGFontRenderingFontSmoothingDisabled && \
+defaults delete com.microsoft.VSCode.helper CGFontRenderingFontSmoothingDisabled && \
+defaults delete com.microsoft.VSCode.helper.EH CGFontRenderingFontSmoothingDisabled && \
+defaults delete com.microsoft.VSCode.helper.NP CGFontRenderingFontSmoothingDisabled
+```
+
 
 ## Backup
 
