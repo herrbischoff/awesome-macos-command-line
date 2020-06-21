@@ -177,10 +177,10 @@ defaults write com.apple.universalaccess reduceTransparency -bool false
 
 #### Set Wallpaper
 ```sh
-# Up to Mountain Lion
+# Up to OS X 10.8 (Mountain Lion)
 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/path/to/picture.jpg"'
 
-# Since Mavericks
+# Since OS X 10.9 (Mavericks)
 sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '/path/to/picture.jpg'" && killall Dock
 ```
 
@@ -200,7 +200,7 @@ mdfind kMDItemAppStoreHasReceipt=1
 ```
 
 #### Show Debug Menu
-Works up to Yosemite.
+Works up to OS X 10.10 (Yosemite).
 ```sh
 # Enable
 defaults write com.apple.appstore ShowDebugMenu -bool true
@@ -266,7 +266,7 @@ defaults write com.apple.addressbook ABShowDebugMenu -bool false
 ### iTunes
 
 #### Keyboard Media Keys
-This works up to Yosemite. System Integrity Protection was introduced in El Capitan which prevents system Launch Agents from being unloaded.
+Works up to OS X 10.10 (Yosemite). System Integrity Protection was introduced in OS X 10.11 (El Capitan) which prevents system Launch Agents from being unloaded.
 ```sh
 # Stop Responding to Key Presses
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
@@ -275,7 +275,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 launchctl load -w /System/Library/LaunchAgents/com.apple.rcd.plist
 ```
 
-From El Capitan onwards, you can either disable SIP or resort to a kind of hack, which will make iTunes inaccessible to any user, effectively preventing it from starting itself or its helpers. Be aware that for all intents and purposes this will trash your iTunes installation and may conflict with OS updates down the road.
+From OS X 10.11 (El Capitan) onwards, you can either disable SIP or resort to a kind of hack, which will make iTunes inaccessible to any user, effectively preventing it from starting itself or its helpers. Be aware that for all intents and purposes this will trash your iTunes installation and may conflict with OS updates down the road.
 ```sh
 sudo chmod 0000 /Applications/iTunes.app
 ```
@@ -416,7 +416,7 @@ sudo tmutil enablelocal
 sudo tmutil disablelocal
 ```
 
-Since High Sierra, you cannot disable local snapshots. Time Machine now always creates a local APFS snapshot and uses that snapshot as the data source to create a regular backup, rather than using the live disk as the source, as is the case with HFS formatted disks.
+Since macOS 10.13 (High Sierra), you cannot disable local snapshots. Time Machine now always creates a local APFS snapshot and uses that snapshot as the data source to create a regular backup, rather than using the live disk as the source, as is the case with HFS formatted disks.
 
 #### Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
 ```sh
@@ -687,14 +687,14 @@ You don't have to use the Disk Utility GUI for this.
 ```sh
 sudo diskutil repairPermissions /
 ```
-> Beginning with OS X El Capitan, system file permissions are automatically protected. It's no longer necessary to verify or repair permissions with Disk Utility. ([Source](https://support.apple.com/en-us/HT201560))
+> Beginning with OS X 10.11 (El Capitan), system file permissions are automatically protected. It's no longer necessary to verify or repair permissions with Disk Utility. ([Source](https://support.apple.com/en-us/HT201560))
 
 #### Set Boot Volume
 ```sh
-# Up to Yosemite
+# Up to OS X 10.10 (Yosemite)
 bless --mount "/path/to/mounted/volume" --setBoot
 
-# From El Capitan
+# From OS X 10.11 (El Capitan)
 sudo systemsetup -setstartupdisk /System/Library/CoreServices
 ```
 
@@ -710,7 +710,7 @@ sudo fs_usage
 ```
 ### APFS
 
-Available since High Sierra. There is no central utility and usage is inconsistent as most functionality is rolled into `tmutil`.
+Available since macOS 10.13 (High Sierra). There is no central utility and usage is inconsistent as most functionality is rolled into `tmutil`.
 
 #### Convert Volume from HFS+ to APFS
 ```sh
@@ -1056,12 +1056,12 @@ You need to download and install Xcode 8 beta for this to work. Afterwards they 
 cp -v /Applications/Xcode-beta.app/Contents/SharedFrameworks/DVTKit.framework/Versions/A/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
 
-From Sierra onward, they are included in Terminal.app.
+From macOS 10.12 (Sierra) onward, they are included in Terminal.app.
 ```sh
 cp -v /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
 
-Starting in Catalina, the Utilities apps (including Terminal.app) are now found in the `/System` folder.
+Starting in macOS 10.15 (Catalina), the Utilities apps (including Terminal.app) are now found in the `/System` folder.
 ```sh
 cp -v /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
@@ -1090,7 +1090,7 @@ sudo killall -HUP blued
 ### Harddisks
 
 #### Force Enable Trim
-Enable Trim for non-Apple SSDs. This command is available since Yosemite.
+Enable Trim for non-Apple SSDs. This command is available since OS X 10.10 (Yosemite).
 ```sh
 forcetrim
 ```
@@ -1243,11 +1243,11 @@ defaults write -g KeyRepeat -int 0.02
 #### Reset Launchpad Layout
 You need to restart `Dock` because Launchpad is tied to it.
 ```sh
-# Up to Yosemite
+# Up to OS X 10.10 (Yosemite)
 rm ~/Library/Application\ Support/Dock/*.db && \
 killall Dock
 
-# From El Capitan
+# From OS X 10.11 (El Capitan)
 defaults write com.apple.dock ResetLaunchPad -bool true && \
 killall Dock
 ```
@@ -1395,9 +1395,9 @@ traceroute github.com
 ### SSH
 
 #### Permanently Add Private Key Passphrase to SSH Agent
-> Prior to macOS Sierra, ssh would present a dialog asking for your passphrase and would offer the option to store it into the keychain. This UI was deprecated some time ago and has been removed.
+> Prior to macOS 10.12 (Sierra), ssh would present a dialog asking for your passphrase and would offer the option to store it into the keychain. This UI was deprecated some time ago and has been removed.
 >
-> Instead, a new UseKeychain option was introduced in macOS Sierra allowing users to specify whether they would like for the passphrase to be stored in the keychain. This option was enabled by default on macOS Sierra, which caused all passphrases to be stored in the keychain.
+> Instead, a new UseKeychain option was introduced in macOS 10.12 (Sierra) allowing users to specify whether they would like for the passphrase to be stored in the keychain. This option was enabled by default on macOS 10.12 (Sierra), which caused all passphrases to be stored in the keychain.
 >
 > This was not the intended default behavior, so this has been changed in macOS 10.12.2. ([Source](https://developer.apple.com/library/archive/technotes/tn2449/_index.html))
 ```sh
@@ -1563,7 +1563,7 @@ spctl --remove /path/to/Application.app
 ```
 
 #### Manage Gatekeeper
-Especially helpful with the annoying Catalina system popup blocking execution of non-signed apps.
+Especially helpful with the annoying macOS 10.15 (Catalina) system popup blocking execution of non-signed apps.
 ```sh
 # Status
 spctl --status
@@ -1587,10 +1587,10 @@ LC_ALL=C tr -dc "[:alnum:]" < /dev/urandom | head -c 20 | pbcopy
 #### Launch Screen Saver
 
 ```sh
-# Up to Sierra
+# Up to macOS 10.12 (Sierra)
 open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app
 
-# From High Sierra
+# From macOS 10.13 (High Sierra)
 /System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
 ```
 
@@ -1801,28 +1801,28 @@ sudo sysdiagnose -f ~/Desktop/
 
 #### Create Bootable Installer
 ```sh
-# Catalina
+# macOS 10.15 (Catalina)
 sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/USB --nointeraction --downloadassets
 
-# Mojave
+# macOS 10.14 (Mojave)
 sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/USB --nointeraction --downloadassets
 
-# High Sierra
+# macOS 10.13 (High Sierra)
 sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/USB --applicationpath /Applications/Install\ macOS\ High\ Sierra.app
 
-# Sierra
+# macOS 10.12 (Sierra)
 sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/USB --applicationpath /Applications/Install\ macOS\ Sierra.app
 
-# El Capitan
+# OS X 10.11 (El Capitan)
 sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/USB --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app
 
-# Yosemite
+# OS X 10.10 (Yosemite)
 sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/USB --applicationpath /Applications/Install\ OS\ X\ Yosemite.app
 ```
 
 * For confirmation before erasing the drive, remove `–-nointeraction` from the command.
-* The optional `–-downloadassets` flag is new in Mojave. It downloads assets which may be required during installation, like updates.
-* The `–-applicationpath` flag is deprecated since Mojave and will throw an error if used.
+* The optional `–-downloadassets` flag is new in macOS 10.14 (Mojave). It downloads assets which may be required during installation, like updates.
+* The `–-applicationpath` flag is deprecated since macOS 10.14 (Mojave) and will throw an error if used.
 
 #### Download Older OS Versions
 
@@ -2029,7 +2029,7 @@ defaults delete com.apple.sidecar.display
 ### Software Update
 
 #### Ignore Specific Software Update
-The identifier can be found via `softwareupdate --list`. In the example below, being on Mojave, will ignore all update prompts to Catalina, since the latter removes 32-bit support.
+The identifier can be found via `softwareupdate --list`. In the example below, being on macOS 10.14 (Mojave), will ignore all update prompts to macOS 10.15 (Catalina), since the latter removes 32-bit support.
 ```sh
 sudo /usr/sbin/softwareupdate --ignore "macOS Catalina"
 ```
