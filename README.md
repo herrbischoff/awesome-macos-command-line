@@ -39,6 +39,7 @@ It also explains what the numbers in the man pages refer to --- like `man(1)`.
 ## Contents
 
 - [Appearance](#appearance)
+    - [Subpixel Anti-Aliasing](#subpixel-anti-aliasing-font-smoothing)
     - [Transparency](#transparency)
     - [Wallpaper](#wallpaper)
 - [Applications](#applications)
@@ -143,6 +144,22 @@ It also explains what the numbers in the man pages refer to --- like `man(1)`.
 
 
 ## Appearance
+
+### Subpixel Anti-Aliasing (Font Smoothing)
+Setting present since macOS 10.14 (Mojave).
+```sh
+# Enable
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool false
+
+# Disable (Default)
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool true
+
+# Per Application
+defaults write com.apple.textedit CGFontRenderingFontSmoothingDisabled -bool false
+
+# Revert for Application
+defaults delete com.apple.textedit CGFontRenderingFontSmoothingDisabled
+```
 
 ### Transparency
 
