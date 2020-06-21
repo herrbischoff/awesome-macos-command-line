@@ -2429,7 +2429,7 @@ OS X 10.11                 | El Capitan         | September 30, 2015 | 10.11.6 (
 macOS 10.12                | Sierra             | September 20, 2016 | 10.12.6 (16G29) (July 19, 2017)
 macOS 10.13                | High Sierra        | September 25, 2017 | 10.13.6 (17G65) (July 9, 2018)
 macOS 10.14                | Mojave             | September 24, 2018 | 10.14.6 (18G3020) (January 28, 2020)
-macOS 10.15                | Catalina           | October 7, 2019    | 10.15.3 (19D76) (January 28, 2020)
+macOS 10.15                | Catalina           | October 7, 2019    | 10.15.5 (19F101) (June 1, 2020)
 
 
 ## License
