@@ -18,6 +18,24 @@ When you find something helpful in here, you could buy me a coffee. I spend a lo
 <https://github.com/sponsors/herrbischoff>
 
 
+## Foreword
+
+There's really only one thing I'd like to note here: [man
+pages](https://en.wikipedia.org/wiki/Man_page). [Man
+pages](https://www.cs.mcgill.ca/~guide/help/man.html). [Man
+pages](https://xkcd.com/1692/). Okay, three things. But this one thing seemed
+so important, I had to mention it multiple times. If you're not doing it
+already, you should get into the habit of consulting man pages before searching
+anywhere else. Unix-style man pages are an excellent source of documentation.
+There's even a man page for the `man` command itself:
+
+```sh
+man man
+```
+
+It also explains what the numbers in the man pages refer to --- like `man(1)`.
+
+
 ## Contents
 
 - [Appearance](#appearance)
