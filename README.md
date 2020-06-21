@@ -4,7 +4,7 @@
 >
 > _“You don’t have to know everything. You simply need to know where to find it when necessary.” (John Brunner)_
 
-[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Build Status](https://travis-ci.org/herrbischoff/awesome-macos-command-line.svg?branch=master)](https://travis-ci.org/herrbischoff/awesome-macos-command-line)
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 If you want to contribute, you are highly encouraged to do so. Please read the [contribution guidelines](contributing.md).
 
@@ -15,7 +15,25 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
 
 When you find something helpful in here, you could buy me a coffee. I spend a lot of time and effort on curating this list. Keeping me properly caffeinated accelerates things. And it would really make my day. Kindness of strangers and all that. If you can't or won't, no hard feelings. It's available completely free for a reason. Still, it would be awesome.
 
-Patreon: https://www.patreon.com/herrbischoff
+<https://github.com/sponsors/herrbischoff>
+
+
+## Foreword
+
+There's really only one thing I'd like to note here: [man
+pages](https://en.wikipedia.org/wiki/Man_page). [Man
+pages](https://www.cs.mcgill.ca/~guide/help/man.html). [Man
+pages](https://xkcd.com/1692/). Okay, three things. But this one thing seemed
+so important, I had to mention it multiple times. If you're not doing it
+already, you should get into the habit of consulting man pages before searching
+anywhere else. Unix-style man pages are an excellent source of documentation.
+There's even a man page for the `man` command itself:
+
+```sh
+man man
+```
+
+It also explains what the numbers in the man pages refer to --- like `man(1)`.
 
 
 ## Contents
@@ -84,6 +102,7 @@ Patreon: https://www.patreon.com/herrbischoff
     - [Gatekeeper](#gatekeeper)
     - [Passwords](#passwords)
     - [Physical Access](#physical-access)
+    - [Privacy Database](#privacy-database)
     - [Wiping Data](#wiping-data)
 - [Search](#search)
     - [Find](#find)
@@ -93,10 +112,10 @@ Patreon: https://www.patreon.com/herrbischoff
     - [AppleScript](#applescript)
     - [Basics](#basics)
     - [Clipboard](#clipboard)
-	- [Date and Time](#date-and-time)
+    - [Date and Time](#date-and-time)
     - [FileVault](#filevault)
     - [Information/Reports](#informationreports)
-    - [Install OS](#install-os)
+    - [Installation](#installation)
     - [Kernel Extensions](#kernel-extensions)
     - [LaunchAgents](#launchagents)
     - [LaunchServices](#launchservices)
@@ -104,10 +123,12 @@ Patreon: https://www.patreon.com/herrbischoff
     - [Memory Management](#memory-management)
     - [Notification Center](#notification-center)
     - [QuickLook](#quicklook)
-    - [Remote Apple Events](#remote-apple-events)
+    - [Remote Management](#remote-management)
     - [Root User](#root-user)
     - [Safe Mode Boot](#safe-mode-boot)
+    - [Save Dialogs](#save-dialogs)
     - [Screenshots](#screenshots)
+    - [Sidecar](#sidecar)
     - [Software Installation](#software-installation)
     - [Software Update](#software-update)
     - [Software Version](#software-version)
@@ -126,7 +147,7 @@ Patreon: https://www.patreon.com/herrbischoff
 ### Transparency
 
 #### Transparency in Menu and Windows
-```bash
+```sh
 # Reduce Transparency
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
@@ -138,7 +159,7 @@ defaults write com.apple.universalaccess reduceTransparency -bool false
 ### Wallpaper
 
 #### Set Wallpaper
-```bash
+```sh
 # Up to Mountain Lion
 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/path/to/picture.jpg"'
 
@@ -153,7 +174,7 @@ sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set v
 
 #### List All Apps Downloaded from App Store
 
-```bash
+```sh
 # Via find
 find /Applications -path '*Contents/_MASReceipt/receipt' -maxdepth 4 -print |\sed 's#.app/Contents/_MASReceipt/receipt#.app#g; s#/Applications/##'
 
@@ -163,7 +184,7 @@ mdfind kMDItemAppStoreHasReceipt=1
 
 #### Show Debug Menu
 Works up to Yosemite.
-```bash
+```sh
 # Enable
 defaults write com.apple.appstore ShowDebugMenu -bool true
 
@@ -175,12 +196,12 @@ defaults write com.apple.appstore ShowDebugMenu -bool false
 ### Apple Remote Desktop
 
 #### Kickstart Manual Pages
-```bash
+```sh
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -help
 ```
 
 #### Activate And Deactivate the ARD Agent and Helper
-```bash
+```sh
 # Activate And Restart the ARD Agent and Helper
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate -restart -agent -console
 
@@ -189,7 +210,7 @@ sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resourc
 ```
 
 #### Enable and Disable Remote Desktop Sharing
-```bash
+```sh
 # Allow Access for All Users and Give All Users Full Access
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -allUsers -privs -all
 
@@ -198,7 +219,7 @@ sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resourc
 ```
 
 #### Remove Apple Remote Desktop Settings
-```bash
+```sh
 sudo rm -rf /var/db/RemoteManagement ; \
 sudo defaults delete /Library/Preferences/com.apple.RemoteDesktop.plist ; \
 defaults delete ~/Library/Preferences/com.apple.RemoteDesktop.plist ; \
@@ -210,7 +231,7 @@ rm -r ~/Library/Containers/com.apple.RemoteDesktop
 ### Contacts
 
 #### Debug Mode
-```bash
+```sh
 # Enable
 defaults write com.apple.addressbook ABShowDebugMenu -bool true
 
@@ -221,7 +242,7 @@ defaults write com.apple.addressbook ABShowDebugMenu -bool false
 ### Google
 
 #### Uninstall Google Update
-```bash
+```sh
 ~/Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/Contents/Resources/ksinstall --nuke
 ```
 
@@ -229,7 +250,7 @@ defaults write com.apple.addressbook ABShowDebugMenu -bool false
 
 #### Keyboard Media Keys
 This works up to Yosemite. System Integrity Protection was introduced in El Capitan which prevents system Launch Agents from being unloaded.
-```bash
+```sh
 # Stop Responding to Key Presses
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 
@@ -238,7 +259,7 @@ launchctl load -w /System/Library/LaunchAgents/com.apple.rcd.plist
 ```
 
 From El Capitan onwards, you can either disable SIP or resort to a kind of hack, which will make iTunes inaccessible to any user, effectively preventing it from starting itself or its helpers. Be aware that for all intents and purposes this will trash your iTunes installation and may conflict with OS updates down the road.
-```bash
+```sh
 sudo chmod 0000 /Applications/iTunes.app
 ```
 
@@ -246,7 +267,7 @@ sudo chmod 0000 /Applications/iTunes.app
 
 #### Show Attachments as Icons
 
-```bash
+```sh
 defaults write com.apple.mail DisableInlineAttachmentViewing -bool yes
 ```
 
@@ -285,7 +306,7 @@ tell application "Mail" to activate
 ### Safari
 
 #### Change Default Fonts
-```bash
+```sh
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2StandardFontFamily Georgia
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DefaultFontSize 16
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2FixedFontFamily Menlo
@@ -293,7 +314,7 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 ```
 
 #### Enable Develop Menu and Web Inspector
-```bash
+```sh
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true && \
 defaults write com.apple.Safari IncludeDevelopMenu -bool true && \
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true && \
@@ -303,12 +324,12 @@ defaults write -g WebKitDeveloperExtras -bool true
 
 #### Get Current Page Data
 Other options: `get source`, `get text`.
-```bash
+```sh
 osascript -e 'tell application "Safari" to get URL of current tab of front window'
 ```
 
 #### Use Backspace/Delete to Go Back a Page
-```bash
+```sh
 # Enable
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool YES
 
@@ -319,7 +340,7 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 ### Sketch
 
 #### Export Compact SVGs
-```bash
+```sh
 defaults write com.bohemiancoding.sketch3 exportCompactSVG -bool yes
 ```
 
@@ -327,13 +348,13 @@ defaults write com.bohemiancoding.sketch3 exportCompactSVG -bool yes
 
 #### Turn Off Auto Reload Dialog
 Removes the dialog and defaults to auto reload.
-```bash
+```sh
 defaults write -app Skim SKAutoReloadFileUpdate -boolean true
 ```
 ### Terminal
 
 #### Focus Follows Mouse
-```bash
+```sh
 # Enable
 defaults write com.apple.Terminal FocusFollowsMouse -string YES
 
@@ -344,14 +365,14 @@ defaults write com.apple.Terminal FocusFollowsMouse -string NO
 ### TextEdit
 
 #### Use Plain Text Mode as Default
-```bash
+```sh
 defaults write com.apple.TextEdit RichText -int 0
 ```
 
 ### Visual Studio Code
 
 #### Fix VSCodeVim Key Repeat
-```bash
+```sh
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
 
@@ -361,13 +382,13 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 #### Change Backup Interval
 This changes the interval to 30 minutes. The integer value is the time in seconds.
-```bash
+```sh
 sudo defaults write /System/Library/LaunchDaemons/com.apple.backupd-auto StartInterval -int 1800
 ```
 
 #### Local Backups
 Whether Time Machine performs local backups while the Time Machine backup volume is not available.
-```bash
+```sh
 # Status
 defaults read /Library/Preferences/com.apple.TimeMachine MobileBackups
 
@@ -381,13 +402,13 @@ sudo tmutil disablelocal
 Since High Sierra, you cannot disable local snapshots. Time Machine now always creates a local APFS snapshot and uses that snapshot as the data source to create a regular backup, rather than using the live disk as the source, as is the case with HFS formatted disks.
 
 #### Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
-```bash
+```sh
 sudo defaults write /Library/Preferences/com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 ```
 
 #### Show Time Machine Logs
 This little script will output the last 12 hours of Time Machine activity followed by live activity.
-```bash
+```sh
 #!/bin/sh
 
 filter='processImagePath contains "backupd" and subsystem beginswith "com.apple.TimeMachine"'
@@ -409,7 +430,7 @@ log stream --style syslog --info --predicate "$filter"
 ```
 
 #### Toggle Backup While on Battery
-```bash
+```sh
 # Status
 sudo defaults read /Library/Preferences/com.apple.TimeMachine RequiresACPower
 
@@ -422,7 +443,7 @@ sudo defaults write /Library/Preferences/com.apple.TimeMachine RequiresACPower -
 
 #### Verify Backup
 Beginning in OS X 10.11, Time Machine records checksums of files copied into snapshots. Checksums are not retroactively computed for files that were copied by earlier releases of OS X.
-```bash
+```sh
 sudo tmutil verifychecksums /path/to/backup
 ```
 
@@ -432,25 +453,25 @@ sudo tmutil verifychecksums /path/to/backup
 
 #### Compile Sane Vim
 Compiling MacVim via Homebrew with all bells and whistles, including overriding system Vim.
-```bash
+```sh
 brew install macvim --HEAD
 ```
 
 #### Neovim
 Install the modern Vim drop-in alternative via Homebrew.
-```bash
+```sh
 brew install neovim
 ```
 
 ### Xcode
 
 #### Install Command Line Tools without Xcode
-```bash
+```sh
 xcode-select --install
 ```
 
 #### Remove All Unavailable Simulators
-```bash
+```sh
 xcrun simctl delete unavailable
 ```
 
@@ -458,31 +479,31 @@ xcrun simctl delete unavailable
 ## Dock
 
 #### Add a Stack with Recent Applications
-```bash
+```sh
 defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "list-type" = 1; }; "tile-type" = "recents-tile"; }' && \
 killall Dock
 ```
 
 #### Add a Nameless Stack Folder and Small Spacer
-```bash
+```sh
 defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = {}; "tile-type"="small-spacer-tile"; }' && \
 killall Dock
 ```
 
 #### Add a Space
-```bash
+```sh
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}' && \
 killall Dock
 ```
 
 #### Add a Small Space
-```bash
+```sh
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="small-spacer-tile";}' && \
 killall Dock
 ```
 
 #### Auto Rearrange Spaces Based on Most Recent Use
-```bash
+```sh
 # Enable (Default)
 defaults write com.apple.dock mru-spaces -bool true && \
 killall Dock
@@ -492,9 +513,21 @@ defaults write com.apple.dock mru-spaces -bool false && \
 killall Dock
 ```
 
+#### Autohide
+
+``` bash
+# Enable
+defaults write com.apple.dock autohide -bool true && \
+killall Dock
+
+# Disable (Default)
+defaults write com.apple.dock autohide -bool false && \
+killall Dock
+```
+
 #### Icon Bounce
 Global setting whether Dock icons should bounce when the respective application demands your attention.
-```bash
+```sh
 # Enable (Default)
 defaults write com.apple.dock no-bouncing -bool true && \
 killall Dock
@@ -505,7 +538,7 @@ killall Dock
 ```
 
 #### Lock the Dock Size
-```bash
+```sh
 # Enable
 defaults write com.apple.Dock size-immutable -bool yes && \
 killall Dock
@@ -516,21 +549,21 @@ killall Dock
 ```
 
 #### Reset Dock
-```bash
+```sh
 defaults delete com.apple.dock && \
 killall Dock
 ```
 
 #### Resize
 Fully resize your Dock's body. To resize change the `0` value as an integer.
-```bash
+```sh
 defaults write com.apple.dock tilesize -int 0 && \
 killall Dock
 ```
 
 #### Scroll Gestures
 Use your touchpad or mouse scroll wheel to interact with Dock items. Allows you to use an upward scrolling gesture to open stacks. Using the same gesture on applications that are running invokes Exposé/Mission Control.
-```bash
+```sh
 # Enable
 defaults write com.apple.dock scroll-to-open -bool true && \
 killall Dock
@@ -561,14 +594,14 @@ killall Dock
 
 #### Set Auto Show/Hide Delay
 The float number defines the show/hide delay in ms.
-```bash
+```sh
 defaults write com.apple.dock autohide-time-modifier -float 0.4 && \
 defaults write com.apple.dock autohide-delay -float 0 && \
 killall Dock
 ```
 
 #### Show Hidden App Icons
-```bash
+```sh
 # Enable
 defaults write com.apple.dock showhidden -bool true && \
 killall Dock
@@ -579,7 +612,7 @@ killall Dock
 ```
 
 #### Show Only Active Applications
-```bash
+```sh
 # Enable
 defaults write com.apple.dock static-only -bool true && \
 killall Dock
@@ -589,12 +622,25 @@ defaults write com.apple.dock static-only -bool false && \
 killall Dock
 ```
 
+#### Single App Mode
+When clicking an application icon in the Dock, the respective windows will come
+to the front, but all other application windows will be hidden.
+```sh
+# Enable
+defaults write com.apple.dock single-app -bool true && \
+killall Dock
+
+# Disable (Default)
+defaults write com.apple.dock single-app -bool false && \
+killall Dock
+```
+
 
 ## Documents
 
 #### Convert File to HTML
 Supported formats are plain text, rich text (rtf) and Microsoft Word (doc/docx).
-```bash
+```sh
 textutil -convert html file.ext
 ```
 
@@ -603,31 +649,31 @@ textutil -convert html file.ext
 
 #### Create an Empty File
 Creates an empty 10 gigabyte test file.
-```bash
+```sh
 mkfile 10g /path/to/file
 ```
 
 #### Disable Sudden Motion Sensor
 Leaving this turned on is useless when you're using SSDs.
-```bash
+```sh
 sudo pmset -a sms 0
 ```
 
 #### Eject All Mountable Volumes
 The only reliable way to do this is by sending an AppleScript command to Finder.
-```bash
+```sh
 osascript -e 'tell application "Finder" to eject (every disk whose ejectable is true)'
 ```
 
 #### Repair File Permissions
 You don't have to use the Disk Utility GUI for this.
-```bash
+```sh
 sudo diskutil repairPermissions /
 ```
 > Beginning with OS X El Capitan, system file permissions are automatically protected. It's no longer necessary to verify or repair permissions with Disk Utility. ([Source](https://support.apple.com/en-us/HT201560))
 
 #### Set Boot Volume
-```bash
+```sh
 # Up to Yosemite
 bless --mount "/path/to/mounted/volume" --setBoot
 
@@ -636,13 +682,13 @@ sudo systemsetup -setstartupdisk /System/Library/CoreServices
 ```
 
 #### Show All Attached Disks and Partitions
-```bash
+```sh
 diskutil list
 ```
 
 #### View File System Usage
 A continuous stream of file system access info.
-```bash
+```sh
 sudo fs_usage
 ```
 ### APFS
@@ -650,33 +696,33 @@ sudo fs_usage
 Available since High Sierra. There is no central utility and usage is inconsistent as most functionality is rolled into `tmutil`.
 
 #### Convert Volume from HFS+ to APFS
-```bash
+```sh
 /System/Library/Filesystems/apfs.fs/Contents/Resources/hfs_convert /path/to/file/system
 ```
 
 #### Create New APFS Filesystem
-```bash
+```sh
 /System/Library/Filesystems/apfs.fs/Contents/Resources/newfs_apfs /path/to/device
 ```
 
 #### Create Snapshot
-```bash
+```sh
 tmutil localsnapshot
 ```
 
 #### Delete Snapshot
-```bash
+```sh
 tmutil deletelocalsnapshots com.apple.TimeMachine.2018-01-26-044042
 ````
 
 #### List Snapshots
-```bash
+```sh
 tmutil listlocalsnapshots /
 ```
 
 #### Mount Snapshot
 Snapshots are read-only.
-```bash
+```sh
 mkdir ~/mnt
 /System/Library/Filesystems/apfs.fs/Contents/Resources/mount_apfs -s com.apple.TimeMachine.2018-01-26-044042 / ~/mnt
 ```
@@ -684,51 +730,51 @@ mkdir ~/mnt
 ### Disk Images
 
 #### Create Disk Image From Folder Contents
-```bash
+```sh
 hdiutil create -volname "Volume Name" -srcfolder /path/to/folder -ov diskimage.dmg
 ```
 
 If you'd like to encrypt the disk image:
-```bash
+```sh
 hdiutil create -encryption -stdinpass -volname "Volume Name" -srcfolder /path/to/folder -ov encrypted.dmg
 ```
 
 By default, you'll be prompted for a password. You can automate that by piping in a password:
-```bash
+```sh
 echo -n YourPassword | hdiutil create -encryption -stdinpass -volname "Volume Name" -srcfolder /path/to/folder -ov encrypted.dmg
 ```
 
 #### Burn Disk Images to DVD
 This command applies to .iso, .img and .dmg images.
-```bash
+```sh
 hdiutil burn /path/to/image_file
 ```
 
 #### Disable Disk Image Verification
-```bash
+```sh
 defaults write com.apple.frameworks.diskimages skip-verify -bool true && \
 defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true && \
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 ```
 
 #### Make Volume OS X Bootable
-```bash
+```sh
 bless --folder "/path/to/mounted/volume/System/Library/CoreServices" --bootinfo --bootefi
 ```
 
 #### Mount Disk Image
-```bash
+```sh
 hdiutil attach /path/to/diskimage.dmg
 ```
 
 #### Unmount Disk Image
-```bash
+```sh
 hdiutil detach /dev/disk2s1
 ```
 
 #### Write Disk Image to Volume
 Like the Disk Utility "Restore" function.
-```bash
+```sh
 sudo asr -restore -noverify -source /path/to/diskimage.dmg -target /Volumes/VolumeToRestoreTo
 ```
 
@@ -739,7 +785,7 @@ sudo asr -restore -noverify -source /path/to/diskimage.dmg -target /Volumes/Volu
 
 #### Show External Media
 External HDs, thumb drives, etc.
-```bash
+```sh
 # Enable
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true && \
 killall Finder
@@ -751,7 +797,7 @@ killall Finder
 
 #### Show Internal Media
 Built-in HDs or SSDs.
-```bash
+```sh
 # Enable
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true && \
 killall Finder
@@ -763,7 +809,7 @@ killall Finder
 
 #### Show Removable Media
 CDs, DVDs, iPods, etc.
-```bash
+```sh
 # Enable
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true && \
 killall Finder
@@ -775,7 +821,7 @@ killall Finder
 
 #### Show Network Volumes
 AFP, SMB, NFS, WebDAV, etc.
-```bash
+```sh
 # Enable
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true && \
 killall Finder
@@ -788,21 +834,21 @@ killall Finder
 ### Files and Folders
 
 #### Clear All ACLs
-```bash
+```sh
 sudo chmod -RN /path/to/folder
 ```
 
 #### Hide Folder in Finder
-```bash
+```sh
 chflags hidden /path/to/folder/
 ```
 #### Show All File Extensions
-```bash
+```sh
 defaults write -g AppleShowAllExtensions -bool true
 ```
 
 #### Show Hidden Files
-```bash
+```sh
 # Show All
 defaults write com.apple.finder AppleShowAllFiles true
 
@@ -811,22 +857,22 @@ defaults write com.apple.finder AppleShowAllFiles false
 ```
 
 #### Remove Protected Flag
-```bash
+```sh
 sudo chflags -R nouchg /path/to/file/or/folder
 ```
 
 #### Show Full Path in Finder Title
-```bash
+```sh
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 ```
 
 #### Unhide User Library Folder
-```bash
+```sh
 chflags nohidden ~/Library
 ```
 
 #### Increase Number of Recent Places
-```bash
+```sh
 defaults write -g NSNavRecentPlacesLimit -int 10 && \
 killall Finder
 ```
@@ -835,7 +881,7 @@ killall Finder
 
 #### Show "Quit Finder" Menu Item
 Makes possible to see Finder menu item "Quit Finder" with default shortcut <kbd>Cmd</kbd> + <kbd>Q</kbd>
-```bash
+```sh
 # Enable
 defaults write com.apple.finder QuitMenuItem -bool true && \
 killall Finder
@@ -847,7 +893,7 @@ killall Finder
 
 #### Smooth Scrolling
 Useful if you’re on an older Mac that messes up the animation.
-```bash
+```sh
 # Disable
 defaults write -g NSScrollAnimationEnabled -bool false
 
@@ -856,7 +902,7 @@ defaults write -g NSScrollAnimationEnabled -bool true
 ```
 
 #### Rubberband Scrolling
-```bash
+```sh
 # Disable
 defaults write -g NSScrollViewRubberbanding -bool false
 
@@ -865,13 +911,13 @@ defaults write -g NSScrollViewRubberbanding -bool true
 ```
 
 #### Expand Save Panel by Default
-```bash
+```sh
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true && \
 defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
 ```
 
 #### Desktop Icon Visibility
-```bash
+```sh
 # Hide Icons
 defaults write com.apple.finder CreateDesktop -bool false && \
 killall Finder
@@ -882,7 +928,7 @@ killall Finder
 ```
 
 #### Path Bar
-```bash
+```sh
 # Show
 defaults write com.apple.finder ShowPathbar -bool true
 
@@ -892,12 +938,12 @@ defaults write com.apple.finder ShowPathbar -bool false
 
 #### Scrollbar Visibility
 Possible values: `WhenScrolling`, `Automatic` and `Always`.
-```bash
+```sh
 defaults write -g AppleShowScrollBars -string "Always"
 ```
 
 #### Status Bar
-```bash
+```sh
 # Show
 defaults write com.apple.finder ShowStatusBar -bool true
 
@@ -907,24 +953,24 @@ defaults write com.apple.finder ShowStatusBar -bool false
 
 #### Save to Disk by Default
 Sets default save target to be a local disk, not iCloud.
-```bash
+```sh
 defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
 ```
 
 #### Set Current Folder as Default Search Scope
-```bash
+```sh
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 ```
 
 #### Set Default Finder Location to Home Folder
-```bash
+```sh
 defaults write com.apple.finder NewWindowTarget -string "PfLo" && \
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 ```
 
 #### Set Sidebar Icon Size
 Sets size to 'medium'.
-```bash
+```sh
 defaults write -g NSTableViewDefaultSizeMode -int 2
 ```
 
@@ -932,13 +978,13 @@ defaults write -g NSTableViewDefaultSizeMode -int 2
 
 #### Disable Creation of Metadata Files on Network Volumes
 Avoids creation of `.DS_Store` and AppleDouble files.
-```bash
+```sh
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 ```
 
 #### Disable Creation of Metadata Files on USB Volumes
 Avoids creation of `.DS_Store` and AppleDouble files.
-```bash
+```sh
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 ```
 
@@ -946,33 +992,33 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 #### Change Working Directory to Finder Path
 If multiple windows are open, it chooses the top-most one.
-```bash
+```sh
 cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
 ```
 
 #### Open URL
-```bash
+```sh
 open https://github.com
 ```
 
 #### Open File
-```bash
+```sh
 open README.md
 ```
 
 #### Open Applications
 You can open applications using `-a`.
-```bash
+```sh
 open -a "Google Chrome" https://github.com
 ```
 
 #### Open Folder
-```bash
+```sh
 open /path/to/folder/
 ```
 
 #### Open Current Folder
-```bash
+```sh
 open .
 ```
 
@@ -981,7 +1027,7 @@ open .
 
 #### Clear Font Cache for Current User
 To clear font caches for all users, put `sudo` in front of this command.
-```bash
+```sh
 atsutil databases -removeUser && \
 atsutil server -shutdown && \
 atsutil server -ping
@@ -989,15 +1035,19 @@ atsutil server -ping
 
 #### Get SF Mono Fonts
 You need to download and install Xcode 8 beta for this to work. Afterwards they should be available in all applications.
-```bash
+```sh
 cp -v /Applications/Xcode-beta.app/Contents/SharedFrameworks/DVTKit.framework/Versions/A/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
 
 From Sierra onward, they are included in Terminal.app.
-```bash
+```sh
 cp -v /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
 
+Starting in Catalina, the Utilities apps (including Terminal.app) are now found in the `/System` folder.
+```sh
+cp -v /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
+```
 
 ## Functions
 
@@ -1008,7 +1058,7 @@ Please see [this file](functions.md).
 
 ### Bluetooth
 
-```bash
+```sh
 # Status
 defaults read /Library/Preferences/com.apple.Bluetooth ControllerPowerState
 
@@ -1024,45 +1074,45 @@ sudo killall -HUP blued
 
 #### Force Enable Trim
 Enable Trim for non-Apple SSDs. This command is available since Yosemite.
-```bash
+```sh
 forcetrim
 ```
 
 ### Hardware Information
 
 #### List All Hardware Ports
-```bash
+```sh
 networksetup -listallhardwareports
 ```
 
 #### Remaining Battery Percentage
-```bash
+```sh
 pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';'
 ```
 
 #### Remaining Battery Time
-```bash
+```sh
 pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f3 -d';'
 ```
 
 #### Show Connected Device's UDID
-```bash
+```sh
 system_profiler SPUSBDataType | sed -n -e '/iPad/,/Serial/p' -e '/iPhone/,/Serial/p'
 ```
 
 #### Show Current Screen Resolution
-```bash
+```sh
 system_profiler SPDisplaysDataType | grep Resolution
 ```
 
 #### Show CPU Brand String
-```bash
+```sh
 sysctl -n machdep.cpu.brand_string
 ```
 
 ### Infrared Receiver
 
-```bash
+```sh
 # Status
 defaults read /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled
 
@@ -1077,48 +1127,48 @@ defaults write /Library/Preferences/com.apple.driver.AppleIRController DeviceEna
 
 #### Prevent System Sleep
 Prevent sleep for 1 hour:
-```bash
+```sh
 caffeinate -u -t 3600
 ```
 
 #### Show All Power Management Settings
-```bash
+```sh
 sudo pmset -g
 ```
 
 #### Put Display to Sleep after 15 Minutes of Inactivity
-```bash
+```sh
 sudo pmset displaysleep 15
 ```
 
 #### Put Computer to Sleep after 30 Minutes of Inactivity
-```bash
+```sh
 sudo pmset sleep 30
 ```
 
 #### Check System Sleep Idle Time
-```bash
+```sh
 sudo systemsetup -getcomputersleep
 ```
 
 #### Set System Sleep Idle Time to 60 Minutes
-```bash
+```sh
 sudo systemsetup -setcomputersleep 60
 ```
 
 #### Turn Off System Sleep Completely
-```bash
+```sh
 sudo systemsetup -setcomputersleep Never
 ```
 
 #### Automatic Restart on System Freeze
-```bash
+```sh
 sudo systemsetup -setrestartfreeze on
 ```
 
 #### Chime When Charging
 Play iOS charging sound when MagSafe is connected.
-```bash
+```sh
 # Enable
 defaults write com.apple.PowerChime ChimeOnAllHardware -bool true && \
 open /System/Library/CoreServices/PowerChime.app
@@ -1134,7 +1184,7 @@ killall PowerChime
 ### Keyboard
 
 #### Auto-Correct
-```bash
+```sh
 # Disable
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 
@@ -1147,7 +1197,7 @@ defaults read -g NSAutomaticSpellingCorrectionEnabled
 
 #### Full Keyboard Access
 Enable Tab in modal dialogs.
-```bash
+```sh
 # Text boxes and lists only (Default)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 0
 
@@ -1157,7 +1207,7 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 #### Key Repeat
 Disable the default "press and hold" behavior.
-```bash
+```sh
 # Enable Key Repeat
 defaults write -g ApplePressAndHoldEnabled -bool false
 
@@ -1167,7 +1217,7 @@ defaults write -g ApplePressAndHoldEnabled -bool true
 
 #### Key Repeat Rate
 Sets a very fast repeat rate, adjust to taste.
-```bash
+```sh
 defaults write -g KeyRepeat -int 0.02
 ```
 
@@ -1175,7 +1225,7 @@ defaults write -g KeyRepeat -int 0.02
 
 #### Reset Launchpad Layout
 You need to restart `Dock` because Launchpad is tied to it.
-```bash
+```sh
 # Up to Yosemite
 rm ~/Library/Application\ Support/Dock/*.db && \
 killall Dock
@@ -1190,46 +1240,65 @@ killall Dock
 ### Audio
 
 #### Convert Audio File to iPhone Ringtone
-```bash
+```sh
 afconvert input.mp3 ringtone.m4r -f m4af
 ```
 
 #### Create Audiobook From Text
 Uses "Alex" voice, a plain UTF-8 encoded text file for input and AAC output.
-```bash
+```sh
 say -v Alex -f file.txt -o "output.m4a"
 ```
 
 #### Disable Sound Effects on Boot
-```bash
+```sh
 sudo nvram SystemAudioVolume=" "
 ```
 
 #### Mute Audio Output
-```bash
+```sh
 osascript -e 'set volume output muted true'
 ```
 
 #### Set Audio Volume
-```bash
+```sh
 osascript -e 'set volume 4'
 ```
 
 #### Play Audio File
 You can play all audio formats that are natively supported by QuickTime.
-```bash
+```sh
 afplay -q 1 filename.mp3
 ```
 
 #### Speak Text with System Default Voice
-```bash
+```sh
 say 'All your base are belong to us!'
+```
+
+#### Startup Chime
+Older Macs:
+```sh
+# Enable (Default)
+sudo nvram BootAudio=%01
+
+# Disable
+sudo nvram BootAudio=%00
+```
+
+From 2016 models onwards:
+```sh
+# Enable
+sudo nvram StartupMute=%00
+
+# Disable (Default)
+sudo nvram StartupMute=%01
 ```
 
 ### Video
 
 #### Auto-Play Videos in QuickTime Player
-```bash
+```sh
 defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen 1
 ```
 
@@ -1239,7 +1308,7 @@ defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen 1
 ### Bonjour
 
 #### Bonjour Service
-```bash
+```sh
 # Disable
 sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist ProgramArguments -array-add "-NoMulticastAdvertisements"
 
@@ -1250,19 +1319,19 @@ sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist 
 ### DHCP
 
 #### Renew DHCP Lease
-```bash
+```sh
 sudo ipconfig set en0 DHCP
 ```
 
 #### Show DHCP Info
-```bash
+```sh
 ipconfig getpacket en0
 ```
 
 ### DNS
 
 #### Clear DNS Cache
-```bash
+```sh
 sudo dscacheutil -flushcache && \
 sudo killall -HUP mDNSResponder
 ```
@@ -1270,7 +1339,7 @@ sudo killall -HUP mDNSResponder
 ### Hostname
 
 #### Set Computer Name/Host Name
-```bash
+```sh
 sudo scutil --set ComputerName "newhostname" && \
 sudo scutil --set HostName "newhostname" && \
 sudo scutil --set LocalHostName "newhostname" && \
@@ -1281,7 +1350,7 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.serve
 
 #### Network Locations
 Switch between network locations created in the Network preference pane.
-```bash
+```sh
 # Status
 scselect
 
@@ -1290,19 +1359,19 @@ scselect LocationNameFromStatus
 ```
 
 #### Set Static IP Address
-```bash
+```sh
 networksetup -setmanual "Ethernet" 192.168.2.100 255.255.255.0 192.168.2.1
 ```
 
 ### Networking Tools
 
 #### Ping a Host to See Whether It’s Available
-```bash
+```sh
 ping -o github.com
 ```
 
 #### Troubleshoot Routing Problems
-```bash
+```sh
 traceroute github.com
 ```
 
@@ -1314,18 +1383,18 @@ traceroute github.com
 > Instead, a new UseKeychain option was introduced in macOS Sierra allowing users to specify whether they would like for the passphrase to be stored in the keychain. This option was enabled by default on macOS Sierra, which caused all passphrases to be stored in the keychain.
 >
 > This was not the intended default behavior, so this has been changed in macOS 10.12.2. ([Source](https://developer.apple.com/library/archive/technotes/tn2449/_index.html))
-```bash
+```sh
 ssh-add -K /path/to/private_key
 ```
 Then add to `~/.ssh/config`:
-```bash
+```sh
 Host server.example.com
     IdentityFile /path/to/private_key
     UseKeychain yes
 ```
 
 #### Remote Login
-```bash
+```sh
 # Enable remote login
 sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 
@@ -1337,23 +1406,23 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
 
 #### Show Application Using a Certain Port
 This outputs all applications currently using port 80.
-```bash
+```sh
 sudo lsof -i :80
 ```
 
 #### Show External IP Address
 Works if your ISP doesn't replace DNS requests (which it shouldn't).
-```bash
+```sh
 dig +short myip.opendns.com @resolver1.opendns.com
 ```
 Alternative that works on all networks.
-```bash
+```sh
 curl -s https://api.ipify.org && echo
 ```
 
 #### Show Network Interface Information
 Undocumented flag of the `scutil` command.
-```bash
+```sh
 scutil --nwi
 ```
 
@@ -1361,7 +1430,7 @@ scutil --nwi
 
 #### Start Native TFTP Daemon
 Files will be served from `/private/tftpboot`.
-```bash
+```sh
 sudo launchctl load -F /System/Library/LaunchDaemons/tftp.plist && \
 sudo launchctl start com.apple.tftpd
 ```
@@ -1369,43 +1438,43 @@ sudo launchctl start com.apple.tftpd
 ### Wi-Fi
 
 #### Join a Wi-Fi Network
-```bash
+```sh
 networksetup -setairportnetwork en0 WIFI_SSID WIFI_PASSWORD
 ```
 
 #### Scan Available Access Points
 Create a symbolic link to the airport command for easy access:
-```bash
+```sh
 sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
 ```
 Run a wireless scan:
-```bash
+```sh
 airport -s
 ```
 
 #### Show Current SSID
-```bash
+```sh
 /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}'
 ```
 
 #### Show Local IP Address
-```bash
+```sh
 ipconfig getifaddr en0
 ```
 
 #### Show Wi-Fi Connection History
-```bash
+```sh
 defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences | grep LastConnected -A 7
 ```
 
 #### Show Wi-Fi Network Passwords
 Exchange SSID with the SSID of the access point you wish to query the password from.
-```bash
+```sh
 security find-generic-password -D "AirPort network password" -a "SSID" -gw
 ```
 
 #### Turn on Wi-Fi Adapter
-```bash
+```sh
 networksetup -setairportpower en0 on
 ```
 
@@ -1419,7 +1488,7 @@ networksetup -setairportpower en0 on
 
 #### Full Uninstall
 
-```bash
+```sh
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
 ```
 
@@ -1427,18 +1496,18 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ## Printing
 
 #### Clear Print Queue
-```bash
+```sh
 cancel -a -
 ```
 
 #### Expand Print Panel by Default
-```bash
+```sh
 defaults write -g PMPrintingExpandedStateForPrint -bool true && \
 defaults write -g PMPrintingExpandedStateForPrint2 -bool true
 ```
 
 #### Quit Printer App After Print Jobs Complete
-```bash
+```sh
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 ```
 
@@ -1448,7 +1517,7 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 ### Application Firewall
 
 #### Firewall Service
-```bash
+```sh
 # Show Status
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate
 
@@ -1460,24 +1529,25 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate off
 ```
 
 #### Add Application to Firewall
-```bash
+```sh
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /path/to/file
 ```
 
 ### Gatekeeper
 
 #### Add Gatekeeper Exception
-```bash
+```sh
 spctl --add /path/to/Application.app
 ```
 
 #### Remove Gatekeeper Exception
-```bash
+```sh
 spctl --remove /path/to/Application.app
 ```
 
 #### Manage Gatekeeper
-```bash
+Especially helpful with the annoying Catalina system popup blocking execution of non-signed apps.
+```sh
 # Status
 spctl --status
 
@@ -1491,7 +1561,7 @@ sudo spctl --master-disable
 ### Passwords
 
 #### Generate Secure Password and Copy to Clipboard
-```bash
+```sh
 LC_ALL=C tr -dc "[:alnum:]" < /dev/urandom | head -c 20 | pbcopy
 ```
 
@@ -1499,7 +1569,7 @@ LC_ALL=C tr -dc "[:alnum:]" < /dev/urandom | head -c 20 | pbcopy
 
 #### Launch Screen Saver
 
-```bash
+```sh
 # Up to Sierra
 open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app
 
@@ -1509,12 +1579,12 @@ open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/Scree
 
 
 #### Lock Screen
-```bash
+```sh
 /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
 ```
 
 #### Screensaver Immediate Lock
-```bash
+```sh
 # Status
 defaults read com.apple.screensaver askForPasswordDelay
 
@@ -1526,7 +1596,7 @@ defaults write com.apple.screensaver askForPasswordDelay -int 10
 ```
 
 #### Screensaver Password
-```bash
+```sh
 # Status
 defaults read com.apple.screensaver askForPassword
 
@@ -1537,23 +1607,36 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPassword -int 0
 ```
 
+### Privacy Database
+The `tccutil` command manages the privacy database, which stores decisions the user has made about whether apps may access personal data. You need to close all applications except Terminal before running any of these commands.
+```sh
+# Full Reset for All Applications
+sudo tccutil reset All
+
+# Reset Adress Book Access
+sudo tccutil reset AddressBook
+
+# Reset All Permission for Terminal.app
+sudo tccutil reset All com.apple.Terminal
+```
+
 ### Wiping Data
 
 Note: The `srm` command appears to have been removed on MacOS after 10.9. There is a note on an [Apple support page](https://support.apple.com/en-us/HT201949) hinting as to why:
 > With an SSD drive, Secure Erase and Erasing Free Space are not available in Disk Utility. These options are not needed for an SSD drive because a standard erase makes it difficult to recover data from an SSD.
 
 #### Securely Remove File
-```bash
+```sh
 srm /path/to/file
 ```
 
 #### Securely Remove Folder
-```bash
+```sh
 srm -r /path/to/folder/
 ```
 
 #### Securely Remove Path (Force)
-```bash
+```sh
 srm -rf /path/to/complete/destruction
 ```
 
@@ -1563,20 +1646,20 @@ srm -rf /path/to/complete/destruction
 ### Find
 
 #### Recursively Delete .DS_Store Files
-```bash
+```sh
 find . -type f -name '*.DS_Store' -ls -delete
 ```
 
 ### Locate
 
 #### Build Locate Database
-```bash
+```sh
 sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 ```
 
 #### Search via Locate
 The `-i` modifier makes the search case insensitive.
-```bash
+```sh
 locate -i *.jpg
 ```
 
@@ -1585,7 +1668,7 @@ locate -i *.jpg
 
 ### AirDrop
 
-```bash
+```sh
 # Enable AirDrop over Ethernet and on Unsupported Macs
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
@@ -1599,74 +1682,74 @@ defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES
 ### AppleScript
 
 #### Execute AppleScript
-```bash
+```sh
 osascript /path/to/script.scpt
 ```
 
 ### Basics
 
 #### Compare Two Folders
-```bash
+```sh
 diff -qr /path/to/folder1 /path/to/folder2
 ```
 
 #### Copy Large File with Progress
 Make sure you have `pv` installed and replace `/dev/rdisk2` with the appropriate write device or file.
-```bash
+```sh
 FILE=/path/to/file.iso pv -s $(du -h $FILE | awk '/.*/ {print $1}') $FILE | sudo dd of=/dev/rdisk2 bs=1m
 ```
 
 #### Restore Sane Shell
 In case your shell session went insane (some script or application turned it into a garbled mess).
-```bash
+```sh
 stty sane
 ```
 
 #### Restart
-```bash
+```sh
 sudo reboot
 ```
 
 #### Shutdown
-```bash
+```sh
 sudo poweroff
 ```
 
 #### Show Build Number of OS
-```bash
+```sh
 sw_vers
 ```
 
 #### Uptime
 How long since your last restart.
-```bash
+```sh
 uptime
 ```
 
 ### Clipboard
 
 #### Copy data to Clipboard
-```bash
+```sh
 cat whatever.txt | pbcopy
 ```
 
 #### Convert Clipboard to Plain Text
-```bash
+```sh
 pbpaste | textutil -convert txt -stdin -stdout -encoding 30 | pbcopy
 ```
 
 #### Convert Tabs to Spaces for Clipboard Content
-```bash
+```sh
 pbpaste | expand | pbcopy
 ```
 
 #### Copy data from Clipboard
-```bash
+```sh
 pbpaste > whatever.txt
 ```
 
 #### Sort and Strip Duplicate Lines from Clipboard Content
-```bash
+```sh
 pbpaste | sort | uniq | pbcopy
 ```
 
@@ -1674,12 +1757,12 @@ pbpaste | sort | uniq | pbcopy
 
 #### Automatically Unlock FileVault on Restart
 If FileVault is enabled on the current volume, it restarts the system, bypassing the initial unlock. The command may not work on all systems.
-```bash
+```sh
 sudo fdesetup authrestart
 ```
 
 #### FileVault Service
-```bash
+```sh
 # Status
 sudo fdesetup status
 
@@ -1693,14 +1776,17 @@ sudo fdesetup disable
 ### Information/Reports
 
 #### Generate Advanced System and Performance Report
-```bash
+```sh
 sudo sysdiagnose -f ~/Desktop/
 ```
 
-### Install OS
+### Installation
 
 #### Create Bootable Installer
-```bash
+```sh
+# Catalina
+sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/USB --nointeraction --downloadassets
+
 # Mojave
 sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/USB --nointeraction --downloadassets
 
@@ -1721,20 +1807,41 @@ sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstall
 * The optional `–-downloadassets` flag is new in Mojave. It downloads assets which may be required during installation, like updates.
 * The `–-applicationpath` flag is deprecated since Mojave and will throw an error if used.
 
+#### Download Older OS Versions
+
+Version       | Codename      | Download
+------------- | ------------- | --------
+Mac OS X 10.0 | Cheetah       | n/a
+Mac OS X 10.1 | Puma          | n/a
+Mac OS X 10.2 | Jaguar        | n/a
+Mac OS X 10.3 | Panther       | n/a
+Mac OS X 10.4 | Tiger         | n/a
+Mac OS X 10.5 | Leopard       | n/a
+Mac OS X 10.6 | Snow Leopard  | n/a
+Mac OS X 10.7 | Lion          | n/a
+OS X 10.8     | Mountain Lion | n/a
+OS X 10.9     | Mavericks     | n/a
+OS X 10.10    | Yosemite      | [Direct Download](http://updates-http.cdn-apple.com/2019/cert/061-41343-20191023-02465f92-3ab5-4c92-bfe2-b725447a070d/InstallMacOSX.dmg)
+OS X 10.11    | El Capitan    | [Direct Download](http://updates-http.cdn-apple.com/2019/cert/061-41424-20191024-218af9ec-cf50-4516-9011-228c78eda3d2/InstallMacOSX.dmg)
+macOS 10.12   | Sierra        | [Direct Download](http://updates-http.cdn-apple.com/2019/cert/061-39476-20191023-48f365f4-0015-4c41-9f44-39d3d2aca067/InstallOS.dmg)
+macOS 10.13   | High Sierra   | [App Store](https://apps.apple.com/de/app/macos-high-sierra/id1246284741)
+macOS 10.14   | Mojave        | [App Store](https://apps.apple.com/de/app/macos-mojave/id1398502828)
+macOS 10.15   | Catalina      | [App Store](https://apps.apple.com/de/app/macos-catalina/id1466841314)
+
 ### Kernel Extensions
 
 #### Display Status of Loaded Kernel Extensions
-```bash
+```sh
 sudo kextstat -l
 ```
 
 #### Load Kernel Extension
-```bash
+```sh
 sudo kextload -b com.apple.driver.ExampleBundle
 ```
 
 #### Unload Kernel Extensions
-```bash
+```sh
 sudo kextunload -b com.apple.driver.ExampleBundle
 ```
 
@@ -1747,26 +1854,26 @@ Please see [this file](launchagents.md).
 
 #### Rebuild LaunchServices Database
 To be independent of OS X version, this relies on `locate` to find `lsregister`. If you do not have your `locate` database built yet, [do it](#build-locate-database).
-```bash
+```sh
 sudo $(locate lsregister) -kill -seed -r
 ```
 
 ### Login Window
 
 #### Set Login Window Text
-```bash
+```sh
 sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Your text"
 ```
 
 ### Memory Management
 
 #### Purge memory cache
-```bash
+```sh
 sudo purge
 ```
 
 #### Show Memory Statistics
-```bash
+```sh
 # One time
 vm_stat
 
@@ -1777,7 +1884,7 @@ vm_stat -c 10 1
 ### Notification Center
 
 #### Notification Center Service
-```bash
+```sh
 # Disable
 launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist && \
 killall -9 NotificationCenter
@@ -1789,12 +1896,26 @@ launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.pl
 ### QuickLook
 
 #### Preview via QuickLook
-```bash
+```sh
 qlmanage -p /path/to/file
 ```
 
-### Remote Apple Events
-```bash
+### Remote Management
+
+See also: [Apple Remote Desktop](#apple-remote-desktop).
+
+#### Prevent Double Password Entry
+When logging into a Mac remotely via Apple Remote Desktop or VNC, you are sometimes required to enter your password a second time after connecting to the Mac. While you can disable this behavior, it is explicitly not recommend to turn this functionality off unless you are certain that no one else will be able to access your Mac physically when you are away.
+```sh
+# Disable
+sudo defaults write /Library/Preferences/com.apple.RemoteManagement.plist RestoreMachineState -bool no
+
+# Enable (Default)
+sudo defaults write /Library/Preferences/com.apple.RemoteManagement.plist RestoreMachineState -bool yes
+```
+
+#### Remote Apple Events
+```sh
 # Status
 sudo systemsetup -getremoteappleevents
 
@@ -1807,7 +1928,7 @@ sudo systemsetup -setremoteappleevents off
 
 ### Root User
 
-```bash
+```sh
 # Enable
 dsenableroot
 
@@ -1817,7 +1938,7 @@ dsenableroot -d
 
 ### Safe Mode Boot
 
-```bash
+```sh
 # Status
 nvram boot-args
 
@@ -1828,36 +1949,42 @@ sudo nvram boot-args="-x"
 sudo nvram boot-args=""
 ```
 
+### Save Dialogs
+Significantly improve the now rather slow animation in save dialogs.
+```sh
+defaults write NSGlobalDomain NSWindowResizeTime .001
+```
+
 ### Screenshots
 
 #### Take Delayed Screenshot
 Takes a screenshot as JPEG after 3 seconds and displays in Preview.
-```bash
+```sh
 screencapture -T 3 -t jpg -P delayedpic.jpg
 ```
 
 #### Save Screenshots to Given Location
 Sets location to `~/Desktop`.
-```bash
+```sh
 defaults write com.apple.screencapture location ~/Desktop && \
 killall SystemUIServer
 ```
 
 #### Save Screenshots in Given Format
 Sets format to `png`. Other options are `bmp`, `gif`, `jpg`, `jpeg`, `pdf`, `tiff`.
-```bash
+```sh
 defaults write com.apple.screencapture type -string "png"
 ```
 
 #### Disable Shadow in Screenshots
-```bash
+```sh
 defaults write com.apple.screencapture disable-shadow -bool true && \
 killall SystemUIServer
 ```
 
 #### Set Default Screenshot Name
 Date and time remain unchanged.
-```bash
+```sh
 defaults write com.apple.screencapture name "Example name" && \
 killall SystemUIServer
 ```
@@ -1865,31 +1992,50 @@ killall SystemUIServer
 ### Software Installation
 
 #### Install PKG
-```bash
+```sh
 installer -pkg /path/to/installer.pkg -target /
+```
+
+### Sidecar
+
+#### Use on Incompatible Macs
+This may or may not work, depending on the age of the machine.
+```sh
+# Enable
+defaults write com.apple.sidecar.display AllowAllDevices -bool true && \
+defaults write com.apple.sidecar.display hasShownPref -bool true
+
+# Disable (Default)
+defaults delete com.apple.sidecar.display
 ```
 
 ### Software Update
 
+#### Ignore Specific Software Update
+The identifier can be found via `softwareupdate --list`. In the example below, being on Mojave, will ignore all update prompts to Catalina, since the latter removes 32-bit support.
+```sh
+sudo /usr/sbin/softwareupdate --ignore "macOS Catalina"
+```
+
 #### Install All Available Software Updates
-```bash
+```sh
 sudo softwareupdate -ia
 ```
 
 #### Set Software Update Check Interval
 Set to check daily instead of weekly.
-```bash
+```sh
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 ```
 
 #### Show Available Software Updates
-```bash
-sudo softwareupdate -l
+```sh
+sudo softwareupdate --list
 ```
 
 #### Set Software Update Server
 This should only be done for testing purposes or unmanaged clients. To use network-wide, either correctly set up DNS along with [Apple SUS service](http://krypted.com/mac-security/using-the-software-update-service-on-mountain-lion-server/) and bind your clients via OpenDirectory. Alternatively, use [Reposado](https://github.com/wdas/reposado) together with correct network DNS settings to make resolution transparent. [Margarita](https://github.com/jessepeterson/margarita) looks nice to have as well.
-```bash
+```sh
 # Use own SUS
 sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate CatalogURL http://su.example.com:8088/index.sucatalog
 
@@ -1900,14 +2046,14 @@ sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
 ### Software Version
 
 #### Show System Software Version
-```bash
+```sh
 sw_vers -productVersion
 ```
 
 ### Spotlight
 
 #### Spotlight Indexing
-```bash
+```sh
 # Disable
 mdutil -i off -d /path/to/volume
 
@@ -1916,17 +2062,17 @@ mdutil -i on /path/to/volume
 ```
 
 #### Erase Spotlight Index and Rebuild
-```bash
+```sh
 mdutil -E /path/to/volume
 ```
 
 #### Search via Spotlight
-```bash
+```sh
 mdfind -name 'searchterm'
 ```
 
 #### Show Spotlight Indexed Metadata
-```bash
+```sh
 mdls /path/to/file
 ```
 
@@ -1934,30 +2080,30 @@ mdls /path/to/file
 
 #### Disable System Integrity Protection
 Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd>, open the Terminal application and enter:
-```bash
+```sh
 csrutil disable && reboot
 ```
 
 #### Enable System Integrity Protection
 Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd>, open the Terminal application and enter:
-```bash
+```sh
 csrutil enable && reboot
 ```
 
 ### Date and Time
 
 #### List Available Timezones
-```bash
+```sh
 sudo systemsetup -listtimezones
 ```
 
 #### Set Timezone
-```bash
+```sh
 sudo systemsetup -settimezone Europe/Berlin
 ```
 
 #### Set Clock Using Network Time
-```bash
+```sh
 # Status
 sudo systemsetup getusingnetworktime
 
@@ -1968,13 +2114,223 @@ sudo systemsetup setusingnetworktime on
 sudo systemsetup setusingnetworktime off
 ```
 
+#### Set Menu Bar Clock Output Format
+```sh
+# System Preferences > Date & Time > Time options
+# Analogue
+defaults write com.apple.menuextra.clock IsAnalog -bool true
+# Digital (Default)
+defaults write com.apple.menuextra.clock IsAnalog -bool false
+
+# System Preferences > Date & Time > Flash the time separators
+# Enable
+defaults write com.apple.menuextra.clock FlashDateSeparators -bool true
+# Disable (Default)
+defaults write com.apple.menuextra.clock FlashDateSeparators -bool false
+
+# Thu 18 Aug 23:46:18
+# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
+# System Preferences > Date & Time > Use a 24-hour clock - Checked [HH:mm]
+# System Preferences > Date & Time > Show AM/PM - Unchecked
+# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
+# System Preferences > Date & Time > Show date - Checked [d MMM]
+defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM HH:mm:ss"
+
+# Thu 23:46:18
+# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
+# System Preferences > Date & Time > Use a 24-hour clock - Checked [HH:mm]
+# System Preferences > Date & Time > Show AM/PM - Unchecked
+# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
+# System Preferences > Date & Time > Show date - Unchecked
+defaults write com.apple.menuextra.clock DateFormat -string "EEE HH:mm:ss"
+
+# 18 Aug 23:46:18
+# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
+# System Preferences > Date & Time > Use a 24-hour clock - Checked [HH:mm]
+# System Preferences > Date & Time > Show AM/PM - Unchecked
+# System Preferences > Date & Time > Show the day of the week - Unchecked
+# System Preferences > Date & Time > Show date - Checked [d MMM]
+defaults write com.apple.menuextra.clock DateFormat -string "d MMM HH:mm:ss"
+
+# 23:46:18
+# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
+# System Preferences > Date & Time > Use a 24-hour clock - Checked [HH:mm]
+# System Preferences > Date & Time > Show AM/PM - Unchecked
+# System Preferences > Date & Time > Show the day of the week - Unchecked
+# System Preferences > Date & Time > Show date - Unchecked
+defaults write com.apple.menuextra.clock DateFormat -string "HH:mm:ss"
+
+# Thu 18 Aug 11:46:18 pm
+# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
+# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
+# System Preferences > Date & Time > Show AM/PM - Checked [a]
+# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
+# System Preferences > Date & Time > Show date - Checked [d MMM]
+defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM h:mm:ss a"
+
+
+# Thu 11:46:18 pm
+# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
+# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
+# System Preferences > Date & Time > Show AM/PM - Checked [a]
+# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
+# System Preferences > Date & Time > Show date - Unchecked
+defaults write com.apple.menuextra.clock DateFormat -string "EEE h:mm:ss a"
+
+# 18 Aug 11:46:18 pm
+# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
+# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
+# System Preferences > Date & Time > Show AM/PM - Checked [a]
+# System Preferences > Date & Time > Show the day of the week - Unchecked
+# System Preferences > Date & Time > Show date - Checked [d MMM]
+defaults write com.apple.menuextra.clock DateFormat -string "d MMM h:mm:ss a"
+
+# 11:46:18 pm
+# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
+# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
+# System Preferences > Date & Time > Show AM/PM - Checked [a]
+# System Preferences > Date & Time > Show the day of the week - Unchecked
+# System Preferences > Date & Time > Show date - Unchecked
+defaults write com.apple.menuextra.clock DateFormat -string "h:mm:ss a"
+
+# Thu 18 Aug 11:46:18
+# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
+# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
+# System Preferences > Date & Time > Show AM/PM - Unchecked
+# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
+# System Preferences > Date & Time > Show date - Checked [d MMM]
+defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM h:mm:ss"
+
+# Thu 11:46:18
+# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
+# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
+# System Preferences > Date & Time > Show AM/PM - Unchecked
+# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
+# System Preferences > Date & Time > Show date - Unchecked
+defaults write com.apple.menuextra.clock DateFormat -string "EEE h:mm:ss"
+
+# 18 Aug 11:46:18
+# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
+# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
+# System Preferences > Date & Time > Show AM/PM - Unchecked
+# System Preferences > Date & Time > Show the day of the week - Unchecked
+# System Preferences > Date & Time > Show date - Checked [d MMM]
+defaults write com.apple.menuextra.clock DateFormat -string "d MMM h:mm:ss"
+
+# 11:46:18
+# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
+# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
+# System Preferences > Date & Time > Show AM/PM - Unchecked
+# System Preferences > Date & Time > Show the day of the week - Unchecked
+# System Preferences > Date & Time > Show date - Unchecked
+defaults write com.apple.menuextra.clock DateFormat -string "h:mm:ss"
+
+# Thu 18 Aug 23:46
+# System Preferences > Date & Time > Display time with seconds - Unchecked
+# System Preferences > Date & Time > Use a 24-hour clock - Checked [HH:mm]
+# System Preferences > Date & Time > Show AM/PM - Unchecked
+# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
+# System Preferences > Date & Time > Show date - Checked [d MMM]
+defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM HH:mm"
+
+# Thu 23:46
+# System Preferences > Date & Time > Display time with seconds - Unchecked
+# System Preferences > Date & Time > Use a 24-hour clock - Checked [HH:mm]
+# System Preferences > Date & Time > Show AM/PM - Unchecked
+# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
+# System Preferences > Date & Time > Show date - Unchecked
+defaults write com.apple.menuextra.clock DateFormat -string "EEE HH:mm"
+
+# 18 Aug 23:46
+# System Preferences > Date & Time > Display time with seconds - Unchecked
+# System Preferences > Date & Time > Use a 24-hour clock - Checked [HH:mm]
+# System Preferences > Date & Time > Show AM/PM - Unchecked
+# System Preferences > Date & Time > Show the day of the week - Unchecked
+# System Preferences > Date & Time > Show date - Checked [d MMM]
+defaults write com.apple.menuextra.clock DateFormat -string "d MMM HH:mm"
+
+# 23:46
+# System Preferences > Date & Time > Display time with seconds - Unchecked
+# System Preferences > Date & Time > Use a 24-hour clock - Checked [HH:mm]
+# System Preferences > Date & Time > Show AM/PM - Unchecked
+# System Preferences > Date & Time > Show the day of the week - Unchecked
+# System Preferences > Date & Time > Show date - Unchecked
+defaults write com.apple.menuextra.clock DateFormat -string "HH:mm"
+
+# Thu 18 Aug 11:46 pm
+# System Preferences > Date & Time > Display time with seconds - Unchecked
+# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
+# System Preferences > Date & Time > Show AM/PM - Checked [a]
+# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
+# System Preferences > Date & Time > Show date - Checked [d MMM]
+defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM h:mm a"
+
+# Thu 11:46 pm
+# System Preferences > Date & Time > Display time with seconds - Unchecked
+# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
+# System Preferences > Date & Time > Show AM/PM - Checked [a]
+# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
+# System Preferences > Date & Time > Show date - Unchecked
+defaults write com.apple.menuextra.clock DateFormat -string "EEE h:mm a"
+
+# 18 Aug 11:46 pm
+# System Preferences > Date & Time > Display time with seconds - Unchecked
+# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
+# System Preferences > Date & Time > Show AM/PM - Checked [a]
+# System Preferences > Date & Time > Show the day of the week - Unchecked
+# System Preferences > Date & Time > Show date - Checked [d MMM]
+defaults write com.apple.menuextra.clock DateFormat -string "d MMM h:mm a"
+
+# 11:46 pm
+# System Preferences > Date & Time > Display time with seconds - Unchecked
+# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
+# System Preferences > Date & Time > Show AM/PM - Checked [a]
+# System Preferences > Date & Time > Show the day of the week - Unchecked
+# System Preferences > Date & Time > Show date - Unchecked
+defaults write com.apple.menuextra.clock DateFormat -string "h:mm a"
+
+# Thu 18 Aug 11:46
+# System Preferences > Date & Time > Display time with seconds - Unchecked
+# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
+# System Preferences > Date & Time > Show AM/PM - Unchecked
+# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
+# System Preferences > Date & Time > Show date - Checked [d MMM]
+defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM h:mm"
+
+# Thu 11:46
+# System Preferences > Date & Time > Display time with seconds - Unchecked
+# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
+# System Preferences > Date & Time > Show AM/PM - Unchecked
+# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
+# System Preferences > Date & Time > Show date - Unchecked
+defaults write com.apple.menuextra.clock DateFormat -string "EEE h:mm"
+
+# 18 Aug 11:46
+# System Preferences > Date & Time > Display time with seconds - Unchecked
+# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
+# System Preferences > Date & Time > Show AM/PM - Unchecked
+# System Preferences > Date & Time > Show the day of the week - Unchecked
+# System Preferences > Date & Time > Show date - Checked [d MMM]
+defaults write com.apple.menuextra.clock DateFormat -string "d MMM h:mm"
+
+# 11:46
+# System Preferences > Date & Time > Display time with seconds - Unchecked
+# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
+# System Preferences > Date & Time > Show AM/PM - Unchecked
+# System Preferences > Date & Time > Show the day of the week - Unchecked
+# System Preferences > Date & Time > Show date - Unchecked
+defaults write com.apple.menuextra.clock DateFormat -string "h:mm"
+```
+
+Source:
+[tech-otaku/macos-defaults](https://github.com/tech-otaku/macos-defaults/blob/master/date-time.sh)
 
 
 ## Terminal
 
 #### Ring Terminal Bell
 Rings the terminal bell (if enabled) and puts a badge on it.
-```bash
+```sh
 tput bel
 ```
 
@@ -1988,7 +2344,7 @@ tput bel
 
 #### Bash
 Install the latest version and set as current user's default shell:
-```bash
+```sh
 brew install bash && \
 echo $(brew --prefix)/bin/bash | sudo tee -a /etc/shells && \
 chsh -s $(brew --prefix)/bin/bash
@@ -1999,7 +2355,7 @@ chsh -s $(brew --prefix)/bin/bash
 
 #### fish
 Install the latest version and set as current user's default shell:
-```bash
+```sh
 brew install fish && \
 echo $(brew --prefix)/bin/fish | sudo tee -a /etc/shells && \
 chsh -s $(brew --prefix)/bin/fish
@@ -2012,7 +2368,7 @@ shell for OS X, Linux, and the rest of the family.
 
 #### Zsh
 Install the latest version and set as current user's default shell:
-```bash
+```sh
 brew install zsh && \
 sudo sh -c 'echo $(brew --prefix)/bin/zsh >> /etc/shells' && \
 chsh -s $(brew --prefix)/bin/zsh
@@ -2028,6 +2384,7 @@ chsh -s $(brew --prefix)/bin/zsh
 - [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) - A family of four fixed-width fonts designed with coding in mind.
 - [Codeface](https://github.com/chrissimpkins/codeface) - A gallery and repository of monospaced fonts for developers.
 - [DejaVu Sans Mono](https://dejavu-fonts.github.io/) - A font family based on the Vera Fonts.
+- [Fantasque Sans Mono](https://github.com/belluzj/fantasque-sans) - Designed with functionality in mind, and with some wibbly-wobbly handwriting-like fuzziness that makes it unassumingly cool.
 - [Hack](http://sourcefoundry.org/hack/) - Hack is hand groomed and optically balanced to be your go-to code face.
 - [Inconsolata](http://levien.com/type/myfonts/inconsolata.html) -  A monospace font, designed for code listings and the like.
 - [Input](http://input.fontbureau.com) - A flexible system of fonts designed specifically for code.
@@ -2061,7 +2418,8 @@ OS X 10.10                 | Yosemite           | October 16, 2014   | 10.10.5 (
 OS X 10.11                 | El Capitan         | September 30, 2015 | 10.11.6 (15G31) (July 18, 2016)
 macOS 10.12                | Sierra             | September 20, 2016 | 10.12.6 (16G29) (July 19, 2017)
 macOS 10.13                | High Sierra        | September 25, 2017 | 10.13.6 (17G65) (July 9, 2018)
-macOS 10.14                | Mojave             | September 24, 2018 | 10.14 (18A391) (September 24, 2018)
+macOS 10.14                | Mojave             | September 24, 2018 | 10.14.6 (18G3020) (January 28, 2020)
+macOS 10.15                | Catalina           | October 7, 2019    | 10.15.3 (19D76) (January 28, 2020)
 
 
 ## License
