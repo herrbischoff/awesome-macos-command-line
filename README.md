@@ -540,6 +540,18 @@ defaults write com.apple.dock scroll-to-open -bool false && \
 killall Dock
 ```
 
+#### Show Recent Apps
+This setting is available since macOS 10.14 (Mojave).
+```sh
+# Disable
+defaults write com.apple.dock show-recents -bool false  && \
+killall Dock
+
+# Enable (Default)
+defaults write com.apple.dock show-recents -bool true && \
+killall Dock
+```
+
 #### Enable Dock Autohide
 
 ``` bash
@@ -577,16 +589,6 @@ defaults write com.apple.dock static-only -bool false && \
 killall Dock
 ```
 
-#### Hide recent apps in macOS Mojave+
-```bash
-# Disable
-defaults write com.apple.dock show-recents -bool false  && \
-killall Dock
-
-# Enable (Default)
-defaults write com.apple.dock show-recents -bool true && \
-killall Dock
-```
 
 ## Documents
 
