@@ -275,7 +275,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 launchctl load -w /System/Library/LaunchAgents/com.apple.rcd.plist
 ```
 
-From OS X 10.11 (El Capitan) onwards, you can either disable SIP or resort to a kind of hack, which will make iTunes inaccessible to any user, effectively preventing it from starting itself or its helpers. Be aware that for all intents and purposes this will trash your iTunes installation and may conflict with OS updates down the road.
+From OS X 10.11 (El Capitan) on, you can either disable SIP or resort to a kind of hack, which will make iTunes inaccessible to any user, effectively preventing it from starting itself or its helpers. Be aware that for all intents and purposes this will trash your iTunes installation and may conflict with OS updates down the road.
 ```sh
 sudo chmod 0000 /Applications/iTunes.app
 ```
@@ -703,7 +703,7 @@ sudo fs_usage
 ```
 ### APFS
 
-Available since macOS 10.13 (High Sierra). There is no central utility and usage is inconsistent as most functionality is rolled into `tmutil`.
+Present since macOS 10.13 (High Sierra). There is no central utility and usage is inconsistent as most functionality is rolled into `tmutil`.
 
 #### Convert Volume from HFS+ to APFS
 ```sh
@@ -1049,7 +1049,7 @@ You need to download and install Xcode 8 beta for this to work. Afterwards they 
 cp -v /Applications/Xcode-beta.app/Contents/SharedFrameworks/DVTKit.framework/Versions/A/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
 
-From macOS 10.12 (Sierra) onward, they are included in Terminal.app.
+From macOS 10.12 (Sierra) on, they are included in Terminal.app.
 ```sh
 cp -v /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
@@ -1083,7 +1083,7 @@ sudo killall -HUP blued
 ### Harddisks
 
 #### Force Enable Trim
-Enable Trim for non-Apple SSDs. This command is available since OS X 10.10 (Yosemite).
+Enable Trim for non-Apple SSDs. This command is present since OS X 10.10 (Yosemite).
 ```sh
 forcetrim
 ```
@@ -1296,7 +1296,7 @@ sudo nvram BootAudio=%01
 sudo nvram BootAudio=%00
 ```
 
-From 2016 models onwards:
+From 2016 models on:
 ```sh
 # Enable
 sudo nvram StartupMute=%00
