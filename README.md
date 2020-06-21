@@ -114,18 +114,21 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
 
 ## Appearance
 
-### Font Rendering
-
-#### Font Smoothing
-```bash
-# Mojave
+### Subpixel Anti-Aliasing (Font Smoothing)
+Setting present since macOS 10.14 (Mojave).
+```sh
 # Enable
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool false
 
 # Disable (Default)
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool true
-```
 
+# Per Application
+defaults write com.apple.textedit CGFontRenderingFontSmoothingDisabled -bool false
+
+# Revert for Application
+defaults delete com.apple.textedit CGFontRenderingFontSmoothingDisabled
+```
 
 ### Transparency
 
