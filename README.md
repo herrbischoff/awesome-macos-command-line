@@ -2303,6 +2303,9 @@ defaults write com.apple.menuextra.clock DateFormat -string "d MMM h:mm"
 defaults write com.apple.menuextra.clock DateFormat -string "h:mm"
 ```
 
+Source:
+[tech-otaku/macos-defaults](https://github.com/tech-otaku/macos-defaults/blob/master/date-time.sh)
+
 
 ## Terminal
 
