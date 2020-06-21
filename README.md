@@ -573,6 +573,25 @@ defaults write com.apple.dock scroll-to-open -bool false && \
 killall Dock
 ```
 
+#### Show Recent Apps
+This setting is available since macOS 10.14 (Mojave).
+```sh
+# Disable
+defaults write com.apple.dock show-recents -bool false  && \
+killall Dock
+
+# Enable (Default)
+defaults write com.apple.dock show-recents -bool true && \
+killall Dock
+```
+
+#### Enable Dock Autohide
+
+``` bash
+defaults write com.apple.dock autohide -bool true && \
+killall Dock
+```
+
 #### Set Auto Show/Hide Delay
 The float number defines the show/hide delay in ms.
 ```sh
