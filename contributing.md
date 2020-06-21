@@ -11,7 +11,7 @@ Please ensure your pull request adheres to the following guidelines:
 - Order titles alphabetically within each category.
 - Group commands for checking, enabling and disabling in one code block.
 - Never remove or replace commands for an older OS version. Instead, mark them as such. Look for existing examples of how to do this properly. The only exception are obvious and verified non-working commands.
-- Always use code fencing with the `bash` descriptor.
+- Always use code fencing with the `sh` descriptor.
 - Check your spelling and grammar.
 - Make sure your text editor is set to remove trailing whitespace.
 - The pull request and commit should have a useful title.
