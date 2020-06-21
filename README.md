@@ -1143,6 +1143,9 @@ Please see [this file](functions.md).
 
 ### Bluetooth
 
+Up to OS X 10.12 (Sierra) the Bluetooth daemon is named `blued` instead of 
+`bluetoothd`. You need to adjust the `killall` command accordingly.
+
 ```sh
 # Status
 defaults read /Library/Preferences/com.apple.Bluetooth ControllerPowerState
@@ -1152,7 +1155,7 @@ sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerStat
 
 # Disable
 sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0 && \
-sudo killall -HUP blued
+sudo killall -HUP bluetoothd
 ```
 
 ### Harddisks
