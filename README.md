@@ -146,7 +146,9 @@ It also explains what the numbers in the man pages refer to --- like `man(1)`.
 ## Appearance
 
 ### Subpixel Anti-Aliasing (Font Smoothing)
+
 Setting present since macOS 10.14 (Mojave).
+
 ```sh
 # Enable
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool false
@@ -1640,7 +1642,9 @@ defaults write com.apple.screensaver askForPassword -int 0
 ```
 
 ### Privacy Database
+
 The `tccutil` command manages the privacy database, which stores decisions the user has made about whether apps may access personal data. You need to close all applications except Terminal before running any of these commands.
+
 ```sh
 # Full Reset for All Applications
 sudo tccutil reset All
@@ -1982,7 +1986,9 @@ sudo nvram boot-args=""
 ```
 
 ### Save Dialogs
+
 Significantly improve the now rather slow animation in save dialogs.
+
 ```sh
 defaults write NSGlobalDomain NSWindowResizeTime .001
 ```
