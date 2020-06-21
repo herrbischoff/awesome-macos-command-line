@@ -236,12 +236,12 @@ sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resourc
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -stop
 ```
 
-#### Enable and Disable Remote Desktop Sharing
+#### Remote Desktop Sharing
 ```sh
 # Allow Access for All Users and Give All Users Full Access
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -allUsers -privs -all
 
-# Disable ARD Agent and Remove Access Privileges for All Users
+# Disable ARD Agent and Remove Access Privileges for All Users (Default)
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -configure -access -off
 ```
 
@@ -348,13 +348,21 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DefaultFixedFontSize 14
 ```
 
-#### Enable Develop Menu and Web Inspector
+#### Develop Menu and Web Inspector
 ```sh
+# Enable
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true && \
 defaults write com.apple.Safari IncludeDevelopMenu -bool true && \
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true && \
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true && \
 defaults write -g WebKitDeveloperExtras -bool true
+
+# Disable (Default)
+defaults delete com.apple.Safari IncludeInternalDebugMenu && \
+defaults delete com.apple.Safari IncludeDevelopMenu && \
+defaults delete com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey && \
+defaults delete com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled && \
+defaults delete -g WebKitDeveloperExtras
 ```
 
 #### Get Current Page Data
@@ -368,7 +376,7 @@ osascript -e 'tell application "Safari" to get URL of current tab of front windo
 # Enable
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool YES
 
-# Disable
+# Disable (Default)
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool NO
 ```
 
@@ -393,7 +401,7 @@ defaults write -app Skim SKAutoReloadFileUpdate -boolean true
 # Enable
 defaults write com.apple.Terminal FocusFollowsMouse -string YES
 
-# Disable
+# Disable (Default)
 defaults write com.apple.Terminal FocusFollowsMouse -string NO
 ```
 
@@ -1294,12 +1302,12 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 ```
 
 #### Key Repeat
-Disable the default "press and hold" behavior.
+Change the "press and hold" behavior.
 ```sh
-# Enable Key Repeat
+# Enable
 defaults write -g ApplePressAndHoldEnabled -bool false
 
-# Disable Key Repeat
+# Disable (Default)
 defaults write -g ApplePressAndHoldEnabled -bool true
 ```
 
@@ -1490,10 +1498,10 @@ Host server.example.com
 
 #### Remote Login
 ```sh
-# Enable remote login
+# Enable
 sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 
-# Disable remote login
+# Disable (Default)
 sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
 ```
 
@@ -1775,14 +1783,14 @@ locate -i *.jpg
 
 ### AirDrop
 
+#### AirDrop over Ethernet on Unsupported Macs
 ```sh
-# Enable AirDrop over Ethernet and on Unsupported Macs
-defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
-
-# Enable (Default)
+# Enable 
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true && \
 defaults remove com.apple.NetworkBrowser DisableAirDrop
 
-# Disable
+# Disable (Default)
+defaults delete com.apple.NetworkBrowser BrowseAllInterfaces && \
 defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES
 ```
 
@@ -2051,7 +2059,7 @@ sudo systemsetup -setremoteappleevents off
 # Enable
 dsenableroot
 
-# Disable
+# Disable (Default)
 dsenableroot -d
 ```
 
@@ -2064,7 +2072,7 @@ nvram boot-args
 # Enable
 sudo nvram boot-args="-x"
 
-# Disable
+# Disable (Default)
 sudo nvram boot-args=""
 ```
 
@@ -2209,18 +2217,18 @@ mdls /path/to/file
 
 ### System Integrity Protection
 
-#### Disable System Integrity Protection
-Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd>, open the Terminal 
-application and enter:
-```sh
-csrutil disable && reboot
-```
+Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd> and open the Terminal 
+application. You will need to `reboot` for the commands to take effect.
 
-#### Enable System Integrity Protection
-Reboot while holding <kbd>Cmd</kbd> + <kbd>R</kbd>, open the Terminal 
-application and enter:
 ```sh
-csrutil enable && reboot
+# Status
+csrutil status
+
+# Enable (Default)
+csrutil enable
+
+# Disable
+csrutil disable
 ```
 
 ### Date and Time
