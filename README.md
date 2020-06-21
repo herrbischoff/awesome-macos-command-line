@@ -102,6 +102,7 @@ It also explains what the numbers in the man pages refer to --- like `man(1)`.
     - [Gatekeeper](#gatekeeper)
     - [Passwords](#passwords)
     - [Physical Access](#physical-access)
+    - [Privacy Database](#privacy-database)
     - [Wiping Data](#wiping-data)
 - [Search](#search)
     - [Find](#find)
@@ -1585,6 +1586,19 @@ defaults write com.apple.screensaver askForPassword -int 1
 
 # Disable (Default)
 defaults write com.apple.screensaver askForPassword -int 0
+```
+
+### Privacy Database
+The `tccutil` command manages the privacy database, which stores decisions the user has made about whether apps may access personal data. You need to close all applications except Terminal before running any of these commands.
+```sh
+# Full Reset for All Applications
+sudo tccutil reset All
+
+# Reset Adress Book Access
+sudo tccutil reset AddressBook
+
+# Reset All Permission for Terminal.app
+sudo tccutil reset All com.apple.Terminal
 ```
 
 ### Wiping Data
