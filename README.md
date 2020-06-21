@@ -93,7 +93,7 @@ When you find something helpful in here, you could buy me a coffee. I spend a lo
     - [AppleScript](#applescript)
     - [Basics](#basics)
     - [Clipboard](#clipboard)
-	- [Date and Time](#date-and-time)
+    - [Date and Time](#date-and-time)
     - [FileVault](#filevault)
     - [Information/Reports](#informationreports)
     - [Install OS](#install-os)
@@ -104,7 +104,6 @@ When you find something helpful in here, you could buy me a coffee. I spend a lo
     - [Memory Management](#memory-management)
     - [Notification Center](#notification-center)
     - [QuickLook](#quicklook)
-    - [Remote Apple Events](#remote-apple-events)
     - [Remote Management](#remote-management)
     - [Root User](#root-user)
     - [Safe Mode Boot](#safe-mode-boot)
@@ -1825,7 +1824,21 @@ launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.pl
 qlmanage -p /path/to/file
 ```
 
-### Remote Apple Events
+### Remote Management
+
+See also: [Apple Remote Desktop](#apple-remote-desktop).
+
+#### Prevent Double Password Entry
+When logging into a Mac remotely via Apple Remote Desktop or VNC, you are sometimes required to enter your password a second time after connecting to the Mac. While you can disable this behavior, it is explicitly not recommend to turn this functionality off unless you are certain that no one else will be able to access your Mac physically when you are away.
+```sh
+# Disable
+sudo defaults write /Library/Preferences/com.apple.RemoteManagement.plist RestoreMachineState -bool no
+
+# Enable (Default)
+sudo defaults write /Library/Preferences/com.apple.RemoteManagement.plist RestoreMachineState -bool yes
+```
+
+#### Remote Apple Events
 ```bash
 # Status
 sudo systemsetup -getremoteappleevents
@@ -1836,16 +1849,6 @@ sudo systemsetup -setremoteappleevents on
 # Disable (Default)
 sudo systemsetup -setremoteappleevents off
 ```
-
-### Remote Management
-
-By default, when logging into a Mac remotely (using Apple Remote Desktop or similar), you are required to enter your password a second time after connecting to the Mac. You can disable this second login requirement using the following command:
-
-```bash
-sudo defaults write /Library/Preferences/com.apple.RemoteManagement.plist RestoreMachineState -bool no
-```
-
-More info can be found in [this blog post](https://help.edovia.com/hc/en-us/articles/360000472587-Why-do-I-sometimes-have-to-log-in-twice-when-connecting-to-my-Mac-) from Edovia, the developer of [Screens](https://edovia.com/en/).
 
 ### Root User
 
