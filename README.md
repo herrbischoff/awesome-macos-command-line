@@ -13,7 +13,7 @@ For more terminal shell goodness, please also see this list's sister list [Aweso
 ## Contents
 
 - [Appearance](#appearance)
-    - [Font Rendering](#font-rendering)
+    - [Subpixel Anti-Aliasing](#subpixel-anti-aliasing-font-smoothing)
     - [Transparency](#transparency)
     - [Wallpaper](#wallpaper)
 - [Applications](#applications)
