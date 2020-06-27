@@ -1168,10 +1168,10 @@ sudo killall -HUP bluetoothd
 
 ### Harddisks
 
-#### Force Enable Trim
+#### Force Trim
 Enable Trim for non-Apple SSDs. This command is present since OS X 10.10 (Yosemite).
 ```sh
-forcetrim
+trimforce
 ```
 
 ### Hardware Information
