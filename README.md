@@ -932,9 +932,20 @@ sudo chmod -RN /path/to/folder
 ```sh
 chflags hidden /path/to/folder/
 ```
+
 #### Show All File Extensions
 ```sh
 defaults write -g AppleShowAllExtensions -bool true
+```
+
+#### Set Protected Flag
+This is equivalent to Finder "Locked" status.
+```sh
+# Disable (Default)
+sudo chflags -R nouchg /path/to/file/or/folder
+
+# Enable
+sudo chflags -R uchg /path/to/file/or/folder
 ```
 
 #### Show Hidden Files
@@ -944,11 +955,6 @@ defaults write com.apple.finder AppleShowAllFiles true
 
 # Restore Default File Visibility
 defaults write com.apple.finder AppleShowAllFiles false
-```
-
-#### Remove Protected Flag
-```sh
-sudo chflags -R nouchg /path/to/file/or/folder
 ```
 
 #### Show Full Path in Finder Title
