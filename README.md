@@ -2191,8 +2191,15 @@ sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
 ### Software Version
 
 #### Show System Software Version
+There are several ways to obtain different levels of detail.
 ```sh
 sw_vers -productVersion
+```
+```sh
+system_profiler SPSoftwareDataType
+```
+```sh
+defaults read loginwindow SystemVersionStampAsString
 ```
 
 ### Spotlight
