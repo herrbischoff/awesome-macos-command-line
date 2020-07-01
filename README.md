@@ -928,9 +928,10 @@ killall Finder
 sudo chmod -RN /path/to/folder
 ```
 
-#### Hide Folder in Finder
+#### Increase Number of Recent Places
 ```sh
-chflags hidden /path/to/folder/
+defaults write -g NSNavRecentPlacesLimit -int 10 && \
+killall Finder
 ```
 
 #### Show All File Extensions
@@ -962,15 +963,15 @@ defaults write com.apple.finder AppleShowAllFiles false
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 ```
 
-#### Unhide User Library Folder
+#### Toggle Folder Visibility in Finder
+By default, the `~/Library` folder is hidden. You can easily show it again. The 
+same method works with all other folders.
 ```sh
-chflags nohidden ~/Library
-```
+# Hidden (Default)
+chflags hidden ~/Library
 
-#### Increase Number of Recent Places
-```sh
-defaults write -g NSNavRecentPlacesLimit -int 10 && \
-killall Finder
+# Visible
+chflags nohidden ~/Library
 ```
 
 ### Layout
