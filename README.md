@@ -1124,7 +1124,7 @@ open .
 ## Fonts
 
 #### Clear Font Cache for Current User
-To clear font caches for all users, put `sudo` in front of this command.
+To clear font caches for all users, put `sudo` in front of these commands.
 ```sh
 atsutil databases -removeUser && \
 atsutil server -shutdown && \
