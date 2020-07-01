@@ -1132,8 +1132,8 @@ atsutil server -ping
 ```
 
 #### Get SF Mono Fonts
-You need to download and install Xcode 8 beta for this to work. Afterwards they 
-should be available in all applications.
+Starting in macOS 10.15 (Catalina), the Utilities apps (including Terminal.app) 
+are now found in the `/System` folder.
 ```sh
 cp -v /Applications/Xcode-beta.app/Contents/SharedFrameworks/DVTKit.framework/Versions/A/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
@@ -1143,8 +1143,8 @@ From macOS 10.12 (Sierra) on, they are included in Terminal.app.
 cp -v /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
 
-Starting in macOS 10.15 (Catalina), the Utilities apps (including Terminal.app) 
-are now found in the `/System` folder.
+In older OS versions, you need to download and install Xcode 8 beta for this to 
+work. Afterwards they should be available in all applications.
 ```sh
 cp -v /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-* ~/Library/Fonts
 ```
