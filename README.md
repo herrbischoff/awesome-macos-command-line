@@ -1596,6 +1596,9 @@ networksetup -setairportpower en0 on
   popular choice.
 - [MacPorts](https://www.macports.org) - Compile, install and upgrade either 
   command-line, X11 or Aqua based open-source software.
+- [Meta Package Manager](https://github.com/kdeldycke/meta-package-manager) -
+  Manage several package managers from one unified CLI. Supports Homebrew,
+  Cask, `mas`, `npm`, `pip` and others.
 
 ### Homebrew
 
