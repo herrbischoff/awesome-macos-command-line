@@ -2539,10 +2539,10 @@ brew install xonsh
 ```
 - [Homepage](https://xon.sh/contents.html) - Xonsh is a Python-powered, cross-platform, 
   Unix-gazing shell language and command prompt.
-- [Tutorial](https://xon.sh/tutorial.html) - step by step introduction to xonsh.
-- [Xontribs](https://xon.sh/xontribs.html) - the list of awesome xonsh extensions
+- [Tutorial](https://xon.sh/tutorial.html) - Step by step introduction to xonsh.
+- [Xontribs](https://xon.sh/xontribs.html) - The list of awesome xonsh extensions
   that makes work faster and beautify the prompt.
-- [xxh](https://github.com/xxh/xxh) - using xonsh wherever you go through the ssh.
+- [xxh](https://github.com/xxh/xxh) - Using xonsh wherever you go through the ssh.
 
 #### Zsh
 Install the latest version and set as current user's default shell:
