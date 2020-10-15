@@ -1769,7 +1769,7 @@ srm -rf /path/to/complete/destruction
 
 #### Recursively Delete .DS_Store Files
 ```sh
-find . -type f -name '*.DS_Store' -ls -delete
+find . -type f -name '.DS_Store' -ls -delete
 ```
 
 ### Locate
