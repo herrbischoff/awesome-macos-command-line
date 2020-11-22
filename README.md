@@ -20,9 +20,11 @@ Apps](https://github.com/herrbischoff/awesome-command-line-apps).
 Send a little karma down the way and support women empowerment in Zanzibar by
 helping to [fund the local production of reusable female hygiene
 products](https://www.gofundme.com/f/women-empowerment-in-zanzibar). A very
-dear friend of mine runs the project. They were already able to buy hundreds of 
-educational books. Sometimes, it takes so little to make a huge impact.<br>
-If you'd like to thank me or support this work, donate.
+dear friend of mine runs the project. They were already able to buy hundreds of
+educational books. Sometimes, it takes so little to make a huge impact. If
+you'd like to thank me or support this work, donate. Additionally, any current
+and future sponsoring of my work via GitHub or other channels will flow one
+hundred percent to the NGO.
 
 
 ## Foreword
