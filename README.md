@@ -327,6 +327,7 @@ considering numeric strings
     if "10.12" <= os_version then set mail_version to "V4"
     if "10.13" <= os_version then set mail_version to "V5"
     if "10.14" <= os_version then set mail_version to "V6"
+    if "10.15" <= os_version then set mail_version to "V7"
 end considering
 
 set sizeBefore to do shell script "ls -lnah ~/Library/Mail/" & mail_version & "/MailData | grep -E 'Envelope Index$' | awk {'print $5'}"
