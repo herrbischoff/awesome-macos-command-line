@@ -1910,6 +1910,9 @@ sudo sysdiagnose -f ~/Desktop/
 
 #### Create Bootable Installer
 ```sh
+# macOS 11 (Big Sur)
+sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/USB
+
 # macOS 10.15 (Catalina)
 sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/USB --nointeraction --downloadassets
 
