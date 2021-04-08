@@ -2533,7 +2533,7 @@ chsh -s $(brew --prefix)/bin/fish
   X. 
 
 #### xonsh
-Install the latest version using Brew ([other methods](https://xon.sh/packages.html)):
+Install the latest version using Homebrew (or [other methods](https://xon.sh/packages.html)):
 ```sh
 brew install xonsh
 ```
