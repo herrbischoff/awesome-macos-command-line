@@ -2616,14 +2616,14 @@ Mac OS X 10.4              | Tiger              | April 29, 2005     | 10.4.11 (
 Mac OS X 10.5              | Leopard            | October 26, 2007   | 10.5.8 (August 5, 2009)
 Mac OS X 10.6              | Snow Leopard       | August 28, 2009    | 10.6.8 v1.1 (July 25, 2011)
 Mac OS X 10.7              | Lion               | July 20, 2011      | 10.7.5 (September 19, 2012)
-OS X 10.8                  | Mountain Lion      | July 25, 2012      | 10.8.5 (12F45) (October 3, 2013)
-OS X 10.9                  | Mavericks          | October 22, 2013   | 10.9.5 (13F1112) (September 18, 2014)
-OS X 10.10                 | Yosemite           | October 16, 2014   | 10.10.5 (14F27) (August 13, 2015)
-OS X 10.11                 | El Capitan         | September 30, 2015 | 10.11.6 (15G31) (July 18, 2016)
-macOS 10.12                | Sierra             | September 20, 2016 | 10.12.6 (16G29) (July 19, 2017)
-macOS 10.13                | High Sierra        | September 25, 2017 | 10.13.6 (17G65) (July 9, 2018)
-macOS 10.14                | Mojave             | September 24, 2018 | 10.14.6 (18G3020) (January 28, 2020)
-macOS 10.15                | Catalina           | October 7, 2019    | 10.15.5 (19F101) (June 1, 2020)
+OS X 10.8                  | Mountain Lion      | July 25, 2012      | 10.8.5 (12F2560) (August 13, 2015)
+OS X 10.9                  | Mavericks          | October 22, 2013   | 10.9.5 (13F1911) (July 18, 2016)
+OS X 10.10                 | Yosemite           | October 16, 2014   | 10.10.5 (14F2511) (July 19, 2017)
+OS X 10.11                 | El Capitan         | September 30, 2015 | 10.11.6 (15G22010) (July 9, 2018)
+macOS 10.12                | Sierra             | September 20, 2016 | 10.12.6 (16G2136) (September 26, 2019)
+macOS 10.13                | High Sierra        | September 25, 2017 | 10.13.6 (17G14042) (November 12, 2020)
+macOS 10.14                | Mojave             | September 24, 2018 | 10.14.6 (18G9028) (April 26, 2021)
+macOS 10.15                | Catalina           | October 7, 2019    | 10.15.7 (19H1030) (April 26, 2021)
 
 
 ## License
