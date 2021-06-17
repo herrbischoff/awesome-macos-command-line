@@ -1996,6 +1996,10 @@ sudo kextunload -b com.apple.driver.ExampleBundle
 
 Please see [this file](launchagents.md).
 
+#### Utilities
+
+- [launchk](https://github.com/mach-kernel/launchk) - TUI for managing launchd agents and daemons.
+
 
 ### LaunchServices
 
